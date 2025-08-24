@@ -1,0 +1,17 @@
+
+import * as React from "react";
+
+interface IconProps extends React.SVGProps<SVGSVGElement> {
+    width?: number;
+    height?: number;
+    fill?: string;
+}
+
+const ArrowRightThin: React.FC<IconProps> = (props) => (
+ <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27" fill="none">
+<path d="M12.0992 1.36907C12.4629 0.614736 13.5371 0.614737 13.9008 1.36907L17.402 8.63193C17.5003 8.83575 17.6647 9.00022 17.8686 9.09847L25.1314 12.5997C25.8858 12.9633 25.8858 14.0376 25.1314 14.4013L17.8686 17.9025C17.6647 18.0008 17.5003 18.1652 17.402 18.369L13.9008 25.6319C13.5371 26.3862 12.4629 26.3862 12.0992 25.6319L8.59798 18.369C8.49973 18.1652 8.33526 18.0008 8.13144 17.9025L0.868584 14.4013C0.114248 14.0376 0.114249 12.9633 0.868585 12.5997L8.13144 9.09847C8.33526 9.00022 8.49973 8.83575 8.59799 8.63193L12.0992 1.36907Z" fill="white"/>
+</svg>
+
+);
+
+export default ArrowRightThin;

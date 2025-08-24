@@ -1,0 +1,78 @@
+@import "tailwindcss/base";
+
+/* 👉 put overrides here */
+*,
+*::before,
+*::after {
+  padding: unset; /* or initial */
+}
+
+body {
+  padding: revert; /* restores browser default */
+}
+
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@font-face {
+  font-family: "Duplet";
+  src: url("/assets/fonts/Duplet-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atyp";
+  src: url("/assets/fonts/Atyp-Regular.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback custom classes */
+.text-primary-dark {
+  color: #132d47 !important;
+}
+
+.bg-primary-dark {
+  background-color: #132d47 !important;
+}
+
+.border-primary-dark {
+  border-color: #132d47 !important;
+}
+
+.bg-primary-light {
+  background-color: #81de76 !important;
+}
+
+.font-body {
+  font-family: "Duplet", sans-serif !important;
+}
+
+.text-bodyRegular {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+
+/* Override Tailwind Preflight reset */
+*,
+*::before,
+*::after {
+  padding: unset; /* or initial if you prefer */
+}
+
+body {
+  padding: revert; /* restores browser default */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

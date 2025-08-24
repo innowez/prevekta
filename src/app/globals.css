@@ -1,0 +1,72 @@
+
+
+@import "tailwindcss";
+
+/* @import "tailwindcss/base"; */
+
+body {
+  padding: revert; /* restores browser default */
+  background-color: #81DE761A;
+}
+
+/* @import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+
+@font-face {
+  font-family: 'Duplet';
+  src: url('/assets/fonts/Duplet-Regular-BF642a340663b06.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atyp';
+  src: url('/assets/fonts/AtypKidoTRIAL-Regular-BF657271256f9eb.otf') format('otf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fallback custom classes */
+.text-primary-dark {
+  color: #132D47 !important;
+}
+
+.bg-primary-dark {
+  background-color: #132D47 !important;
+}
+
+.border-primary-dark {
+  border-color: #132D47 !important;
+}
+
+.bg-primary-light {
+  background-color: #81DE76 !important;
+}
+
+.font-body {
+  font-family: 'Duplet', sans-serif !important;
+}
+
+.text-bodyRegular {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Smooth transitions */
+* {
+  transition: opacity 0.8s ease-in-out;
+}

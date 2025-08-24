@@ -1,0 +1,137 @@
+"use client";
+import FooterLogo from '@assets/images/FooterLogo.png'
+import FacebookIcon from '@/assets/icons/FacebookIcon';
+import InstagramIcon from '@/assets/icons/InstagramIcon';
+import YoutubeIcon from '@/assets/icons/YoutubeIcon';
+import LinkdInIcon from '@/assets/icons/LinkdInIcon';
+import WhatsappIcon from '@/assets/icons/WhatsappIcon';
+import FooterDesign from '@assets/images/FooterDesign.png'
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-[#132D47] text-white w-full h-auto rounded-[20px]">
+      <div className="pt-1">
+        <img src={FooterDesign.src} alt="Footer Design" className="w-full h-auto mb-6" />
+      </div>
+      <div className="py-8 px-4 md:px-8">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex justify-between">
+          {/* Logo and Social */}
+          <div className="space-y-8">
+            <img src={FooterLogo.src} alt="Prevekta Logo" className="w-[220px] h-[36px]" />
+            <div className="flex mt-16 space-x-3">
+              <FacebookIcon className='cursor-pointer' />
+              <InstagramIcon className='cursor-pointer' />
+              <YoutubeIcon className='cursor-pointer' />
+              <LinkdInIcon className='cursor-pointer' />
+              <WhatsappIcon className='cursor-pointer' />
+            </div>
+          </div>
+
+          {/* Links */}
+          <div className="flex space-x-8">
+            <div className="space-y-6">
+              <h3 className="text-xl font-light">About</h3>
+              <ul className="space-y-2 text-base">
+                <li>Our Story</li>
+                <li>The 4P Model</li>
+                <li>Our Team</li>
+              </ul>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-xl font-light">Quick Links</h3>
+              <ul className="space-y-2 text-base">
+                <li>Book a Consultation</li>
+                <li>Shop Products</li>
+                <li>Find a Clinic</li>
+                <li>Become a Franchisee</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-xl font-light">Products</h3>
+              <ul className="space-y-2 text-base">
+                <li>Treeyna</li>
+                <li>Trimanya</li>
+                <li>Yuvrasa</li>
+                <li>Juvinam</li>
+              </ul>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-xl font-light">Legal & Help</h3>
+              <ul className="space-y-2 text-base">
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>FAQ</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden flex flex-col">
+          {/* Logo */}
+          <div className="mb-6">
+            <img src={FooterLogo.src} alt="Prevekta Logo" className="w-[180px] h-[28px]" />
+          </div>
+
+          {/* Links in column */}
+          <div className="flex flex-col space-y-6">
+            <div className="space-y-2">
+              <h3 className="text-xl font-light">About</h3>
+              <ul className="space-y-2 text-base">
+                <li>Our Story</li>
+                <li>The 4P Model</li>
+                <li>Our Team</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-light">Quick Links</h3>
+              <ul className="space-y-2 text-base">
+                <li>Book a Consultation</li>
+                <li>Shop Products</li>
+                <li>Find a Clinic</li>
+                <li>Become a Franchisee</li>
+                <li>Contact</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-light">Products</h3>
+              <ul className="space-y-2 text-base">
+                <li>Treeyna</li>
+                <li>Trimanya</li>
+                <li>Yuvrasa</li>
+                <li>Juvinam</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-light">Legal & Help</h3>
+              <ul className="space-y-2 text-base">
+                <li>Terms & Conditions</li>
+                <li>Privacy Policy</li>
+                <li>FAQ</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex mt-6 space-x-3">
+            <FacebookIcon className='cursor-pointer' />
+            <InstagramIcon className='cursor-pointer' />
+            <YoutubeIcon className='cursor-pointer' />
+            <LinkdInIcon className='cursor-pointer' />
+            <WhatsappIcon className='cursor-pointer' />
+          </div>
+        </div>
+
+        {/* Bottom Section (Privacy and Terms) */}
+        <div className="mt-6 border-t border-white/40 pt-2 flex flex-col md:flex-row justify-between text-base gap-1">
+          <p className="text-center md:text-left">Privacy Policy</p>
+          <p className="text-center md:text-left md:mt-0">Terms & conditions</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
