@@ -109,7 +109,7 @@ const Header: React.FC = () => {
               iconPosition="2px"
               iconPositionHover="px"
             />
-            <div className="relative -ml-3">
+            <div className="relative -ml-5">
               <CustomButton
                 mainWidth="120px"
                 labelWidth="120px"
@@ -253,7 +253,7 @@ const Header: React.FC = () => {
                   arrowFillHover="#FFFF"
                   labelText="Franchise"
                   labelBorderColor="#132D47"
-                  iconPosition="0px"
+                  iconPosition="2px"
                   iconPositionHover="px"
                 />
                 <CustomButton
