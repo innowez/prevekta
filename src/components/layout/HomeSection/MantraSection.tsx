@@ -11,14 +11,17 @@ const MantraSection: React.FC = () => {
           <h3 className="text-basic md:text-[24px] md:leading-[29px] font-bold text-[#132D47] font-['Atyp']">
             Our Mantra
           </h3>
-          <h2 className="text-lg md:text-[40px] md:leading-[48px] font-bold text-[#132D47] font-['Atyp']">
-            Ayurveda for All. Ayurveda Together.
+          <h2 className="text-[20px] md:text-[40px] md:leading-[48px] font-bold text-[#132D47] font-Atyp">
+            Ayurveda for All. Ayurveda <br className='block md:hidden' />Together.
           </h2>
         </div>
 
         {/* Content section */}
         <div className="flex flex-col lg:flex-row gap-3 md:gap-10 items-center">
           {/* Image placeholder */}
+          <p className="text-lg md:text-[18px] leading-[23px] text-[#132D47] font-duplet font-light block md:hidden">
+              Whether you are in a village in Kerala, a city like Hyderabad, or a small community in Tamil Nadu Prevekta brings the same promise: Rooted tradition, connected community, modern access.
+            </p>
           <div className="w-full lg:w-[534px] h-[282px] bg-gray-300 rounded-[28px] flex-shrink-0">
             <Image 
               src={DoctorsImage}
@@ -29,7 +32,7 @@ const MantraSection: React.FC = () => {
 
           {/* Text content */}
           <div className="flex flex-col justify-between gap-3 md:gap-8 w-full h-full lg:w-[506px]">
-            <p className="text-lg md:text-[18px] leading-[23px] text-[#132D47] font-duplet font-light">
+            <p className="text-lg md:text-[18px] leading-[23px] text-[#132D47] font-duplet font-light hidden md:block">
               Whether you are in a village in Kerala, a city like Hyderabad, or a small community in Tamil Nadu Prevekta brings the same promise: Rooted tradition, connected community, modern access.
             </p>
             

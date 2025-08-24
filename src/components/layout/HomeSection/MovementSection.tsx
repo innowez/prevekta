@@ -82,7 +82,7 @@ const MovementSection = () => {
         {movementItems.map((item) => (
           <div
             key={item.id}
-            className="relative w-full h-[80px] md:h-[134px] flex items-center justify-center hover:bg-[#96dda55b] rounded-2xl"
+            className="relative w-full h-[60px] md:h-[134px] flex items-center justify-center bg-[#96dda55b] md:bg-[#f2fcf1] hover:bg-[#96dda55b] rounded-2xl"
             onMouseEnter={() => setHoveredItem(item.id)}
             onMouseLeave={() => setHoveredItem(null)}
           >
@@ -95,9 +95,9 @@ const MovementSection = () => {
 
             {/* Left Image */}
             <div
-              className={`absolute left-0 md:left-9 w-[66px] -rotate-6 h-[86px] md:w-[183px] md:h-[238px] transition-all duration-500 ease-in-out ${
+              className={`absolute left-0 md:left-9 w-[66px] -rotate-6 h-[86px] md:w-[183px] md:h-[238px] z-20 transition-all duration-500 ease-in-out ${
                 hoveredItem === item.id || isMobile
-                  ? "-bottom-5 opacity-100"
+                  ? "top-1/2 -translate-y-1/2 opacity-100"
                   : "-bottom-20 opacity-0"
               }`}
             >
@@ -110,9 +110,9 @@ const MovementSection = () => {
 
             {/* Right Image */}
             <div
-              className={`absolute right-0 md:right-9 w-[66px] rotate-6 h-[86px] md:w-[183px] md:h-[238px] transition-all duration-500 ease-in-out ${
+              className={`absolute right-0 md:right-9 w-[66px] rotate-6 h-[86px] md:w-[183px] md:h-[238px] z-20 transition-all duration-500 ease-in-out ${
                 hoveredItem === item.id || isMobile
-                  ? "-bottom-5 opacity-100"
+                  ? "top-1/2 -translate-y-1/2 opacity-100"
                   : "-bottom-20 opacity-0"
               }`}
             >

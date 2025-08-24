@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import PhysiciansImage from '@assets/images/vsvsv.png'
+import PhysiciansImageMobile from '@assets/images/physicianImgMobile.png'
 import Grop from '@assets/images/Group.png'
 import Grow from '@assets/images/Grow.png'
 import Brand from '@assets/images/Brand.png'
@@ -74,13 +75,21 @@ const ForPhysicians = () => {
           <Image 
              src={PhysiciansImage.src}
             alt="Physicians"
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover hidden"
             fill
             // height={459}
             // width={361}
           />
+          <Image 
+          src={PhysiciansImageMobile.src}
+          alt='ph'
+          className='w-full h-full object-cover '
+          fill
+          // height={459}
+          //   width={361}
+          />
           {/* Overlay Text Box */}
-          <div className="absolute left-5 md:left-10 bottom-10 w-full md:w-[505px] p-8 bg-[rgba(129,222,118,0.7)] rounded-[32px]">
+          <div className="absolute left-1/2 -translate-x-1/2 min-w-[335px] md:left-10 bottom-2 md:w-[505px] p-4 mb:p-8 bg-[rgba(129,222,118,0.7)] rounded-[32px] ">
             <p className="text-[18px] leading-[23px] font-duplet font-light text-justify text-white">
               At Prevekta, you focus on treating patients we take care of the rest. From branding and patient flow to mentorship and growth, we support you at every step. Work with experienced Vaidyas, learn, collaborate, and grow your knowledge. Already running your own clinic? Strengthen it with our tools advanced technology, access to quality products, better patient management, and co-branding to help you stand out.
             </p>

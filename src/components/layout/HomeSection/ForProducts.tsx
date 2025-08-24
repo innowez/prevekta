@@ -130,7 +130,7 @@ const ForProducts = () => {
               <div
                 className={`flex items-end gap-3 md:gap-4 ${
                   product.textAlign === "text-right"
-                    ? "flex-row-reverse"
+                    ? "md:flex-row-reverse"
                     : "flex-row"
                 }`}
               >
@@ -138,7 +138,7 @@ const ForProducts = () => {
                 <div
                   className={`flex-1 w-fit ${
                     product.textAlign === "text-right"
-                      ? "text-right"
+                      ? "md:text-right"
                       : "text-left"
                   }`}
                 >
