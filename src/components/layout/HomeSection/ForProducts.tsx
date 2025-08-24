@@ -100,7 +100,7 @@ const ForProducts = () => {
             className={`relative overflow-hidden rounded-[28px] transition-all duration-500 ${
               activeProduct === product.id
                 ? "h-[280px] md:h-[480px]"
-                : "h-[140px] md:h-[165px]"
+                : "h-[280px] md:h-[165px]"
             }`}
             style={{ backgroundColor: product.bgColor }}
             onMouseEnter={() => setActiveProduct(product.id)}
@@ -111,7 +111,7 @@ const ForProducts = () => {
               className={`absolute transition-all duration-700 ${
                 activeProduct === product.id
                   ? "top-4 md:top-6 left-4 md:left-6 right-4 md:right-6 bottom-[80px] md:bottom-[100px] opacity-100"
-                  : "top-full opacity-0"
+                  : "top-4 left-4 right-4  md:right-0 bottom-[80px] md:bottom-0 md:left-0 md:top-full md:opacity-0"
               }`}
             >
               <div className="w-full h-full rounded-[12px] md:rounded-[16px] overflow-hidden">
@@ -151,7 +151,7 @@ const ForProducts = () => {
                 </div>
 
                 {/* Arrow Button */}
-                <div className="flex-shrink-0 w-8 h-8 md:w-[56px] md:h-[56px] bg-[#132D47] rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-8 h-8 md:w-[56px] md:h-[56px] bg-[#132D47] rounded-full flex items-center justify-center -rotate-45">
                   <ArrowRightThin
                     fill="#ffffff"
                     width={12}

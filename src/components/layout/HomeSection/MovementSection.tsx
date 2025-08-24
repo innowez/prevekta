@@ -40,19 +40,19 @@ const MovementSection = () => {
     },
     {
       id: 3,
-      text: (<>Entrepreneurs who wish to <br className="block md:hidden" />build with purpose</>),
+      text: (<>Entrepreneurs who wish <br className="block md:hidden" />to build with purpose</>),
       leftImage: fiveleft,
       rightImage: fiveright,
     },
     {
       id: 4,
-      text: (<>Patients seeking solutions <br className="block md:hidden" />beyond pills</>),
+      text: (<>Patients seeking <br className="block md:hidden" />solutions beyond pills</>),
       leftImage: sixleft,
       rightImage: sixright,
     },
     {
       id: 5,
-      text: (<>Investors who value purpose <br className="block md:hidden" />over profit</>),
+      text: (<>Investors who value <br className="block md:hidden" />purpose over profit</>),
       leftImage: twoleft,
       rightImage: tworight,
     },
@@ -82,7 +82,7 @@ const MovementSection = () => {
         {movementItems.map((item) => (
           <div
             key={item.id}
-            className="relative w-full h-[60px] md:h-[134px] flex items-center justify-center bg-[#96dda55b] md:bg-[#f2fcf1] hover:bg-[#96dda55b] rounded-2xl"
+            className="relative w-full h-[60px] md:h-[134px] flex items-center justify-center bg-[#81DE7633] md:bg-[#f2fcf1] hover:bg-[#96dda55b] rounded-2xl"
             onMouseEnter={() => setHoveredItem(item.id)}
             onMouseLeave={() => setHoveredItem(null)}
           >

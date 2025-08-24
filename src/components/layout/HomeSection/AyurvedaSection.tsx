@@ -185,7 +185,7 @@ const AyurvedaSection = () => {
         </div>
 
         {/* Dark Card */}
-        <div className="relative w-full h-[300px] bg-primary-dark rounded-3xl mt-4">
+        <div className="relative w-full h-[320px] bg-primary-dark rounded-3xl mt-4">
           <div className="absolute w-[305px] h-[164px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[40px] flex flex-col gap-6">
             <h3 className="w-full font-atyp font-bold text-xl leading-6 text-white">
               Whether you are,
@@ -209,7 +209,7 @@ const AyurvedaSection = () => {
           </div>
 
           {/* Logo Pattern (Bottom) */}
-          <div className="absolute w-full h-[60px] left-1/2 -translate-x-1/2 top-[220px] flex flex-row items-center gap-1 overflow-hidden">
+          <div className="absolute w-full h-[60px] left-1/2 -translate-x-1/2 bottom-2 flex flex-row items-center gap-1 overflow-hidden">
             <Image
               className="absolute w-full h-[60px] left-1/2  bottom-0 flex flex-row items-center gap-1 overflow-hidden"
               src={LogoDriverDesignTwo}

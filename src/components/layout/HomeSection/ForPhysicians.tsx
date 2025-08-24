@@ -84,9 +84,9 @@ const ForPhysicians = () => {
           src={PhysiciansImageMobile.src}
           alt='ph'
           className='w-full h-full object-cover '
-          fill
-          // height={459}
-          //   width={361}
+          // fill
+          height={459}
+            width={361}
           />
           {/* Overlay Text Box */}
           <div className="absolute left-1/2 -translate-x-1/2 min-w-[335px] md:left-10 bottom-2 md:w-[505px] p-4 mb:p-8 bg-[rgba(129,222,118,0.7)] rounded-[32px] ">
