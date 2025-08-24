@@ -104,7 +104,7 @@ const ForProducts = () => {
             }`}
             style={{ backgroundColor: product.bgColor }}
             onMouseEnter={() => setActiveProduct(product.id)}
-            onMouseLeave={() => setActiveProduct(null)}
+            onMouseLeave={() => setActiveProduct(0)}
           >
             {/* Product Image Container - Properly contained */}
             <div
