@@ -34,7 +34,7 @@ const ForPatients = () => {
           <div className="flex flex-col md:flex-row  w-full h-full">
             {/* Feature 1 */}
             <div
-              className={`flex flex-col md:flex-row justify-center items-center w-full md:w-1/3 h-full  relative transition-all duration-300 ${
+              className={`flex flex-col md:flex-row justify-start items-start w-2/3 mx-auto md:w-1/3 h-full  relative transition-all duration-300 ${
                 hoveredFeature !== null && hoveredFeature !== 0
                   ? "opacity-90 blur-[1.5px]"
                   : ""
@@ -67,7 +67,7 @@ const ForPatients = () => {
 
             {/* Feature 2 */}
             <div
-              className={`flex flex-col md:flex-row justify-center items-center w-full md:w-1/3 h-full  relative transition-all duration-300 ${
+              className={`flex flex-col md:flex-row justify-start items-start w-2/3 mx-auto md:w-1/3 h-full  relative transition-all duration-300 ${
                 hoveredFeature !== null && hoveredFeature !== 1
                   ? "opacity-90 blur-[1.5px]"
                   : ""
@@ -95,7 +95,7 @@ const ForPatients = () => {
 
             {/* Feature 3 */}
             <div
-              className={`flex flex-col md:flex-row justify-center items-center w-full md:w-1/3 h-full  relative transition-all duration-300 ${
+              className={`flex flex-col md:flex-row justify-start items-start w-2/3 mx-auto md:w-1/3 h-full  relative transition-all duration-300  ${
                 hoveredFeature !== null && hoveredFeature !== 2
                   ? "opacity-90 blur-[1.5px]"
                   : ""

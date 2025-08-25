@@ -57,7 +57,7 @@ transform: "rotate(-166.19deg)"
         <div className="absolute w-[522px] h-[793px] left-[902px] top-[-759px] bg-cover blur-[7.2px] rotate-[13.81deg] hidden md:block" style={{backgroundImage: `url(${LeafBg.src})`}} /> */}
 
         {/* Content section */}
-        <div className="absolute w-full md:w-[371px] h-[215px] left-0 md:left-[100px] top-auto md:top-[486px] bottom-10 md:bottom-auto px-5 md:px-0">
+        <div className="absolute w-full md:w-[371px] h-[215px] left-0 md:left-[70px] top-auto md:top-[486px] bottom-10 md:bottom-auto px-5 md:px-0">
           <div className="flex items-center md:items-start flex-col gap-6">
             <p className="w-full text-[18px] leading-[23px] text-[#132D47] font-[Duplet] text-center md:text-left">
               A new era of Ayurvedic formulations is on the horizon. Carefully
@@ -99,7 +99,7 @@ transform: "rotate(-166.19deg)"
         </div>
 
         {/* Launching Soon text */}
-        <div className="absolute w-full max-w-[475px] h-auto left-1/2 transform -translate-x-1/2 md:left-[110px] font-extrabold md:translate-x-0 top-[92px] px-5 md:px-0 text-center md:text-left">
+        <div className="absolute w-full max-w-[475px] h-auto left-1/2 transform -translate-x-1/2 md:left-[70px] font-extrabold md:translate-x-0 top-[92px] px-5 md:px-0 text-center md:text-left">
           <h1 className="text-[40px] md:text-[80px] leading-[48px] md:leading-[96px] text-[#132D47] font-[Atyp] font-bold">
             LAUNCHING SOON
           </h1>

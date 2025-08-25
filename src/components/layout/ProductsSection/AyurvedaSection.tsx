@@ -46,22 +46,22 @@ const AyurvedaSection: React.FC = () => {
       imageUrl: ProductImageFour,
     },
   ];
-
+// 
   return (
-    <div className="flex flex-col items-start gap-6 w-full max-w-[1360px] mx-auto py-10 px-4 ">
+    <div className="flex flex-col items-start gap-6 md:gap-[1px] w-full max-w-[1360px] mx-auto py-10 px-4 ">
       {subsections.map((section, index) => (
         <div
           key={index}
-          className="w-full border-b border-[#132D47] bg-[#132D47] md:bg-auto hover:bg-[#132D47] rounded-3xl md:rounded-[48px] box-border mb-[-1px] hover:text-white flex flex-col items-center py-6 md:py-10 transition-all duration-300"
+          className="w-full border-b border-[#132D47] bg-[#132D47] md:bg-[#f2fcf1] hover:bg-[#132D47] rounded-3xl md:rounded-[48px] box-border mb-[-1px] hover:text-white flex flex-col items-center py-6 md:py-10 transition-all duration-300"
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           {/* Heading */}
           <h2
-            className="text-[28px] md:text-[60px] font-[Atyp] font-light md:leading-[72px] text-[#132D47] text-center mb-0 md:mb-10"
+            className="text-[28px] md:text-[60px] font-[Atyp] font-light md:leading-[72px] text-[#132D47] text-center mb-0 md:mb-0 md:relative md:top-7"
             style={{
               width: `${section.heading.length * 30}px`,
-              color: (hoveredIndex=== index || isMobile) ? "white" : "#132D47",
+              color: (hoveredIndex=== index || isMobile ) ? "white" : "#132D47",
             }}
           >
             {section.heading}
@@ -69,15 +69,15 @@ const AyurvedaSection: React.FC = () => {
 
           {/* Content (Image, Subtitle, Description, Button) */}
           <div
-            className={`w-full flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8 px-4 md:px-10 transition-all duration-300 ${
+            className={`w-full flex flex-col md:flex-row items-center md:items-end gap-4 md:gap-8 px-4 md:px-10 transition-all duration-300 ${
              (hoveredIndex === index) || isMobile 
-                ? "opacity-100 min-h-[600px] md:max-h-[600px] visible"
+                ? "opacity-100 min-h-[550px] md:min-h-[300px] visible"
                 : "opacity-0 max-h-0 invisible overflow-hidden"
             }`}
           >
             <div >
               <div className="mb-4">
-                <h3 className="text-base md:text-[24px] font-['Atyp'] font-light leading-[29px] text-white text-center">
+                <h3 className="text-base md:text-[24px] font-['Atyp'] font-light leading-[29px] text-white text-center md:text-left">
                   {section.subtitle}
                 </h3>
               </div>
@@ -87,7 +87,7 @@ const AyurvedaSection: React.FC = () => {
                 alt={`${section.heading} Image`}
                 width={840}
                 height={240}
-                className="rounded-[20px] object-cover md:object-contain w-[329px] h-[250px] md:w-[840px] md:h-[240px]"
+                className="rounded-[20px] object-cover md:object-cover w-[329px] h-[250px] md:w-[840px] md:h-[240px]"
               />
             </div>
 
