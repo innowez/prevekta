@@ -15,7 +15,15 @@ const Atyp = localFont({
   // variable: '--font-atyp'
 });
 
+const AtypTest = localFont({ 
+  src: '../../public/fonts/AtypTEST.ttf',
+  // variable: '--font-atyp'
+});
 
+// console.log(AtypTest, "comman is this", Atyp);
+
+
+// C:\Users\danip\Documents\WEZ-Product\prevekta\public\fonts\AtypTEST.ttf
 // C:\Users\danip\Documents\Projects\prevekta-frontend\public\fonts\.otf
 // C:\Users\danip\Documents\Projects\prevekta-frontend\public\fonts\Duplet-Regular.otf
 
@@ -40,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${Atyp.className} ${Duplet.className}`}>
+    <html lang="en" className={`${Atyp.className} ${Duplet.className} ${AtypTest.className}`}>
       <body>
         <Header />
         {children}

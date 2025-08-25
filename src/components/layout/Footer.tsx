@@ -9,7 +9,7 @@ import FooterDesign from '@assets/images/FooterDesign.png'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#132D47] text-white w-full h-auto rounded-[20px]">
+    <footer className="bg-[#132D47] text-white w-full h-auto rounded-[20px] overflow-hidden">
       <div className="pt-1">
         <img src={FooterDesign.src} alt="Footer Design" className="w-full h-auto mb-6" />
       </div>

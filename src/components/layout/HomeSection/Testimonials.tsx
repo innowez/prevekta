@@ -244,7 +244,7 @@ const Testimonials: React.FC = () => {
               </div>
               
               
-              <div className="flex justify-center items-center w-[400px] mb-2">
+               <div className="flex justify-center items-center md:w-[400px]">
                 <p className="text-base md:text-lg font-duplet font-normal">
                   {testimonial.text}
                 </p>

@@ -67,7 +67,15 @@ const PrevektaSection = () => {
     <div className="max-w-[1360px] mx-auto px-8 py-12 md:py-24">
       {/* Header */}
       <div className="flex justify-between items-center gap-8 mb-0">
-        <h1 className="text-2xl md:text-[60px] font-bold text-primary-dark font-[Atyp]">
+        <h1 className="text-2xl md:text-[60px] font-extrabold text-primary-dark font-Atyp" style={{
+// fontFamily: 'Atyp TEST',
+fontStyle: "normal",
+// fontWeight: 135,
+fontSize: '60px',
+lineHeight: "72px",
+color: "#132D47",
+
+        }}>
           PREVEKTA FOR
         </h1>
         <div className="">

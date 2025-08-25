@@ -75,7 +75,7 @@ const ForPhysicians = () => {
           <Image 
              src={PhysiciansImage.src}
             alt="Physicians"
-            className="w-full h-full object-cover hidden"
+            className="w-full h-full object-cover hidden md:block"
             fill
             // height={459}
             // width={361}
@@ -83,13 +83,13 @@ const ForPhysicians = () => {
           <Image 
           src={PhysiciansImageMobile.src}
           alt='ph'
-          className='w-full h-full object-cover '
+          className='w-full h-full object-cover block md:hidden '
           // fill
           height={459}
             width={361}
           />
           {/* Overlay Text Box */}
-          <div className="absolute left-1/2 -translate-x-1/2 min-w-[335px] md:left-10 bottom-2 md:w-[505px] p-4 mb:p-8 bg-[rgba(129,222,118,0.7)] rounded-[32px] ">
+          <div className="absolute left-1/2 -translate-x-1/2 md:-translate-x-0 min-w-[335px] md:left-6 bottom-2 md:bottom-6 md:w-[505px] p-4 mb:p-8 bg-[rgba(129,222,118,0.7)] rounded-[32px] ">
             <p className="text-[18px] leading-[23px] font-duplet font-light text-justify text-white">
               At Prevekta, you focus on treating patients we take care of the rest. From branding and patient flow to mentorship and growth, we support you at every step. Work with experienced Vaidyas, learn, collaborate, and grow your knowledge. Already running your own clinic? Strengthen it with our tools advanced technology, access to quality products, better patient management, and co-branding to help you stand out.
             </p>
