@@ -15,10 +15,10 @@ const Atyp = localFont({
   // variable: '--font-atyp'
 });
 
-const AtypTest = localFont({ 
-  src: '../../public/fonts/AtypTEST.ttf',
-  // variable: '--font-atyp'
-});
+// const AtypTest = localFont({ 
+//   src: '../../public/fonts/AtypTEST.ttf',
+//   // variable: '--font-atyp'
+// });
 
 // console.log(AtypTest, "comman is this", Atyp);
 
@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${Atyp.className} ${Duplet.className} ${AtypTest.className}`}>
+    <html lang="en" className={`${Atyp.className} ${Duplet.className} `}>
       <body>
         <Header />
         {children}
