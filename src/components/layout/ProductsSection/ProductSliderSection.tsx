@@ -35,12 +35,13 @@ const ProductSliderSection: React.FC = () => {
   const isNextDisabled = currentSlide >= slides.length - 3;
 
   return (
-    <div className="flex flex-col items-start w-full max-w-[1360px] mx-auto gap-12 py-10">
+    <div className="flex flex-col items-start w-full max-w-[1360px] mx-auto gap-3 md:gap-12 py-10">
       {/* Heading and Button (Frame 372) */}
       <div className="flex flex-col md:flex-row justify-between items-center w-full gap-4 px-5">
-        <h2 className="text-[60px] font-['Atyp'] font-light leading-[72px] text-[#132D47] text-center w-full md:w-[479px]">
+        <h2 className="text-2xl md:text-[60px] font-[Atyp] font-bold md:leading-[72px] text-[#132D47] text-center w-full md:w-[479px]">
           Watch and Shop
         </h2>
+        <div className="hidden md:block">
         <CustomButton
           mainWidth="176px"
           labelWidth="176px"
@@ -54,12 +55,13 @@ const ProductSliderSection: React.FC = () => {
           arrowFillHover="#000000"
           labelText="Shop Now"
         />
+        </div>
       </div>
 
       {/* Slider (Frame 550) */}
-      <div className="w-full h-[711px] flex flex-col items-center gap-12">
+      <div className="w-full flex flex-col items-center gap-4 md:gap-12">
         {/* Slides (Frame 549) */}
-        <div className="relative w-full h-[607px] overflow-hidden">
+        <div className="relative w-full overflow-x-scroll no-scrollbar">
           <div
             className={`flex transition-all duration-1500 ease-in-out ${
               isTransitioning ? 'opacity-80' : 'opacity-100'
@@ -69,14 +71,14 @@ const ProductSliderSection: React.FC = () => {
             {slides.map((slide, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-full md:w-1/3 h-[607px] p-5"
+                className="flex-shrink-0 w-full md:w-1/3 p-5"
               >
                 <Image
                   src={slide.imageUrl}
                   alt={slide.alt}
                   width={450}
                   height={607}
-                  className="w-[450px] h-[607px] rounded-[24px] object-cover mx-auto"
+                  className="w-[450px] rounded-[24px] object-cover mx-auto"
                 />
               </div>
             ))}
@@ -84,7 +86,7 @@ const ProductSliderSection: React.FC = () => {
         </div>
 
         {/* Navigation Buttons (Frame 548) */}
-        <div className="flex flex-row items-center gap-4">
+        <div className="hidden md:flex flex-row items-center gap-4">
           <button
             className={`w-[56px] h-[56px] bg-[#132D47] rounded-full flex justify-center items-center ${
               isPrevDisabled ? 'opacity-30 cursor-not-allowed' : 'opacity-50 hover:opacity-100'
@@ -107,6 +109,21 @@ const ProductSliderSection: React.FC = () => {
               <ArrowRightThin fill="#FFFFFF" />
             </div>
           </button>
+        </div>
+        <div className="block md:hidden">
+        <CustomButton
+          mainWidth="176px"
+          labelWidth="176px"
+          labelWidthHover="130px"
+          labelBackground="#81DE76"
+          labelBackgroundHover="#6BCB62"
+          labelBorderColor="#81DE76"
+          labelTextColor="#000000"
+          labelTextColorHover="#000000"
+          arrowFill="#000000"
+          arrowFillHover="#000000"
+          labelText="Shop Now"
+        />
         </div>
       </div>
     </div>
