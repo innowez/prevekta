@@ -8,9 +8,11 @@ import PhysicianImage from "@assets/images/PhysicianImage.jpg";
 import ProductImage from "@assets/images/ProductImage.jpg";
 import YogaImage from "@assets/images/YogaImage.jpg";
 import PrevektaLogo from "@assets/images/PrevektaLogo.png";
+import useMediaQuery from "@/hooks/useMediaquery";
 
 const PrevektaSection = () => {
   const [activeTab, setActiveTab] = useState<number | null>(null);
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const tabs = [
     {
@@ -63,18 +65,22 @@ const PrevektaSection = () => {
     setActiveTab(null);
   };
 
+  const gotoelement = (name:string) => {
+    const element = document.getElementById(name);
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   return (
     <div className="max-w-[1360px] mx-auto px-8 py-12 md:py-24">
       {/* Header */}
       <div className="flex justify-between items-center gap-8 mb-0">
         <h1 className="text-2xl md:text-[60px] font-extrabold text-primary-dark font-Atyp" style={{
-// fontFamily: 'Atyp TEST',
-fontStyle: "normal",
+        // fontFamily: 'Atyp TEST',
+// fontStyle: "normal",
 // fontWeight: 135,
-fontSize: '60px',
-lineHeight: "72px",
-color: "#132D47",
-
+// fontSize: '60px',
+// lineHeight: "72px",
+// color: "#132D47",
         }}>
           PREVEKTA FOR
         </h1>
@@ -149,7 +155,7 @@ color: "#132D47",
                   />
                 </div>
                 <div className="flex justify-between items-center cursor-pointer w-full">
-                  <h2 className="text-base md:text-[32px] font-bold uppercase text-primary-dark font-[Atyp]">
+                  <h2 className="text-base md:text-[32px] font-bold uppercase text-primary-dark font-[Atyp]" onClick={() => gotoelement(tab.title)}>
                     {tab.title}
                   </h2>
                   <div
@@ -162,7 +168,7 @@ color: "#132D47",
                 </div>
               </div>
 
-              {activeTab === tab.id && (
+              {(activeTab === tab.id || isMobile) && (
                 <div className="mt-4 transition-all duration-300">
                   <p className="text-lg text-primary-dark font-duplet mb-6">
                     {tab.description}

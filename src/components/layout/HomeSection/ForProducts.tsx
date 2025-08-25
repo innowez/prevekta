@@ -48,7 +48,8 @@ const ForProducts = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center px-4 py-20 mx-auto max-w-[1360px] gap-[48px]">
+    <div className="flex flex-col items-center px-4 py-20 mx-auto max-w-[1360px] gap-[48px] relative">
+      <div id="Product" className="absolute -top-6 md:-top-12"></div>
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-end w-full gap-6">
         <div className="flex flex-col items-start gap-2.5 w-full md:w-auto">

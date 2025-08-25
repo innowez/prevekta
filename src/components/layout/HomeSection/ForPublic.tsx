@@ -6,7 +6,8 @@ import CustomButton from "@/components/ui/CustomButton";
 
 const ForPublic: React.FC = () => {
   return (
-    <section className="py-12 md:py-20 px-4">
+    <section className="py-12 md:py-20 px-4 relative">
+      <div id="Public" className="absolute -top-14"></div>
       <div className="max-w-[1360px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">

@@ -103,7 +103,7 @@ const AyurvedaPlatform: React.FC = () => {
             <div
               className="w-full h-full rounded-[28px] overflow-hidden flex items-center justify-center p-8"
               style={{
-                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${card.image.src})`,
+                background: `linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${card.image.src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

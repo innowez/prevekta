@@ -17,7 +17,7 @@ const Atyp = localFont({
 
 // const AtypTest = localFont({ 
 //   src: '../../public/fonts/AtypTEST.ttf',
-//   // variable: '--font-atyp'
+//   // variable: '--font-test'
 // });
 
 // console.log(AtypTest, "comman is this", Atyp);
