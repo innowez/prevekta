@@ -201,12 +201,12 @@ const Testimonials: React.FC = () => {
                     />
                   </span>
                 </div>
-                <p className="text-base md:text-lg font-semibold mt-2 font-duplet">{testimonial.name}</p>
+                <p className="text-base md:text-lg font-semibold mt-2 font-[Duplet]">{testimonial.name}</p>
               </div>
               
               
               <div className="flex justify-center items-center md:w-[400px]">
-                <p className="text-base md:text-lg font-duplet font-normal">
+                <p className="text-base md:text-lg font-[Duplet] font-normal">
                   {testimonial.text}
                 </p>
               </div>

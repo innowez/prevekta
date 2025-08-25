@@ -14,7 +14,7 @@ const ForPublic: React.FC = () => {
           <h2 className="text-2xl md:text-6xl text-heading text-[#132D47] font-semibold">
             FOR PUBLIC
           </h2>
-          <p className="text-base md:text-medium mt-4 md:mt-6 max-w-xl text-[#132D47] mx-auto">
+          <p className="text-base md:text-medium font-[Duplet] mt-4 md:mt-6 max-w-xl text-[#132D47] mx-auto">
             Ayurveda isnt just medicine. its a lifestyle. We make its timeless
             principles practical relatable, and ready for everyday living.
             Whether youre a curious learner or a wellness enthusiast, dive deep

@@ -76,7 +76,7 @@ const PrevektaSection = () => {
     <div className="max-w-[1360px] mx-auto px-8 py-12 md:py-24">
       {/* Header */}
       <div className="flex justify-between items-center gap-8 mb-0">
-        <h1 className="text-2xl md:text-[60px] font-extrabold text-primary-dark font-Atyp" style={{
+        <h1 className="text-2xl md:text-[60px] font-bold text-primary-dark font-[atyp]" style={{
         // fontFamily: 'Atyp TEST',
 // fontStyle: "normal",
 // fontWeight: 135,
@@ -156,7 +156,7 @@ const PrevektaSection = () => {
                     className="object-cover"
                   />
                 </div>
-                <div className="flex justify-between items-center cursor-pointer w-full">
+                <div className="flex justify-between items-center cursor-pointer w-8/12 md:w-full">
                   <h2 className="text-base md:text-[32px] font-bold uppercase text-primary-dark font-[Atyp]" onClick={() => gotoelement(tab.title)}>
                     {tab.title}
                   </h2>

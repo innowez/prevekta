@@ -72,7 +72,7 @@ const MovementSection = () => {
         <h2 className="text-2xl md:text-[60px] leading-[1.2] md:leading-[72px] font-atyp font-bold text-[#132D47] w-full md:w-[687px]">
           We are not just a clinic. <br />We are a Movement.
         </h2>
-        <p className="text-base md:text-[18px] leading-[1.5] md:leading-[23px] font-duplet font-normal text-[#132D47] w-full md:w-[468px]">
+        <p className="text-base md:text-[18px] leading-[1.5] md:leading-[23px] font-[Duplet] font-normal text-[#132D47] w-full md:w-[468px]">
           At Prevekta, we believe that Ayurveda thrives when it unites
         </p>
       </div>

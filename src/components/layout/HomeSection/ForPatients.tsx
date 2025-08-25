@@ -20,7 +20,7 @@ const ForPatients = () => {
           <h2 className="text-2xl md:text-[60px] md:leading-[72px] font-atyp font-bold text-center text-[#132D47]">
             FOR PATIENTS
           </h2>
-          <p className="text-base md:text-[18px] leading-[23px] font-duplet font-normal text-center text-[#132D47]">
+          <p className="text-base md:text-[18px] md:leading-[23px] font-[Duplet] font-normal text-center text-[#132D47]">
             Find the right doctor, not just a consultation. Prevekta connects
             you to a growing network of experienced Ayurveda practitioners
             across specialties. Get timely diagnoses, personalized wellness

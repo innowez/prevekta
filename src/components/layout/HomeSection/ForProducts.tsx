@@ -53,12 +53,12 @@ const ForProducts = () => {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-end w-full gap-6">
         <div className="flex flex-col items-start gap-2.5 w-full md:w-auto">
-          <h2 className="text-2xl md:text-[60px] md:leading-[72px] font-atyp font-bold text-[#132D47] text-left">
+          <h2 className="text-2xl md:text-[60px] md:leading-[72px] font-[Atyp] font-bold text-[#132D47] text-left">
             FOR PRODUCT
           </h2>
-          <p className="text-base md:text-[18px] leading-[23px] font-duplet font-normal text-[#132D47] text-left max-w-[610px]">
+          <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-normal text-[#132D47] text-left max-w-[610px]">
             At Prevekta, we provide an end-to-end Ayurvedic product suite—backed
-            by tradition and tailored for today. Trusted by practitioners,
+            by tradition and tailored for today. Trusted by practitioners,  
             designed for results
           </p>
         </div>

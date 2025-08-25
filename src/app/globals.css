@@ -12,7 +12,7 @@ body {
 /* @import "tailwindcss/components";
 @import "tailwindcss/utilities"; */
 
-@font-face {
+/* @font-face {
   font-family: 'Duplet';
   src: url('/assets/fonts/Duplet-Regular-BF642a340663b06.otf') format('otf');
   font-weight: 400;
@@ -26,7 +26,7 @@ body {
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 /* Fallback custom classes */
 .text-primary-dark {
@@ -46,7 +46,7 @@ body {
 }
 
 .font-body {
-  font-family: 'Duplet', sans-serif !important;
+  /* font-family: 'Duplet', sans-serif !important; */
 }
 
 .text-bodyRegular {

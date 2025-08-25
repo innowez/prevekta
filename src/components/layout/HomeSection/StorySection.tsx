@@ -28,7 +28,7 @@ const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
           <h2 className="text-white font-bold text-2xl md:text-[40px] leading-tight font-[Atyp]">
             One Platform. Boundless <br />Possibilities in Ayurveda.
           </h2>
-          <p className="text-white text-[16px] md:text-[18px] leading-snug mt-4 font-duplet">
+          <p className="text-white text-[16px] md:text-[18px] leading-snug mt-4 font-[Duplet]">
             {content}
           </p>
         </div>

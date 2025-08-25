@@ -15,8 +15,8 @@ const Atyp = localFont({
   // variable: '--font-atyp'
 });
 
-// const AtypTest = localFont({ 
-//   src: '../../public/fonts/AtypTEST.ttf',
+// const TestAtyp = localFont({ 
+//   src: '../../public/fonts/AtypTEST-OTF.otf',
 //   // variable: '--font-test'
 // });
 

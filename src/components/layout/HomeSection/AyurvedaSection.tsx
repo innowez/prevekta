@@ -32,7 +32,7 @@ const AyurvedaSection = () => {
               </h1>
 
               {/* Description */}
-              <p className=" w-[474px] h-[161px] left-[396px] top-[136px] mt-4 font-duplet font-normal text-sm leading-[23px] text-primary-dark">
+              <p className=" w-[474px] h-[161px] left-[396px] top-[136px] mt-4 md:mb-8 font-[Duplet] font-normal text-base md:text-lg leading-[23px] text-primary-dark">
                 Prevekta Ayurveda is more than a healthcare service its a
                 holistic ecosystem designed to bring the ancient science of
                 Ayurveda into every aspect of modern life. Whether youre a
@@ -86,7 +86,7 @@ const AyurvedaSection = () => {
 
         {/* Right Section (Dark) */}
         <div className="relative w-[454px] h-[507px] bg-primary-dark rounded-3xl">
-          <div className=" w-[350px] h-[201px] py-10 mt-16 px-6 ml-5 flex flex-col gap-8">
+          <div className=" w-[370px] h-[201px] py-10 mt-16 px-3 ml-5 flex flex-col gap-8">
             <div>
               <h3 className="w-full font-atyp font-bold text-2xl leading-[29px] text-white">
                 Whether you are,
@@ -103,7 +103,7 @@ const AyurvedaSection = () => {
                 <div key={index} className="flex items-center gap-3">
                   {/* <div className="w-[19px] h-[19px] bg-primary-2 rounded-full"></div> */}
                   <Logo className=" opacity-30 text-primary-light" />
-                  <p className=" font-duplet font-normal text-sm leading-[23px] text-white">
+                  <p className=" font-duplet font-normal text-base md:text-[17px] leading-[23px] text-white">
                     {item}
                   </p>
                 </div>
@@ -150,7 +150,7 @@ const AyurvedaSection = () => {
           </h1>
 
           {/* Description */}
-          <p className="p-4 py-10 w-full left-4 top-[45px] font-duplet font-normal text-sm leading-5 text-primary-dark">
+          <p className="p-4 py-10 w-full left-4 top-[45px] font-[duplet] font-normal text-sm leading-5 text-primary-dark">
             Prevekta Ayurveda is more than a healthcare service its a holistic
             ecosystem designed to bring the ancient science of Ayurveda into
             every aspect of modern life. Whether youre a patient seeking
@@ -200,7 +200,7 @@ const AyurvedaSection = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <Logo className=" opacity-30 text-primary-light" />
-                  <p className="font-duplet font-normal text-base leading-5 text-white">
+                  <p className="font-duplet font-normal text-sm leading-5 text-white">
                     {item}
                   </p>
                 </div>

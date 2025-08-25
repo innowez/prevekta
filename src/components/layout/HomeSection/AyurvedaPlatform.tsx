@@ -78,7 +78,7 @@ const AyurvedaPlatform: React.FC = () => {
           A Platform Where Ayurveda Reconnects
         </h2>
 
-        <p className="text-base md:text-[18px] md:leading-[23px] text-white font-duplet font-normal flex-1 max-w-[371px]">
+        <p className="text-base md:text-[18px] md:leading-[23px] text-white font-[Duplet] flex-1 max-w-[371px]">
           From individual care to community awareness, from traditional
           therapies to modern formats, we are building a collaborative ecosystem
         </p>
