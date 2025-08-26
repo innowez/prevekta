@@ -182,6 +182,7 @@ const AyurvedaSection = () => {
         labelBorderColor="#132D47"
         iconPosition="0px"
         iconPositionHover="px"
+        // isHoveredProp={true}
       />
           </div>
 

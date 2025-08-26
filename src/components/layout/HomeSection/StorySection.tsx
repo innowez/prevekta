@@ -20,7 +20,7 @@ const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
       {/* <div className="absolute inset-0 bg-[rgba(19,45,71,0.3)] backdrop-blur-sm"></div> */}
 
       {/* Bottom Content */}
-      <div className="absolute bottom-8 left-0  right-0 flex flex-col lg:flex-row justify-between items-start lg:items-end px-6 md:px-12 gap-6 z-10">
+      <div className="absolute bottom-8 left-0  right-0 flex flex-col lg:flex-row justify-between items-start lg:items-end px-1.5 sm:px-6 md:px-12 gap-6 z-10">
         {/* Text Card */}
         <div className=" rounded-2xl p-6 md:p-5 w-full md:w-[550px] bg-[rgba(19,45,71,0.3)] backdrop-blur-sm">
 
