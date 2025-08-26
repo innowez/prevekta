@@ -165,9 +165,24 @@ const AyurvedaSection = () => {
 
           {/* Button */}
           <div className=" ml-5 w-[163px] h-12 left-4 top-[90px]">
-            <button className="w-[141px] h-12 bg-primary-dark rounded-full flex items-center justify-center font-duplet font-normal text-base leading-5 text-white uppercase">
+            {/* <button className="w-[141px] h-12 bg-primary-dark rounded-full flex items-center justify-center font-duplet font-normal text-base leading-5 text-white uppercase">
               Explore More
-            </button>
+            </button> */}
+                  <CustomButton
+        mainWidth="200px"
+        labelWidth="199px"
+        labelWidthHover="160px"
+        labelBackground="rgba(19,45,71,0.0)"
+        labelBackgroundHover="#132D47"
+        labelTextColor="#132D47"
+        labelTextColorHover="#FFFF"
+        arrowFill="#132D47"
+        arrowFillHover="#FFFF"
+        labelText="Explore More"
+        labelBorderColor="#132D47"
+        iconPosition="0px"
+        iconPositionHover="px"
+      />
           </div>
 
           {/* Logo Pattern (Bottom) */}
