@@ -15,7 +15,7 @@ const ContactSection = () => {
       {/* Title Section */}
       <div className="w-full lg:w-1/2 flex flex-col justify-center lg:pl-16 relative">
        <Image src={WaterMark} alt="watermark" height={321} width={376} className="absolute h-[121px] w-[142px] lg:h-[321px] lg:w-[376px] lg:top-[-102px] left-2.5 " />
-        <h2 className="text-[28px] md:text-[40px] leading-[1] md:leading-[60px] font-[Atyp] font-bold text-[#132D47] relative z-10">
+        <h2 className="text-[28px] md:text-[40px] leading-[1] md:leading-[60px] font-atyp font-bold text-[#132D47] relative z-10">
           GET IN TOUCH
         </h2>
       </div>
