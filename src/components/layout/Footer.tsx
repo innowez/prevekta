@@ -15,11 +15,11 @@ const Footer: React.FC = () => {
       </div>
       <div className="py-8 px-4 md:px-8">
         {/* Desktop Layout */}
-        <div className="hidden md:flex justify-between">
+        <div className="hidden md:flex justify-between flex-col lg:flex-row">
           {/* Logo and Social */}
-          <div className="space-y-8">
+          <div className="space-y-8 flex gap-10 lg:flex-col lg:justify-between ">
             <img src={FooterLogo.src} alt="Prevekta Logo" className="w-[220px] h-[36px]" />
-            <div className="flex mt-16 space-x-3">
+            <div className="flex lg:mt-16 space-x-3">
               <FacebookIcon className='cursor-pointer' />
               <InstagramIcon className='cursor-pointer' />
               <YoutubeIcon className='cursor-pointer' />
