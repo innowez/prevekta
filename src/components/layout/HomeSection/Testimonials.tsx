@@ -4,33 +4,49 @@ import LadyImage from "@assets/images/LadyImage.png";
 import {ChevronLeft, ChevronRight,} from "lucide-react"
 
 const Testimonials: React.FC = () => {
-  const testimonials = [
-    {
-      name: "Mrunalini",
-      text: "I feel lighter, both emotionally and physically. It's amazing how much has improved. Thanks to Dr. Chithra and her supportive, non-judgmental team. This experience has been life-changing—beyond relaxation and healing, I've gained valuable insights into holistic wellness and self-care.",
-      location: "Chennai",
-    },
-    {
-      name: "Priya",
-      text: "The treatment completely transformed my approach to health. I've never felt better in my life. The care and attention to detail from the team was exceptional.",
-      location: "Bangalore",
-    },
-    {
-      name: "Rahul",
-      text: "After just a few sessions, my chronic pain has significantly reduced. The holistic approach addressed not just my physical symptoms but also my stress levels.",
-      location: "Mumbai",
-    },
-    {
-      name: "Anjali",
-      text: "The personalized treatment plan worked wonders for my digestive issues. I'm grateful for the compassionate care and expert guidance throughout my journey.",
-      location: "Delhi",
-    },
-    {
-      name: "Vikram",
-      text: "This has been a transformative experience. The combination of traditional Ayurveda with modern approaches created the perfect healing environment for me.",
-      location: "Hyderabad",
-    },
-  ];
+const testimonials = [
+  {
+    name: "Ms. Sree Vidya",
+    text: "Dr. Chithra is always observant to all health disorders, takes personal interest, pays daily visits and ensures personal care for different ailments. A versatile woman managing and supporting a kind staff. Can be recommended for anyone seeking authentic Ayurvedic treatment.",
+    location: "Chennai",
+  },
+  {
+    name: "Revathi Subramanian",
+    text: "I am very much satisfied with this fantastic treatment. I really enjoy and feel very light on my body because of the wonderful massage. My loving thanks to each and everyone, and special thanks to Dr. Chithra for her wholehearted kindness and love.",
+    location: "Chennai",
+  },
+  {
+    name: "Sooraj",
+    text: "Really glad I opted for treatment from Dr. Chithra. She made me feel so much better physically as well as mentally. The facility was an out-of-the-world experience, with friendly and helpful staff. I came with so many problems and now I am leaving with peace. Truly grateful and would love to visit again.",
+    location: "Chennai",
+  },
+  {
+    name: "Rama Rao",
+    text: "The best Ayurvedic experience I ever had, with excellent care. It completely changed my mindset about Ayurveda. I would recommend this treatment to my family and friends. Dr. Chithra has wonderful people to take care of our needs. Wishing you success in your service with flying colours.",
+    location: "Malaysia",
+  },
+  {
+    name: "Asha",
+    text: "My 18 days at Dr. Chithra’s hospital were filled with wonderful memories that made it feel more like a home. Everyone treated me like a daughter, making everything comfortable and enjoyable. Treatments were very relaxing and authentic. Thank you so much for this noble service to humanity.",
+    location: "Philippines",
+  },
+  {
+    name: "Hema Vasan",
+    text: "I came here with a lot of pain. The Ayurvedic treatment was well placed and executed under the guidance of Dr. Chithra. I am happy with the reduced pain. Ayurveda cures the root cause of the problem. I am thankful to Dr. Chithra for her experience and support.",
+    location: "Chennai",
+  },
+  {
+    name: "Shivaani Srinivasan",
+    text: "There are no words to explain how light I feel. I was burdened with emotions and health issues, but now both have drastically reduced, which feels like magic. Thanks to Dr. Chithra and her supportive, non-judgmental staff. This has been a life-changing experience for me.",
+    location: "Kulithalai",
+  },
+  {
+    name: "Mrunalini Somasundaram",
+    text: "Dr. Chithra is a kind, caring, and precise professional who cured me of my chronic knee pain. Her diagnosis, meticulous treatment, and supportive team are remarkable. Her positive approach and patience are truly inspiring. I am deeply thankful for my complete recovery.",
+    location: "Chennai",
+  },
+];
+
 
   // const scrollContainerRef = useRef<HTMLDivElement>(null);
 

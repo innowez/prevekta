@@ -6,13 +6,16 @@ import doctorsRight from "@assets/images/doctors-right.png";
 import twoleft from "@assets/images/2left.jpg";
 import tworight from "@assets/images/2right.jpg";
 import threeright from "@assets/images/3right.png";
+import fiveright from "@assets/images/3DoctRig.png";
 import threeleft from "@assets/images/3left.png";
-import fourleft from "@assets/images/4left.jpg";
+import fourleft from "@assets/images/2LeftSmile.png";
+// import fourleft from "@assets/images/4left.jpg";
 import fourright from "@assets/images/4right.jpg";
-import fiveright from "@assets/images/5right.png";
+// import fiveright from "@assets/images/5right.png";
 import fiveleft from "@assets/images/5left.jpg";
 import sixleft from "@assets/images/6left.png";
-import sixright from "@assets/images/6right.jpg";
+// import sixright from "@assets/images/6right.jpg";
+import sixright from "@assets/images/2RightMassage.jpg";
 import StarIcon from "@assets/icons/StarIcon";
 
 const MovementSection = () => {
@@ -23,32 +26,32 @@ const MovementSection = () => {
     {
       id: 0,
       text: (<>Doctors who carry <br className="block md:hidden"/>generations of wisdom</>),
-      leftImage: doctorsLeft,
-      rightImage: doctorsRight,
+      leftImage: doctorsRight,
+      rightImage: doctorsLeft,
     },
     {
       id: 1,
       text: (<>Therapists who heal with <br  className="block md:hidden" />their hands and heart</>),
-      leftImage: threeleft,
-      rightImage: threeright,
+      leftImage: fourleft,
+      rightImage: sixright,
     },
     {
       id: 2,
       text: (<>Medicine makers who <br className="block md:hidden" />preserve rare herbs <br />and forgotten formulas</>),
-      leftImage: fourleft,
-      rightImage: fourright,
+      leftImage: sixleft,
+      rightImage: fiveright,
     },
     {
       id: 3,
       text: (<>Entrepreneurs who wish <br className="block md:hidden" />to build with purpose</>),
       leftImage: fiveleft,
-      rightImage: fiveright,
+      rightImage: fourright,
     },
     {
       id: 4,
       text: (<>Patients seeking <br className="block md:hidden" />solutions beyond pills</>),
-      leftImage: sixleft,
-      rightImage: sixright,
+      leftImage: threeleft,
+      rightImage: threeright,
     },
     {
       id: 5,
