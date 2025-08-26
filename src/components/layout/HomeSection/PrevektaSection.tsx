@@ -12,7 +12,7 @@ import useMediaQuery from "@/hooks/useMediaquery";
 
 const PrevektaSection = () => {
   const [activeTab, setActiveTab] = useState<number | null>(null);
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 1028px)');
 
   const tabs = [
     {
