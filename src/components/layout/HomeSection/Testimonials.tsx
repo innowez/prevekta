@@ -208,7 +208,7 @@ const testimonials = [
               style={{ flexShrink: 0 }}
             >
               <div className="flex flex-col items-center mb-4">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-200 flex items-center justify-center">
+                {/* <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-200 flex items-center justify-center">
                   <span className="text-xl md:text-2xl font-semibold text-[#132D47]">
                     <Image
                     src={LadyImage}
@@ -216,7 +216,7 @@ const testimonials = [
                     className='w-full h-full object-cover rounded-full'
                     />
                   </span>
-                </div>
+                </div> */}
                 <p className="text-base md:text-lg font-semibold mt-2 font-[Duplet]">{testimonial.name}</p>
               </div>
               
@@ -247,7 +247,7 @@ const testimonials = [
               style={{ flexShrink: 0 }}
             >
               <div className="flex flex-col items-center mb-4">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-200 flex items-center">
+                {/* <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-200 flex items-center">
                   <span className="text-xl md:text-2xl font-semibold text-[#132D47]">
                      <Image
                     src={LadyImage}
@@ -255,7 +255,7 @@ const testimonials = [
                     className='w-full h-full object-cover rounded-full'
                     />
                   </span>
-                </div>
+                </div> */}
                 <p className="text-base md:text-lg font-semibold mt-2 font-[Duplet]">{testimonial.name}</p>
               </div>
               
