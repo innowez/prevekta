@@ -22,7 +22,7 @@ const MantraSection: React.FC = () => {
           <p className="text-lg md:text-[18px] leading-[23px] text-[#132D47] font-[Duplet] font-light block md:hidden">
               Whether you are in a village in Kerala, a city like Hyderabad, or a small community in Tamil Nadu Prevekta brings the same promise: Rooted tradition, connected community, modern access.
             </p>
-          <div className="w-full lg:w-[534px] h-[282px] bg-gray-300 rounded-[28px] flex-shrink-0">
+          <div className="w-full lg:w-[534px] h-[282px] sm:h-[400px] bg-gray-300 rounded-[28px] flex-shrink-0">
             <Image 
               src={DoctorsImage}
               alt="Ayurveda tradition" 

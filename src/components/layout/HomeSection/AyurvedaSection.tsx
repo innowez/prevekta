@@ -134,15 +134,18 @@ const AyurvedaSection = () => {
         {/* Green Card */}
         <div className="relative w-full h-[669px] bg-primary-light rounded-3xl">
           {/* Image */}
-          <div className="relative w-full h-[199px] px-3 top-4 rounded-xl overflow-hidden">
-            <Image
-              className="px-3 rounded-2xl"
-              src={AyurvedaDoctor}
-              alt="Ayurveda Doctor"
-              layout="fill"
-              objectFit="contain"
-            />
-          </div>
+          <div className="relative w-full pt-4">
+      <div className="relative mx-auto w-[93%] sm:w-[85%] md:w-[95%] md:h-[300px]" style={{ aspectRatio: '16/10' }}>
+        <Image
+          src={AyurvedaDoctor}
+          alt="Ayurveda Doctor"
+          fill
+          sizes="(max-width: 768px) 85vw, (max-width: 1024px) 70vw, 50vw"
+          style={{ objectFit: "cover" }}
+          className="rounded-2xl"
+        />
+      </div>
+    </div>
 
           {/* Title */}
           <h1 className="relative w-[224px] h-[58px] left-4 top-[31px] font-atyp font-bold text-2xl leading-[29px] text-primary-dark">
@@ -150,7 +153,7 @@ const AyurvedaSection = () => {
           </h1>
 
           {/* Description */}
-          <p className="p-4 py-10 w-full left-4 top-[45px] font-[duplet] font-normal text-sm leading-5 text-primary-dark">
+          <p className="p-4 py-10 pb-5 w-full left-4 top-[45px] font-[duplet] font-normal text-sm leading-5 text-primary-dark">
             Prevekta Ayurveda is more than a healthcare service its a holistic
             ecosystem designed to bring the ancient science of Ayurveda into
             every aspect of modern life. Whether youre a patient seeking
@@ -161,7 +164,7 @@ const AyurvedaSection = () => {
           </p>
 
           {/* Button */}
-          <div className=" ml-5 w-[163px] h-12 left-4 top-[121px]">
+          <div className=" ml-5 w-[163px] h-12 left-4 top-[90px]">
             <button className="w-[141px] h-12 bg-primary-dark rounded-full flex items-center justify-center font-duplet font-normal text-base leading-5 text-white uppercase">
               Explore More
             </button>
@@ -185,45 +188,42 @@ const AyurvedaSection = () => {
         </div>
 
         {/* Dark Card */}
-        <div className="relative w-full h-[320px] bg-primary-dark rounded-3xl mt-4">
-          <div className="absolute w-[305px] h-[164px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 -mt-[40px] flex flex-col gap-6">
-            <h3 className="w-full font-atyp font-bold text-xl leading-6 text-white">
-              Whether you are,
-            </h3>
+        <div className="w-full bg-primary-dark rounded-3xl flex flex-col justify-between min-h-[320px] mt-4">
+  {/* Main Content */}
+  <div className="flex-1 flex flex-col justify-center px-4">
+    <h3 className="font-atyp font-bold text-xl leading-6 text-white mb-6">
+      Whether you are,
+    </h3>
 
-            <div className="flex flex-col gap-3">
-              {[
-                "A Patient seeking personalized healing",
-                "A physician seeking clinical growth",
-                "A wellness seeker exploring Ayurveda",
-                "An eager student of Ayurveda",
-              ].map((item, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <Logo className=" opacity-30 text-primary-light" />
-                  <p className="font-duplet font-normal text-sm leading-5 text-white">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Logo Pattern (Bottom) */}
-          <div className="absolute w-full h-[60px] left-1/2 -translate-x-1/2 bottom-2 flex flex-row items-center gap-1 overflow-hidden">
-            <Image
-              className="absolute w-full h-[60px] left-1/2  bottom-0 flex flex-row items-center gap-1 overflow-hidden"
-              src={LogoDriverDesignTwo}
-              alt="LogoDriverDesignTwo"
-              layout="fill"
-              objectFit="cover"
-            />
-            {/* {[...Array(6)].map((_, i) => (
-                            <div key={i} className="w-[60px] h-[60px] relative">
-                                <Logo className="w-full h-full opacity-30 text-primary-light" />
-                            </div>
-                        ))} */}
-          </div>
+    <div className="space-y-3">
+      {[
+        "A Patient seeking personalized healing",
+        "A physician seeking clinical growth", 
+        "A wellness seeker exploring Ayurveda",
+        "An eager student of Ayurveda",
+      ].map((item, index) => (
+        <div key={index} className="flex items-center gap-3">
+          <Logo className="opacity-30 text-primary-light flex-shrink-0" />
+          <p className="font-duplet font-normal text-sm leading-5 text-white">
+            {item}
+          </p>
         </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Logo Pattern (Bottom) - Simplified */}
+  <div className="relative w-full h-[60px] mt-4 rounded overflow-hidden">
+    <Image
+      src={LogoDriverDesignTwo}
+      alt="LogoDriverDesignTwo"
+      fill
+      sizes="100vw"
+      style={{ objectFit: "cover" }}
+    />
+  </div>
+</div>
+
       </div>
     </>
   );

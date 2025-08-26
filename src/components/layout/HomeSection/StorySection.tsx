@@ -20,15 +20,15 @@ const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
       {/* <div className="absolute inset-0 bg-[rgba(19,45,71,0.3)] backdrop-blur-sm"></div> */}
 
       {/* Bottom Content */}
-      <div className="absolute bottom-8 left-0  right-0   flex flex-col md:flex-row justify-between items-start md:items-end px-6 md:px-12 gap-6 z-10">
+      <div className="absolute bottom-8 left-0  right-0 flex flex-col lg:flex-row justify-between items-start lg:items-end px-6 md:px-12 gap-6 z-10">
         {/* Text Card */}
         <div className=" rounded-2xl p-6 md:p-5 w-full md:w-[550px] bg-[rgba(19,45,71,0.3)] backdrop-blur-sm">
 
 
-          <h2 className="text-white font-bold text-2xl md:text-[40px] leading-tight font-[Atyp]">
+          <h2 className="text-white font-bold text-2xl md:text-3xl lg:text-[40px] leading-tight font-[Atyp]">
             One Platform. Boundless <br />Possibilities in Ayurveda.
           </h2>
-          <p className="text-white text-[16px] md:text-[18px] leading-snug mt-4 font-[Duplet]">
+          <p className="text-white text-[16px] md:text-xl leading-snug mt-4 font-[Duplet]">
             {content}
           </p>
         </div>

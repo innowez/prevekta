@@ -11,7 +11,7 @@ const ForPublic: React.FC = () => {
       <div className="max-w-[1360px] mx-auto">
         {/* Header Section */}
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-6xl text-heading text-[#132D47] font-semibold">
+          <h2 className="text-2xl sm:text-5xl lg:text-6xl text-heading text-[#132D47] font-semibold">
             FOR PUBLIC
           </h2>
           <p className="text-base md:text-medium font-[Duplet] mt-4 md:mt-6 max-w-xl text-[#132D47] mx-auto">
@@ -26,7 +26,7 @@ const ForPublic: React.FC = () => {
         {/* Video Grid */}
         <div className="flex flex-row items-center justify-start gap-4 md:gap-6 mb-8 md:mb-12 overflow-x-auto no-scrollbar">
           {/* Video 1 */}
-          <div className="w-[297px] md:w-[437px] h-[413px] md:h-[523px]">
+          <div className="w-[297px] md:w-[437px] h-[413px] sm:h-[607px] lg:h-[523px]">
             <img
               src={PublicVideoOne.src}
               alt="Public 1"
@@ -44,7 +44,7 @@ const ForPublic: React.FC = () => {
           </div>
 
           {/* Video 3 */}
-          <div className="w-[297px] md:w-[437px] h-[413px] md:h-[523px]">
+          <div className="w-[297px] md:w-[437px] h-[413px] sm:h-[607] lg:h-[523px]">
             <img
               src={PublicVideoThree.src}
               alt="Public 3"

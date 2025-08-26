@@ -7,28 +7,35 @@ const FranchiseSection: React.FC = () => {
   return (
 <section className="relative w-full max-w-[1360px] mx-auto bg-[rgba(129,222,118,0.2)] rounded-[20px] md:rounded-[40px] overflow-hidden">
   {/* Mobile Layout */}
-  <div className="md:hidden p-6 space-y-4 min-h-[280px]">
+  <div className="lg:hidden p-6 space-y-4 min-h-[280px]">
     <div className="flex justify-between items-start">
-      <h2 className="text-[20px] leading-[24px] font-bold uppercase text-[#132D47] font-['Atyp'] flex-1 pr-4">
+      <h2 className="text-[20px] sm:text-3xl leading-[24px] sm:leading-9 font-bold uppercase text-[#132D47] font-['Atyp'] flex-1 pr-4">
         Partner with Us 
         <span className="block">Prevekta Franchise</span>
         <span className="block">Opportunities</span>
       </h2>
       
-      <div className="border-2 border-[#132D47] rounded-[16px] w-[50px] h-[50px] flex items-center justify-center flex-shrink-0">
+      <div className="border-2 border-[#132D47] rounded-[16px] w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] flex items-center justify-center flex-shrink-0">
         <div className="transform -rotate-45">
-          <ArrowRightThin width={16} height={14} fill='#132D47' />
+          <ArrowRightThin width={16} height={14} fill='#132D47' className='sm:w-10 sm:h-10' />
         </div>
       </div>
     </div>
     
-    <p className="text-sm text-[#132D47] font-duplet font-normal mt-auto pt-8">
+    <p className="text-sm sm:text-xl text-[#132D47] font-duplet font-normal mt-auto pt-8">
       Own a piece of{" India's"} Ayurveda future. Become a unit or cluster franchise partner. We offer you branding, tech, training, and product support.
     </p>
+    <div className="absolute left-[52%] top-[17%] transform -translate-x-1/2 -translate-y-1/2 -z-10 w-[450px] h-[450px]">
+      <Image
+        src={LogoHalf}
+        alt=""
+        className="w-full h-full object-contain rounded-[16px]"
+      />
+    </div>
   </div>
 
   {/* Desktop Layout */}
-  <div className="hidden md:block relative h-[320px]">
+  <div className="hidden lg:block relative h-[320px]">
     {/* Main content */}
     <div className="absolute left-10 top-10 w-[434px]">
       <h2 className="text-[40px] leading-[48px] font-bold uppercase text-[#132D47] font-['Atyp']">

@@ -59,17 +59,17 @@ const MovementSection = () => {
   ];
 
   useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth < 768);
+    const checkScreen = () => setIsMobile(window.innerWidth < 1024);
     checkScreen();
     window.addEventListener("resize", checkScreen);
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
   return (
-    <div className="flex flex-col items-center px-4 py-12 md:py-20 mx-auto max-w-[1360px] gap-12 md:gap-[100px]">
+    <div className="flex flex-col items-center px-4 py-12 md:py-20 mx-auto max-w-[1360px] gap-12 lg:gap-[100px]">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-end w-full gap-3 md:gap-[215px]">
-        <h2 className="text-2xl md:text-[60px] leading-[1.2] md:leading-[72px] font-atyp font-bold text-[#132D47] w-full md:w-[687px]">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-end w-full gap-3 lg:gap-[215px]">
+        <h2 className="text-2xl sm:text-5xl lg:text-[60px]  md:leading-[1.2] lg:leading-[72px] font-atyp font-bold text-[#132D47] w-full md:w-[687px]">
           We are not just a clinic. <br />We are a Movement.
         </h2>
         <p className="text-base md:text-[18px] leading-[1.5] md:leading-[23px] font-[Duplet] font-normal text-[#132D47] w-full md:w-[468px]">
@@ -78,11 +78,11 @@ const MovementSection = () => {
       </div>
 
       {/* Movement Items */}
-      <div className="flex flex-col w-full gap-14 md:gap-1">
+      <div className="flex flex-col w-full gap-14 sm:gap-8 lg:gap-1">
         {movementItems.map((item) => (
           <div
             key={item.id}
-            className="relative w-full h-[60px] md:h-[134px] flex items-center justify-center bg-[#81DE7633] md:bg-[#f2fcf1] hover:bg-[#96dda55b] rounded-2xl"
+            className="relative w-full h-[60px] sm:h-[90px] lg:h-[134px] flex items-center justify-center bg-[#81DE7633] lg:bg-[#f2fcf1] hover:bg-[#96dda55b] rounded-2xl"
             onMouseEnter={() => setHoveredItem(item.id)}
             onMouseLeave={() => setHoveredItem(null)}
           >
@@ -95,7 +95,7 @@ const MovementSection = () => {
 
             {/* Left Image */}
             <div
-              className={`absolute left-0 md:left-9 w-[66px] -rotate-6 h-[86px] md:w-[183px] md:h-[238px] z-20 transition-all duration-500 ease-in-out ${
+              className={`absolute left-0 sm:left-2 lg:left-9 -rotate-6 w-[66px] h-[86px] sm:w-[91px] sm:h-[111px] lg:w-[183px] lg:h-[238px] z-20 transition-all duration-500 ease-in-out ${
                 hoveredItem === item.id || isMobile
                   ? "top-1/2 -translate-y-1/2 opacity-100"
                   : "-bottom-20 opacity-0"
@@ -110,7 +110,7 @@ const MovementSection = () => {
 
             {/* Right Image */}
             <div
-              className={`absolute right-0 md:right-9 w-[66px] rotate-6 h-[86px] md:w-[183px] md:h-[238px] z-20 transition-all duration-500 ease-in-out ${
+              className={`absolute right-0 sm:right-2 lg:right-9 rotate-6 h-[86px] w-[66px] sm:w-[91px] sm:h-[111px] lg:w-[183px] lg:h-[238px] z-20 transition-all duration-500 ease-in-out ${
                 hoveredItem === item.id || isMobile
                   ? "top-1/2 -translate-y-1/2 opacity-100"
                   : "-bottom-20 opacity-0"

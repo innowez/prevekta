@@ -17,7 +17,7 @@ const ForPatients = () => {
       <div className="flex flex-col items-center w-full gap-2 md:gap-[48px]">
         {/* Title and Description */}
         <div className="flex flex-col items-center w-full max-w-[735px] gap-4 md:gap-[24px]">
-          <h2 className="text-2xl md:text-[60px] md:leading-[72px] font-atyp font-bold text-center text-[#132D47]">
+          <h2 className="text-2xl sm:text-5xl lg:text-[60px] md:leading-[72px] font-atyp font-bold text-center text-[#132D47]">
             FOR PATIENTS
           </h2>
           <p className="text-base md:text-[18px] md:leading-[23px] font-[Duplet] font-normal text-center text-[#132D47]">
@@ -34,7 +34,7 @@ const ForPatients = () => {
           <div className="flex flex-col md:flex-row  w-full h-full">
             {/* Feature 1 */}
             <div
-              className={`flex flex-col md:flex-row justify-start items-start w-2/3 mx-auto md:w-1/3 h-full  relative transition-all duration-300 ${
+              className={`flex flex-col md:flex-row justify-start items-start w-[75%] mx-auto md:w-1/3 h-full  relative transition-all duration-300 ${
                 hoveredFeature !== null && hoveredFeature !== 0
                   ? "opacity-90 blur-[1.5px]"
                   : ""
@@ -43,7 +43,7 @@ const ForPatients = () => {
               onMouseLeave={() => setHoveredFeature(null)}
             >
               <div
-                className={`flex items-center gap-[12px] py-8 md:p-12 rounded-lg `}
+                className={`flex items-center sm:flex-col lg:flex-row gap-[12px] py-8 md:p-12 mx-auto w-[220px] md:w-auto`}
               >
                 <div className="relative w-[40px] md:w-[80px] h-[40px] md:h-[80px]">
                   {/* <img
@@ -67,7 +67,7 @@ const ForPatients = () => {
 
             {/* Feature 2 */}
             <div
-              className={`flex flex-col md:flex-row justify-start items-start w-2/3 mx-auto md:w-1/3 h-full  relative transition-all duration-300 ${
+              className={`flex flex-col md:flex-row justify-start items-start w-[75%] mx-auto md:w-1/3 h-full  relative transition-all duration-300 ${
                 hoveredFeature !== null && hoveredFeature !== 1
                   ? "opacity-90 blur-[1.5px]"
                   : ""
@@ -76,7 +76,7 @@ const ForPatients = () => {
               onMouseLeave={() => setHoveredFeature(null)}
             >
               <div
-                className={`flex items-center gap-[12px] py-8 md:p-12  rounded-lg`}
+                className={`flex items-center sm:flex-col lg:flex-row gap-[12px] py-8 md:p-12  mx-auto w-[220px] md:w-auto`}
               >
                 <div className="relative w-[40px] md:w-[80px] h-[40px] md:h-[80px]">
                   <Image 
@@ -87,7 +87,7 @@ const ForPatients = () => {
                     height={25}
                   />
                 </div>
-                <p className="text-[18px] leading-[23px] font-duplet font-semibold text-center text-[#132D47]">
+                <p className="text-base md:text-[18px] leading-[23px] font-duplet font-semibold text-center text-[#132D47]">
                   Expert Experiences
                 </p>
               </div>
@@ -95,7 +95,7 @@ const ForPatients = () => {
 
             {/* Feature 3 */}
             <div
-              className={`flex flex-col md:flex-row justify-start items-start w-2/3 mx-auto md:w-1/3 h-full  relative transition-all duration-300  ${
+              className={`flex flex-col md:flex-row justify-start items-start w-[75%] mx-auto md:w-1/3 h-full  relative transition-all duration-300  ${
                 hoveredFeature !== null && hoveredFeature !== 2
                   ? "opacity-90 blur-[1.5px]"
                   : ""
@@ -104,7 +104,7 @@ const ForPatients = () => {
               onMouseLeave={() => setHoveredFeature(null)}
             >
               <div
-                className={`flex items-center gap-[12px] py-8 md:p-12  rounded-lg `}
+                className={`flex items-center sm:flex-col lg:flex-row gap-[12px] py-8 md:p-12 mx-auto w-[220px] md:w-auto`}
               >
                 <div className="relative w-[40px] md:w-[80px] h-[40px] md:h-[80px]">
                   {/* <img
@@ -117,7 +117,7 @@ const ForPatients = () => {
                     height={25}
                   />
                 </div>
-                <p className="text-[18px] leading-[23px] font-duplet font-semibold text-center text-[#132D47]">
+                <p className="text-base md:text-[18px] leading-[23px] font-duplet font-semibold text-center text-[#132D47]">
                   Digital Health Records
                 </p>
               </div>

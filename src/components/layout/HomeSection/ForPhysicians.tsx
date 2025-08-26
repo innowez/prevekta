@@ -15,7 +15,7 @@ const ForPhysicians = () => {
       <div id='Physician' className="absolute -top-4 md:-top-12"></div>
       {/* Header Section */}
       <div className="flex flex-row justify-between items-center w-full gap-4">
-        <h2 className="text-2xl md:text-[60px] md:leading-[72px] font-atyp font-bold text-[#132D47]">
+        <h2 className="text-2xl sm:text-5xl lg:text-[60px] md:leading-[72px] font-atyp font-bold text-[#132D47]">
           FOR PHYSICIANS
         </h2>
 

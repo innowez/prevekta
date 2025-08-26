@@ -76,14 +76,7 @@ const PrevektaSection = () => {
     <div className="max-w-[1360px] mx-auto px-8 py-12 md:py-24">
       {/* Header */}
       <div className="flex justify-between items-center gap-8 mb-0">
-        <h1 className="text-2xl md:text-[60px] font-bold text-primary-dark font-[atyp]" style={{
-        // fontFamily: 'Atyp TEST',
-// fontStyle: "normal",
-// fontWeight: 135,
-// fontSize: '60px',
-// lineHeight: "72px",
-// color: "#132D47",
-        }}>
+        <h1 className="text-2xl md:text-5xl lg:text-[60px] font-extrabold text-primary-dark font-[Atyp]" >
           PREVEKTA FOR
         </h1>
         <div className="">
@@ -101,7 +94,7 @@ const PrevektaSection = () => {
       {/* Content */}
       <div className="py-4 mt-4 flex flex-col md:flex-row gap-12">
         {/* Image Panel */}
-        <div className="hidden md:block w-full md:w-1/2 relative h-[638px] rounded-3xl overflow-hidden">
+        <div className="hidden lg:block w-full md:w-1/2 relative h-[638px] rounded-3xl overflow-hidden">
           {tabs.map((tab) => (
             <div
               key={tab.id}
@@ -137,7 +130,7 @@ const PrevektaSection = () => {
           ))}
         </div>
         {/* Accordion */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full lg:w-1/2">
           {tabs.map((tab) => (
             <div
               key={tab.id}
@@ -179,7 +172,7 @@ const PrevektaSection = () => {
                     {tab.chips.map((chip, idx) => (
                       <span
                         key={idx}
-                        className="px-4 border border-primary-dark rounded-full text-primary-dark font-duplet text-base whitespace-nowrap"
+                        className="px-4 border border-primary-dark rounded-full text-primary-dark font-[Duplet] text-base whitespace-nowrap"
                       >
                         {chip}
                       </span>
