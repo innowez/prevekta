@@ -76,7 +76,7 @@ const PrevektaSection = () => {
     <div className="max-w-[1360px] mx-auto px-8 py-12 md:py-24">
       {/* Header */}
       <div className="flex justify-between items-center gap-8 mb-0">
-        <h1 className="text-2xl md:text-5xl lg:text-[60px] font-extrabold text-primary-dark font-[Atyp]" >
+        <h1 className="text-2xl md:text-5xl lg:text-[60px] font-bold text-primary-dark font-atyp" >
           PREVEKTA FOR
         </h1>
         <div className="">
@@ -165,14 +165,14 @@ const PrevektaSection = () => {
 
               {(activeTab === tab.id || isMobile) && (
                 <div className="mt-4 transition-all duration-300">
-                  <p className="text-lg text-primary-dark font-duplet mb-6">
+                  <p className="text-lg text-primary-dark font-[Duplet] mb-6">
                     {tab.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {tab.chips.map((chip, idx) => (
                       <span
                         key={idx}
-                        className="px-4 border border-primary-dark rounded-full text-primary-dark font-[Duplet] text-base whitespace-nowrap"
+                        className="px-4 py-0.5 border border-primary-dark rounded-full text-primary-dark font-[Duplet] text-base whitespace-nowrap"
                       >
                         {chip}
                       </span>

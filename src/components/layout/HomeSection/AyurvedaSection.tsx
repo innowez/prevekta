@@ -27,7 +27,7 @@ const AyurvedaSection = () => {
 
             <div className="p-5 px-9">
               {/* Title */}
-              <h1 className=" w-[373px] h-[96px] left-[396px] top-5 font-atyp font-bold text-4xl leading-[48px] text-primary-dark">
+              <h1 className=" w-[373px] h-[96px] left-[396px] top-5 font-[Atyp] font-bold text-4xl leading-[48px] text-primary-dark">
                 Ayurveda. Community. Future.
               </h1>
 
@@ -88,7 +88,7 @@ const AyurvedaSection = () => {
         <div className="relative w-[454px] h-[507px] bg-primary-dark rounded-3xl">
           <div className=" w-[370px] h-[201px] py-10 mt-16 px-3 ml-5 flex flex-col gap-8">
             <div>
-              <h3 className="w-full font-atyp font-bold text-2xl leading-[29px] text-white">
+              <h3 className="w-full font-[Atyp] font-bold text-2xl leading-[29px] text-white">
                 Whether you are,
               </h3>
             </div>
@@ -103,7 +103,7 @@ const AyurvedaSection = () => {
                 <div key={index} className="flex items-center gap-3">
                   {/* <div className="w-[19px] h-[19px] bg-primary-2 rounded-full"></div> */}
                   <Logo className=" opacity-30 text-primary-light" />
-                  <p className=" font-duplet font-normal text-base md:text-[17px] leading-[23px] text-white">
+                  <p className=" font-[Duplet] font-normal text-base md:text-[17px] leading-[23px] text-white">
                     {item}
                   </p>
                 </div>
@@ -148,7 +148,7 @@ const AyurvedaSection = () => {
     </div>
 
           {/* Title */}
-          <h1 className="relative w-[224px] h-[58px] left-4 top-[31px] font-atyp font-bold text-2xl leading-[29px] text-primary-dark">
+          <h1 className="relative w-[224px] h-[58px] left-4 top-[31px] font-[Atyp] font-bold text-2xl leading-[29px] text-primary-dark">
             Ayurveda. Community. Future.
           </h1>
 
@@ -191,7 +191,7 @@ const AyurvedaSection = () => {
         <div className="w-full bg-primary-dark rounded-3xl flex flex-col justify-between min-h-[320px] mt-4">
   {/* Main Content */}
   <div className="flex-1 flex flex-col justify-center px-4">
-    <h3 className="font-atyp font-bold text-xl leading-6 text-white mb-6">
+    <h3 className="font-[Atyp] font-bold text-xl leading-6 text-white mb-6">
       Whether you are,
     </h3>
 
@@ -204,7 +204,7 @@ const AyurvedaSection = () => {
       ].map((item, index) => (
         <div key={index} className="flex items-center gap-3">
           <Logo className="opacity-30 text-primary-light flex-shrink-0" />
-          <p className="font-duplet font-normal text-sm leading-5 text-white">
+          <p className="font-[Duplet] font-normal text-sm leading-5 text-white">
             {item}
           </p>
         </div>

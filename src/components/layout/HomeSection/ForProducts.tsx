@@ -53,7 +53,7 @@ const ForProducts = () => {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-end w-full gap-6">
         <div className="flex flex-col items-start gap-2.5 w-full md:w-auto">
-          <h2 className="text-2xl sm:text-5xl lg:text-[60px] md:leading-[72px] font-[Atyp] font-bold text-[#132D47] text-left">
+          <h2 className="text-2xl sm:text-5xl lg:text-[60px] md:leading-[72px] font-atyp  text-[#132D47] text-left">
             FOR PRODUCT
           </h2>
           <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-normal text-[#132D47] text-left max-w-[610px]">
@@ -143,10 +143,10 @@ const ForProducts = () => {
                       : "text-left"
                   }`}
                 >
-                  <h3 className="text-[18px] md:text-[32px] font-bold uppercase text-[#132D47] font-atyp leading-tight md:leading-[38px] mb-1 md:mb-2">
+                  <h3 className="text-[18px] md:text-[32px] font-bold uppercase text-[#132D47] font-[Atyp] leading-tight md:leading-[38px] mb-1 md:mb-2">
                     {product.name}
                   </h3>
-                  <h3 className="text-[12px] md:text-[18px] font-normal text-[#132D47] font-duplet leading-tight md:leading-[23px] w-full">
+                  <h3 className="text-[12px] md:text-[18px] font-normal text-[#132D47] font-[Duplet] leading-tight md:leading-[23px] w-full">
                     {product.description}
                   </h3>
                 </div>

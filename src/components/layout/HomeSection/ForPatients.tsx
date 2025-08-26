@@ -59,7 +59,7 @@ const ForPatients = () => {
                     height={25}
                   />
                 </div>
-                <p className="text-base md:text-[18px] leading-[23px] font-duplet font-semibold text-center text-[#132D47]">
+                <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold text-center text-[#132D47]">
                   Multiple specialties
                 </p>
               </div>
@@ -87,7 +87,7 @@ const ForPatients = () => {
                     height={25}
                   />
                 </div>
-                <p className="text-base md:text-[18px] leading-[23px] font-duplet font-semibold text-center text-[#132D47]">
+                <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold text-center text-[#132D47]">
                   Expert Experiences
                 </p>
               </div>
@@ -117,7 +117,7 @@ const ForPatients = () => {
                     height={25}
                   />
                 </div>
-                <p className="text-base md:text-[18px] leading-[23px] font-duplet font-semibold text-center text-[#132D47]">
+                <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold text-center text-[#132D47]">
                   Digital Health Records
                 </p>
               </div>

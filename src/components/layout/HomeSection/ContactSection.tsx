@@ -27,13 +27,13 @@ const ContactSection = () => {
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
               placeholder="First Name"
-              className="w-full text-base md:text-[18px] leading-[23px] font-duplet font-semibold bg-transparent outline-none"
+              className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none"
             />
           </div>
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
               placeholder="Last Name"
-              className="w-full text-base md:text-[18px] leading-[23px] font-duplet font-semibold bg-transparent outline-none"
+              className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none"
             />
           </div>
         </div>
@@ -43,13 +43,13 @@ const ContactSection = () => {
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
               placeholder="Email"
-              className="w-full text-base md:text-[18px] leading-[23px] font-duplet font-semibold bg-transparent outline-none"
+              className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none"
             />
           </div>
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
               placeholder="Phone Number"
-              className="w-full text-base md:text-[18px] leading-[23px] font-duplet font-semibold bg-transparent outline-none"
+              className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none"
             />
           </div>
         </div>
@@ -58,7 +58,7 @@ const ContactSection = () => {
         <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
           <textarea
             placeholder="Message"
-            className="w-full h-24 md:h-32 text-base md:text-[18px] leading-[23px] font-duplet font-semibold bg-transparent outline-none resize-none"
+            className="w-full h-24 md:h-32 text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none resize-none"
           />
         </div>
 

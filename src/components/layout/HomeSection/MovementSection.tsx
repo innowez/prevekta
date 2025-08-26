@@ -68,11 +68,11 @@ const MovementSection = () => {
   return (
     <div className="flex flex-col items-center px-4 py-12 md:py-20 mx-auto max-w-[1360px] gap-12 lg:gap-[100px]">
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row justify-between lg:items-end w-full gap-3 lg:gap-[215px]">
-        <h2 className="text-2xl sm:text-5xl lg:text-[60px]  md:leading-[1.2] lg:leading-[72px] font-atyp font-bold text-[#132D47] w-full md:w-[687px]">
+      <div className="flex flex-col lg:flex-row justify-between lg:items-end w-full gap-3 lg:gap-[170px]">
+        <h2 className="text-2xl sm:text-5xl lg:text-[60px]  md:leading-[1.2] lg:leading-[72px] font-[Atyp] font-bold text-[#132D47] w-full md:w-[676px]">
           We are not just a clinic. <br />We are a Movement.
         </h2>
-        <p className="text-base md:text-[18px] leading-[1.5] md:leading-[23px] font-[Duplet] font-normal text-[#132D47] w-full md:w-[468px]">
+        <p className="text-base md:text-[18px] leading-[1.5] md:leading-[23px] font-[Duplet] font-normal text-[#132D47] w-full md:w-[490px]">
           At Prevekta, we believe that Ayurveda thrives when it unites
         </p>
       </div>
@@ -88,7 +88,7 @@ const MovementSection = () => {
           >
             {/* Item Text */}
             <div className="z-10 px-4 py-2 md:py-0 rounded-[24px] transition-all duration-300">
-              <p className="text-base md:text-[24px] leading-[1.2] md:leading-[29px] font-atyp font-bold text-[#132D47] text-center">
+              <p className="text-base md:text-[24px] leading-[1.2] md:leading-[29px] font-[Atyp] font-bold text-[#132D47] text-center">
                 {item.text}
               </p>
             </div>

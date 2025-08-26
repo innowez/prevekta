@@ -44,7 +44,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className="px-3 absolute h-[57.5px] whitespace-nowrap flex items-center rounded-full text-[18px] leading-[23px] uppercase font-duplet transition-all duration-300 ease-in-out"
+        className="px-3 absolute h-[57.5px] whitespace-nowrap flex items-center rounded-full text-[18px] leading-[23px] uppercase font-[Duplet] transition-all duration-300 ease-in-out"
         style={{
           width: isHovered ? labelWidthHover : labelWidth,
           backgroundColor: isHovered ? labelBackgroundHover : labelBackground,

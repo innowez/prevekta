@@ -75,7 +75,7 @@ const AyurvedaPlatform: React.FC = () => {
       {/* Header section */}
       <div className="w-full flex flex-col lg:flex-row lg:justify-between gap-5 md:gap-10 mb-8 md:mb-16 relative z-10">
         <h2 className="text-[20px] md:text-5xl lg:text-[60px] md:leading-[48px] lg:leading-[72px] font-bold text-white font-['Atyp'] flex-1">
-          A Platform Where Ayurveda Reconnects
+          A Platform Where <br className="hidden lg:block" /> Ayurveda Reconnects
         </h2>
 
         <p className="text-base md:text-[18px] md:leading-[23px] text-white font-[Duplet] flex-1 max-w-[371px]">

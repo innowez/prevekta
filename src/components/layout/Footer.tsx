@@ -29,9 +29,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Links */}
-          <div className="flex space-x-8">
+          <div className="flex space-x-8 font-[Duplet]">
             <div className="space-y-6">
-              <h3 className="text-xl font-light">About</h3>
+              <h3 className="text-xl font-bold">About</h3>
               <ul className="space-y-2 text-base">
                 <li>Our Story</li>
                 <li>The 4P Model</li>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="space-y-6">
-              <h3 className="text-xl font-light">Quick Links</h3>
+              <h3 className="text-xl font-bold">Quick Links</h3>
               <ul className="space-y-2 text-base">
                 <li>Book a Consultation</li>
                 <li>Shop Products</li>
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="space-y-6">
-              <h3 className="text-xl font-light">Products</h3>
+              <h3 className="text-xl font-bold">Products</h3>
               <ul className="space-y-2 text-base">
                 <li>Treeyna</li>
                 <li>Trimanya</li>
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="space-y-6">
-              <h3 className="text-xl font-light">Legal & Help</h3>
+              <h3 className="text-xl font-bold">Legal & Help</h3>
               <ul className="space-y-2 text-base">
                 <li>Terms & Conditions</li>
                 <li>Privacy Policy</li>
@@ -76,9 +76,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Links in column */}
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col space-y-6 font-[Duplet]">
             <div className="space-y-2">
-              <h3 className="text-xl font-light">About</h3>
+              <h3 className="text-xl font-bold">About</h3>
               <ul className="space-y-2 text-base">
                 <li>Our Story</li>
                 <li>The 4P Model</li>
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-light">Quick Links</h3>
+              <h3 className="text-xl font-bold">Quick Links</h3>
               <ul className="space-y-2 text-base">
                 <li>Book a Consultation</li>
                 <li>Shop Products</li>
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-light">Products</h3>
+              <h3 className="text-xl font-bold">Products</h3>
               <ul className="space-y-2 text-base">
                 <li>Treeyna</li>
                 <li>Trimanya</li>
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div className="space-y-2">
-              <h3 className="text-xl font-light">Legal & Help</h3>
+              <h3 className="text-xl font-bold">Legal & Help</h3>
               <ul className="space-y-2 text-base">
                 <li>Terms & Conditions</li>
                 <li>Privacy Policy</li>
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section (Privacy and Terms) */}
-        <div className="mt-6 border-t border-white/40 pt-2 flex flex-col md:flex-row justify-between text-base gap-1">
+        <div className="mt-6 border-t border-white/40 pt-2 flex flex-col md:flex-row justify-between text-base gap-1 font-[Duplet]">
           <p className="text-center md:text-left">Privacy Policy</p>
           <p className="text-center md:text-left md:mt-0">Terms & conditions</p>
         </div>

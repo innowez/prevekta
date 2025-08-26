@@ -116,10 +116,10 @@ const Hero = () => {
           />
           <div className="relative z-10 min-h-screen flex flex-col px-4 md:px-16 w-full max-w-7xl mx-auto justify-start pt-20">
             <div className="flex flex-col gap-6 md:gap-8 max-w-2xl">
-              <h1 className="text-4xl md:text-6xl font-atyp font-bold leading-[48px] md:leading-[72px] text-white">
+              <h1 className="text-4xl md:text-6xl font-[Atyp] font-bold leading-[48px] md:leading-[72px] text-white">
                 Once upon a time
               </h1>
-              <p className="text-lg md:text-xl font-duplet font-semibold leading-6 md:leading-[23px] text-white">
+              <p className="text-lg md:text-xl font-[Duplet] font-semibold leading-6 md:leading-[23px] text-white">
                 Ayurveda Thrived in the sacred silence of forests, whispered in
                 the homes of grandmothers, and guided the hands of Vaidyas. But
                 as the world sped forward, this 5,000-year-old science was
@@ -144,7 +144,7 @@ const Hero = () => {
             }}
           />
           <div className="w-full uppercase px-4 md:px-16 py-8">
-            <h1 className="text-3xl  font-atyp font-bold text-white">
+            <h1 className="text-3xl  font-[Atyp] font-bold text-white">
               Each practitioner worked in isolation.
               <br /> Each remedy lived in a small corner.
               <br /> Each patient searched in pieces

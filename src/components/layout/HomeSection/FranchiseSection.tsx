@@ -22,7 +22,7 @@ const FranchiseSection: React.FC = () => {
       </div>
     </div>
     
-    <p className="text-sm sm:text-xl text-[#132D47] font-duplet font-normal mt-auto pt-8">
+    <p className="text-sm sm:text-xl text-[#132D47] font-[Duplet] font-normal mt-auto pt-8">
       Own a piece of{" India's"} Ayurveda future. Become a unit or cluster franchise partner. We offer you branding, tech, training, and product support.
     </p>
     <div className="absolute left-[52%] top-[17%] transform -translate-x-1/2 -translate-y-1/2 -z-10 w-[450px] h-[450px]">
@@ -38,13 +38,13 @@ const FranchiseSection: React.FC = () => {
   <div className="hidden lg:block relative h-[320px]">
     {/* Main content */}
     <div className="absolute left-10 top-10 w-[434px]">
-      <h2 className="text-[40px] leading-[48px] font-bold uppercase text-[#132D47] font-['Atyp']">
+      <h2 className="text-[40px] leading-[48px] font-bold uppercase text-[#132D47] font-Atyp">
         Partner with Us <span className='whitespace-nowrap'>Prevekta Franchise</span>  <br/> Opportunities
       </h2>
     </div>
 
     {/* Bottom text */}
-    <p className="absolute left-1/2 transform -translate-x-1/2 bottom-20 text-lg text-[#132D47] font-duplet font-normal w-[427px] text-left">
+    <p className="absolute left-1/2 transform -translate-x-1/2 bottom-20 text-lg text-[#132D47] font-[Duplet] font-normal w-[427px] text-left">
       Own a piece of {"India's"} Ayurveda future. Become a unit or cluster franchise partner. We offer you branding, tech, training, and product support.
     </p>
 

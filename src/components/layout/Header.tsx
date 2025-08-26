@@ -56,7 +56,7 @@ const Header: React.FC = () => {
         <nav className="flex flex-1 justify-center items-center mx-4">
           <div className="flex whitespace-nowrap justify-center gap-4 xl:gap-6">
             <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors">
-              <span className="font-duplet text-bodyRegular text-primary-dark">
+              <span className="font-[Duplet] text-bodyRegular text-primary-dark">
                 Services
               </span>
               <ArrowDown />
@@ -65,27 +65,27 @@ const Header: React.FC = () => {
               className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors"
               onClick={() => router.push('/products')}
             >
-              <span className="font-duplet text-bodyRegular text-primary-dark">
+              <span className="font-[Duplet] text-bodyRegular text-primary-dark">
                 Products
               </span>
               <ArrowDown />
             </div>
-            <span className="font-duplet text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
+            <span className="font-[Duplet] text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
               Clinics
             </span>
             <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors">
-              <span className="font-duplet text-bodyRegular text-primary-dark">
+              <span className="font-[Duplet] text-bodyRegular text-primary-dark">
                 Knowledge Hub
               </span>
               <ArrowDown />
             </div>
-            <span className="font-duplet text-bodyRegular text-primary-dark cursor-pointer bg-[#ffffff00] hover:text-primary transition-colors">
+            <span className="font-[Duplet] text-bodyRegular text-primary-dark cursor-pointer bg-[#ffffff00] hover:text-primary transition-colors">
               Careers
             </span>
-            <span className="font-duplet text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
+            <span className="font-[Duplet] text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
               About Us
             </span>
-            <span className="font-duplet text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
+            <span className="font-[Duplet] text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
               Contact us
             </span>
           </div>

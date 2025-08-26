@@ -169,7 +169,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="py-5 md:py-20 bg-white overflow-hidden">
-      <h2 className="text-2xl md:text-[40px] md:leading-[48px] font-bold text-left md:text-center text-[#132D47] font-['Atyp'] mb-12 ml-2.5 md:ml-0">
+      <h2 className="text-2xl md:text-[40px] md:leading-[48px] font-bold text-left md:text-center text-[#132D47] font-Atyp mb-12 ml-2.5 md:ml-0">
         Real Stories Real Healing
       </h2>
 
@@ -218,7 +218,7 @@ const Testimonials: React.FC = () => {
                     fill="#132D47"
                   />
                 </svg>
-                <p className="ml-2 text-base md:text-lg uppercase font-duplet">{testimonial.location}</p>
+                <p className="ml-2 text-base md:text-lg uppercase font-[Duplet]">{testimonial.location}</p>
               </div>
             </div>
           ))}
@@ -240,12 +240,12 @@ const Testimonials: React.FC = () => {
                     />
                   </span>
                 </div>
-                <p className="text-base md:text-lg font-semibold mt-2 font-duplet">{testimonial.name}</p>
+                <p className="text-base md:text-lg font-semibold mt-2 font-[Duplet]">{testimonial.name}</p>
               </div>
               
               
                <div className="flex justify-center items-center md:w-[400px]">
-                <p className="text-base md:text-lg font-duplet font-normal">
+                <p className="text-base md:text-lg font-[Duplet] font-normal">
                   {testimonial.text}
                 </p>
               </div>
@@ -257,7 +257,7 @@ const Testimonials: React.FC = () => {
                     fill="#132D47"
                   />
                 </svg>
-                <p className="ml-2 text-base md:text-lg uppercase font-duplet">{testimonial.location}</p>
+                <p className="ml-2 text-base md:text-lg uppercase font-[Duplet]">{testimonial.location}</p>
               </div>
             </div>
           ))}
