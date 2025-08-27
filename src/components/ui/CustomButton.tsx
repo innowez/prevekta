@@ -46,13 +46,13 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 
   return (
     <div
-      className="relative h-[57.5px] group overflow-hidden transition-all duration-300 ease-in-out"
+      className="relative h-12 md:h-[57.5px] group overflow-hidden transition-all duration-300 ease-in-out"
       style={{ width: mainWidth }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className="px-3 absolute h-[57.5px] whitespace-nowrap flex items-center rounded-full text-[18px] leading-[23px] uppercase font-[Duplet] transition-all duration-300 ease-in-out"
+        className="px-3 absolute h-12 md:h-[57.5px] whitespace-nowrap flex items-center rounded-full text-base md:text-[18px] leading-[23px] uppercase font-[Duplet] transition-all duration-300 ease-in-out"
         style={{
           width: isHovered ? labelWidthHover : labelWidth,
           backgroundColor: isHovered ? labelBackgroundHover : labelBackground,
@@ -66,7 +66,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       </div>
 
       <div
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 w-[55px] h-[56px] flex justify-center items-center rounded-full transition-transform duration-300"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2  h-12 w-[48px] md:w-[55px] md:h-[56px] flex justify-center items-center rounded-full transition-transform duration-300"
         style={{
           backgroundColor: isHovered ? labelBackgroundHover : labelBackground,
           borderRightWidth: isHovered ? "0px" : "1px",

@@ -7,9 +7,11 @@ import Yuvrasa from "@assets/images/Yuvrasa.jpg";
 import Juvinam from "@assets/images/Juvinam.jpg";
 import Treenya from "@assets/images/Treenya.png";
 import CustomButton from "@/components/ui/CustomButton";
+import useMediaQuery from "@/hooks/useMediaquery";
 
 const ForProducts = () => {
   const [activeProduct, setActiveProduct] = useState<number>(0);
+  const isMobile = useMediaQuery('(max-width: 720px)');
 
   const products = [
     {
@@ -66,8 +68,8 @@ const ForProducts = () => {
         {/* Button */}
         <div className="w-full md:w-auto">
           <CustomButton
-            mainWidth="290px"
-            labelWidth="290px"
+            mainWidth={isMobile ? "280px" : "290px"}
+            labelWidth={isMobile? "250px" : "290px"}
             labelWidthHover="240px"
             labelBackground="rgba(19,45,71,0.0)"
             labelBackgroundHover="#132D47"
