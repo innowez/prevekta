@@ -1,0 +1,38 @@
+.photo-collage {
+  display: flex;
+  width: 600px;
+  height: 400px;
+  gap: 12px;
+}
+
+.main-photo {
+  flex: 2;
+  background-image: url('/public/phyHero.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+.side-photos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top-crop,
+.bottom-crop {
+  flex: 1;
+  background-image: url('/public/phyHero.png');
+  border-radius: 20px;
+}
+
+.top-crop {
+  background-size: 400% 300%;
+  background-position: 75% 30%;
+}
+
+.bottom-crop {
+  background-size: 400% 300%;
+  background-position: 70% 70%;
+}
