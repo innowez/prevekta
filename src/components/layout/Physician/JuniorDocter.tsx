@@ -194,7 +194,7 @@ function JuniorDocter() {
                 <h2 className="text-center text-base text-white font-Duplet font-bold  ">
                   Live OP/IP Case Exposure
                 </h2>
-                <p className="text-center text-white text-base leading-5 font-[duplet] ">
+                <p className="text-center text-white text-base leading-5 font-[duplet] font-light ">
                   Learn by doing, in real Ayurvedic <br />
                   clinics and wellness centers
                 </p>
@@ -207,7 +207,7 @@ function JuniorDocter() {
                   <h2 className="text-center text-base text-primary font-Duplet font-bold  ">
                     Clinical Mentorship
                   </h2>
-                  <p className="text-center text-primary text-base leading-5 font-[duplet] ">
+                  <p className="text-center text-primary text-base leading-5 font-[duplet] font-light ">
                     Shadow senior vaidyas, <br />
                     understand Ayurvedic <br />
                     diagnosis, plan real treatments
@@ -221,7 +221,7 @@ function JuniorDocter() {
                 <h2 className="text-center text-base text-white font-Duplet font-bold  ">
                   Continuous Learning
                 </h2>
-                <p className="text-center text-white text-base leading-5 font-[duplet] ">
+                <p className="text-center text-white text-base leading-5 font-[duplet] font-light ">
                   CMEs, research discussions, <br />
                   case reviews, and guided <br />
                   patient interactions
@@ -235,7 +235,7 @@ function JuniorDocter() {
                   <h2 className="text-center text-base text-primary font-Duplet font-bold  ">
                     Career Pathway Support
                   </h2>
-                  <p className="text-center text-primary text-base leading-5 font-[duplet] ">
+                  <p className="text-center text-primary text-base leading-5 font-[duplet] font-light ">
                     Guidance on specializations, <br />
                     entrepreneurship, or research-
                     <br />
@@ -391,7 +391,7 @@ function JuniorDocter() {
             <AnimatePresence mode="wait">
               {hoveredIndex === index && (
                 <motion.p
-                  className="text-center text-lg leading-5"
+                  className="text-center text-lg leading-5 font-[duplet]"
                   variants={descriptionVariants}
                   // variants={}
                   initial="hidden"
@@ -431,7 +431,7 @@ function JuniorDocter() {
       ))}
     </div>
 
-          <p className="text-primary text-xl text-center font-Atyp">
+          <p className="text-primary text-xl text-center font-Atyp sm:uppercase">
             “Join not just a platform, but a movement to elevate authentic,{" "}
             <br />
             modern Ayurveda”

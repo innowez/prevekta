@@ -14,7 +14,7 @@ function ForSenior() {
     <div className="px-4 mt-12 relative">
       <div className="flex mb-6 items-end lg:items-center lg:flex-col gap-3 lg:mb-12">
         <h1 className="text-xl sm:text-3xl lg:text-[40px] font-Atyp font-semibold text-[#132D47] w-[60%] lg:text-center">
-          For Senior & <br className="sm:hidden" />
+          For Senior <span className="font-light">&</span> <br className="sm:hidden" />
           Experienced <br className="lg:hidden" />
           Physicians
         </h1>
@@ -177,7 +177,7 @@ function ForSenior() {
         </div>
 
         <div className="flex flex-col justify-center items-center gap-6 lg:gap-12 pb-12 lg:pb-28">
-          <h2 className="text-primary text-xl sm:text-2xl lg:text-[32px] text-center font-semibold font-[Atyp] ">
+          <h2 className="text-primary text-xl sm:text-2xl lg:text-[32px] text-center font-semibold font-Atyp sm:uppercase ">
             “With Prevekta, you don’t just <br className="sm:hidden" /> get
             patients. <br className="hidden lg:block" />
             You build a <br className="lg:hidden" />
