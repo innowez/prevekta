@@ -59,11 +59,11 @@ const AyurvedaSection = () => {
                   iconPosition="0px"
                   iconPositionHover="px"
                 />
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-primary flex items-center justify-center">
+                {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-primary flex items-center justify-center">
                   <div className="w-[22.5px] h-[15px] relative">
                     <div className="absolute inset-0 bg-primary"></div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
