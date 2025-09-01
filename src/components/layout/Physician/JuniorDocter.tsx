@@ -86,15 +86,15 @@ function JuniorDocter() {
     },
     {
       title: "Clinical Mentorship", 
-      description: "Learn by doing, in real Ayurvedic clinics and wellness centers"
+      description: "Shadow senior vaidyas, understand Ayurvedic diagnosis, plan real treatments"
     },
     {
       title: "Continuous Learning",
-      description: "Learn by doing, in real Ayurvedic clinics and wellness centers"
+      description: "CMEs, research discussions, case reviews, and guided patient interactions"
     },
     {
       title: "Career Pathway Support",
-      description: "Learn by doing, in real Ayurvedic clinics and wellness centers"
+      description: "Guidance on specializations, entrepreneurship, or research-oriented Ayurveda"
     }
   ];
 
