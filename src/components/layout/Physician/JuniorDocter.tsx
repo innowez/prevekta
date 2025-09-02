@@ -82,7 +82,7 @@ function JuniorDocter() {
   const cardData = [
     {
       title: "Live OP/IP Case Exposure",
-      description: "Learn by doing, in real Ayurvedic clinics and wellness centers"
+      description: "Learn by participating, in real Ayurvedic clinics and wellness centers"
     },
     {
       title: "Clinical Mentorship", 
@@ -185,7 +185,7 @@ function JuniorDocter() {
 
         <div>
           <p className="text-2xl lg:text-[40px] leading-7 text-primary text-center lg:text-left font-semibold font-Atyp mb-6">
-            What You Gain with Prevekta
+            What you gain as a junior physician in prevekta
           </p>
 
           <div className="w-[300px] mx-auto mb-6 md:hidden">
@@ -195,7 +195,7 @@ function JuniorDocter() {
                   Live OP/IP Case Exposure
                 </h2>
                 <p className="text-center text-white text-base leading-5 font-[duplet] font-light ">
-                  Learn by doing, in real Ayurvedic <br />
+                  Learn by participating, in real Ayurvedic <br />
                   clinics and wellness centers
                 </p>
               </div>

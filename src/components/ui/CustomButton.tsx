@@ -18,6 +18,7 @@ interface CustomButtonProps {
   iconPosition?: string;
   iconPositionHover?: string;
   // isHoveredProp?: boolean;
+  onClick?: () => void;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
@@ -34,6 +35,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   labelText = "Shop",
   iconPosition = "0px",
   iconPositionHover = "0px",
+  onClick= () => {},
   // isHoveredProp = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -46,10 +48,11 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 
   return (
     <div
-      className="relative h-12 md:h-[57.5px] group overflow-hidden transition-all duration-300 ease-in-out"
+      className="relative h-12 md:h-[57.5px] group overflow-hidden transition-all duration-300 ease-in-out cursor-pointer"
       style={{ width: mainWidth }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={onClick}
     >
       <div
         className="px-3 absolute h-12 md:h-[57.5px] whitespace-nowrap flex items-center rounded-full text-base md:text-[18px] leading-[23px] uppercase font-[Duplet] transition-all duration-300 ease-in-out"

@@ -8,8 +8,10 @@ import Grow from '@assets/images/Grow.png'
 import Brand from '@assets/images/Brand.png'
 import Focus from '@assets/images/Focus.png'
 import CustomButton from '@/components/ui/CustomButton';
+import { useRouter } from "next/navigation";
 
 const ForPhysicians = () => {
+   const router = useRouter();
   return (
     <div className="flex flex-col items-start px-4 py-20 mx-auto max-w-[1360px] gap-[40px] relative">
       <div id='Physician' className="absolute -top-4 md:-top-12"></div>
@@ -49,6 +51,7 @@ const ForPhysicians = () => {
         labelBorderColor="#81DE76"
         iconPosition="0px"
         iconPositionHover="px"
+        onClick={() => router.replace('/physician')}
       />
        </div>
         {/* <button className="relative w-[269px] h-[56px] bg-[#81DE76] border border-[#81DE76] rounded-full hover:bg-[#6bcb60] transition-colors duration-300">

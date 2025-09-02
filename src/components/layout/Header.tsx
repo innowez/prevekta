@@ -37,7 +37,7 @@ const Header: React.FC = () => {
     <>
       {/* Desktop Header */}
       <header
-        className={`hidden lg:flex w-full justify-between items-center py-4 px-4 xl:px-4 bg-white z-50 sticky top-0 transition-all duration-300 ${
+        className={`hidden xl:flex w-full justify-between items-center py-4 px-4 xl:px-4 bg-white z-50 sticky top-0 transition-all duration-300 ${
           isScrolled ? "shadow-md" : ""
         }`}
       >
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Navigation Bar */}
-        <nav className="flex flex-1 justify-center items-center mx-4">
+        <nav className="flex flex-1 justify-center items-center mx-4 md:text-base xl:text-lg">
           <div className="flex whitespace-nowrap justify-center gap-4 xl:gap-6">
             <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors">
               <span className="font-[Duplet] text-bodyRegular text-primary-dark">
@@ -132,7 +132,7 @@ const Header: React.FC = () => {
 
       {/* Mobile Header */}
       <header
-        className={`lg:hidden flex w-full justify-between items-center py-4 px-4 bg-white z-50 sticky top-0 transition-all duration-300 ${
+        className={`xl:hidden flex w-full justify-between items-center py-4 px-4 bg-white z-50 sticky top-0 transition-all duration-300 ${
           isScrolled ? "shadow-md" : ""
         }`}
       >
