@@ -5,9 +5,11 @@ import Star from "@assets/images/Star.png";
 import Board from "@assets/images/Board.png";
 import CustomButton from "@/components/ui/CustomButton";
 import Image from "next/image";
+import useMediaQuery from "@/hooks/useMediaquery";
 
 const ForPatients = () => {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
+  const isMobile = useMediaQuery('(max-width: 525px)');
 
   return (
     <div className="flex flex-col items-center px-4 py-5 md:py-20 mx-auto max-w-[1360px] gap-4 mb:gap-[72px] relative">
@@ -128,9 +130,9 @@ const ForPatients = () => {
 
       {/* Button */}
       <CustomButton
-        mainWidth="320px"
-        labelWidth="320px"
-        labelWidthHover="280px"
+        mainWidth={isMobile? "100%" : "320px"}
+        labelWidth={isMobile? "100%" : "320px"}
+        labelWidthHover={isMobile? "91%" : "280px"}
         labelBackground="rgba(19,45,71,0.0)"
         labelBackgroundHover="#132D47"
         labelTextColor="#132D47"

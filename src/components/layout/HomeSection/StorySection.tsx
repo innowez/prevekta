@@ -1,5 +1,6 @@
 "use client";
 import CustomButton from "@/components/ui/CustomButton";
+import useMediaQuery from "@/hooks/useMediaquery";
 import React from "react";
 // import HeroVideo from "@assets/videos/Herovideo.mp4";
 
@@ -10,6 +11,8 @@ interface StorySectionProps {
 }
 
 const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
+  const isMobile = useMediaQuery('(max-width: 525px)');
+
   return (
     <section
       className="relative px-6 h-[600px] w-full bg-cover bg-center"
@@ -45,11 +48,11 @@ const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
         </div>
 
         {/* Button */}
-        <div className="">
+        <div className=" w-full">
           <CustomButton
-            mainWidth="320px"
-            labelWidth="320px"
-            labelWidthHover="280px"
+            mainWidth={isMobile ? "100%" : "320px"}
+            labelWidth={isMobile ? "100%" : "320px"}
+            labelWidthHover={isMobile ? "91%" : "280px"}
             labelBackground="rgba(19,45,71,0.0)"
             labelBackgroundHover="#132D47"
             labelTextColor="#FFFF"
