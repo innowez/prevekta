@@ -7,6 +7,8 @@ import ArrowDown from "@/assets/icons/ArrowDown";
 import MenuIcon from "@/assets/icons/MenuIcon";
 import CloseIcon from "@/assets/icons/CloseIcon";
 import CustomButton from "@/components/ui/CustomButton";
+import { Button } from "../ui/Button";
+import CsButton from "../ui/CsButton";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -109,6 +111,8 @@ const Header: React.FC = () => {
               iconPosition="2px"
               iconPositionHover="px"
             />
+            {/* <Button showIcon>Robin</Button> */}
+            {/* <CsButton>Robin</CsButton> */}
             <div className="relative -ml-5">
               <CustomButton
                 mainWidth="120px"

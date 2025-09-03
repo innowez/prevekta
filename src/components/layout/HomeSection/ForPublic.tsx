@@ -3,8 +3,10 @@ import PublicVideoOne from "@assets/videos/PublicVideoOne.gif";
 import PublicVideoTwo from "@assets/videos/PublicVideoTwo.gif";
 import PublicVideoThree from "@assets/videos/PublicVideoThree.gif";
 import CustomButton from "@/components/ui/CustomButton";
+import useMediaQuery from "@/hooks/useMediaquery";
 
 const ForPublic: React.FC = () => {
+  const isMobile = useMediaQuery('(max-width: 720px)');
   return (
     <section className="py-12 md:py-20 px-4 relative">
       <div id="Public" className="absolute -top-14"></div>
@@ -56,9 +58,9 @@ const ForPublic: React.FC = () => {
         {/* Button */}
         <div className="flex justify-center">
           <CustomButton
-            mainWidth="210px"
-            labelWidth="210px"
-            labelWidthHover="180px"
+            mainWidth={isMobile ? "175px" : "210px"}
+            labelWidth={isMobile ? "135px" : "210px"}
+            labelWidthHover={isMobile ? "139px" : "180px"}
             labelBackground="rgba(19,45,71,0.0)"
             labelBackgroundHover="#132D47"
             labelTextColor="#132D47"

@@ -68,9 +68,9 @@ const ForProducts = () => {
         {/* Button */}
         <div className="w-full md:w-auto">
           <CustomButton
-            mainWidth={isMobile ? "280px" : "290px"}
-            labelWidth={isMobile? "250px" : "290px"}
-            labelWidthHover="240px"
+            mainWidth={isMobile ? "250px" : "290px"}
+            labelWidth={isMobile? "200px" : "290px"}
+            labelWidthHover={isMobile? "210px" : "240px"}
             labelBackground="rgba(19,45,71,0.0)"
             labelBackgroundHover="#132D47"
             labelTextColor="#132D47"

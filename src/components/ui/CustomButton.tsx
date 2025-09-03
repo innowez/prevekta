@@ -55,7 +55,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       onClick={onClick}
     >
       <div
-        className="px-3 absolute h-12 md:h-[57.5px] whitespace-nowrap flex items-center rounded-full text-base md:text-[18px] leading-[23px] uppercase font-[Duplet] transition-all duration-300 ease-in-out"
+        className="px-3 absolute h-12 md:h-[57.5px] whitespace-nowrap flex items-center rounded-full text-base text-center md:text-[18px] leading-[23px] uppercase font-[Duplet] transition-all duration-300 ease-in-out"
         style={{
           width: isHovered ? labelWidthHover : labelWidth,
           backgroundColor: isHovered ? labelBackgroundHover : labelBackground,

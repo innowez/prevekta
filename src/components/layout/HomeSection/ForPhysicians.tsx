@@ -1,59 +1,62 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
-import PhysiciansImage from '@assets/images/vsvsv.png'
-import PhysiciansImageMobile from '@assets/images/physicianImgMobile.png'
-import Grop from '@assets/images/Group.png'
-import Grow from '@assets/images/Grow.png'
-import Brand from '@assets/images/Brand.png'
-import Focus from '@assets/images/Focus.png'
-import CustomButton from '@/components/ui/CustomButton';
+import React from "react";
+import Image from "next/image";
+import PhysiciansImage from "@assets/images/vsvsv.png";
+import PhysiciansImageMobile from "@assets/images/physicianImgMobile.png";
+import Grop from "@assets/images/Group.png";
+import Grow from "@assets/images/Grow.png";
+import Brand from "@assets/images/Brand.png";
+import Focus from "@assets/images/Focus.png";
+import CustomButton from "@/components/ui/CustomButton";
 import { useRouter } from "next/navigation";
 
 const ForPhysicians = () => {
-   const router = useRouter();
+  const router = useRouter();
   return (
     <div className="flex flex-col items-start px-4 py-20 mx-auto max-w-[1360px] gap-[40px] relative">
-      <div id='Physician' className="absolute -top-4 md:-top-12"></div>
+      <div id="Physician" className="absolute -top-4 md:-top-12"></div>
       {/* Header Section */}
       <div className="flex flex-row justify-between items-center w-full gap-4">
         <h2 className="text-2xl sm:text-5xl lg:text-[60px] md:leading-[72px] font-atyp font-bold text-[#132D47]">
           FOR PHYSICIANS
         </h2>
 
-        <button className='md:hidden flex items-center justify-center rounded-full bg-[#81DE76] w-12 h-12'>
-            <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="16"
-    fill="none"
-    viewBox="0 0 24 16"
-  >
-    <path
-      fill="#132D47"
-      d="M23.065 7.497 17.064.745c-.314-.319-.77-.316-1.061-.052a.78.78 0 0 0-.053 1.06l4.888 5.498H1.498a.75.75 0 1 0 0 1.5h19.34l-4.888 5.497c-.264.292-.23.788.053 1.06.294.285.797.24 1.06-.052l6.002-6.751c.265-.37.233-.685 0-1.008"
-    ></path>
-  </svg>
+        <button
+          className="md:hidden flex items-center justify-center rounded-full bg-[#81DE76] w-12 h-12 cursor-pointer"
+          onClick={() => router.replace("/physician")}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="16"
+            fill="none"
+            viewBox="0 0 24 16"
+          >
+            <path
+              fill="#132D47"
+              d="M23.065 7.497 17.064.745c-.314-.319-.77-.316-1.061-.052a.78.78 0 0 0-.053 1.06l4.888 5.498H1.498a.75.75 0 1 0 0 1.5h19.34l-4.888 5.497c-.264.292-.23.788.053 1.06.294.285.797.24 1.06-.052l6.002-6.751c.265-.37.233-.685 0-1.008"
+            ></path>
+          </svg>
         </button>
         {/* Button */}
-       <div className='absolute right-16 hidden md:block'>
-        <CustomButton
-        mainWidth="270px"
-        labelWidth="270px"
-        labelWidthHover="220px"
-        labelBackground="#81DE76"
-        labelBackgroundHover="#81DE76"
-        labelTextColor="#132D47"
-        labelTextColorHover="#132D47"
-        arrowFill="#132D47"
-        arrowFillHover="#132D47"
-        labelText="Hold Hands with us"
-        labelBorderColor="#81DE76"
-        iconPosition="0px"
-        iconPositionHover="px"
-        onClick={() => router.replace('/physician')}
-      />
-       </div>
+        <div className="absolute right-16 hidden md:block">
+          <CustomButton
+            mainWidth="270px"
+            labelWidth="270px"
+            labelWidthHover="220px"
+            labelBackground="#81DE76"
+            labelBackgroundHover="#81DE76"
+            labelTextColor="#132D47"
+            labelTextColorHover="#132D47"
+            arrowFill="#132D47"
+            arrowFillHover="#132D47"
+            labelText="Hold Hands with us"
+            labelBorderColor="#81DE76"
+            iconPosition="0px"
+            iconPositionHover="px"
+            onClick={() => router.replace("/physician")}
+          />
+        </div>
         {/* <button className="relative w-[269px] h-[56px] bg-[#81DE76] border border-[#81DE76] rounded-full hover:bg-[#6bcb60] transition-colors duration-300">
           <span className="absolute left-6 top-1/2 transform -translate-y-1/2 text-[18px] leading-[23px] font-duplet font-normal uppercase text-[#132D47]">
             Hold Hands with us
@@ -76,26 +79,32 @@ const ForPhysicians = () => {
             alt="Physicians"
             className="w-full h-full object-cover"
           /> */}
-          <Image 
-             src={PhysiciansImage.src}
+          <Image
+            src={PhysiciansImage.src}
             alt="Physicians"
             className="w-full h-full object-cover hidden md:block"
             fill
             // height={459}
             // width={361}
           />
-          <Image 
-          src={PhysiciansImageMobile.src}
-          alt='ph'
-          className='w-full h-full object-cover block md:hidden '
-          // fill
-          height={459}
+          <Image
+            src={PhysiciansImageMobile.src}
+            alt="ph"
+            className="w-full h-full object-cover block md:hidden "
+            // fill
+            height={459}
             width={361}
           />
           {/* Overlay Text Box */}
           <div className="absolute left-1/2 -translate-x-1/2 md:-translate-x-0 min-w-[335px] md:left-6 bottom-2 md:bottom-6 md:w-[505px] p-4 mb:p-8 bg-[rgba(129,222,118,0.7)] rounded-[32px] ">
             <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-light text-justify text-white">
-              At Prevekta, you focus on treating patients we take care of the rest. From branding and patient flow to mentorship and growth, we support you at every step. Work with experienced Vaidyas, learn, collaborate, and grow your knowledge. Already running your own clinic? Strengthen it with our tools advanced technology, access to quality products, better patient management, and co-branding to help you stand out.
+              At Prevekta, you focus on treating patients we take care of the
+              rest. From branding and patient flow to mentorship and growth, we
+              support you at every step. Work with experienced Vaidyas, learn,
+              collaborate, and grow your knowledge. Already running your own
+              clinic? Strengthen it with our tools advanced technology, access
+              to quality products, better patient management, and co-branding to
+              help you stand out.
             </p>
           </div>
         </div>
