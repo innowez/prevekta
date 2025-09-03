@@ -54,7 +54,7 @@ const Header: React.FC = () => {
 
         {/* Navigation Bar */}
         <nav className="flex flex-1 justify-center items-center mx-4 md:text-base xl:text-lg">
-          <div className="flex whitespace-nowrap justify-center gap-4 xl:gap-6">
+          <div className="flex whitespace-nowrap justify-center gap-2 xl:gap-5">
             <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors">
               <span className="font-[Duplet] text-bodyRegular text-primary-dark">
                 Services
