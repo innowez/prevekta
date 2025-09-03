@@ -6,8 +6,10 @@ import AyurvedaDoctor from "@assets/images/AyurvedaDoctor.png";
 import LogoDriverDesignOne from "@assets/images/LogoDriverDesignOne.png";
 import LogoDriverDesignTwo from "@assets/images/LogoDriverDesignTwo.png";
 import CustomButton from "@/components/ui/CustomButton";
+import useMediaQuery from "@/hooks/useMediaquery";
 
 const AyurvedaSection = () => {
+  const isMobile = useMediaQuery('(max-width: 720px)');
   return (
     <div className="w-full mx-auto px-4  my-8 lg:my-16">
       {/* Main Grid Layout */}
@@ -46,11 +48,11 @@ const AyurvedaSection = () => {
                   Ayurvedic knowledge Prevekta is your trusted destination.
                 </p>
 
-                <div>
+                <div className="pb-4 lg:pb-0">
                   <CustomButton
-                    mainWidth="210px"
-                    labelWidth="200px"
-                    labelWidthHover="180px"
+                    mainWidth={isMobile? "172px" : "190px"}
+                    labelWidth={isMobile? "172px" : "190px"}
+                    labelWidthHover={isMobile? "137px" : "155px"}
                     labelBackground="rgba(19,45,71,0.0)"
                     labelBackgroundHover="#132D47"
                     labelTextColor="#132D47"
