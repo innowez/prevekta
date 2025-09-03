@@ -43,6 +43,8 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   useEffect(() => {
     if (isMobile) {
       setIsHovered(true);
+    } else {
+      setIsHovered(false);
     }
   }, [isMobile]);
 

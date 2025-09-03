@@ -37,7 +37,7 @@ const ForPublic: React.FC = () => {
           </div>
 
           {/* Video 2 - Taller on desktop */}
-          <div className="w-[297px] md:w-[437px] h-[413px] md:h-[607px]">
+          <div className="w-[297px] md:w-[437px] h-[413px] sm:h-[607px] md:h-[607px]">
             <img
               src={PublicVideoTwo.src}
               alt="Public 2"

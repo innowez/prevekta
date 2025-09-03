@@ -48,7 +48,7 @@ const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
         </div>
 
         {/* Button */}
-        <div className=" w-full">
+        <div className=" w-full sm:w-auto">
           <CustomButton
             mainWidth={isMobile ? "100%" : "320px"}
             labelWidth={isMobile ? "100%" : "320px"}
