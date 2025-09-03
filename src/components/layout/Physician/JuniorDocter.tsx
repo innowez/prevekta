@@ -185,8 +185,8 @@ function JuniorDocter() {
 
         <div>
           <p className="text-2xl lg:text-[40px] leading-7 text-primary text-center lg:text-left font-semibold font-Atyp mb-6">
-           <span className="hidden md:block">What you gain as a junior physician in prevekta</span>
-           <span className="block md:hidden">What You Gain with Prevekta</span>
+           <span className="block md:hidden">What you gain as a junior physician in prevekta</span>
+           <span className="hidden md:block">What You Gain with Prevekta</span>
           </p>
 
           <div className="w-[300px] mx-auto mb-6 md:hidden">
