@@ -1,18 +1,31 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import React from "react";
 import Human from "@assets/images/Human.png";
+import PvP from "@assets/images/prevVsPain.png";
+import LogoLeft from "@assets/images/pvprightlogo.png";
+import LogoRight from "@assets/images/pvpleftlogo.png";
 import CustomButton from "@/components/ui/CustomButton";
 
 function PrevektavsPain() {
   return (
-    <div className="px-4 mt-12 lg:mt-32">
-      <h1 className="text-primary text-[28px] lg:text-6xl leading-8 text-center ">
+    <div className="mt-12 lg:mt-32 ">
+      <h1 className="text-primary text-[28px] lg:text-6xl leading-8 text-center mb-6 lg:mb-12 ">
         Prevekta vs Pain
       </h1>
+      <div className="px-4 min-h-[590px] lg:min-h-[654px] relative">
+        <Image
+          src={LogoRight}
+          height={454}
+          className=" absolute right-0 -top-1 lg:-top-56 h-[282px] lg:h-[454px] object-contain object-right "
+        />
+        <Image
+          src={LogoLeft}
+          height={354}
+          className=" absolute bottom-0 left-0 h-[282px] lg:h-[354px] object-contain object-left"
+        />
 
-      <div className="min-h-[650px] lg:min-h-[654px] relative">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-20 w-20"
           style={{
@@ -21,10 +34,14 @@ function PrevektavsPain() {
           }}
         ></div>
         <Image
+          src={PvP}
+          className="h-full w-full object-center object-cover hidden lg:block"
+        />
+        <Image
           src={Human}
           width={171.93321228027344}
           height={407}
-          className="absolute top-2.5 left-1/2 -translate-x-1/2 "
+          className="absolute lg:hidden top-0 left-1/2 -translate-x-1/2 "
         />
         <div
           className=" border border-[#132D471A] rounded-[20px] backdrop-blur-[1px] p-4 lg:h-fit lg:max-w-[389px] absolute bottom-16 lg:top-1/2 lg:-translate-y-1/2 lg:left-28 "
