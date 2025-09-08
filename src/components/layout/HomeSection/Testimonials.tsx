@@ -185,7 +185,7 @@ const testimonials = [
   };
 
   return (
-    <section className="py-5 md:py-20 bg-white overflow-hidden">
+    <section className="py-5 md:py-20 overflow-hidden">
       <h2 className="text-2xl md:text-[40px] md:leading-[48px] font-bold text-left md:text-center text-[#132D47] font-Atyp mb-12 ml-2.5 md:ml-0">
         Real Stories Real Healing
       </h2>

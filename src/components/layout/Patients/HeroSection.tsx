@@ -76,7 +76,7 @@ function HeroSection() {
             <>Personalized Ayurvedic Wellness Plans</>,
             <>Online and Offline <br className="hidden lg:block"/>support till you heal</>,
           ].map((e, i) => (
-            <div key={i+1} className={`w-full aspect-square rounded-full p-1 flex items-center justify-center ${isMobile ? i === 0 || i === 3 ? "bg-primary text-white" : "bg-[#CEDDD6] text-primary" : i%2 === 0 ? "bg-primary text-white" : "bg-[#CEDDD6] text-primary"}  `}>
+            <div key={i+1} className={`w-full aspect-square rounded-full p-1 flex items-center justify-center ${isMobile ? i === 0 || i === 3 ? "bg-primary text-white" : "bg-[#CEDDD6] text-primary" : i%2 !== 0 ? "bg-primary text-white" : "bg-[#CEDDD6] text-primary"}  `}>
               <p className="font-[Duplet] font-semibold text-center text-base lg:text-2xl lg:leading-[29px]">{e}</p>
             </div>
           ))}

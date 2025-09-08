@@ -25,7 +25,20 @@ function PrevektaFor() {
         </p>
       </div>
 
-      <div className="rounded-2xl lg:rounded-[28px] bg-primary mb-2 lg:mb-6">
+      <div className="rounded-2xl lg:rounded-[28px] bg-primary mb-2 lg:mb-6 relative">
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "164px",
+            left: "calc(50% - 1427px/2 + 0.5px)",
+            top: "48px",
+
+            /* Primary 2 */
+            background: "#81DE76",
+            filter: "blur(300px)",
+          }}
+        ></div>
         <div className="h-[256px] lg:h-[437px] rounded-2xl lg:rounded-[28px] ">
           <Image
             src={MassageGirl}
@@ -91,7 +104,7 @@ function PrevektaFor() {
           }}
         ></div>
 
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-4 lg:mb-12">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-4 lg:mb-12">
           <h1 className="text-2xl lg:text-[40px] text-primary font-Atyp ">
             Why choosing Prevekta <br className="lg:hidden" />
             is good
