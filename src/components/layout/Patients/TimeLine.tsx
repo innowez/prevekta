@@ -1,6 +1,5 @@
-import Image from "next/image";
+"use clients"
 import "./timeline.css";
-import Logo from "@assets/images/preblurLogo.png";
 
 const LGTVIcon = () => (
   <svg
@@ -36,7 +35,7 @@ const LegIcon = () => (
   </svg>
 );
 
-const HartIcon = (props) => (
+const HartIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="18"
@@ -53,32 +52,10 @@ const HartIcon = (props) => (
     ></path>
   </svg>
 );
-
-function HealingPrograms() {
+function TimeLine() {
   return (
-    <div className="mt-12 lg:mt-12 px-4 lg:px-20">
-      <div className="mb-10 lg:mb-12">
-        <h1 className="text-center text-2xl lg:text-6xl text-primary font-Atyp leading-7 lg:leading-[72px] mb-4 lg:mb-12">
-          Healing Programs <br />
-          Customized by Doctors
-        </h1>
-        <p className="text-base text-primary font-[Duplet] leading-5 ">
-          Each healing program is designed and led by senior Ayurvedic experts.
-          Each <br className="hidden lg:block" />
-          treatment menu is personalized to align with your unique body
-          constitution.
-        </p>
-      </div>
-
-      <div className="relative">
-        <Image
-          alt="ioejr"
-          src={Logo}
-          className=" absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2"
-          width={270.0184021858}
-          height={266.2796631709347}
-        />
-        <div className="timeline">
+    <div className="mt-12 lg:mt-12 px-4 lg:px-20 relative">
+    <div className="timeline">
           <div className="boxes right mb-12">
             <div className="content mb-6 ">
               <div className="flex gap-3 mb-2 lg:mb-5">
@@ -174,9 +151,8 @@ function HealingPrograms() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
+        </div>
+  )
 }
 
-export default HealingPrograms;
+export default TimeLine

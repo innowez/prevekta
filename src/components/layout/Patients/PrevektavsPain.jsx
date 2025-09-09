@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import React from "react";
-import Human from "@assets/images/Human.png";
-import PvP from "@assets/images/prevVsPain.png";
+// import Human from "@assets/images/Human.png";
+// import PvP from "@assets/images/prevVsPain.png";
 import LogoLeft from "@assets/images/pvprightlogo.png";
 import LogoRight from "@assets/images/pvpleftlogo.png";
 import CustomButton from "@/components/ui/CustomButton";
+import MapVisualization from "@/components/ui/BodyVisualization";
 
 function PrevektavsPain() {
   return (
@@ -16,11 +17,13 @@ function PrevektavsPain() {
       </h1>
       <div className="px-4 min-h-[590px] lg:min-h-[654px] relative">
         <Image
+          alt="uyu"
           src={LogoRight}
           height={454}
           className=" absolute right-0 -top-1 lg:-top-56 h-[282px] lg:h-[454px] object-contain object-right "
         />
         <Image
+          alt="ttgv"
           src={LogoLeft}
           height={354}
           className=" absolute bottom-0 left-0 h-[282px] lg:h-[354px] object-contain object-left"
@@ -33,16 +36,20 @@ function PrevektavsPain() {
             filter: "blur(200px)",
           }}
         ></div>
-        <Image
+        {/* <Image
+          alt="yuyu"
           src={PvP}
           className="h-full w-full object-center object-cover hidden lg:block"
-        />
-        <Image
+        /> */}
+        <MapVisualization />
+
+        {/* <Image
+          alt="kklk"
           src={Human}
           width={171.93321228027344}
           height={407}
           className="absolute lg:hidden top-0 left-1/2 -translate-x-1/2 "
-        />
+        /> */}
         <div
           className=" border border-[#132D471A] rounded-[20px] backdrop-blur-[1px] p-4 lg:h-fit lg:max-w-[389px] absolute bottom-16 lg:top-1/2 lg:-translate-y-1/2 lg:left-28 "
           // style={{

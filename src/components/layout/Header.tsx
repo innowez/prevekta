@@ -1,8 +1,8 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import logo from "@assets/images/Logo GP.png";
+import Whitelogo from "@assets/images/FooterLogo.png";
 import ArrowDown from "@/assets/icons/ArrowDown";
 import MenuIcon from "@/assets/icons/MenuIcon";
 import CloseIcon from "@/assets/icons/CloseIcon";
@@ -13,6 +13,7 @@ import CustomButton from "@/components/ui/CustomButton";
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHome, setIsHome] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -21,6 +22,14 @@ const Header: React.FC = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      setIsHome(true);
+    } else {
+      setIsHome(false);
+    }
   }, []);
 
   const handleFranchiseClick = () => {
@@ -39,55 +48,61 @@ const Header: React.FC = () => {
     <>
       {/* Desktop Header */}
       <header
-        className={`hidden xl:flex w-full justify-between items-center py-4 px-4 xl:px-4 bg-white z-50 sticky top-0 transition-all duration-300 ${
+        className={`hidden xl:flex w-full justify-between items-center py-4 px-4 xl:px-4 ${isHome ? "bg-white" : "bg-primary"} z-50 sticky top-0 transition-all duration-300 ${
           isScrolled ? "shadow-md" : ""
         }`}
       >
         {/* Logo */}
-        <div className="min-w-[180px] xl:min-w-[200px] cursor-pointer" 
-        onClick={() => router.push('/')}
+        <div
+          className="min-w-[180px] xl:min-w-[200px] cursor-pointer"
+          onClick={() => router.push("/")}
         >
-          <img
+          {isHome ? <img
             src={logo.src}
             alt="Company Logo"
             className="w-full h-auto max-h-[32px] object-contain"
-          />
+          /> :
+          <img
+            src={Whitelogo.src}
+            alt="Company Logo"
+            className="w-full h-auto max-h-[32px] object-contain"
+          />}
         </div>
 
         {/* Navigation Bar */}
         <nav className="flex flex-1 justify-center items-center mx-4 md:text-base xl:text-lg">
-          <div className="flex whitespace-nowrap justify-center gap-2 xl:gap-5">
-            <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors">
-              <span className="font-[Duplet] text-bodyRegular text-primary-dark">
+          <div className={`flex whitespace-nowrap justify-center gap-2 xl:gap-5 ${isHome ? "text-primary" : "text-white"} `}>
+            <div className="flex items-center gap-1 cursor-pointer transition-colors">
+              <span className="font-[Duplet] text-bodyRegular ">
                 Services
               </span>
-              <ArrowDown />
+              <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
             <div
-              className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors"
-              onClick={() => router.push('/products')}
+              className="flex items-center gap-1 cursor-pointer transition-colors"
+              onClick={() => router.push("/products")}
             >
-              <span className="font-[Duplet] text-bodyRegular text-primary-dark">
+              <span className="font-[Duplet] text-bodyRegular ">
                 Products
               </span>
-              <ArrowDown />
+              <ArrowDown fill={isHome ? "#132D47" : "#ffff"}/>
             </div>
-            <span className="font-[Duplet] text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
+            <span className="font-[Duplet] text-bodyRegular cursor-pointer  transition-colors">
               Clinics
             </span>
-            <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors">
-              <span className="font-[Duplet] text-bodyRegular text-primary-dark">
+            <div className="flex items-center gap-1 cursor-pointer transition-colors">
+              <span className="font-[Duplet] text-bodyRegular">
                 Knowledge Hub
               </span>
-              <ArrowDown />
+              <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
-            <span className="font-[Duplet] text-bodyRegular text-primary-dark cursor-pointer bg-[#ffffff00] hover:text-primary transition-colors">
+            <span className="font-[Duplet] text-bodyRegular cursor-pointer bg-[#ffffff00] hover:text-primary transition-colors">
               Careers
             </span>
-            <span className="font-[Duplet] text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
+            <span className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
               About Us
             </span>
-            <span className="font-[Duplet] text-bodyRegular text-primary-dark cursor-pointer hover:text-primary transition-colors">
+            <span className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
               Contact us
             </span>
           </div>
@@ -100,14 +115,14 @@ const Header: React.FC = () => {
               mainWidth="170px"
               labelWidth="170px"
               labelWidthHover="140px"
-              labelBackground="#ffff"
-              labelBackgroundHover="#132D47"
-              labelTextColor="#132D47"
-              labelTextColorHover="#FFFF"
-              arrowFill="#132D47"
-              arrowFillHover="#FFFF"
+              labelBackground={isHome ? "#ffff" : "#132D47"}
+              labelBackgroundHover={isHome ? "#132D47" : "#ffff" }
+              labelTextColor={isHome ? "#132D47" : "#ffff"}
+              labelTextColorHover={isHome ? "#FFFF" : "#132D47"}
+              arrowFill={isHome ? "#132D47" : "#ffff"}
+              arrowFillHover={isHome ? "#FFFF" : "#132D47"}
               labelText="Franchise"
-              labelBorderColor="#132D47"
+              labelBorderColor={isHome ? "#132D47" : "#ffff"}
               iconPosition="2px"
               iconPositionHover="px"
             />
@@ -136,17 +151,22 @@ const Header: React.FC = () => {
 
       {/* Mobile Header */}
       <header
-        className={`xl:hidden flex w-full justify-between items-center py-4 px-4 bg-white z-50 sticky top-0 transition-all duration-300 ${
+        className={`xl:hidden flex w-full justify-between items-center py-4 px-4 ${isHome ? "bg-white" : "bg-primary"} z-50 sticky top-0 transition-all duration-300 ${
           isScrolled ? "shadow-md" : ""
         }`}
       >
         {/* Logo */}
         <div className="w-[160px]">
-          <img
+          {isHome ? <img
             src={logo.src}
             alt="Company Logo"
             className="w-full h-auto max-h-[25px] object-contain"
-          />
+          /> :
+          <img
+            src={Whitelogo.src}
+            alt="Company Logo"
+            className="w-full h-auto max-h-[25px] object-contain"
+          />}
         </div>
 
         {/* Mobile Menu Button */}
@@ -155,7 +175,7 @@ const Header: React.FC = () => {
           className="w-10 h-10 flex items-center justify-center focus:outline-none"
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon fill={!isHome ? "#ffff" :"#132D47"} />}
         </button>
       </header>
 
@@ -199,7 +219,7 @@ const Header: React.FC = () => {
                 <div className="border-b pb-4">
                   <div
                     className="flex justify-between items-center cursor-pointer"
-                    onClick={() => router.push('/products')}
+                    onClick={() => router.push("/products")}
                   >
                     <span className="font-bold text-primary-dark text-base">
                       Products
