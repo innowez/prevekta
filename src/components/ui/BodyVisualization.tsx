@@ -14,6 +14,8 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
   imageUrl = '/humanbody.png',
   height = 550
 }) => {
+  // Use smaller height on mobile devices
+  const [responsiveHeight, setResponsiveHeight] = useState(height);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
@@ -26,6 +28,19 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
     ww?: number;
     wh?: number;
   }>({});
+
+  // Responsive height effect
+  useEffect(() => {
+    const updateHeight = () => {
+      const isMobile = window.innerWidth < 768; // Tailwind md breakpoint
+      setResponsiveHeight(isMobile ? Math.min(height * 0.75, 420) : height);
+    };
+
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+
+    return () => window.removeEventListener('resize', updateHeight);
+  }, [height]);
 
   // Intersection Observer effect
   useEffect(() => {
@@ -61,7 +76,7 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
     let imagedata: ImageData;
     let animationId: number;
     let ww = window.innerWidth;
-    let wh = height;
+    let wh = responsiveHeight;
 
     const centerVector = new THREE.Vector3(0, 0, 0);
 
@@ -91,9 +106,9 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
       const targetHeight = targetWidth / aspectRatio;
       const scaleFactor = Math.min(targetWidth / imagedata.width, targetHeight / imagedata.height);
 
-      // Create particles with larger spacing
-      for (let y = 0; y < imagedata.height; y += 12) {
-        for (let x = 0; x < imagedata.width; x += 12) {
+      // Create particles with smaller spacing for better object definition
+      for (let y = 0; y < imagedata.height; y += 8) {
+        for (let x = 0; x < imagedata.width; x += 8) {
           if (imagedata.data[(x * 4 + y * 4 * imagedata.width) + 3] > 128) {
             const vertex = {
               x: Math.random() * 1000 - 500,
@@ -149,7 +164,7 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
 
     const onResize = () => {
       ww = window.innerWidth;
-      wh = height;
+      wh = responsiveHeight;
       renderer.setSize(ww, wh);
       camera.aspect = ww / wh;
       camera.updateProjectionMatrix();
@@ -229,10 +244,10 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
         scene.clear();
       }
     };
-  }, [imageUrl, height, isInView]);
+  }, [imageUrl, responsiveHeight, isInView]);
 
   return (
-    <div ref={containerRef} className={`w-full ${className}`} style={{ height: `${height}px`, overflow: 'hidden' }}>
+    <div ref={containerRef} className={`w-full ${className}`} style={{ height: `${responsiveHeight}px`, overflow: 'hidden' }}>
       <canvas
         ref={canvasRef}
         className="w-full"
@@ -240,7 +255,7 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
           display: 'block',
           padding: 0,
           margin: 0,
-          height: `${height}px`
+          height: `${responsiveHeight}px`
         }}
       />
     </div>
