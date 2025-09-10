@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 interface BodyVisualizationProps {
@@ -15,6 +15,8 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
   height = 550
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
   const sceneRef = useRef<{
     renderer?: THREE.WebGLRenderer;
     scene?: THREE.Scene;
@@ -25,8 +27,31 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
     wh?: number;
   }>({});
 
+  // Intersection Observer effect
   useEffect(() => {
-    if (!canvasRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the component is visible
+        rootMargin: '50px' // Start animation 50px before the component comes into view
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!canvasRef.current || !isInView) return;
 
     const canvas = canvasRef.current;
     let renderer: THREE.WebGLRenderer;
@@ -204,10 +229,10 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
         scene.clear();
       }
     };
-  }, [imageUrl, height]);
+  }, [imageUrl, height, isInView]);
 
   return (
-    <div className={`w-full ${className}`} style={{ height: `${height}px`, overflow: 'hidden' }}>
+    <div ref={containerRef} className={`w-full ${className}`} style={{ height: `${height}px`, overflow: 'hidden' }}>
       <canvas
         ref={canvasRef}
         className="w-full"
