@@ -10,7 +10,7 @@ function HeroSection() {
           src={HeroBg}
           alt="This is hero"
           height={674}
-          className="h-full w-full object-fill absolute lg:rounded-b-[40px] -z-10"
+          className="h-full w-full object-cover absolute lg:rounded-b-[40px] -z-10"
         />
         <div className="p-4 lg:p-10 lg:pb-16 max-w-[563px] ">
           <h1 className="text-white text-[28px] lg:text-6xl leading-[34px] lg:leading-16 mb-4">

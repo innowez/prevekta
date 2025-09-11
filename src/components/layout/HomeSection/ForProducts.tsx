@@ -8,6 +8,7 @@ import Juvinam from "@assets/images/Juvinam.jpg";
 import Treenya from "@assets/images/Treenya.png";
 import CustomButton from "@/components/ui/CustomButton";
 import useMediaQuery from "@/hooks/useMediaquery";
+import Link from "next/link";
 
 const ForProducts = () => {
   const [activeProduct, setActiveProduct] = useState<number>(0);
@@ -67,6 +68,7 @@ const ForProducts = () => {
 
         {/* Button */}
         <div className="w-full md:w-auto">
+          <Link href="/products">
           <CustomButton
             mainWidth={isMobile ? "250px" : "290px"}
             labelWidth={isMobile? "200px" : "290px"}
@@ -82,6 +84,7 @@ const ForProducts = () => {
             iconPosition="0px"
             iconPositionHover="px"
           />
+          </Link>
         </div>
         {/* <button className="relative w-[277px] h-[56px] border border-[#132D47] rounded-full hover:bg-[#132D47] hover:text-white transition-colors duration-300">
           <span className="absolute left-6 top-1/2 transform -translate-y-1/2 text-[18px] leading-[23px] font-duplet font-normal uppercase">

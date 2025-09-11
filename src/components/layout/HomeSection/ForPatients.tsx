@@ -6,10 +6,13 @@ import Board from "@assets/images/Board.png";
 import CustomButton from "@/components/ui/CustomButton";
 import Image from "next/image";
 import useMediaQuery from "@/hooks/useMediaquery";
+import { useRouter } from "next/navigation";
 
 const ForPatients = () => {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
   const isMobile = useMediaQuery('(max-width: 525px)');
+
+  const router = useRouter();
 
   return (
     <div className="flex flex-col items-center px-4 py-5 md:py-20 mx-auto max-w-[1360px] gap-4 mb:gap-[72px] relative">
@@ -143,6 +146,7 @@ const ForPatients = () => {
         labelBorderColor="#132D47"
         iconPosition="0px"
         iconPositionHover="px"
+        onClick={() => router.push("/patients")}
       />
     </div>
   );

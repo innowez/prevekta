@@ -4,6 +4,7 @@ import PublicVideoTwo from "@assets/videos/PublicVideoTwo.gif";
 import PublicVideoThree from "@assets/videos/PublicVideoThree.gif";
 import CustomButton from "@/components/ui/CustomButton";
 import useMediaQuery from "@/hooks/useMediaquery";
+import Link from "next/link";
 
 const ForPublic: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 720px)');
@@ -57,6 +58,7 @@ const ForPublic: React.FC = () => {
 
         {/* Button */}
         <div className="flex justify-center">
+          <Link href="/for-people">
           <CustomButton
             mainWidth={isMobile ? "175px" : "210px"}
             labelWidth={isMobile ? "135px" : "210px"}
@@ -72,6 +74,7 @@ const ForPublic: React.FC = () => {
             iconPosition="0px"
             iconPositionHover="px"
           />
+          </Link>
         </div>
       </div>
     </section>
