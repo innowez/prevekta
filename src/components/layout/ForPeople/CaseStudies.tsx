@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Case1 from "@/assets/images/case1.png";
 import Case2 from "@/assets/images/case2.png";
 import Image from "next/image";
@@ -21,92 +21,105 @@ const Arrow = () => (
   </svg>
 );
 
+const caseList = [
+  {
+    heading: "Child Immunity Boost in a Pollution-Prone City",
+    dis: "Growing up in polluted cities weakens immunity. Ayurveda offers simple remedies from herbs to diet, to keep children strong and resilient.",
+    img: Case1,
+  },
+  {
+    heading: "Healing Anxiety & Sleep Disorders Naturally",
+    dis: "Growing up in polluted cities weakens immunity. Ayurveda offers simple remedies from herbs to diet, to keep children strong and resilient.",
+    img: Case2,
+  },
+  {
+    heading: "Managing Arthritis Without Painkillers",
+    dis: "Growing up in polluted cities weakens immunity. Ayurveda offers simple remedies from herbs to diet, to keep children strong and resilient.",
+    img: Case1,
+  },
+  {
+    heading: "Reversing PCOS Through Lifestyle Correction",
+    dis: "Growing up in polluted cities weakens immunity. Ayurveda offers simple remedies from herbs to diet, to keep children strong and resilient.",
+    img: Case2,
+  },
+];
+
 function CaseStudies() {
-  const caseList = [
-    {
-      heading: "Child Immunity Boost in a Pollution-Prone City",
-      dis: "Growing up in polluted cities weakens immunity. Ayurveda offers simple remedies from herbs to diet, to keep children strong and resilient.",
-      img: Case1,
-    },
-    {
-      heading: "Healing Anxiety & Sleep Disorders Naturally",
-      dis: "Growing up in polluted cities weakens immunity. Ayurveda offers simple remedies from herbs to diet, to keep children strong and resilient.",
-      img: Case2,
-    },
-    {
-      heading: "Managing Arthritis Without Painkillers",
-      dis: "Growing up in polluted cities weakens immunity. Ayurveda offers simple remedies from herbs to diet, to keep children strong and resilient.",
-      img: Case1,
-    },
-    {
-      heading: "Reversing PCOS Through Lifestyle Correction",
-      dis: "Growing up in polluted cities weakens immunity. Ayurveda offers simple remedies from herbs to diet, to keep children strong and resilient.",
-      img: Case2,
-    },
-  ];
+  const [isSelected, setIsSelected] = useState(0);
+
   return (
     <div className="px-4 pt-12 lg:px-10 ">
       <div className="flex items-end justify-between gap-24">
         <div className="lg:w-1/2">
-          <p className="text-base lg:text-2xl text-primary font-semibold font-[Duplet] leading-5 lg:leading-[29px] mb-4 ">
-            Case Studies
-          </p>
-          <h1 className="text-2xl lg:text-[40px] text-primary lg:leading-12 mb-6 ">
-            Real stories, real <br />
-            healing
-          </h1>
+          <div className="lg:ml-10">
+            <p className="text-base lg:text-2xl text-primary font-semibold font-[Duplet] leading-5 lg:leading-[29px] mb-4 ">
+              Case Studies
+            </p>
+            <h1 className="text-2xl lg:text-[40px] text-primary lg:leading-12 mb-6 ">
+              Real stories, real <br />
+              healing
+            </h1>
+          </div>
 
           <div className="flex flex-col gap-2">
             {caseList.map((e, i) => (
               <div
                 key={i + 1}
-                className=" p-4 rounded-[20px]"
+                className=" p-4 rounded-[20px] cursor-pointer"
                 style={{
                   backgroundColor: `rgba(19, 45, 71, ${1 - i * 0.2})`,
                 }}
+                onMouseEnter={() => setIsSelected(i)}
+                onMouseLeave={() => setIsSelected(0)}
               >
                 <div className="flex justify-between items-center gap-2.5 mb-4 lg:mb-0">
                   <h1 className="text-white text-base font-[Duplet] leading-5 ">
                     {e.heading}
                   </h1>
-                  <span className={`${i !== 0 && "rotate-45"} `}>
+                  <span className={`${i !== isSelected && "rotate-45"} `}>
                     <Arrow />
                   </span>
                 </div>
 
-                <div className="min-h-[256px] rounded-2xl relative w-full lg:hidden">
-                  <Image
-                    src={e.img}
-                    alt={e.heading}
-                    fill={true}
-                    className="object-cover rounded-2xl absolute"
-                    style={{
-                      background:
-                        "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%)",
-                      backdropFilter: "blur(10px)",
-                    }}
-                  />
-                  <div className="p-4 relative z-10 min-h-[256px] h-full flex flex-col justify-end gap-4">
-                    <p className="text-white text-base font-[Duplet] ">
-                      {e.dis}
-                    </p>
-
-                    <CustomButton
-                      mainWidth="170px"
-                      labelWidth="170px"
-                      labelWidthHover="170px"
-                      labelBackground="#81DE76"
-                      labelBackgroundHover="#81DE76"
-                      labelTextColor="#132D47"
-                      labelTextColorHover="#132D47"
-                      arrowFill="#132D47"
-                      arrowFillHover="#132D47"
-                      labelText="Read More"
-                      labelBorderColor="#81DE76"
-                      iconPosition="0px"
-                      iconPositionHover="px"
-                      // isHoveredProp={true}
+                <div className="lg:hidden">
+                  <div
+                    className={`min-h-[256px] rounded-2xl relative w-full ${
+                      isSelected === i ? "block" : "hidden"
+                    } `}
+                  >
+                    <Image
+                      src={e.img}
+                      alt={e.heading}
+                      fill={true}
+                      className="object-cover rounded-2xl absolute"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%)",
+                        backdropFilter: "blur(10px)",
+                      }}
                     />
+                    <div className="p-4 relative z-10 min-h-[256px] h-full flex flex-col justify-end gap-4">
+                      <p className="text-white text-base font-[Duplet] ">
+                        {e.dis}
+                      </p>
+
+                      <CustomButton
+                        mainWidth="170px"
+                        labelWidth="170px"
+                        labelWidthHover="170px"
+                        labelBackground="#81DE76"
+                        labelBackgroundHover="#81DE76"
+                        labelTextColor="#132D47"
+                        labelTextColorHover="#132D47"
+                        arrowFill="#132D47"
+                        arrowFillHover="#132D47"
+                        labelText="Read More"
+                        labelBorderColor="#81DE76"
+                        iconPosition="0px"
+                        iconPositionHover="px"
+                        // isHoveredProp={true}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -116,8 +129,8 @@ function CaseStudies() {
 
         <div className="min-h-[528px] w-[683px] rounded-2xl relative hidden lg:block">
           <Image
-            src={caseList[0].img}
-            alt={caseList[0].heading}
+            src={caseList[isSelected].img}
+            alt={caseList[isSelected].heading}
             fill={true}
             className="object-cover rounded-2xl absolute"
             style={{
@@ -128,7 +141,7 @@ function CaseStudies() {
           />
           <div className="p-4 relative z-10 min-h-[528px] h-full flex flex-col justify-end gap-4">
             <p className="text-white text-lg font-[Duplet] ">
-              {caseList[0].dis}
+              {caseList[isSelected].dis}
             </p>
 
             <CustomButton
