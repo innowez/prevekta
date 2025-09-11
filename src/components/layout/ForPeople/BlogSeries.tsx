@@ -65,7 +65,7 @@ function BlogSeries() {
           <Image
             src={OldAunty}
             alt="old aunty"
-            className="h-full w-full object-cover rounded-3xl "
+            className="h-full w-full object-cover rounded-3xl scale-x-[-1]"
           />
         </div>
         <h1 className="block lg:hidden text-primary text-xl font-semibold ">

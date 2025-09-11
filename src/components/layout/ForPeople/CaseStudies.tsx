@@ -47,7 +47,7 @@ function CaseStudies() {
   return (
     <div className="px-4 pt-12 lg:px-10 ">
       <div className="flex items-end justify-between gap-24">
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <p className="text-base lg:text-2xl text-primary font-semibold font-[Duplet] leading-5 lg:leading-[29px] mb-4 ">
             Case Studies
           </p>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import RS1 from "@/assets/images/rs1.png";
 import RS2 from "@/assets/images/rs2.png";
 import RS3 from "@/assets/images/rs3.png";
@@ -54,7 +54,63 @@ function ResearchArticles() {
       des: "Clinical research highlights Ashwagandha’s role in reducing stress, improving sleep, and boosting strength naturally.",
       img: RS3,
     },
+    {
+      heading: "The Science of Turmeric",
+      des: "Modern studies confirm what Ayurveda knew turmeric’s curcumin fights inflammation, boosts immunity, and supports overall health.",
+      img: RS1,
+    },
+    {
+      heading: "Gut Health & Ayurveda",
+      des: "Research shows Ayurvedic herbs and diets naturally restore gut balance, improving digestion and overall well-being.",
+      img: RS2,
+    },
   ];
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  const slideLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -450,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const slideRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 450,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const checkScrollPosition = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } =
+        scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+      
+      // Calculate progress percentage
+      const maxScrollLeft = scrollWidth - clientWidth;
+      const progress = maxScrollLeft > 0 ? (scrollLeft / maxScrollLeft) * 100 : 0;
+      setScrollProgress(Math.min(100, Math.max(0, progress)));
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      checkScrollPosition();
+      container.addEventListener("scroll", checkScrollPosition);
+      return () => container.removeEventListener("scroll", checkScrollPosition);
+    }
+  }, []);
 
   return (
     <div
@@ -70,7 +126,8 @@ function ResearchArticles() {
           </h1>
           <h2 className="text-primary text-[28px] lg:text-[40px] leading-[34px] lg:leading-[48px] ">
             Science behind <br className="lg:hidden" />
-            Ayurvedic <br className="hidden lg:block"/>therapies
+            Ayurvedic <br className="hidden lg:block" />
+            therapies
           </h2>
         </div>
 
@@ -83,16 +140,22 @@ function ResearchArticles() {
       </div>
 
       <div className="w-full">
-        <div className="flex gap-4 overflow-scroll no-scrollbar w-full mb-6 px-4 lg:px-10">
+        <div
+          ref={scrollContainerRef}
+          className="flex gap-4 overflow-scroll no-scrollbar w-full mb-6 px-4 lg:px-10"
+        >
           {reserchList.map((e, i) => (
-            <div key={i + 1} className="min-w-[297px] h-[413px] lg:h-[565px] relative">
+            <div
+              key={i + 1}
+              className="min-w-[297px] lg:min-w-[467px] h-[413px] lg:h-[565px] relative"
+            >
               <Image
                 src={e.img}
                 alt="rr1"
                 width={297}
                 className=" min-w-[297px] w-full h-full overflow-hidden rounded-3xl object-cover absolute "
               />
-              <div className="flex flex-col justify-between items-center p-4 lg:p-12 h-full w-full relative z-10">
+              <div className="min-w-[297px] flex flex-col justify-between items-center p-4 lg:p-12 h-full w-full relative z-10">
                 <div className="w-full">
                   <h2 className="text-white text-xl leading-6 mb-4 ">
                     {e.heading}
@@ -124,18 +187,31 @@ function ResearchArticles() {
         </div>
 
         <div className="flex items-center gap-4 px-4 lg:px-10">
-          <div className="w-full">
-            <div className=" h-[1px] lg:h-1 bg-[#83959c] w-full rounded-full">
-              <div className=" h-[1px] lg:h-1 bg-[#132D47] w-2/6 rounded-full"></div>
+          <div className="w-full progress-bar-section">
+            <div className="progress-bar-container h-[1px] lg:h-1 bg-[#83959c] w-full rounded-full">
+              <div 
+                className="progress-bar h-[1px] lg:h-1 bg-[#132D47] rounded-full transition-all duration-300 ease-out"
+                style={{ width: `${scrollProgress}%` }}
+              ></div>
             </div>
           </div>
 
           <div className="flex gap-4">
-            <button className="h-12 w-12 rounded-full flex justify-center items-center bg-[#132D47] opacity-50">
+            <button
+              onClick={slideLeft}
+              className={`h-12 w-12 rounded-full flex justify-center items-center bg-[#132D47] cursor-pointer transition-opacity ${
+                canScrollLeft ? "opacity-100" : "opacity-50"
+              }`}
+            >
               <ArrowLeft />
             </button>
 
-            <button className="h-12 w-12 rounded-full flex justify-center items-center bg-[#132D47] ">
+            <button
+              onClick={slideRight}
+              className={`h-12 w-12 rounded-full flex justify-center items-center bg-[#132D47] cursor-pointer transition-opacity ${
+                canScrollRight ? "opacity-100" : "opacity-50"
+              }`}
+            >
               <ArrowRight />
             </button>
           </div>

@@ -9,6 +9,8 @@ import Brand from "@assets/images/Brand.png";
 import Focus from "@assets/images/Focus.png";
 import CustomButton from "@/components/ui/CustomButton";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+// import { Link } from "t";
 
 const ForPhysicians = () => {
   const router = useRouter();
@@ -40,6 +42,7 @@ const ForPhysicians = () => {
         </button>
         {/* Button */}
         <div className="absolute right-16 hidden md:block">
+          <Link href="/physician">
           <CustomButton
             mainWidth="270px"
             labelWidth="270px"
@@ -54,8 +57,9 @@ const ForPhysicians = () => {
             labelBorderColor="#81DE76"
             iconPosition="0px"
             iconPositionHover="px"
-            onClick={() => router.replace("/physician")}
+            // onClick={() => router.push("/physician")}
           />
+          </Link>
         </div>
         {/* <button className="relative w-[269px] h-[56px] bg-[#81DE76] border border-[#81DE76] rounded-full hover:bg-[#6bcb60] transition-colors duration-300">
           <span className="absolute left-6 top-1/2 transform -translate-y-1/2 text-[18px] leading-[23px] font-duplet font-normal uppercase text-[#132D47]">

@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
 import NormalButton from "@/components/ui/NormalButton";
 import Image from "next/image";
-import React, { useState } from "react";
-import VideoTip1 from "@/assets/images/videotip1.gif"
-import VideoTip2 from "@/assets/images/videotip2.gif"
-import VideoTip3 from "@/assets/images/videotip3.gif"
-import VideoTip4 from "@/assets/images/videotip4.gif"
+import React, { useState, useRef, useEffect } from "react";
+import VideoTip1 from "@/assets/images/videotip1.gif";
+import VideoTip2 from "@/assets/images/videotip2.gif";
+import VideoTip3 from "@/assets/images/videotip3.gif";
+import VideoTip4 from "@/assets/images/videotip4.gif";
 
 const ArrowLeft = () => (
   <svg
@@ -38,9 +38,47 @@ const ArrowRight = () => (
   </svg>
 );
 
-
 function VideoSection() {
   const [isSelect, setIsSelect] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const slideLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -300,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const slideRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const checkScrollPosition = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      checkScrollPosition();
+      container.addEventListener('scroll', checkScrollPosition);
+      return () => container.removeEventListener('scroll', checkScrollPosition);
+    }
+  }, []);
+
   return (
     <div className=" mb-12">
       <div className="flex flex-col lg:flex-row lg:justify-between gap-6 mb-6 px-0 lg:px-10">
@@ -52,7 +90,7 @@ function VideoSection() {
         <div className="flex gap-2 overflow-x-scroll no-scrollbar px-4 lg:px-0">
           {["Routines", "Prevent pain", "Self-care", "Sleep Rituals"].map(
             (e, i) => (
-              // <button  >{e}</button>
+              // <button>{e}</button>
               <NormalButton
                 key={i + 1}
                 variant={i === isSelect ? "fill" : "outline"}
@@ -68,24 +106,38 @@ function VideoSection() {
       </div>
 
       <div className="">
-        <div className="flex items-start gap-2 lg:gap-6 overflow-x-scroll no-scrollbar mb-8 px-4 lg:px-10">
-            <Image src={VideoTip1} width={437} height={658} alt="video tip" className="w-[297px] h-[413px] lg:w-[437px] lg:h-[658px]  rounded-3xl " />
-            <Image src={VideoTip2} width={437} height={658} alt="video tip" className="w-[297px] h-[413px] lg:w-[437px] lg:h-[658px]  rounded-3xl " />
-            <Image src={VideoTip3} width={437} height={658} alt="video tip" className="w-[297px] h-[413px] lg:w-[437px] lg:h-[658px]  rounded-3xl " />
-            <Image src={VideoTip4} width={437} height={658} alt="video tip" className="w-[297px] h-[413px] lg:w-[437px] lg:h-[658px]  rounded-3xl " />
+        <div ref={scrollContainerRef} className="flex items-start gap-2 lg:gap-6 overflow-x-scroll no-scrollbar mb-8 px-4 lg:px-10">
+          {[VideoTip1, VideoTip2, VideoTip3, VideoTip4].map((e, i) => (
+          <Image
+            key={i+1}
+            src={e}
+            width={437}
+            height={658}
+            alt="video tip"
+            className="w-[297px] h-[413px] lg:w-[437px] lg:h-[658px]  rounded-3xl "
+          />))}
+          
         </div>
 
         <div className="flex gap-4 justify-center mb-28">
+          <button 
+            onClick={slideLeft}
+            className={`h-12 w-12 rounded-full flex justify-center items-center bg-[#132D47] cursor-pointer transition-opacity ${
+              canScrollLeft ? 'opacity-100' : 'opacity-50'
+            }`}
+          >
+            <ArrowLeft />
+          </button>
 
-            <button className="h-12 w-12 rounded-full flex justify-center items-center bg-[#132D47] opacity-50">
-              <ArrowLeft />
-            </button>
-
-            <button className="h-12 w-12 rounded-full flex justify-center items-center bg-[#132D47] ">
-              <ArrowRight />
-            </button>
-          </div>
-
+          <button 
+            onClick={slideRight}
+            className={`h-12 w-12 rounded-full flex justify-center items-center bg-[#132D47] cursor-pointer transition-opacity ${
+              canScrollRight ? 'opacity-100' : 'opacity-50'
+            }`}
+          >
+            <ArrowRight />
+          </button>
+        </div>
 
         <hr className="bg-primary text-primary" />
       </div>

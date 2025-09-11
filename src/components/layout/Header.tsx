@@ -30,7 +30,7 @@ const Header: React.FC = () => {
     } else {
       setIsHome(false);
     }
-  }, []);
+  }, [router]);
 
   const handleFranchiseClick = () => {
     console.log("Franchise Button clicked!");
