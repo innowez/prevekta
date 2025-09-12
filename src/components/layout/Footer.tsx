@@ -198,10 +198,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Section (Privacy and Terms) */}
-        <div className="mt-6 border-t border-white/40 pt-2 flex flex-col md:flex-row justify-between text-base gap-1 font-[Duplet]">
-          <p className="text-center md:text-left">Privacy Policy</p>
-          <p className="text-center md:text-left md:mt-0">Terms & conditions</p>
+        {/* Copyright Section */}
+        <div className="mt-6 border-t border-white/40 pt-2 text-center text-base font-[Duplet]">
+          <p>© 2025 Prevekta Ayurveda. All rights reserved.</p>
         </div>
       </div>
     </footer>
