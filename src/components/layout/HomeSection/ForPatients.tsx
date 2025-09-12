@@ -146,7 +146,7 @@ const ForPatients = () => {
         labelBorderColor="#132D47"
         iconPosition="0px"
         iconPositionHover="px"
-        onClick={() => router.push("/patients")}
+        // onClick={() => router.push("/patients")}
       />
     </div>
   );

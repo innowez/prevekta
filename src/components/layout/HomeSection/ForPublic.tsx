@@ -58,7 +58,7 @@ const ForPublic: React.FC = () => {
 
         {/* Button */}
         <div className="flex justify-center">
-          <Link href="/for-people">
+          {/* <Link href="/for-people"> */}
           <CustomButton
             mainWidth={isMobile ? "175px" : "210px"}
             labelWidth={isMobile ? "135px" : "210px"}
@@ -74,7 +74,7 @@ const ForPublic: React.FC = () => {
             iconPosition="0px"
             iconPositionHover="px"
           />
-          </Link>
+          {/* </Link> */}
         </div>
       </div>
     </section>
