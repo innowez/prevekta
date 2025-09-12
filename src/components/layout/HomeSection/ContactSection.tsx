@@ -1,10 +1,77 @@
 "use client";
 import CustomButton from "@/components/ui/CustomButton";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import WaterMark from "@assets/images/watrmark.png";
+import { useRouter } from "next/navigation";
 
 const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Create a hidden iframe for form submission
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.name = 'hidden_iframe';
+    document.body.appendChild(iframe);
+
+    // Create a temporary form for submission
+    const tempForm = document.createElement('form');
+    tempForm.action = "https://forms.zohopublic.in/adminviri1/form/PreviktaWebsite/formperma/QV6vR7uRlqBG75EVBmNvekv1nbBfI129nwqpqWlP_aE/htmlRecords/submit";
+    tempForm.method = "POST";
+    tempForm.target = 'hidden_iframe';
+    tempForm.encType = "multipart/form-data";
+    tempForm.style.display = 'none';
+
+    // Copy form data to temp form
+    for (const [key, value] of formData.entries()) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value as string;
+      tempForm.appendChild(input);
+    }
+
+    document.body.appendChild(tempForm);
+
+    try {
+      // Submit the form
+      tempForm.submit();
+      
+      // Wait a moment then assume success
+      setTimeout(() => {
+        setIsSubmitted(true);
+        setIsSubmitting(false);
+        
+        // Cleanup
+        document.body.removeChild(tempForm);
+        document.body.removeChild(iframe);
+      }, 1000);
+      
+    } catch (error) {
+      setSubmitError("Failed to send message. Please try again.");
+      setIsSubmitting(false);
+      
+      // Cleanup on error
+      document.body.removeChild(tempForm);
+      document.body.removeChild(iframe);
+    }
+  };
+
+  if (isSubmitted) {
+   router.push("/thank-you");
+  }
+
   return (
     <div className="flex flex-col lg:flex-row items-start px-4 py-12 md:py-20 lg:pt-40 mx-auto max-w-[1360px] gap-10 md:gap-20 relative">
       {/* Background Circle (hidden on mobile) */}
@@ -29,13 +96,13 @@ const ContactSection = () => {
       {/* Form Section */}
       <form
         className="w-full lg:w-1/2 space-y-6 md:space-y-10"
-        action="https://forms.zohopublic.in/adminviri1/form/PreviktaWebsite/formperma/QV6vR7uRlqBG75EVBmNvekv1nbBfI129nwqpqWlP_aE/htmlRecords/submit"
-        name="form"
-        id="form"
-        method="POST"
-        accept-charset="UTF-8"
-        encType="multipart/form-data"
+        onSubmit={handleSubmit}
       >
+        {submitError && (
+          <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
+            {submitError}
+          </div>
+        )}
         {/* Name Fields */}
         <div className="flex flex-col md:flex-row gap-4 w-full">
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
@@ -86,7 +153,7 @@ const ContactSection = () => {
         </div>
 
         {/* Submit Button */}
-        <button type="submit" className="relative w-[214px] h-[56px]">
+        <button type="submit" className="relative w-[214px] h-[56px]" disabled={isSubmitting}>
           <CustomButton
             mainWidth="210px"
             labelWidth="210px"
@@ -97,7 +164,7 @@ const ContactSection = () => {
             labelTextColorHover="#132D47"
             arrowFill="#132D47"
             arrowFillHover="#132D47"
-            labelText="Send Message"
+            labelText={isSubmitting ? "Sending..." : "Send Message"}
             labelBorderColor="#81DE76"
             iconPosition="0px"
             iconPositionHover="0px"
