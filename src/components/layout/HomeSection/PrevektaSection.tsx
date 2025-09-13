@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@assets/icons/Logo";
 import ArrowRightThin from "@/assets/icons/ArrowRightThin";
 import PatientImage from "@assets/images/PatientImage.jpg";
@@ -12,7 +13,7 @@ import useMediaQuery from "@/hooks/useMediaquery";
 
 const PrevektaSection = () => {
   const [activeTab, setActiveTab] = useState<number | null>(null);
-  const isMobile = useMediaQuery('(max-width: 1028px)');
+  const isMobile = useMediaQuery("(max-width: 1028px)");
 
   const tabs = [
     {
@@ -65,18 +66,18 @@ const PrevektaSection = () => {
     setActiveTab(null);
   };
 
-  const gotoelement = (name:string) => {
+  const gotoelement = (name: string) => {
     const element = document.getElementById(name);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }
+  };
 
   return (
     <div className="max-w-[1360px] mx-auto px-8 py-12 md:py-24">
       {/* Header */}
       <div className="flex justify-between items-center gap-8 mb-0">
-        <h1 className="text-2xl md:text-5xl lg:text-[60px] font-bold text-primary-dark font-atyp" >
+        <h1 className="text-2xl md:text-5xl lg:text-[60px] font-bold text-primary-dark font-atyp">
           PREVEKTA FOR
         </h1>
         <div className="">
@@ -131,57 +132,115 @@ const PrevektaSection = () => {
         </div>
         {/* Accordion */}
         <div className="w-full lg:w-1/2">
-          {tabs.map((tab) => (
-            <div
-              key={tab.id}
-              className={`border-b border-primary-dark py-5 md:py-12 transition-all duration-300 ${
-                activeTab === tab.id ? "active" : ""
-              }`}
-              onMouseEnter={() => handleTabHover(tab.id)}
-              onMouseLeave={handleTabLeave}
-            >
-              <div className="flex items-start gap-3.5 w-full">
-                <div className="relative rounded-xl block md:hidden h-[96px] w-[96px] overflow-hidden">
-                  <Image
-                    src={tab.image}
-                    alt={tab.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex justify-between items-center cursor-pointer w-8/12 md:w-full">
-                  <h2 className="text-base md:text-[32px] font-bold uppercase text-primary-dark font-[Atyp]" onClick={() => gotoelement(tab.title)}>
-                    {tab.title}
-                  </h2>
-                  <div
-                    className={`transform ${
-                      activeTab === tab.id ? "-rotate-45" : "rotate-0"
-                    } transition-transform duration-300`}
-                  >
-                    <ArrowRightThin className="text-primary-dark" />
-                  </div>
-                </div>
-              </div>
+          {tabs.map((tab) => {
+            const Container = !isMobile ? motion.div : "div";
+            const containerProps = !isMobile
+              ? {
+                  whileHover: { opacity: 0.8 },
+                  transition: { duration: 0.2 },
+                }
+              : {};
 
-              {(activeTab === tab.id || isMobile) && (
-                <div className="mt-4 transition-all duration-300">
-                  <p className="text-lg text-primary-dark font-[Duplet] mb-6">
-                    {tab.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {tab.chips.map((chip, idx) => (
-                      <span
-                        key={idx}
-                        className="px-4 py-0.5 border border-primary-dark rounded-full text-primary-dark font-[Duplet] text-base whitespace-nowrap"
-                      >
-                        {chip}
-                      </span>
-                    ))}
+            return (
+              <Container
+                key={tab.id}
+                className={`border-b border-primary-dark py-5 md:py-12 cursor-pointer ${
+                  activeTab === tab.id ? "active" : ""
+                }`}
+                onMouseEnter={() =>
+                  !isMobile ? handleTabHover(tab.id) : undefined
+                }
+                onMouseLeave={() => (!isMobile ? handleTabLeave() : undefined)}
+                {...containerProps}
+              >
+                <div className="flex items-start gap-3.5 w-full">
+                  <div className="relative rounded-xl block md:hidden h-[96px] w-[96px] overflow-hidden">
+                    <Image
+                      src={tab.image}
+                      alt={tab.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex justify-between items-center cursor-pointer w-8/12 md:w-full">
+                    <h2
+                      className="text-base md:text-[32px] font-bold uppercase text-primary-dark font-[Atyp]"
+                      onClick={() => gotoelement(tab.title)}
+                    >
+                      {tab.title}
+                    </h2>
+
+                    {(() => {
+                      const Arrow = !isMobile ? motion.div : "div";
+                      const arrowProps = !isMobile
+                        ? {
+                            animate: {
+                              rotate: activeTab === tab.id ? -45 : 0,
+                            },
+                            whileHover: { scale: 1.1 },
+                            transition: { duration: 0.2 },
+                          }
+                        : {
+                            className: `transform transition-transform duration-200 ${
+                              activeTab === tab.id ? "-rotate-45" : "rotate-0"
+                            }`,
+                          };
+
+                      return (
+                        <Arrow {...arrowProps}>
+                          <ArrowRightThin className="text-primary-dark" />
+                        </Arrow>
+                      );
+                    })()}
                   </div>
                 </div>
-              )}
-            </div>
-          ))}
+
+                <AnimatePresence mode="wait">
+                  {(activeTab === tab.id || isMobile) &&
+                    (!isMobile ? (
+                      <motion.div
+                        key={tab.id}
+                        className="mt-4 overflow-hidden"
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      >
+                        <p className="text-lg text-primary-dark font-[Duplet] mb-6">
+                          {tab.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {tab.chips.map((chip, idx) => (
+                            <span
+                              key={idx}
+                              className="px-4 py-0.5 border border-primary-dark rounded-full text-primary-dark font-[Duplet] text-base whitespace-nowrap"
+                            >
+                              {chip}
+                            </span>
+                          ))}
+                        </div>
+                      </motion.div>
+                    ) : (
+                      <div className="mt-4">
+                        <p className="text-lg text-primary-dark font-[Duplet] mb-6">
+                          {tab.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {tab.chips.map((chip, idx) => (
+                            <span
+                              key={idx}
+                              className="px-4 py-0.5 border border-primary-dark rounded-full text-primary-dark font-[Duplet] text-base whitespace-nowrap"
+                            >
+                              {chip}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                </AnimatePresence>
+              </Container>
+            );
+          })}
         </div>
       </div>
     </div>

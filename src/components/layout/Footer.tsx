@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
               className="w-[220px] h-[36px]"
             />
 
-            <div className="flex space-x-3">
+            <div className="flex items-center space-x-3">
               <FacebookIcon className="cursor-pointer" />
               <InstagramIcon className="cursor-pointer" />
               <YoutubeIcon className="cursor-pointer" />
