@@ -15,7 +15,7 @@ function PrevektavsPain() {
       <h1 className="text-primary text-[28px] lg:text-6xl leading-8 text-center mb-6 lg:mb-12 ">
         Prevekta vs Pain
       </h1>
-      <div className="px-4 min-h-[590px] lg:min-h-[654px] relative">
+      <div className="px-4 min-h-[659px] lg:min-h-[654px] relative">
         <Image
           alt="uyu"
           src={LogoRight}
