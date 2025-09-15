@@ -12,7 +12,7 @@ interface BodyVisualizationProps {
 const BodyVisualization: React.FC<BodyVisualizationProps> = ({ 
   className = '',
   imageUrl = '/humanbody2.png',
-  height = 550
+  height = 650
 }) => {
   // Use smaller height on mobile devices
   const [responsiveHeight, setResponsiveHeight] = useState(height);

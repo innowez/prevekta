@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import React from "react";
-// import Human from "@assets/images/Human.png";
-// import PvP from "@assets/images/prevVsPain.png";
 import LogoLeft from "@assets/images/pvprightlogo.png";
 import LogoRight from "@assets/images/pvpleftlogo.png";
 import CustomButton from "@/components/ui/CustomButton";
@@ -36,28 +34,11 @@ function PrevektavsPain() {
             filter: "blur(200px)",
           }}
         ></div>
-        {/* <Image
-          alt="yuyu"
-          src={PvP}
-          className="h-full w-full object-center object-cover hidden lg:block"
-        /> */}
+
         <MapVisualization />
 
-        {/* <Image
-          alt="kklk"
-          src={Human}
-          width={171.93321228027344}
-          height={407}
-          className="absolute lg:hidden top-0 left-1/2 -translate-x-1/2 "
-        /> */}
         <div
-          className=" border border-[#132D471A] rounded-[20px] backdrop-blur-[1px] p-4 lg:h-fit lg:max-w-[389px] absolute bottom-16 lg:top-1/2 lg:-translate-y-1/2 lg:left-28 "
-          // style={{
-          //   boxSizing: "border-box",
-          //   background: "rgba(255, 255, 255, 0.1)",
-          //   border: "1px solid rgba(19, 45, 71, 0.1)",
-          //   borderRadius: "20px",
-          // }}
+          className="my-3 border border-[#132D471A] rounded-[20px] backdrop-blur-[1px] p-4 lg:h-fit lg:max-w-[389px] lg:absolute md:bottom-16 lg:top-1/2 lg:-translate-y-1/2 lg:left-28 "
         >
           <p className="text-primary text-base leading-5 font-[Duplet]">
             Pain is one of the most commonly ignored, self-managed, or
@@ -70,7 +51,7 @@ function PrevektavsPain() {
           </p>
         </div>
 
-        <div className="absolute w-[218px] h-[56px] left-1/2 -translate-x-1/2 bottom-0 lg:left-auto lg:bottom-20 lg:right-6">
+        <div className="relative lg:absolute w-[218px] h-[56px] left-1/2 -translate-x-1/2 bottom-0 lg:left-auto lg:bottom-20 lg:right-6">
           <CustomButton
             mainWidth="216px"
             labelWidth="216px"
