@@ -11,7 +11,7 @@ interface BodyVisualizationProps {
 
 const BodyVisualization: React.FC<BodyVisualizationProps> = ({ 
   className = '',
-  imageUrl = '/humanbody.png',
+  imageUrl = '/humanbody2.png',
   height = 550
 }) => {
   // Use smaller height on mobile devices
@@ -107,8 +107,8 @@ const BodyVisualization: React.FC<BodyVisualizationProps> = ({
       const scaleFactor = Math.min(targetWidth / imagedata.width, targetHeight / imagedata.height);
 
       // Create particles with smaller spacing for better object definition
-      for (let y = 0; y < imagedata.height; y += 8) {
-        for (let x = 0; x < imagedata.width; x += 8) {
+      for (let y = 0; y < imagedata.height; y += 12) {
+        for (let x = 0; x < imagedata.width; x += 12) {
           if (imagedata.data[(x * 4 + y * 4 * imagedata.width) + 3] > 128) {
             const vertex = {
               x: Math.random() * 1000 - 500,
