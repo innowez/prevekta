@@ -104,7 +104,7 @@ function ThankYouPage() {
                 onClick={handleHomeClick}
               />
             </div>
-            <div className="relative">
+            {/* <div className="relative">
               <CustomButton
                 mainWidth="220px"
                 labelWidth="220px"
@@ -121,7 +121,7 @@ function ThankYouPage() {
                 iconPositionHover="0px"
                 onClick={handleContactClick}
               />
-            </div>
+            </div> */}
           </div>
 
           {/* Additional Info */}
