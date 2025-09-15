@@ -5,6 +5,7 @@ import PublicVideoThree from "@assets/videos/PublicVideoThree.gif";
 import CustomButton from "@/components/ui/CustomButton";
 import useMediaQuery from "@/hooks/useMediaquery";
 import Link from "next/link";
+import VideoTip3 from "@/assets/images/videotip3.gif";
 
 const ForPublic: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 720px)');
@@ -40,7 +41,7 @@ const ForPublic: React.FC = () => {
           {/* Video 2 - Taller on desktop */}
           <div className="w-[297px] md:w-[437px] h-[413px] sm:h-[607px] md:h-[607px]">
             <img
-              src={PublicVideoTwo.src}
+              src={VideoTip3.src}
               alt="Public 2"
               className="w-[297px] md:w-[437px] h-full object-cover rounded-[24px] max-w-none"
             />
