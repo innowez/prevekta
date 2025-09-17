@@ -20,6 +20,7 @@ const Hero = () => {
             fill
             className="object-cover"
             priority
+            // loader={"lazy"}
           />
 
           <div
@@ -117,7 +118,7 @@ const Hero = () => {
               <div className="mt-4">Prevail + Ekta (Unity)</div>
             </div>
           </div>
-          <div className=" absolute -bottom-5  flex flex-row-reverse w-full text-white p-4 md:p-8">
+          <div className=" absolute bottom-5 lg:-bottom-5  flex flex-row-reverse w-full text-white p-4 md:p-8">
             <div>
               <div className="text-2xl">Echoing our mission:</div>
               <div className="mt-4 w-[300px]">
