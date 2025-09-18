@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import FooterLogo from "@assets/images/FooterLogo.png";
 import FacebookIcon from "@/assets/icons/FacebookIcon";
 import InstagramIcon from "@/assets/icons/InstagramIcon";
@@ -7,6 +7,7 @@ import LinkdInIcon from "@/assets/icons/LinkdInIcon";
 import WhatsappIcon from "@/assets/icons/WhatsappIcon";
 import FooterDesign from "@assets/images/FooterDesign.png";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -23,9 +24,11 @@ const Footer: React.FC = () => {
         <div className="hidden md:flex justify-between flex-col lg:flex-row">
           {/* Logo and Social */}
           <div className="space-y-0 flex gap-10 lg:flex-col lg:justify-between ">
-            <img
+            <Image
               src={FooterLogo.src}
               alt="Prevekta Logo"
+              height={36}
+              width={220}
               className="w-[220px] h-[36px]"
             />
 
@@ -113,9 +116,11 @@ const Footer: React.FC = () => {
         <div className="md:hidden flex flex-col">
           {/* Logo */}
           <div className="mb-6">
-            <img
+            <Image
               src={FooterLogo.src}
               alt="Prevekta Logo"
+              height={28}
+              width={180}
               className="w-[180px] h-[28px]"
             />
           </div>

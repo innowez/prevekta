@@ -7,6 +7,7 @@ import ArrowDown from "@/assets/icons/ArrowDown";
 import MenuIcon from "@/assets/icons/MenuIcon";
 import CloseIcon from "@/assets/icons/CloseIcon";
 import CustomButton from "@/components/ui/CustomButton";
+import Image from "next/image";
 // import { Button } from "../ui/Button";
 // import CsButton from "../ui/CsButton";
 
@@ -57,14 +58,18 @@ const Header: React.FC = () => {
           className="min-w-[180px] xl:min-w-[200px] cursor-pointer"
           onClick={() => router.push("/")}
         >
-          {isHome ? <img
-            src={logo.src}
+          {isHome ? <Image
+            src={logo}
             alt="Company Logo"
+            height={32}
+            width={201}
             className="w-full h-auto max-h-[32px] object-contain"
           /> :
-          <img
+          <Image
             src={Whitelogo.src}
             alt="Company Logo"
+            height={32}
+            width={201}
             className="w-full h-auto max-h-[32px] object-contain"
           />}
         </div>
@@ -157,13 +162,17 @@ const Header: React.FC = () => {
       >
         {/* Logo */}
         <div className="w-[160px]">
-          {isHome ? <img
+          {isHome ? <Image
             src={logo.src}
             alt="Company Logo"
+            height={25}
+            width={201}
             className="w-full h-auto max-h-[25px] object-contain"
           /> :
-          <img
+          <Image
             src={Whitelogo.src}
+            height={25}
+            width={201}
             alt="Company Logo"
             className="w-full h-auto max-h-[25px] object-contain"
           />}
@@ -186,8 +195,10 @@ const Header: React.FC = () => {
             {/* Mobile Menu Header */}
             <div className="flex justify-between items-center p-4 border-b">
               <div className="w-[160px]">
-                <img
-                  src={logo.src}
+                <Image
+                  src={logo}
+                  width={201}
+                  height={25}
                   alt="Company Logo"
                   className="w-full h-auto max-h-[25px]"
                 />
