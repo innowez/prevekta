@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import LeftSideHalfrLogo from "@assets/images/LeftSideHalfLogo.png";

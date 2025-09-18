@@ -1,15 +1,13 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import Logo from "@assets/icons/Logo";
 import AyurvedaDoctor from "@assets/images/AyurvedaDoctor.png";
 import LogoDriverDesignOne from "@assets/images/LogoDriverDesignOne.png";
 import LogoDriverDesignTwo from "@assets/images/LogoDriverDesignTwo.png";
-import CustomButton from "@/components/ui/CustomButton";
-import useMediaQuery from "@/hooks/useMediaquery";
+import AyruvedaSectionBtn from "./btns/AyruvedaSectionBtn";
 
 const AyurvedaSection = () => {
-  const isMobile = useMediaQuery('(max-width: 720px)');
+  
   return (
     <div className="w-full mx-auto px-4  my-8 lg:my-16">
       {/* Main Grid Layout */}
@@ -26,6 +24,7 @@ const AyurvedaSection = () => {
                   alt="Ayurveda Doctor"
                   // layout="fill"
                   // objectFit="cover"
+                  loading="lazy"
                   className="object-cover object-center min-h-[199px] min-w-[329px] w-full h-full lg:min-w-[356px] lg:min-h-[363px] "
                 />
               </div>
@@ -49,21 +48,7 @@ const AyurvedaSection = () => {
                 </p>
 
                 <div className="pb-4 lg:pb-0">
-                  <CustomButton
-                    mainWidth={isMobile? "172px" : "190px"}
-                    labelWidth={isMobile? "172px" : "190px"}
-                    labelWidthHover={isMobile? "137px" : "155px"}
-                    labelBackground="rgba(19,45,71,0.0)"
-                    labelBackgroundHover="#132D47"
-                    labelTextColor="#132D47"
-                    labelTextColorHover="#FFFF"
-                    arrowFill="#132D47"
-                    arrowFillHover="#FFFF"
-                    labelText="Explore More"
-                    labelBorderColor="#132D47"
-                    iconPosition="0px"
-                    iconPositionHover="px"
-                  />
+                  <AyruvedaSectionBtn />
                 </div>
               </div>
             </div>

@@ -1,14 +1,16 @@
 "use client";
 import PublicVideoOne from "@assets/videos/PublicVideoOne.gif";
-import PublicVideoTwo from "@assets/videos/PublicVideoTwo.gif";
+// import PublicVideoTwo from "@assets/videos/PublicVideoTwo.gif";
 import PublicVideoThree from "@assets/videos/PublicVideoThree.gif";
-import CustomButton from "@/components/ui/CustomButton";
-import useMediaQuery from "@/hooks/useMediaquery";
-import Link from "next/link";
+// import CustomButton from "@/components/ui/CustomButton";
+// import useMediaQuery from "@/hooks/useMediaquery";
+// import Link from "next/link";
 import VideoTip3 from "@/assets/images/videotip3.gif";
+import Image from "next/image";
+import ForPublicBtn from "./btns/ForPublicBtn";
 
 const ForPublic: React.FC = () => {
-  const isMobile = useMediaQuery('(max-width: 720px)');
+  
   return (
     <section className="py-12 md:py-20 px-4 relative">
       <div id="Public" className="absolute -top-14"></div>
@@ -31,27 +33,36 @@ const ForPublic: React.FC = () => {
         <div className="flex flex-row items-center justify-start gap-4 md:gap-6 mb-8 md:mb-12 overflow-x-auto no-scrollbar">
           {/* Video 1 */}
           <div className="w-[297px] md:w-[437px] h-[413px] sm:h-[607px] lg:h-[523px]">
-            <img
+            <Image
               src={PublicVideoOne.src}
+              width={437}
+              height={523}
               alt="Public 1"
+              objectFit="cover"
               className="w-[297px] md:w-[437px] h-full object-cover rounded-[24px] max-w-none"
             />
           </div>
 
           {/* Video 2 - Taller on desktop */}
           <div className="w-[297px] md:w-[437px] h-[413px] sm:h-[607px] md:h-[607px]">
-            <img
+            <Image
               src={VideoTip3.src}
               alt="Public 2"
+              objectFit="cover"
+              width={437}
+              height={607}
               className="w-[297px] md:w-[437px] h-full object-cover rounded-[24px] max-w-none"
             />
           </div>
 
           {/* Video 3 */}
           <div className="w-[297px] md:w-[437px] h-[413px] sm:h-[607] lg:h-[523px]">
-            <img
+            <Image
               src={PublicVideoThree.src}
               alt="Public 3"
+              width={437}
+              height={523}
+              objectFit="cover"
               className="w-[297px] md:w-[437px] h-full object-cover rounded-[24px] max-w-none"
             />
           </div>
@@ -60,21 +71,7 @@ const ForPublic: React.FC = () => {
         {/* Button */}
         <div className="flex justify-center">
           {/* <Link href="/for-people"> */}
-          <CustomButton
-            mainWidth={isMobile ? "175px" : "210px"}
-            labelWidth={isMobile ? "135px" : "210px"}
-            labelWidthHover={isMobile ? "139px" : "180px"}
-            labelBackground="rgba(19,45,71,0.0)"
-            labelBackgroundHover="#132D47"
-            labelTextColor="#132D47"
-            labelTextColorHover="#FFFF"
-            arrowFill="#132D47"
-            arrowFillHover="#FFFF"
-            labelText="Explore More"
-            labelBorderColor="#132D47"
-            iconPosition="0px"
-            iconPositionHover="px"
-          />
+            <ForPublicBtn />
           {/* </Link> */}
         </div>
       </div>

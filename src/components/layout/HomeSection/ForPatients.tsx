@@ -1,12 +1,5 @@
 "use client";
-import React, { useState } from "react";
-// import Box from "@assets/images/Box.png";
-// import Star from "@assets/images/Star.png";
-// import Board from "@assets/images/Board.png";
-// import Image from "next/image";
-import CustomButton from "@/components/ui/CustomButton";
-import useMediaQuery from "@/hooks/useMediaquery";
-// import { useRouter } from "next/navigation";
+import ForPatientBtn from "./btns/ForPatientBtn";
 
 const MultipleIcon = () => (
   <svg
@@ -64,10 +57,6 @@ const HealthRecordIcon = () => (
 );
 
 const ForPatients = () => {
-  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
-  const isMobile = useMediaQuery('(max-width: 525px)');
-
-  // const router = useRouter();
 
   return (
     <div className="flex flex-col items-center px-4 py-5 md:py-20 mx-auto max-w-[1360px] gap-4 mb:gap-[72px] relative">
@@ -91,124 +80,67 @@ const ForPatients = () => {
         {/* Features Section */}
         <div className="relative w-full md:h-[223px]">
           {/* Features Grid */}
-          <div className="flex flex-col md:flex-row justify-between w-full h-full">
+          <div className="flex flex-col md:flex-row justify-between w-full h-full parent-container">
             {/* Feature 1 */}
             <div
-              className={`flex flex-col md:flex-row justify-start items-center h-full md:w-1/3 relative transition-all duration-300 method-3  ${
-                hoveredFeature !== null && hoveredFeature !== 0
-                  ? "opacity-90 blur-[1.5px]"
-                  : ""
-              }`}
-              onMouseEnter={() => setHoveredFeature(0)}
-              onMouseLeave={() => setHoveredFeature(null)}
+              id="feature1"
+              className="flex flex-col md:flex-row justify-start items-center h-full md:w-1/3 relative transition-all duration-300 method-3 "
             >
               <div
                 className={`flex items-center sm:flex-col lg:flex-row gap-[12px] py-8 md:p-12 mx-auto  w-[220px] md:w-auto`}
               >
                 <div className="relative">
-                  {/* <img
-                    src={Box.src}
-                    alt="Box Icon"
-                    className="absolute top-1/2 left-1/2 w-[43px] h-[51px] transform -translate-x-1/2 -translate-y-1/2"
-                  /> */}
-                  {/* <Image 
-                    src={Box.src}
-                    alt="Box Icon"
-                    className="absolute top-1/2 left-1/2 w-[27px] h-[25px] md:w-[51px] md:h-[51px] transform -translate-x-1/2 -translate-y-1/2" 
-                    width={27}
-                    height={25}
-                  /> */}
                   <MultipleIcon />
                 </div>
                 <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold text-center text-[#132D47]">
                   Multiple specialties
                 </p>
               </div>
-            <div className="sm:hidden absolute right-0 top-0 h-full w-1 method-1"></div>
+              <div className="sm:hidden absolute right-0 top-0 h-full w-1 method-1"></div>
             </div>
 
             {/* Feature 2 */}
             <div
-              className={`flex flex-col md:flex-row justify-start items-center  h-full md:w-1/3 relative transition-all duration-300  method-1 ${
-                hoveredFeature !== null && hoveredFeature !== 1
-                  ? "opacity-90 blur-[1.5px]"
-                  : ""
-              }`}
-              onMouseEnter={() => setHoveredFeature(1)}
-              onMouseLeave={() => setHoveredFeature(null)}
+              id="feature2"
+              className="flex flex-col md:flex-row justify-start items-center h-full md:w-1/3 relative transition-all duration-300 method-1 "
             >
               <div
                 className={`flex items-center sm:flex-col lg:flex-row gap-[12px] py-8 md:p-12  mx-auto w-[220px] md:w-auto`}
               >
                 <div className="relative">
-                  {/* <Image 
-                    src={Star.src}
-                    alt="Star Icon"
-                    className="absolute top-1/2 left-1/2 w-[21px] h-[25px] md:w-[43px] md:h-[51px] transform -translate-x-1/2 -translate-y-1/2"
-                    width={21}
-                    height={25}
-                  /> */}
                   <ExpertIcon />
                 </div>
                 <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold text-center text-[#132D47]">
                   Expert Experiences
                 </p>
               </div>
-            <div className="sm:hidden absolute right-0 top-0 h-full w-1 method-1"></div>
+              <div className="sm:hidden absolute right-0 top-0 h-full w-1 method-1"></div>
             </div>
 
             {/* Feature 3 */}
             <div
-              className={`flex flex-col md:flex-row justify-start items-center h-full md:w-1/3 relative transition-all duration-300  method-1  ${
-                hoveredFeature !== null && hoveredFeature !== 2
-                  ? "opacity-90 blur-[1.5px]"
-                  : ""
-              }`}
-              onMouseEnter={() => setHoveredFeature(2)}
-              onMouseLeave={() => setHoveredFeature(null)}
+              id="feature3"
+              className="flex flex-col md:flex-row justify-start items-center h-full md:w-1/3 relative transition-all duration-300  method-1"
             >
               <div
                 className={`flex items-center sm:flex-col lg:flex-row gap-[12px] py-8 md:p-12 mx-auto w-[220px] md:w-auto`}
               >
                 <div className="relative ">
-                  {/* <img
-                    /> */}
-                  {/* <Image
-                    src={Board.src}
-                    alt="Board Icon"
-                    className="absolute top-1/2 left-1/2 w-[22px] h-[25px] md:w-[43px] md:h-[51px] transform -translate-x-1/2 -translate-y-1/2"
-                    width={22}
-                    height={25}
-                  /> */}
                   <HealthRecordIcon />
                 </div>
                 <p className="text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold text-center text-[#132D47]">
                   Digital Health Records
                 </p>
               </div>
-            <div className="sm:hidden absolute right-0 top-0 h-full w-1 method-1"></div>
+              <div className="sm:hidden absolute right-0 top-0 h-full w-1 method-1"></div>
             </div>
+
           </div>
         </div>
       </div>
 
       {/* Button */}
-      <CustomButton
-        mainWidth={isMobile? "100%" : "320px"}
-        labelWidth={isMobile? "100%" : "320px"}
-        labelWidthHover={isMobile? "91%" : "280px"}
-        labelBackground="rgba(19,45,71,0.0)"
-        labelBackgroundHover="#132D47"
-        labelTextColor="#132D47"
-        labelTextColorHover="#FFFF"
-        arrowFill="#132D47"
-        arrowFillHover="#FFFF"
-        labelText="Book Your Consultation"
-        labelBorderColor="#132D47"
-        iconPosition="0px"
-        iconPositionHover="px"
-        // onClick={() => router.push("/patients")}
-      />
+      <ForPatientBtn />
     </div>
   );
 };

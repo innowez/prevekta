@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import ArrowRightThin from "@/assets/icons/ArrowRightThin";
 import useMediaQuery from "@/hooks/useMediaquery";

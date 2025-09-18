@@ -1,17 +1,7 @@
-"use client";
-import CustomButton from "@/components/ui/CustomButton";
-import useMediaQuery from "@/hooks/useMediaquery";
 import React from "react";
-// import HeroVideo from "@assets/videos/Herovideo.mp4";
+import StorySectionBtn from "./btns/StorySectionBtn";
 
-interface StorySectionProps {
-  // title: string;
-  content: string;
-  background: string;
-}
-
-const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
-  const isMobile = useMediaQuery('(max-width: 525px)');
+const StorySection = () => {
 
   return (
     <section
@@ -24,12 +14,6 @@ const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
       <div className="absolute inset-0 backdrop-blur-sm w-full">
         <video muted autoPlay loop preload="none" className="w-full h-full object-cover ">
           <source src="/video/Herovideo.mp4" type="video/mp4" />
-          {/* <track
-            src="/path/to/captions.vtt"
-            kind="subtitles"
-            srcLang="en"
-            label="English"
-          /> */}
           Your browser does not support the video tag.
         </video>
       </div>
@@ -43,27 +27,13 @@ const StorySection: React.FC<StorySectionProps> = ({ content, background }) => {
             Possibilities in Ayurveda.
           </h2>
           <p className="text-white text-[16px] md:text-xl leading-snug mt-4 font-[Duplet]">
-            {content}
+            We unify care, career, commerce, and community through a single, tech-enabled platform that promotes Ayurveda with authenticity, innovation, and inclusivity.
           </p>
         </div>
 
         {/* Button */}
         <div className=" w-full sm:w-auto">
-          <CustomButton
-            mainWidth={isMobile ? "100%" : "320px"}
-            labelWidth={isMobile ? "100%" : "320px"}
-            labelWidthHover={isMobile ? "91%" : "280px"}
-            labelBackground="rgba(19,45,71,0.0)"
-            labelBackgroundHover="#132D47"
-            labelTextColor="#FFFF"
-            labelTextColorHover="#FFFF"
-            arrowFill="#FFFF"
-            arrowFillHover="#FFFF"
-            labelText="Book Your Consultation"
-            labelBorderColor="#FFFF"
-            iconPosition="0px"
-            iconPositionHover="px"
-          />
+            <StorySectionBtn />
         </div>
       </div>
     </section>

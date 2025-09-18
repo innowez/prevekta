@@ -1,7 +1,5 @@
-"use client";
-import React from "react";
-import Image from "next/image";
 
+import Image from "next/image";
 import WisdomImage from "@assets/images/08d3753354181adb573fe9f85ff1e540754516d7.png";
 import PeapleImage from "@assets/images/23d33544155f1b27c3c4cc9a89a7961f52e29477.jpg";
 import ClinicImage from "@assets/images/ca08e9ba0fc4400efd6cc5e6712e7df02003591b.jpg";
@@ -20,7 +18,6 @@ const Hero = () => {
             fill
             className="object-cover"
             priority
-            // loader={"lazy"}
           />
 
           <div
@@ -47,13 +44,20 @@ const Hero = () => {
 
         {/* Frame two */}
         <div
-          className="z-20 sticky top-16 left-0 h-screen w-full overflow-hidden"
-          style={{
-            backgroundImage: ` url(${PeapleImage.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="z-20 sticky top-16 left-0 h-[90vh] w-full overflow-hidden"
+          // style={{
+          //   backgroundImage: `url(${PeapleImage.src})`,
+          //   backgroundSize: "cover",
+          //   backgroundPosition: "center",
+          // }}
         >
+          <Image
+            src={PeapleImage}
+            alt="Wisdom Image"
+            fill
+            className="object-cover"
+            priority
+          />
           <div
             className="absolute inset-0"
             style={{
@@ -61,14 +65,14 @@ const Hero = () => {
                 "radial-gradient(50% 50% at 50% 50%, rgba(19, 45, 71, 0.08) 0%, rgba(19, 45, 71, 0.4) 100%)",
             }}
           />
-          <div className="w-full uppercase px-4 md:px-16 py-16">
+          <div className="w-full uppercase px-4 md:px-16 py-16 relative z-10 ">
             <h1 className="text-3xl  font-[Atyp] font-bold text-white">
               Each practitioner worked in isolation.
               <br /> Each remedy lived in a small corner.
               <br /> Each patient searched in pieces
             </h1>
           </div>
-          <div className="text-3xl uppercase absolute -bottom-5 right-8 flex flex-row-reverse w-full text-white p-4 md:p-8">
+          <div className="text-3xl uppercase absolute z-10 -bottom-5 right-8 flex flex-row-reverse w-full text-white p-4 md:p-8">
             But healing was never meant to be fragmented.
           </div>
         </div>
@@ -76,12 +80,19 @@ const Hero = () => {
         {/* Frame Three */}
         <div
           className="z-20 sticky top-16 left-0 h-screen w-full overflow-hidden"
-          style={{
-            backgroundImage: ` url(${ClinicImage.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          // style={{
+          //   backgroundImage: ` url(${ClinicImage.src})`,
+          //   backgroundSize: "cover",
+          //   backgroundPosition: "center",
+          // }}
         >
+          <Image
+            src={ClinicImage}
+            alt="Wisdom Image"
+            fill
+            className="object-cover"
+            priority
+          />
           <div
             className="absolute inset-0 flex justify-center items-center"
             style={{
@@ -89,7 +100,7 @@ const Hero = () => {
                 "radial-gradient(50% 50% at 50% 50%, rgba(19, 45, 71, 0.08) 0%, rgba(19, 45, 71, 0.4) 100%)",
             }}
           />
-          <div className=" h-full uppercase  flex justify-center items-center px-4 md:px-16 py-8">
+          <div className=" h-full uppercase  flex justify-center items-center px-4 md:px-16 py-8 relative z-10">
             <h1 className="text-5xl  font-atyp font-bold text-white">
               Prevekta was born to change this.
             </h1>
@@ -99,12 +110,19 @@ const Hero = () => {
         {/* Frame Four */}
         <div
           className="z-20 sticky top-16 left-0 h-[90vh] w-full overflow-hidden"
-          style={{
-            backgroundImage: ` url(${SmokeImage.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          // style={{
+          //   backgroundImage: ` url(${SmokeImage.src})`,
+          //   backgroundSize: "cover",
+          //   backgroundPosition: "center",
+          // }}
         >
+          <Image
+            src={SmokeImage}
+            alt="Wisdom Image"
+            fill
+            className="object-cover"
+            priority
+          />
           <div
             className="absolute inset-0"
             style={{
@@ -112,13 +130,13 @@ const Hero = () => {
                 "radial-gradient(50% 50% at 50% 50%, rgba(19, 45, 71, 0.08) 0%, rgba(19, 45, 71, 0.4) 50%)",
             }}
           />
-          <div className="w-full uppercase px-4 md:px-16 py-8">
+          <div className="w-full uppercase px-4 md:px-16 py-8 relative z-20">
             <div className="text-3xl font-atyp font-bold text-white">
-              <div>{"IT'S"} VERY NAME</div>
-              <div className="mt-4">Prevail + Ekta (Unity)</div>
+              <div className="text-white" >{"IT'S"} VERY NAME</div>
+              <div className="mt-4 text-white">Prevail + Ekta (Unity)</div>
             </div>
           </div>
-          <div className=" absolute bottom-5 lg:-bottom-5  flex flex-row-reverse w-full text-white p-4 md:p-8">
+          <div className=" absolute bottom-5 lg:bottom-6  flex flex-row-reverse w-full text-white p-4 md:p-8">
             <div>
               <div className="text-2xl">Echoing our mission:</div>
               <div className="mt-4 w-[300px]">

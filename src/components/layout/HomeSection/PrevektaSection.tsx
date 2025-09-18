@@ -86,6 +86,7 @@ const PrevektaSection = () => {
             alt="Prevekta Logo"
             width={50}
             height={50}
+            loading="lazy"
             className="w-[29px] h-[29px] md:w-[50px] md:h-[50px]"
           />
           {/* <Logo className="opacity-30 text-primary-light w-[70px] h-[70px]" /> */}

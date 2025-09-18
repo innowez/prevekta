@@ -1,14 +1,10 @@
-"use client";
+// "use client";
 import React from "react";
 import Image from "next/image";
 import PhysiciansImage from "@assets/images/vsvsv.png";
 import PhysiciansImageMobile from "@assets/images/physicianImgMobile.png";
-import Grop from "@assets/images/Group.png";
-import Grow from "@assets/images/Grow.png";
-import Brand from "@assets/images/Brand.png";
-import Focus from "@assets/images/Focus.png";
 import CustomButton from "@/components/ui/CustomButton";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Link from "next/link";
 // import { Link } from "t";
 
@@ -85,7 +81,7 @@ const PatientsIcon = () => (
 );
 
 const ForPhysicians = () => {
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <div className="flex flex-col items-start px-4 py-20 mx-auto max-w-[1360px] gap-[40px] relative">
       <div id="Physician" className="absolute -top-4 md:-top-12"></div>
@@ -95,9 +91,10 @@ const ForPhysicians = () => {
           FOR PHYSICIANS
         </h2>
 
-        <button
+        <Link
           className="md:hidden flex items-center justify-center rounded-full bg-[#81DE76] w-12 h-12 cursor-pointer"
-          onClick={() => router.replace("/physician")}
+          // onClick={() => router.replace("/physician")}
+          href="/physician"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +108,7 @@ const ForPhysicians = () => {
               d="M23.065 7.497 17.064.745c-.314-.319-.77-.316-1.061-.052a.78.78 0 0 0-.053 1.06l4.888 5.498H1.498a.75.75 0 1 0 0 1.5h19.34l-4.888 5.497c-.264.292-.23.788.053 1.06.294.285.797.24 1.06-.052l6.002-6.751c.265-.37.233-.685 0-1.008"
             ></path>
           </svg>
-        </button>
+        </Link>
         {/* Button */}
         <div className="absolute right-16 hidden md:block">
           <Link href="/physician">

@@ -197,14 +197,32 @@ body {
   }
 
   .method-3::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  /* right: 0; */
-  bottom: 0;
-  width: 1px;
-  height: 100%;
-  background: #f2fcf1;
-  /* border-radius: 0 0 5px 5px; */
+    content: "";
+    position: absolute;
+    left: 0;
+    /* right: 0; */
+    bottom: 0;
+    width: 1px;
+    height: 100%;
+    background: #f2fcf1;
+    /* border-radius: 0 0 5px 5px; */
+  }
 }
+
+.parent-container:has(#feature1:hover) #feature2,
+.parent-container:has(#feature1:hover) #feature3 {
+  opacity: 0.9;
+  filter: blur(1.5px);
+}
+
+.parent-container:has(#feature2:hover) #feature1,
+.parent-container:has(#feature2:hover) #feature3 {
+  opacity: 0.9;
+  filter: blur(1.5px);
+}
+
+.parent-container:has(#feature3:hover) #feature1,
+.parent-container:has(#feature3:hover) #feature2 {
+  opacity: 0.9;
+  filter: blur(1.5px);
 }
