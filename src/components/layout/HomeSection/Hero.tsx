@@ -3,7 +3,8 @@ import Image from "next/image";
 import WisdomImage from "@assets/images/08d3753354181adb573fe9f85ff1e540754516d7.png";
 import PeapleImage from "@assets/images/23d33544155f1b27c3c4cc9a89a7961f52e29477.jpg";
 import ClinicImage from "@assets/images/ca08e9ba0fc4400efd6cc5e6712e7df02003591b.jpg";
-import SmokeImage from "@assets/images/5a5b3ce1edaad7f42a20285acef71d0f88255158.jpg";
+// import SmokeImage from "@assets/images/5a5b3ce1edaad7f42a20285acef71d0f88255158.jpg";
+import SmokeImage2 from "@assets/images/SmokeImage2.png";
 
 const Hero = () => {
   return (
@@ -117,7 +118,7 @@ const Hero = () => {
           // }}
         >
           <Image
-            src={SmokeImage}
+            src={SmokeImage2}
             alt="Wisdom Image"
             fill
             className="object-cover"
