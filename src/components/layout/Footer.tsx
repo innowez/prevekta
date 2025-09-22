@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
               <LinkdInIcon className="cursor-pointer" />
               </a>
 
-              <a href="https://wa.me/919962062060" target="_blank" rel="noopener noreferrer">
+              <a href="https://whatsapp.com/channel/0029Vb5lp2eICVfeN93oxw11" target="_blank" rel="noopener noreferrer">
               <WhatsappIcon className="cursor-pointer" />
               </a>
             </div>
@@ -221,7 +221,7 @@ const Footer: React.FC = () => {
             <a href="https://www.linkedin.com/company/prevekta/" target="_blank" rel="noopener noreferrer">
             <LinkdInIcon className="cursor-pointer" /></a>
 
-            <a href="https://wa.me/919962062060" target="_blank" rel="noopener noreferrer">
+            <a href="https://whatsapp.com/channel/0029Vb5lp2eICVfeN93oxw11" target="_blank" rel="noopener noreferrer">
             <WhatsappIcon className="cursor-pointer" /></a>
           </div>
         </div>
