@@ -33,11 +33,25 @@ const Footer: React.FC = () => {
             />
 
             <div className="flex items-center space-x-3">
+              <a href="https://www.facebook.com/prevektaayurveda/" target="_blank">
               <FacebookIcon className="cursor-pointer" />
+              </a>
+
+              <a href="https://www.instagram.com/prevekta_ayurveda/" target="_blank" rel="noopener noreferrer">
               <InstagramIcon className="cursor-pointer" />
+              </a>
+
+              <a href="https://www.youtube.com/@PrevektaAyurveda" target="_blank" rel="noopener noreferrer">
               <YoutubeIcon className="cursor-pointer" />
+              </a>
+
+              <a href="https://www.linkedin.com/company/prevekta/" target="_blank" rel="noopener noreferrer">
               <LinkdInIcon className="cursor-pointer" />
+              </a>
+
+              <a href="https://wa.me/919962062060" target="_blank" rel="noopener noreferrer">
               <WhatsappIcon className="cursor-pointer" />
+              </a>
             </div>
           </div>
 
