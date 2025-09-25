@@ -226,3 +226,25 @@ body {
   opacity: 0.9;
   filter: blur(1.5px);
 }
+
+.semisSw ul {
+  list-style-type: none;
+}
+
+.semisSw ul li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.semisSw ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7;
+  /* transform: translateY(-50%); */
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 14 14'%3E%3Cpath stroke='%23132D47' d='M6.123 1.646a1 1 0 0 1 1.754 0l1.302 2.38a2 2 0 0 0 .795.795l2.38 1.302a1 1 0 0 1 0 1.754l-2.38 1.302a2 2 0 0 0-.795.795l-1.302 2.38a1 1 0 0 1-1.754 0l-1.302-2.38a2 2 0 0 0-.795-.795l-2.38-1.302a1 1 0 0 1 0-1.754l2.38-1.302a2 2 0 0 0 .795-.795z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}

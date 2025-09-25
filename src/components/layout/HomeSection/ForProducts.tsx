@@ -6,6 +6,7 @@ import ProductBoxes from "@assets/images/ProductBoxes.jpg";
 import Yuvrasa from "@assets/images/Yuvrasa.jpg";
 import Juvinam from "@assets/images/Juvinam.jpg";
 import Treenya from "@assets/images/Treenya.png";
+import Trenia from "@assets/images/DSC03477.png"
 import CustomButton from "@/components/ui/CustomButton";
 import useMediaQuery from "@/hooks/useMediaquery";
 import Link from "next/link";
@@ -20,7 +21,7 @@ const ForProducts = () => {
       name: "TRIMANYA",
       description: "Classical formulations - authentic and GMP-certified.",
       bgColor: "rgba(19, 45, 71, 0.2)",
-      image: ProductBoxes,
+      image: Trenia,
     },
     {
       id: 1,
@@ -124,7 +125,7 @@ const ForProducts = () => {
                 <Image
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                   width={1312}
                   height={390}
                 />
