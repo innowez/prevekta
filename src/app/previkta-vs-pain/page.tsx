@@ -1,92 +1,769 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import * as PrevIcon from "./icon-component";
 import Pvplogo from "@/assets/images/pvp-bg.png";
 import BodyFront from "@/assets/pvp/body-front.png";
 import BodySide from "@/assets/pvp/body-side.png";
 import BodyBack from "@/assets/pvp/body-back.png";
+import EyePain from "@/assets/pvp/eye.png";
 import Image from "next/image";
-import * as motion from "motion/react-client"
+import { AnimatePresence, motion } from "motion/react";
+import { StaticImageData } from "next/image";
+import ContactSection from "@/components/layout/HomeSection/ContactSection";
 
-function page() {
-  const iconList = [
-    PrevIcon.firstIcon,
-    PrevIcon.SecondIcon,
-    PrevIcon.ThirdIcon,
-    PrevIcon.FourthIcon,
-    PrevIcon.fifthIcon,
-    PrevIcon.sixthIcon,
-    PrevIcon.seventhIcon,
-    PrevIcon.eigithIcon,
-    PrevIcon.ninthIcon,
-    PrevIcon.tenthIcon,
-    PrevIcon.eleventhIcon,
-    PrevIcon.twelvthIcon,
-    PrevIcon.thirteenthIcon,
-    PrevIcon.fourteenthIcon,
-    PrevIcon.fifteenIcon,
-    // PrevIcon.sixteenthIcon,
+const iconList = [
+  PrevIcon.firstIcon,
+  PrevIcon.SecondIcon,
+  PrevIcon.ThirdIcon,
+  PrevIcon.FourthIcon,
+  PrevIcon.fifthIcon,
+  PrevIcon.sixthIcon,
+  PrevIcon.seventhIcon,
+  PrevIcon.eigithIcon,
+  PrevIcon.ninthIcon,
+  PrevIcon.tenthIcon,
+  PrevIcon.eleventhIcon,
+  PrevIcon.twelvthIcon,
+  PrevIcon.thirteenthIcon,
+  PrevIcon.fourteenthIcon,
+  PrevIcon.fifteenIcon,
+];
+
+function Previkta() {
+  const [navigaate, setNavigaate] = useState<1 | 2 | 3>(1);
+  const [activeOrgan, setActiveOrgan] = useState(0);
+
+  const rotateImage = (
+    direction: "next" | "prev",
+    current: 1 | 2 | 3
+  ): 1 | 2 | 3 => {
+    if (direction === "next") {
+      // Rotate forward: 1 -> 2 -> 3 -> 1
+      return current === 3 ? 1 : ((current + 1) as 1 | 2 | 3);
+    } else {
+      // Rotate backward: 1 -> 3 -> 2 -> 1
+      return current === 1 ? 3 : ((current - 1) as 1 | 2 | 3);
+    }
+  };
+
+  interface BodyPosition {
+  top: string;
+  left: string;
+  translate: string;
+  icon: React.ElementType;
+  organ?: {
+    name: string;
+    image: StaticImageData;
+    description: string;
+  };
+}
+
+  const bodySectionPositions: Record<1 | 2 | 3, BodyPosition[]> =  {
+    1: [
+      // Front view positions
+      { top: "1.5", left: "50%", translate: "-50%", icon: PrevIcon.firstIcon },
+      {
+        top: "2.25",
+        left: "53%",
+        translate: "0",
+        icon: PrevIcon.SecondIcon,
+        organ: {
+          name: "Eye Pain",
+          image: EyePain,
+          description: "Common eye pain areas",
+        },
+      },
+      { top: "5", left: "50%", translate: "-50%", icon: PrevIcon.ThirdIcon },
+      { top: "6", left: "35%", translate: "0", icon: PrevIcon.FourthIcon },
+
+      { top: "10", left: "68%", translate: "0", icon: PrevIcon.fifthIcon },
+      { top: "12", left: "50%", translate: "-50%", icon: PrevIcon.sixthIcon },
+      { top: "15", left: "50%", translate: "-50%", icon: PrevIcon.seventhIcon },
+
+      { top: "22", left: "40%", translate: "0", icon: PrevIcon.eleventhIcon },
+      { top: "25", left: "49%", translate: "0", icon: PrevIcon.twelvthIcon },
+
+      {
+        top: "28.5",
+        left: "49%",
+        translate: "0",
+        icon: PrevIcon.thirteenthIcon,
+      },
+      {
+        top: "29.5",
+        left: "42%",
+        translate: "0",
+        icon: PrevIcon.fourteenthIcon,
+      },
+      { top: "30.2", left: "52%", translate: "0", icon: PrevIcon.fifteenIcon },
+    ],
+    2: [
+      // Side view positions
+      { top: "2.2", left: "53%", translate: "0", icon: PrevIcon.firstIcon },
+      {
+        top: "3.5",
+        left: "48%",
+        translate: "0",
+        icon: PrevIcon.SecondIcon,
+        organ: {
+          name: "Eye Pain",
+          image: EyePain,
+          description: "Common eye pain areas",
+        },
+      },
+      // { top: "24", left: "40%", translate: "-50%", icon: PrevIcon.ThirdIcon },
+      { top: "7.5", left: "55%", translate: "0", icon: PrevIcon.FourthIcon },
+
+      // { top: "10", left: "68%", translate: "0", icon: PrevIcon.fifthIcon },
+      // { top: "12", left: "50%", translate: "-50%", icon: PrevIcon.sixthIcon },
+      { top: "12", left: "57%", translate: "0", icon: PrevIcon.seventhIcon },
+
+      { top: "22.7", left: "44%", translate: "0", icon: PrevIcon.eleventhIcon },
+      { top: "25", left: "56%", translate: "0", icon: PrevIcon.twelvthIcon },
+
+      { top: "29", left: "55%", translate: "0", icon: PrevIcon.thirteenthIcon },
+      {
+        top: "30.5",
+        left: "56.5%",
+        translate: "0",
+        icon: PrevIcon.fourteenthIcon,
+      },
+      {
+        top: "31.3",
+        left: "44.5%",
+        translate: "0",
+        icon: PrevIcon.fifteenIcon,
+      },
+    ],
+    3: [
+      // Back view positions
+      { top: "1", left: "52%", translate: "-50%", icon: PrevIcon.firstIcon },
+      // { top: "2.5", left: "58%", translate: "0", icon: PrevIcon.SecondIcon },
+      // { top: "5", left: "45%", translate: "-50%", icon: PrevIcon.ThirdIcon },
+      { top: "6", left: "34%", translate: "0", icon: PrevIcon.FourthIcon },
+
+      { top: "10", left: "68%", translate: "0", icon: PrevIcon.fifthIcon },
+      // { top: "12", left: "50%", translate: "-50%", icon: PrevIcon.sixthIcon },
+      {
+        top: "13.5",
+        left: "52%",
+        translate: "-50%",
+        icon: PrevIcon.seventhIcon,
+      },
+
+      { top: "12.5", left: "57%", translate: "0", icon: PrevIcon.tenthIcon },
+
+      // { top: "22", left: "40%", translate: "0", icon: PrevIcon.eleventhIcon },
+      { top: "25", left: "54%", translate: "0", icon: PrevIcon.twelvthIcon },
+
+      {
+        top: "28.5",
+        left: "52%",
+        translate: "0",
+        icon: PrevIcon.thirteenthIcon,
+      },
+      { top: "30", left: "42%", translate: "0", icon: PrevIcon.fourteenthIcon },
+      { top: "30", left: "55%", translate: "0", icon: PrevIcon.fifteenIcon },
+    ],
+  };
+
+  // 15 Organs
+  const organData = [
+    {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+    {
+      Heading: "Eye Pain / Eye Strain",
+      Diseases: [
+        "Computer vision syndrome",
+        "Eye strain",
+        "Conjunctivitis",
+        "Dry eye syndrome",
+        "Cluster headaches with eye pain",
+      ],
+      Causes: [
+        { icon: PrevIcon.LongScreenIcon, dis: "Long screen time" },
+        { icon: PrevIcon.SleeplessnessIcon, dis: "Lack of sleep & stress" },
+        { icon: PrevIcon.DryEyeIcon, dis: "Dry eyes or sinus-related strain" },
+      ],
+      ProbableTherapies: [
+        "Netra tarpanam",
+        "Aschotanam",
+        "Nasyam",
+        "Mukha abhyangam",
+        "Nadi swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple strain :", period: "1 to 3 month" },
+        { title: "Chronic dry eyes/sinus :", period: "3 to 6 month" },
+      ],
+    },
+
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+        {
+      Heading: "Headache / Head Region",
+      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Causes: [
+        {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Stress, tension & overthinking",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Late nights & sleeplessness",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Too much mobile & computer use",
+        },
+        {
+          icon: PrevIcon.SinusBlockageIcon,
+          dis: "Sinus blockage or acidity rising to head",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
   ];
 
   return (
     <main className="p-10 relative min-h-screen overflow-hidden">
       {/* Eclips 19 */}
-      <div
-        className="absolute w-[513px] h-[513px]"
-        style={{
-          top: "-89px",
-          left: "calc(50% - 513px/2 - 598.5px)",
-          background: "rgba(129, 222, 118, 0.4)",
-          filter: "blur(100px)",
-          borderRadius: "50%",
-        }}
-      ></div>
+      <>
+        <div
+          className="absolute w-[513px] h-[513px]"
+          style={{
+            top: "-89px",
+            left: "calc(50% - 513px/2 - 598.5px)",
+            background: "rgba(129, 222, 118, 0.4)",
+            filter: "blur(100px)",
+            borderRadius: "50%",
+          }}
+        ></div>
 
-      {/* Eclips 21 */}
-      <div
-        style={{
-          position: "absolute",
-          width: "280px",
-          height: "280px",
-          left: "calc(50% - 280px/2 - 329px)",
-          top: "824px",
-          background: "#81DE76",
-          filter: "blur(200px)",
-        }}
-      ></div>
+        {/* Eclips 21 */}
+        <div
+          style={{
+            position: "absolute",
+            width: "280px",
+            height: "280px",
+            left: "calc(50% - 280px/2 - 329px)",
+            top: "824px",
+            background: "#81DE76",
+            filter: "blur(200px)",
+          }}
+        ></div>
 
-      {/* Eclips 22 */}
-      <div
-        style={{
-          position: "absolute",
-          width: "280px",
-          height: "280px",
-          left: "calc(50% - 280px/2 + 359px)",
-          top: "-55px",
-          background: "#81DE76",
-          filter: "blur(200px)",
-        }}
-      ></div>
+        {/* Eclips 22 */}
+        <div
+          style={{
+            position: "absolute",
+            width: "280px",
+            height: "280px",
+            left: "calc(50% - 280px/2 + 359px)",
+            top: "-55px",
+            background: "#81DE76",
+            filter: "blur(200px)",
+          }}
+        ></div>
 
-      <div
-        style={{
-          position: "absolute",
-          width: "317px",
-          height: "317px",
-          left: "calc(50% - 317px/2 + 579.5px)",
-          top: "766px",
-          background: "#81DE76",
-          filter: "blur(250px)",
-        }}
-      ></div>
-
+        <div
+          style={{
+            position: "absolute",
+            width: "317px",
+            height: "317px",
+            left: "calc(50% - 317px/2 + 579.5px)",
+            top: "766px",
+            background: "#81DE76",
+            filter: "blur(250px)",
+          }}
+        ></div>
+      </>
       <div className="mx-auto flex relative z-10 max-w-7xl gap-6">
         <div className="flex flex-col gap-2 w-12">
           {iconList.map((Icon, index) => (
-            <div
+            <motion.button
               key={index}
-              className=" w-12 h-12 rounded-full flex items-center justify-center"
+              className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               style={{
                 backdropFilter: "blur(7px) saturate(200%)",
                 WebkitBackdropFilter: "blur(7px) saturate(200%)",
@@ -94,21 +771,24 @@ function page() {
                 // borderRadius: "12px",
                 border: "1px solid rgba(255, 255, 255, 0.125)",
               }}
+              onClick={() => {
+                setActiveOrgan(index);
+              }}
             >
               <div
                 className={`${
-                  index === 0 ? "bg-primary" : "bg-white"
+                  index === activeOrgan ? "bg-primary" : "bg-white"
                 } w-8 h-8 rounded-full flex items-center justify-center `}
               >
                 <span
                   className={`relative z-20 ${
-                    index !== 0 ? "fill-white" : "fill-primary"
+                    index !== activeOrgan ? "fill-white" : "fill-primary"
                   }`}
                 >
-                  <Icon />
+                  <Icon isActive={index === activeOrgan} />
                 </span>
               </div>
-            </div>
+            </motion.button>
           ))}
         </div>
 
@@ -127,62 +807,29 @@ function page() {
               <h1 className=" text-2xl text-primary mb-5">Diseases</h1>
 
               <div className="grid grid-cols-2 grid-row-2 gap-4">
-                <div className="p-4 rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md">
-                  <div className="bg-primary flex justify-center items-center w-8 h-8 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="15"
-                      height="15"
-                      fill="none"
-                      viewBox="0 0 15 15"
-                    >
-                      <path
-                        fill="#81DE76"
-                        d="M13.662 7.496c.416-.4.749-.879.978-1.41a4.39 4.39 0 0 0-.899-4.814 4.3 4.3 0 0 0-1.42-.952 4.25 4.25 0 0 0-3.338.044c-.526.233-1 .57-1.395.99l-.036.041-.052-.041A4.27 4.27 0 0 0 4.491.122a4.27 4.27 0 0 0-3.002 1.25A4.37 4.37 0 0 0 .21 4.39a4.37 4.37 0 0 0 1.175 3.062l-.127.132A4.37 4.37 0 0 0 0 10.656a4.37 4.37 0 0 0 1.258 3.072A4.27 4.27 0 0 0 4.295 15a4.27 4.27 0 0 0 3.037-1.272l.044-.045.044.045a4.27 4.27 0 0 0 3.004 1.213 4.27 4.27 0 0 0 2.99-1.251 4.37 4.37 0 0 0 1.277-3.007 4.37 4.37 0 0 0-1.16-3.055zM2.345 2.28a2.975 2.975 0 0 1 3.726-.414L5.35 2.6H2.66v2.716l-.724.733a3.06 3.06 0 0 1 .41-3.769m2.62 1.635V4.93H3.96V3.915zm-2.791 8.883a3.062 3.062 0 0 1-.41-3.769l.724.734v2.717h2.687l.725.733a2.975 2.975 0 0 1-3.726-.415m1.614-1.633v-1.017h1.006v1.017zm4.866.385-1.278 1.293-1.28-1.294V8.835H3.408l-1.19-1.207L3.58 6.247h2.684V3.53l1.287-1.293 1.28 1.294v2.716h2.676l1.193 1.206-1.365 1.382H8.654zm1.473-6.618V3.915h1.003v1.017zm.832 5.217v1.016H9.952V10.15zm1.613 2.649a2.972 2.972 0 0 1-3.726.414l.723-.732h2.686V9.763l.726-.734a3.064 3.064 0 0 1-.41 3.769m.58-6.749-.722-.732V2.6H9.743l-.726-.734a2.96 2.96 0 0 1 3.741.4 3.051 3.051 0 0 1 .394 3.784"
-                      ></path>
-                    </svg>
+                {organData[activeOrgan].Diseases.map((item, ind) => (
+                  <div
+                    key={ind + 1}
+                    className="p-4 rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md"
+                  >
+                    <div className="bg-primary flex justify-center items-center w-8 h-8 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="15"
+                        height="15"
+                        fill="none"
+                        viewBox="0 0 15 15"
+                      >
+                        <path
+                          fill="#81DE76"
+                          d="M13.662 7.496c.416-.4.749-.879.978-1.41a4.39 4.39 0 0 0-.899-4.814 4.3 4.3 0 0 0-1.42-.952 4.25 4.25 0 0 0-3.338.044c-.526.233-1 .57-1.395.99l-.036.041-.052-.041A4.27 4.27 0 0 0 4.491.122a4.27 4.27 0 0 0-3.002 1.25A4.37 4.37 0 0 0 .21 4.39a4.37 4.37 0 0 0 1.175 3.062l-.127.132A4.37 4.37 0 0 0 0 10.656a4.37 4.37 0 0 0 1.258 3.072A4.27 4.27 0 0 0 4.295 15a4.27 4.27 0 0 0 3.037-1.272l.044-.045.044.045a4.27 4.27 0 0 0 3.004 1.213 4.27 4.27 0 0 0 2.99-1.251 4.37 4.37 0 0 0 1.277-3.007 4.37 4.37 0 0 0-1.16-3.055zM2.345 2.28a2.975 2.975 0 0 1 3.726-.414L5.35 2.6H2.66v2.716l-.724.733a3.06 3.06 0 0 1 .41-3.769m2.62 1.635V4.93H3.96V3.915zm-2.791 8.883a3.062 3.062 0 0 1-.41-3.769l.724.734v2.717h2.687l.725.733a2.975 2.975 0 0 1-3.726-.415m1.614-1.633v-1.017h1.006v1.017zm4.866.385-1.278 1.293-1.28-1.294V8.835H3.408l-1.19-1.207L3.58 6.247h2.684V3.53l1.287-1.293 1.28 1.294v2.716h2.676l1.193 1.206-1.365 1.382H8.654zm1.473-6.618V3.915h1.003v1.017zm.832 5.217v1.016H9.952V10.15zm1.613 2.649a2.972 2.972 0 0 1-3.726.414l.723-.732h2.686V9.763l.726-.734a3.064 3.064 0 0 1-.41 3.769m.58-6.749-.722-.732V2.6H9.743l-.726-.734a2.96 2.96 0 0 1 3.741.4 3.051 3.051 0 0 1 .394 3.784"
+                        ></path>
+                      </svg>
+                    </div>
+
+                    <p className="text-sm font-[Duplet]">{item}</p>
                   </div>
-
-                  <p className="text-sm font-[Duplet]">Migraine</p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md">
-                  <div className="bg-primary flex justify-center items-center w-8 h-8 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="15"
-                      height="15"
-                      fill="none"
-                      viewBox="0 0 15 15"
-                    >
-                      <path
-                        fill="#81DE76"
-                        d="M13.662 7.496c.416-.4.749-.879.978-1.41a4.39 4.39 0 0 0-.899-4.814 4.3 4.3 0 0 0-1.42-.952 4.25 4.25 0 0 0-3.338.044c-.526.233-1 .57-1.395.99l-.036.041-.052-.041A4.27 4.27 0 0 0 4.491.122a4.27 4.27 0 0 0-3.002 1.25A4.37 4.37 0 0 0 .21 4.39a4.37 4.37 0 0 0 1.175 3.062l-.127.132A4.37 4.37 0 0 0 0 10.656a4.37 4.37 0 0 0 1.258 3.072A4.27 4.27 0 0 0 4.295 15a4.27 4.27 0 0 0 3.037-1.272l.044-.045.044.045a4.27 4.27 0 0 0 3.004 1.213 4.27 4.27 0 0 0 2.99-1.251 4.37 4.37 0 0 0 1.277-3.007 4.37 4.37 0 0 0-1.16-3.055zM2.345 2.28a2.975 2.975 0 0 1 3.726-.414L5.35 2.6H2.66v2.716l-.724.733a3.06 3.06 0 0 1 .41-3.769m2.62 1.635V4.93H3.96V3.915zm-2.791 8.883a3.062 3.062 0 0 1-.41-3.769l.724.734v2.717h2.687l.725.733a2.975 2.975 0 0 1-3.726-.415m1.614-1.633v-1.017h1.006v1.017zm4.866.385-1.278 1.293-1.28-1.294V8.835H3.408l-1.19-1.207L3.58 6.247h2.684V3.53l1.287-1.293 1.28 1.294v2.716h2.676l1.193 1.206-1.365 1.382H8.654zm1.473-6.618V3.915h1.003v1.017zm.832 5.217v1.016H9.952V10.15zm1.613 2.649a2.972 2.972 0 0 1-3.726.414l.723-.732h2.686V9.763l.726-.734a3.064 3.064 0 0 1-.41 3.769m.58-6.749-.722-.732V2.6H9.743l-.726-.734a2.96 2.96 0 0 1 3.741.4 3.051 3.051 0 0 1 .394 3.784"
-                      ></path>
-                    </svg>
-                  </div>
-
-                  <p className="text-sm font-[Duplet]">Sinus Headache</p>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md">
-                  <div className="bg-primary flex justify-center items-center w-8 h-8 rounded-full">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="15"
-                      height="15"
-                      fill="none"
-                      viewBox="0 0 15 15"
-                    >
-                      <path
-                        fill="#81DE76"
-                        d="M13.662 7.496c.416-.4.749-.879.978-1.41a4.39 4.39 0 0 0-.899-4.814 4.3 4.3 0 0 0-1.42-.952 4.25 4.25 0 0 0-3.338.044c-.526.233-1 .57-1.395.99l-.036.041-.052-.041A4.27 4.27 0 0 0 4.491.122a4.27 4.27 0 0 0-3.002 1.25A4.37 4.37 0 0 0 .21 4.39a4.37 4.37 0 0 0 1.175 3.062l-.127.132A4.37 4.37 0 0 0 0 10.656a4.37 4.37 0 0 0 1.258 3.072A4.27 4.27 0 0 0 4.295 15a4.27 4.27 0 0 0 3.037-1.272l.044-.045.044.045a4.27 4.27 0 0 0 3.004 1.213 4.27 4.27 0 0 0 2.99-1.251 4.37 4.37 0 0 0 1.277-3.007 4.37 4.37 0 0 0-1.16-3.055zM2.345 2.28a2.975 2.975 0 0 1 3.726-.414L5.35 2.6H2.66v2.716l-.724.733a3.06 3.06 0 0 1 .41-3.769m2.62 1.635V4.93H3.96V3.915zm-2.791 8.883a3.062 3.062 0 0 1-.41-3.769l.724.734v2.717h2.687l.725.733a2.975 2.975 0 0 1-3.726-.415m1.614-1.633v-1.017h1.006v1.017zm4.866.385-1.278 1.293-1.28-1.294V8.835H3.408l-1.19-1.207L3.58 6.247h2.684V3.53l1.287-1.293 1.28 1.294v2.716h2.676l1.193 1.206-1.365 1.382H8.654zm1.473-6.618V3.915h1.003v1.017zm.832 5.217v1.016H9.952V10.15zm1.613 2.649a2.972 2.972 0 0 1-3.726.414l.723-.732h2.686V9.763l.726-.734a3.064 3.064 0 0 1-.41 3.769m.58-6.749-.722-.732V2.6H9.743l-.726-.734a2.96 2.96 0 0 1 3.741.4 3.051 3.051 0 0 1 .394 3.784"
-                      ></path>
-                    </svg>
-                  </div>
-
-                  <p className="text-sm font-[Duplet]">Tension headache</p>
-                </div>
+                ))}
 
                 <div className="relative rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md overflow-hidden">
                   <Image
@@ -207,123 +854,141 @@ function page() {
               <h1 className=" text-2xl text-primary mb-5">Causes</h1>
 
               <div className="flex flex-col gap-4">
-                <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
-                  <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="48"
-                      height="48"
-                      fill="none"
-                      viewBox="0 0 48 48"
-                    >
-                      <rect
-                        width="48"
-                        height="48"
-                        fill="#132D47"
-                        rx="24"
-                      ></rect>
-                      <path
-                        fill="#fff"
-                        fillRule="evenodd"
-                        d="M23.164 10q-.45-.003-.896.028c-3.572.245-6.894 2.207-8.758 5.398-2.48 4.245-1.91 9.566 1.746 13.094.772.744 1.013 1.415 1.059 2.205s-.144 1.708-.317 2.785c-.078.487.018.977.283 1.4.266.424.678.783 1.22 1.122 2.164 1.352 5.85 2.252 8.61 1.886 1.154-.154 1.814-.956 1.98-1.96.097-.594.188-1.022.335-1.223.146-.202.337-.321.994-.31.67.011 1.375.083 2.038-.158s1.179-.891 1.29-1.92c.05-.462-.04-.42.277-.82.503-.636.711-1.064.418-1.759.674-.207.82-.74.626-1.348l-.385-1.206 1.502-.553c.435-.16.724-.541.794-.936a1.4 1.4 0 0 0-.314-1.13c-.86-1.04-1.631-1.584-2.062-2.558-.253-.569-.207-.77-.099-1.133s.333-.877.336-1.67c.006-2.38-1.323-4.236-2.602-5.629-1.595-1.738-3.635-2.816-5.362-3.232l.046.013-.046-.015a11.2 11.2 0 0 0-2.713-.37m-.012.936c.822.01 1.652.12 2.475.337h.006l.019.007c1.522.365 3.43 1.367 4.885 2.952 1.218 1.326 2.364 2.965 2.358 5-.001.626-.163.959-.298 1.412-.135.454-.186 1.037.138 1.768.54 1.219 1.446 1.817 2.198 2.776.227.289.136.52-.08.599l-1.517.558c-.098.037-.28.094-.444.286s-.22.526-.132.802l.407 1.27c.061.193-.026.337-.268.355-.365.027-.605.397-.41.702.342.534.059.852-.212 1.2-.398.512-.425.895-.468 1.288-.088.817-.311 1.01-.68 1.145-.37.134-.991.112-1.693.1-.822-.014-1.44.233-1.78.702-.34.47-.405 1.02-.501 1.619-.116.72-.546 1.1-1.164 1.178-2.44.31-6.088-.564-7.985-1.75-.467-.29-.763-.567-.92-.82a1 1 0 0 1-.155-.765c.169-1.048.383-2.017.326-2.985-.056-.97-.423-1.935-1.339-2.819-3.352-3.236-3.868-8.06-1.588-11.962 1.705-2.918 4.74-4.708 8.004-4.932q.407-.029.818-.023"
-                        clipRule="evenodd"
-                      ></path>
-                      <path
-                        fill="#fff"
-                        d="M22.935 12c-1.564 0-3.15.495-3.476 1.839-1.044.165-2.032.5-2.796 1.125-1.213.994-1.986 2.536-1.531 4.155.498 1.773 1.808 2.65 3.39 2.728.712 1.052 1.69 1.898 2.93 2.085 1.609.243 3.057-.19 4.342-.88 2.08.889 4.388-.205 5.007-2.066.6-1.942-.164-4.33-2.2-5.42-.34-.182-.382-.549-.527-.822C27.129 12.968 24.91 12 22.934 12m-.05.816c1.776.098 4.203 1.044 4.592 2.715-.843-.271-1.407-.236-2.103.034-1.647-1.008-3.221-1.965-4.987-1.774.47-.85 1.374-1.038 2.497-.975M24.61 16c-.625.406-1.168.92-1.51 1.647-.818-.861-2.242-1.061-3.09-.848-.201-.959-.138-1.604.044-2.19 1.619-.245 3.347.568 4.556 1.39m-5.373-1.347c-.143.639-.125 1.382.032 2.23-1.748.853-2.222 2.771-1.058 4.121-1.026-.128-2.069-1.216-2.295-2.082-.314-1.308.228-2.482 1.254-3.322.566-.465 1.29-.77 2.067-.947m6.897 1.564c.5-.088 1.01-.088 1.544.064.777 2.836.121 4.668-2.08 5.945-1.358-.125-2.676-1.044-3.596-1.851.468-.5.921-1.002 1.203-1.65.659.686 1.617 1.61 2.592 1.554.44-.034.866-.252 1.101-.63.704-1.133.35-2.618-.764-3.432m-.96.24c.813.505 1.753 1.844 1.077 2.7-.935.664-1.92-.378-2.56-1.06.306-.756.845-1.286 1.484-1.64m3.39.198c1.342.917 1.907 2.655 1.465 4.084-.716 1.75-1.94 1.932-3.305 1.657 2.026-1.147 2.428-3.616 1.84-5.74m-9.157.989c.229 1.095.947 2.034 1.63 2.763-.443.549-1.354.704-1.945.713-1.049-1.03-.997-2.959.315-3.476m.664-.156c.894-.153 1.81.117 2.528.757-.237.599-.663 1.021-1.067 1.477-.676-.54-1.312-1.47-1.461-2.234m1.439 3.564c.864.756 1.877 1.356 2.866 1.788-.876.263-1.815.431-2.81.282-.718-.11-1.354-.616-1.909-1.178.736-.185 1.346-.352 1.853-.892"
-                      ></path>
-                    </svg>
+                {organData[activeOrgan].Causes.map((item, ind) => (
+                  <div
+                    key={ind + 1}
+                    className="w-full flex items-center gap-2 p-2 rounded-full bg-white"
+                  >
+                    <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full ">
+                      <item.icon />
+                    </div>
+
+                    <p className=" text-sm font-[Duplet] ">{item.dis}</p>
                   </div>
+                ))}
 
-                  <p className=" text-sm font-[Duplet] ">
-                    Stress, tension & overthinking
-                  </p>
-                </div>
-
-                <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
+                {/* <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
                   <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="18"
-                      fill="none"
-                      viewBox="0 0 28 18"
-                    >
-                      <path
-                        fill="#fff"
-                        d="M5.833 14.167C2.59 14.167 0 10.979 0 7.083S2.59 0 5.833 0s5.834 3.188 5.834 7.083-2.59 7.084-5.834 7.084m-2.87-6.433-2.046.491c.431 2.918 2.485 5.108 4.916 5.108 2.74 0 5-2.781 5-6.25q0-.625-.094-1.215l-1.647.395q.075.402.075.82c0 2.055-1.378 3.75-3.125 3.75-1.555 0-2.824-1.346-3.079-3.1M.84 7.387l9.724-2.334C9.886 2.59 8.011.833 5.833.833c-2.74 0-5 2.782-5 6.25q0 .153.006.304m20.828 6.78c-3.243 0-5.834-3.188-5.834-7.084S18.423 0 21.667 0 27.5 3.188 27.5 7.083s-2.59 7.084-5.833 7.084m-2.859-7.808-2.047-.491q-.093.591-.094 1.215c0 3.469 2.26 6.25 5 6.25 2.432 0 4.485-2.19 4.916-5.108l-1.645-.395c-.287 1.71-1.54 3.003-3.063 3.003-1.747 0-3.125-1.695-3.125-3.75q0-.368.058-.724m-1.871-1.306 9.724 2.334q.006-.15.006-.304c0-3.468-2.26-6.25-5-6.25-2.178 0-4.053 1.757-4.73 4.22m-8.36 11.009a.417.417 0 1 1 .346.758 7.4 7.4 0 0 1-3.09.68c-2.132 0-4.143-.928-5.718-2.58a.417.417 0 1 1 .603-.575c1.423 1.493 3.22 2.322 5.115 2.322.948 0 1.873-.207 2.744-.605m18.205-1.717a.417.417 0 1 1 .603.575c-1.575 1.652-3.586 2.58-5.718 2.58a7.4 7.4 0 0 1-3.09-.68.417.417 0 0 1 .346-.758c.871.398 1.796.605 2.744.605 1.896 0 3.692-.83 5.115-2.322"
-                      ></path>
-                    </svg>
+                    
                   </div>
 
                   <p className=" text-sm font-[Duplet] ">
                     Late nights & sleeplessness
                   </p>
-                </div>
+                </div> */}
 
-                <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
+                {/* <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
                   <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="23"
-                      height="26"
-                      fill="none"
-                      viewBox="0 0 23 26"
-                    >
-                      <path
-                        fill="#fff"
-                        stroke="#fff"
-                        strokeWidth="0.2"
-                        d="M15.67 1c-2.685 0-4.504.809-5.63 2.484-.896 1.357-1.3 3.35-1.3 6.209 0 .289 0 .577.029.895h-.26l-4.361.145c-.52.028-1.01.26-1.357.635-.347.404-.52.924-.463 1.415l.434 4.303c-.607.029-1.04.231-1.358.578-.462.548-.375 1.27-.375 1.415 0 .346.173.635.404.866-.26.202-.433.549-.433.895 0 .52.318.925.78 1.098a1.18 1.18 0 0 0-.231.693c0 .635.52 1.155 1.155 1.155h.78c.26.722.924 1.213 1.704 1.27l4.39.174h.086a1.845 1.845 0 0 0 1.848-2.05l-.606-5.92c1.242 1.877 2.888 3.176 4.736 3.176 3.899 0 6.931-5.747 6.931-10.714C22.631 5.65 21.823 1 15.671 1Zm-5.197 2.744c1.01-1.531 2.714-2.253 5.198-2.253 3.754 0 5.718 1.704 6.267 5.632-3.466-.203-4.101-2.657-4.13-2.773-.029-.115-.144-.202-.289-.202-.115.029-.23.115-.23.26l.057 2.224c-2.773-.29-3.35-2.657-3.379-2.744a.28.28 0 0 0-.26-.202c-.115 0-.23.115-.23.26l-.03 2.397c-.866-.087-1.588-.636-1.964-1.473-.029-.087-.144-.145-.23-.145a.25.25 0 0 0-.232.174s-.375 1.155-1.53 1.415c.23-1.04.548-1.877.982-2.57ZM1.549 19.079v-.03s-.087-.634.26-1.039c.202-.26.548-.375 1.01-.404l.03.404c.028.26.26.462.52.462h3.61c.346 0 .634.29.634.636a.64.64 0 0 1-.635.635H2.155c-.346-.058-.606-.318-.606-.664Zm-.03 1.79c0-.346.29-.635.636-.635h4.852a.63.63 0 0 1 .578.635.64.64 0 0 1-.636.636H2.155a.64.64 0 0 1-.635-.636Zm.55 1.762a.65.65 0 0 1 .548-.635h3.495a.65.65 0 0 1 .548.635.64.64 0 0 1-.635.635H2.704c-.347.03-.635-.26-.635-.635Zm8.606 1.646c-.26.289-.665.433-1.069.433l-4.39-.173c-.49-.029-.953-.318-1.155-.75h1.964c.635 0 1.155-.52 1.155-1.156 0-.231-.057-.462-.202-.635.607-.03 1.126-.52 1.126-1.156 0-.346-.144-.664-.404-.866.26-.202.433-.549.433-.895 0-.636-.52-1.155-1.155-1.155h-3.61l-.52-5.228c-.029-.375.087-.75.347-1.04.26-.288.606-.461.982-.461l4.36-.145h.03c.693 0 1.3.549 1.357 1.242L11.02 23.18c.058.433-.086.808-.346 1.097Zm9.53-7.624c-1.27 2.108-2.888 3.263-4.505 3.263s-3.235-1.155-4.505-3.263l-.347-.607-.375-3.783c-.058-.722-.55-1.3-1.156-1.56-.029-.346-.057-.692-.057-1.01q0-1.603.173-2.86c1.01-.144 1.588-.837 1.877-1.328.549.838 1.415 1.329 2.426 1.329.144 0 .26-.116.26-.26l.029-1.53c.548.866 1.617 1.963 3.639 2.079a.5.5 0 0 0 .202-.058.26.26 0 0 0 .086-.202l-.029-1.3c.087.144.203.289.347.462.578.693 1.733 1.53 3.755 1.617q.086.954.086 2.08c0 2.339-.722 4.938-1.906 6.93Z"
-                      ></path>
-                      <path
-                        fill="#fff"
-                        stroke="#fff"
-                        strokeWidth="0.2"
-                        d="M8.971 13.159c-.058-.52-.462-.896-.982-.896h-.722c-.289 0-.549.116-.75.318a.96.96 0 0 0-.26.78l.23 2.31c.058.491.463.895.982.895l.722.03h.03a.94.94 0 0 0 .721-.319.96.96 0 0 0 .26-.78zm-.404 2.743c-.087.116-.231.144-.376.144H7.47c-.26 0-.462-.202-.462-.433l-.23-2.31c-.03-.145.028-.26.115-.376.086-.115.23-.144.375-.173h.722a.5.5 0 0 1 .491.433l.231 2.31c0 .174-.029.318-.144.405Z"
-                      ></path>
-                      <path
-                        fill="#fff"
-                        stroke="#fff"
-                        strokeWidth="0.2"
-                        d="M7.757 14.689a.42.42 0 1 0 .087.837.42.42 0 1 0-.087-.837ZM8.075 13.765a.42.42 0 1 0-.838.087.42.42 0 1 0 .838-.087ZM13.36 10.935c.26-.462.347-1.011.203-1.502a1.97 1.97 0 0 0-.925-1.213c-.115-.058-.288-.029-.346.087s-.029.288.087.346c.346.202.606.52.693.896.115.375.057.78-.145 1.126-.144.26-.404.462-.693.548a1.14 1.14 0 0 1-.866-.115.82.82 0 0 1-.405-.52.89.89 0 0 1 .087-.664.61.61 0 0 1 .375-.289.58.58 0 0 1 .491.058.36.36 0 0 1 .145.347q0 .13-.174.173a.23.23 0 0 0-.173.317.23.23 0 0 0 .318.174c.318-.087.52-.29.549-.607.057-.346-.116-.693-.405-.837a1.14 1.14 0 0 0-.866-.116c-.289.087-.549.26-.693.549a1.45 1.45 0 0 0-.145 1.04c.087.346.318.635.636.837.26.144.52.231.808.231.145 0 .29-.029.434-.058.433-.144.78-.433 1.01-.808ZM15.354 11.34c.26.143.548.201.808.201.578 0 1.126-.289 1.444-.837.549-.953.202-2.166-.75-2.715-.116-.058-.29-.029-.347.087-.058.115-.03.289.086.346.722.405.953 1.329.549 2.022-.318.549-1.01.722-1.56.433a.82.82 0 0 1-.404-.52.89.89 0 0 1 .087-.664.61.61 0 0 1 .375-.289.58.58 0 0 1 .491.058.36.36 0 0 1 .145.347q0 .13-.174.173a.23.23 0 0 0-.173.318.23.23 0 0 0 .318.173c.317-.087.52-.29.548-.607.058-.346-.115-.693-.404-.837a1.14 1.14 0 0 0-.866-.116c-.29.087-.549.26-.693.549a1.45 1.45 0 0 0-.145 1.04c.116.375.347.664.665.837ZM17.664 14.776c.087-.087.173-.174.231-.29.087-.115.058-.26-.058-.346-.115-.087-.26-.058-.346.058-.404.606-1.329 1.01-2.34 1.01-1.04 0-1.963-.404-2.368-1.039a.276.276 0 0 0-.346-.087.276.276 0 0 0-.087.347c.491.78 1.589 1.27 2.802 1.27.173 0 .346 0 .52-.028.144.289.317.52.52.75q.475.521.952.607h.145c.26 0 .49-.087.693-.289.26-.23.375-.49.346-.808 0-.318-.173-.665-.49-1.011-.087-.058-.145-.116-.174-.145Zm-.058 1.617c-.144.115-.26.173-.433.144-.202-.029-.433-.173-.664-.433a2.4 2.4 0 0 1-.376-.52c.405-.115.78-.26 1.098-.49l.173.172c.231.26.347.491.376.694a.43.43 0 0 1-.174.433Z"
-                      ></path>
-                    </svg>
+                    
                   </div>
 
                   <p className=" text-sm font-[Duplet] ">
                     Too much mobile & computer use
                   </p>
-                </div>
+                </div> */}
 
-                <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
+                {/* <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
                   <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="24"
-                      fill="none"
-                      viewBox="0 0 28 24"
-                    >
-                      <path
-                        fill="#fff"
-                        d="M23.065.898c-2.703-1.317-6.089-.937-8.427.943a7.1 7.1 0 0 0-1.211 1.238C12.125 1.965 11.907.474 11.895.387A.44.44 0 0 0 11.46 0H9.47c-.241 0-.438.2-.438.442 0 2.774 1.686 4.493 3.117 5.45-.381 1.776-.113 3.912.725 5.47 1.445 2.69 1.147 4.443.476 4.83-.493.285-1.212-.177-1.795-1.152-1.252-2.06-3.244-3.377-5.325-3.518C3.007 11.298 0 14.158 0 17.998v5.358a.44.44 0 0 0 .437.441H3.17a.44.44 0 0 0 .437-.441v-4.61c0-.887.717-1.61 1.596-1.61a1.6 1.6 0 0 1 1.371.789C8.897 21.88 12.141 24 15.73 24c.856 0 1.735-.12 2.623-.37 5.017-1.387 9.025-6.449 9.569-11.848-.003-.009 0-.013 0-.02.445-4.264-.967-8.979-4.857-10.867zM9.924.886h1.184c.166.635.632 1.925 1.83 2.924-.216.377-.399.77-.541 1.185-1.12-.808-2.316-2.128-2.473-4.109M12.95 6.38h.003a6.12 6.12 0 0 1 2.23-3.848c2.08-1.67 5.094-2.007 7.501-.837 3.476 1.69 4.721 5.935 4.383 9.8-3.144 2.363-5.242 1.122-7.463-.197-1.872-1.108-3.803-2.25-6.106-.64-.592-1.27-.777-2.918-.548-4.278m5.17 16.402c-4.197 1.16-8.13-.77-10.793-5.303a2.48 2.48 0 0 0-2.126-1.223c-1.362 0-2.471 1.12-2.471 2.495v4.167H.875v-4.915c0-3.332 2.576-5.778 5.291-5.594 1.8.123 3.536 1.281 4.637 3.095 1.041 1.746 2.256 1.878 2.979 1.46 1.106-.64 1.462-2.709.117-5.508 1.89-1.39 3.387-.5 5.257.606 2.731 1.62 4.843 2.447 7.752.612-.853 4.674-4.411 8.897-8.792 10.11zM14.4 18.21c-.92 0-1.668.755-1.668 1.683 0 .927.746 1.684 1.668 1.684.92 0 1.668-.756 1.668-1.684S15.32 18.21 14.4 18.21m0 2.48a.796.796 0 0 1-.791-.798c0-.44.352-.8.791-.8.436 0 .792.36.792.8s-.356.799-.792.799m8.186-5.733a1.21 1.21 0 0 0-1.202 1.21c0 .67.541 1.214 1.202 1.214.664 0 1.202-.544 1.202-1.214 0-.667-.538-1.21-1.202-1.21m0 1.54a.328.328 0 0 1 0-.655.327.327 0 0 1 0 .655m-4.438-1.828a.44.44 0 0 1-.438.441.44.44 0 0 1-.437-.441.44.44 0 0 1 .437-.442.44.44 0 0 1 .438.441m2.082 4.78a.44.44 0 0 1-.437.442.44.44 0 0 1-.438-.442.44.44 0 0 1 .438-.442.44.44 0 0 1 .437.442"
-                      ></path>
-                    </svg>
+                    
                   </div>
 
                   <p className=" text-sm font-[Duplet] ">
                     Sinus blockage or acidity rising to head
                   </p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
 
           <div className="relative w-full mr-5">
             <div className="w-[358px]  absolute top-1 left-1/2 -translate-x-1/2 z-20 ">
-              <div className="relative">
-                <Image src={BodyFront} alt="reov" className="relative z-10 h-[569px]" />
+              <div className="relative ">
+                {bodySectionPositions[navigaate].map((position, index) => (
+                  <motion.div
+                    key={`body-section-${index}-${navigaate}`}
+                    initial={{
+                      opacity: 0,
+                      top: `${position.top}rem`,
+                      left: position.left,
+                      transform: `translateX(${position.translate})`,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      top: `${position.top}rem`,
+                      left: position.left,
+                      transform: `translateX(${position.translate})`,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.1,
+                      type: "spring",
+                      stiffness: 100,
+                    }}
+                    onClick={() => setActiveOrgan(index)}
+                    className="absolute z-30"
+                  >
+                    <BodySection
+                      className=""
+                      Icon={position.icon}
+                      organ={position.organ}
+                    />
+                  </motion.div>
+                ))}
+
+                {/* Image in the Center */}
+                <AnimatePresence mode="popLayout">
+                  {navigaate === 1 && (
+                    <motion.div
+                      key="front"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Image
+                        src={BodyFront}
+                        alt="reov"
+                        className="relative z-10 h-[569px]"
+                      />
+                    </motion.div>
+                  )}
+
+                  {navigaate === 2 && (
+                    <motion.div
+                      key="side"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative z-10 flex justify-center items-center h-[569px]"
+                    >
+                      <Image
+                        src={BodySide}
+                        alt="reov"
+                        height={529}
+                        className="absolute left-[50%] -translate-x-[42%]"
+                      />
+                    </motion.div>
+                  )}
+
+                  {navigaate === 3 && (
+                    <motion.div
+                      key="back"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="relative z-10 h-[569px] flex items-end justify-center"
+                    >
+                      <Image
+                        src={BodyBack}
+                        alt="reov"
+                        height={556}
+                        className=""
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
                 <svg
                   className="absolute bottom-0"
                   xmlns="http://www.w3.org/2000/svg"
@@ -403,8 +1068,14 @@ function page() {
                     backdropFilter: "blur(8px)",
                   }}
                 >
-                  <motion.button className="cursor-pointer" whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.95 }}>
+                  <motion.button
+                    className="cursor-pointer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() =>
+                      setNavigaate((prev) => rotateImage("prev", prev))
+                    }
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -427,8 +1098,14 @@ function page() {
                       transform: "rotate(-90deg)",
                     }}
                   ></div>
-                  <motion.button className="cursor-pointer" whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.95 }}>
+                  <motion.button
+                    className="cursor-pointer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() =>
+                      setNavigaate((prev) => rotateImage("next", prev))
+                    }
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -444,7 +1121,9 @@ function page() {
                   </motion.button>
                 </div>
 
-                <p className="text-2xl text-primary absolute left-1/2 -translate-x-1/2 whitespace-nowrap ">Headache / Head Region</p>
+                <p className="text-2xl text-primary absolute left-1/2 -translate-x-1/2 whitespace-nowrap ">
+                  {organData[activeOrgan].Heading}
+                </p>
               </div>
             </div>
             <div className="absolute top-0 right-0 flex flex-col gap-4 ">
@@ -517,19 +1196,10 @@ function page() {
               borderRadius: "20px",
             }}
           >
-            <h1 className=" text-2xl text-primary mb-5">Causes</h1>
+            <h1 className=" text-2xl text-primary mb-5">Probable therapies</h1>
 
             <div className="flex flex-wrap gap-2 mb-12">
-              {[
-                "Siro abhynagam",
-                "Dhara",
-                "Pichu",
-                "Nasyam",
-                "Thalapothichil",
-                "Siro lepam",
-                "Abhyangam",
-                "Swedanam",
-              ].map((item, ind) => (
+              {organData[activeOrgan].ProbableTherapies.map((item, ind) => (
                 <p
                   key={ind + 1}
                   className="p-2.5 text-sm text-primary font-[Duplet] wrap-break-word rounded-2xl bg-[#D2F4CD]"
@@ -541,7 +1211,8 @@ function page() {
 
             <h1 className=" text-2xl text-primary mb-5">Healing time</h1>
 
-            <div className="flex justify-between items-center rounded-2xl p-2 bg-[#81DE764D] mb-4">
+              {organData[activeOrgan].HealingTime.map((item, index) => (
+            <div key={index+1} className="flex justify-between items-center rounded-2xl p-2 bg-[#81DE764D] mb-4">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                   <svg
@@ -558,40 +1229,14 @@ function page() {
                   </svg>
                 </div>
                 <p className="text-sm font-[Duplet] text-primary ">
-                  Simple headache :
+                  {item.title}
                 </p>
               </div>
 
               <p className="bg-white rounded-lg px-3 py-2 text-sm font-[Duplet] text-primary">
-                1 to 3 month
+                {item.period}
               </p>
-            </div>
-
-            <div className="flex justify-between items-center rounded-2xl p-2 bg-[#81DE764D] mb-12">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="15"
-                    fill="none"
-                    viewBox="0 0 16 15"
-                  >
-                    <path
-                      fill="#fff"
-                      d="M13.75 13.015a1.73 1.73 0 0 1-.519 1.138 1.78 1.78 0 0 1-1.254.514H2.441c-.488 0-.931-.197-1.253-.514a1.73 1.73 0 0 1-.52-1.236c0-.215.176-.39.394-.39s.396.175.396.39c0 .266.11.508.289.685a1 1 0 0 0 .694.285h9.536a.986.986 0 0 0 .979-.873H5.012c-.455 0-.919-.15-1.297-.393-.39-.25-.697-.604-.827-1l-1.43-4.344v2.44c0 .216-.178.39-.396.39a.393.393 0 0 1-.395-.39V3.513c0-.482.2-.92.52-1.237a1.78 1.78 0 0 1 1.254-.513h.581v-.705c0-.215.177-.39.396-.39h1.967c.218 0 .396.175.396.39v.705h2.857v-.705c0-.215.177-.39.395-.39h1.968c.218 0 .395.175.395.39v.705h.58c.489 0 .932.197 1.254.513l.022.025c.309.315.499.743.499 1.212v1.245l2.18 6.625q.07.211.07.409c0 .27-.09.514-.253.714-.154.192-.373.34-.641.425l-.021.006q-.25.076-.54.078h-.798zm-3.482-2.93c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.949-.61.135-.609.548-.609m7.28-2.017c.414 0 .839.272.95.609s-.135.61-.548.61-.838-.274-.95-.61c-.11-.336.136-.61.549-.61m-2.648 0c.414 0 .839.272.95.609s-.135.61-.549.61c-.413 0-.837-.274-.949-.61-.11-.336.135-.61.548-.61m-2.648 0c.414 0 .838.272.95.609.11.336-.135.61-.549.61-.413 0-.838-.274-.949-.61s.135-.61.548-.61m-2.647 0c.413 0 .837.272.949.609.11.336-.135.61-.548.61s-.838-.274-.95-.61c-.11-.336.135-.61.549-.61m7.28-2.018c.414 0 .838.273.95.61.11.336-.135.609-.549.609-.413 0-.838-.273-.949-.61s.135-.609.548-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-.302-3.508H5.782v.705c0 .215-.177.39-.395.39H3.419a.393.393 0 0 1-.395-.39v-.705h-.581c-.27 0-.517.11-.695.285a.96.96 0 0 0-.289.685v.915h11.503v-.915a.96.96 0 0 0-.27-.668l-.019-.017a1 1 0 0 0-.694-.285h-.58v.705c0 .215-.178.39-.396.39H9.036a.393.393 0 0 1-.396-.39v-.705m1.968-1.095H9.43v1.41h1.177zm-5.616 0H3.814v1.41h1.177zm10.192 10.175-2.112-6.416H1.607l2.033 6.176c.073.222.261.431.505.588.255.164.566.265.868.265h9.536q.173 0 .302-.04l.013-.004a.56.56 0 0 0 .267-.169.36.36 0 0 0 .08-.23q0-.081-.028-.168zM1.46 11.83c0 .215-.177.39-.395.39a.393.393 0 0 1-.396-.39v-1.025c0-.215.178-.39.396-.39s.395.175.395.39z"
-                    ></path>
-                  </svg>
-                </div>
-                <p className="text-sm font-[Duplet] text-primary ">
-                  Migraine :
-                </p>
-              </div>
-
-              <p className="bg-white rounded-lg px-3 py-2 text-sm font-[Duplet] text-primary">
-                3 to 6 month
-              </p>
-            </div>
+            </div>))}
 
             <div className="bg-white rounded-2xl p-5 ">
               <h1 className="text-lg text-primary text-center font-[Duplet] font-semibold mb-4">
@@ -612,31 +1257,72 @@ function page() {
           </div>
         </div>
       </div>
+      <ContactSection />
     </main>
   );
 }
 
-export default page;
+export default Previkta;
 
-/* Headache / Head Region */
+interface BodySectionProps {
+  className: string;
+  Icon: React.ElementType; // Changed from ReactDOM to React.ElementType
+  organ?: {
+    name: string;
+    image: StaticImageData;
+    description: string;
+  };
+}
 
-// width: 287px;
-// height: 29px;
+function BodySection({ className, Icon, organ }: BodySectionProps) {
+  const [showOrgan, setShowOrgan] = useState(false);
 
-// /* Desktop/H3 */
-// font-family: 'Atyp TEST';
-// font-style: normal;
-// font-weight: 135;
-// font-size: 24px;
-// line-height: 29px;
-// /* identical to box height */
+  return (
+    <div className="relative">
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        onHoverStart={() => setShowOrgan(true)}
+        onHoverEnd={() => setShowOrgan(false)}
+        className={
+          "h-5 w-5 rounded-full bg-[#81DE7633] flex items-center justify-center cursor-pointer" +
+          className
+        }
+      >
+        <div className="bg-primary rounded-full w-3 h-3 flex items-center justify-center ">
+          <Icon size="small" isActive={true} />
+        </div>
+      </motion.div>
 
-// /* Primary */
-// color: #132D47;
-// font-variation-settings: 'opsz' 0;
-
-
-// /* Inside auto layout */
-// flex: none;
-// order: 0;
-// flex-grow: 0;
+      <AnimatePresence>
+        {showOrgan && organ && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            className="absolute z-50 bg-[#132D4733] rounded-xl p-1 shadow-lg"
+            style={{
+              top: "-1.8rem",
+              left: "3rem",
+              // transform: "translateX(-50%)",
+              // width: "200px"
+            }}
+          >
+            <div className="relative aspect-video rounded-lg overflow-hidden mb-0.5  h-[52px] w-[86px]">
+              <Image
+                src={organ.image}
+                alt={organ.name}
+                height={52}
+                width={86}
+                // fill
+                className=" h-[52px] w-[86px]"
+              />
+            </div>
+            <h3 className="text-primary font-[Duplet] text-sm text-center ">
+              {organ.name}
+            </h3>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
