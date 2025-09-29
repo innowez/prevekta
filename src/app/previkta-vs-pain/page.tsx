@@ -172,6 +172,7 @@ function Previkta() {
   const organData = [
     {
       Heading: "Headache / Head Region",
+      // Diseases: [{icon: PrevIcon.MigraineIcon, txt:"Migraine"}, {icon: PrevIcon.SinusHeadacheIcon, txt:"Sinus Headache"}, {icon: PrevIcon.TensionHeadache, txt:"Tension headache"}],
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
         {
@@ -233,7 +234,39 @@ function Previkta() {
       ],
     },
 
+    {
+      Heading: "Neck Pain (Cervical)",
+      Diseases: ["Cervical spondylosis", "Disc prolapse",],
+      Causes: [
         {
+          icon: PrevIcon.OverThinkingIcon,
+          dis: "Long sitting in wrong posture",
+        },
+        {
+          icon: PrevIcon.SleeplessnessIcon,
+          dis: "Hours on phone/laptop",
+        },
+        {
+          icon: PrevIcon.ComputerUseIcon,
+          dis: "Ageing & dryness in bones",
+        },
+      ],
+      ProbableTherapies: [
+        "Siro abhynagam",
+        "Dhara",
+        "Pichu",
+        "Nasyam",
+        "Thalapothichil",
+        "Siro lepam",
+        "Abhyangam",
+        "Swedanam",
+      ],
+      HealingTime: [
+        { title: "Simple headache :", period: "1 to 3 month" },
+        { title: "Migraine :", period: "3 to 6 month" },
+      ],
+    },
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -269,7 +302,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -305,7 +338,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -341,7 +374,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -377,7 +410,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -413,7 +446,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -449,7 +482,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -485,7 +518,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -521,7 +554,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -557,7 +590,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -593,7 +626,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
@@ -629,43 +662,7 @@ function Previkta() {
         { title: "Migraine :", period: "3 to 6 month" },
       ],
     },
-        {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
-      Causes: [
-        {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
-        },
-        {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
-        },
-        {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
-        },
-        {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
-        },
-      ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
-      HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
-      ],
-    },
-        {
+    {
       Heading: "Headache / Head Region",
       Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
