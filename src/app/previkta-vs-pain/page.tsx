@@ -172,8 +172,12 @@ function Previkta() {
   const organData = [
     {
       Heading: "Headache / Head Region",
-      // Diseases: [{icon: PrevIcon.MigraineIcon, txt:"Migraine"}, {icon: PrevIcon.SinusHeadacheIcon, txt:"Sinus Headache"}, {icon: PrevIcon.TensionHeadache, txt:"Tension headache"}],
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Diseases: [
+        { icon: PrevIcon.MigraineIcon, txt: "Migraine" },
+        { icon: PrevIcon.SinusHeadacheIcon, txt: "Sinus Headache" },
+        { icon: PrevIcon.TensionHeadache, txt: "Tension headache" },
+      ],
+      // Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
         {
           icon: PrevIcon.OverThinkingIcon,
@@ -210,11 +214,17 @@ function Previkta() {
     {
       Heading: "Eye Pain / Eye Strain",
       Diseases: [
-        "Computer vision syndrome",
-        "Eye strain",
-        "Conjunctivitis",
-        "Dry eye syndrome",
-        "Cluster headaches with eye pain",
+        {
+          icon: PrevIcon.ComputerVisionSyndrome,
+          txt: "Computer vision syndrome",
+        },
+        { icon: PrevIcon.EyeStrain, txt: "Eye strain" },
+        { icon: PrevIcon.Conjunctivitis, txt: "Conjunctivitis" },
+        { icon: PrevIcon.DryEyeSyndrome, txt: "Dry eye syndrome" },
+        {
+          icon: PrevIcon.ClusterHeadaches,
+          txt: "Cluster headaches with eye pain",
+        },
       ],
       Causes: [
         { icon: PrevIcon.LongScreenIcon, dis: "Long screen time" },
@@ -236,18 +246,21 @@ function Previkta() {
 
     {
       Heading: "Neck Pain (Cervical)",
-      Diseases: ["Cervical spondylosis", "Disc prolapse",],
+      Diseases: [
+        { icon: PrevIcon.CervicalSpondylosis, txt: "Cervical spondylosis" },
+        { icon: PrevIcon.DiscProlapse, txt: "Disc prolapse" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
+          icon: PrevIcon.SittingWrongPosture,
           dis: "Long sitting in wrong posture",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
+          icon: PrevIcon.HoursOnPhone,
           dis: "Hours on phone/laptop",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
+          icon: PrevIcon.AgeingDrynessBones,
           dis: "Ageing & dryness in bones",
         },
       ],
@@ -267,24 +280,23 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Shoulder Pain",
+      Diseases: [
+        { icon: PrevIcon.FrozenShoulder, txt: "Frozen shoulder" },
+        { icon: PrevIcon.Arthritis, txt: "Arthritis" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.StiffnessInactivity,
+          dis: "Stiffness due to diabetes or inactivity",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.OveruseStrain,
+          dis: "Overuse or sudden strain",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
-        },
-        {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.ArthritisAffectingJoints,
+          dis: "Arthritis affecting joints",
         },
       ],
       ProbableTherapies: [
@@ -303,24 +315,24 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Elbow & Wrist Pain",
+      Diseases: [
+        { txt: "Tennis", icon: PrevIcon.Tennis },
+        { icon: PrevIcon.GolferElbow, txt: "Golfer’s elbow" },
+        { icon: PrevIcon.CarpalTunnel, txt: "Carpal tunnel" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.RepeatedMovements,
+          dis: "Repeated hand movements",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.AgeingOrArthritis,
+          dis: "Weak joints due to ageing or arthritis",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
-        },
-        {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.NerveCompression,
+          dis: "Nerve compression in wrist",
         },
       ],
       ProbableTherapies: [
@@ -339,24 +351,34 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Xiphisternum Pain",
+      Diseases: [
+        { txt: "Gastritis", icon: PrevIcon.Tennis },
+        { icon: PrevIcon.GolferElbow, txt: "Acid reflux" },
+        { icon: PrevIcon.CarpalTunnel, txt: "Costochondritis" },
+        { icon: PrevIcon.CarpalTunnel, txt: "Peptic ulcer pain radiating to xiphisternum" },
+        { icon: PrevIcon.CarpalTunnel, txt: "Anxiety-related chest tightness" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.IrregularFood,
+          dis: "Excess spicy, oily, or irregular food",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.ToxinAccumulation,
+          dis: "Weak digestion and toxin accumulation",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
+          icon: PrevIcon.RibCartilage,
+          dis: "Overexertion, trauma, or strain can inflame rib cartilage.",
         },
         {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.StressAnxiety,
+          dis: "Stress and anxiety",
+        },
+         {
+          icon: PrevIcon.PoorPostureMeals,
+          dis: "Poor posture after meals",
         },
       ],
       ProbableTherapies: [
@@ -375,24 +397,28 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Low Back & Mid Back Pain",
+      Diseases: [
+        { icon: PrevIcon.GolferElbow, txt: "Sciatica" },
+        { icon: PrevIcon.CarpalTunnel, txt: "Lumbar pain" },
+        { icon: PrevIcon.CarpalTunnel, txt: "Thoracic stiffness" },
+      ],
       Causes: [
         {
           icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          dis: "Wrong sitting posture & long travel",
         },
         {
           icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          dis: "Weak spine muscles",
         },
         {
           icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
+          dis: "Disc bulge pressing on nerves",
         },
         {
           icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          dis: "Stress & lack of exercise",
         },
       ],
       ProbableTherapies: [
@@ -411,24 +437,27 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Pelvic Pain",
+      Diseases: [
+        { icon: PrevIcon.LowerAbdomen, txt: "Lower Abdomen" },
+        { icon: PrevIcon.HipRegion, txt: "Hip Region" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.MenstrualCramps,
+          dis: "Menstrual cramps or PCOS in women",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.UrinaryTractInfection,
+          dis: "Urinary tract infection (UTI)",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
+          icon: PrevIcon.MuscleStrainPelvic,
+          dis: "Muscle strain in pelvic floor",
         },
         {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.ConstipationBowelIssues,
+          dis: "Constipation or bowel issues",
         },
       ],
       ProbableTherapies: [
@@ -447,24 +476,22 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Abdominal Pain",
+      Diseases: [
+        
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.IndigestionGasAcidity,
+          dis: "Indigestion, gas or acidity",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.ConstipationIBS,
+          dis: "Constipation or IBS",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
-        },
-        {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.ChronicGastritis,
+          dis: "Ulcer or chronic gastritis",
         },
       ],
       ProbableTherapies: [
@@ -483,24 +510,20 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Flank Pain",
+      Diseases: [],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.KidneyStoneInfection,
+          dis: "Kidney stone or infection",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.MuscleStrainBending,
+          dis: "Muscle strain from bending or lifting",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
-        },
-        {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.NerveCompressionSpine,
+          dis: "Nerve compression in spine",
         },
       ],
       ProbableTherapies: [
@@ -519,24 +542,24 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Knee Pain",
+      Diseases: [
+        { icon: PrevIcon.Osteoarthritis, txt: "Osteoarthritis" },
+        { icon: PrevIcon.RheumatoidArthritis, txt: "Rheumatoid arthritis" },
+        { icon: PrevIcon.LigamentInjury, txt: "Ligament injury" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.WearTearJoints,
+          dis: "Wear & tear of joints",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.InjuryLigamentsCartilage,
+          dis: "Injury to ligaments or cartilage",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
-        },
-        {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.OverweightAddingStressKnees,
+          dis: "Overweight adding stress on knees",
         },
       ],
       ProbableTherapies: [
@@ -555,24 +578,26 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Calf Muscle Pain",
+        Diseases: [
+        { icon: PrevIcon.MuscleCramps, txt: "Muscle cramps" },
+        { icon: PrevIcon.VaricoseVeins, txt: "Varicose veins" },
+        { icon: PrevIcon.DeepVeinWeakness, txt: "Deep vein weakness" },
+        { icon: PrevIcon.MuscleFatigue, txt: "Muscle fatigue" },
+        { icon: PrevIcon.Strain, txt: "strain" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.SuddenCrampsDue,
+          dis: "Sudden cramps due to dehydration or low minerals",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.InjuryLigaments,
+          dis: "Injury to ligaments or cartilage",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
-        },
-        {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.OverweightStress,
+          dis: "Overweight adding stress on knees",
         },
       ],
       ProbableTherapies: [
@@ -591,24 +616,23 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Ankle Pain",
+      Diseases: [
+        { icon: PrevIcon.Sprain, txt: "Sprain" },
+        { icon: PrevIcon.Gout, txt: "Gout" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.SuddenTwistingInjury,
+          dis: "Sudden twisting injury",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.ArthritisCausingSwelling,
+          dis: "Arthritis or gout causing swelling",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
-        },
-        {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.WeakLigamentsDue,
+          dis: "Weak ligaments due to age/strain",
         },
       ],
       ProbableTherapies: [
@@ -627,24 +651,26 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Sole Pain",
+      Diseases: [
+
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.LongWalkingStanding,
+          dis: "Long walking/standing on hard floor",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.FlatwrongFootwear,
+          dis: "Flat foot or wrong footwear",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
+          icon: PrevIcon.InflammationSoleTissue,
+          dis: "Inflammation of sole tissue",
         },
         {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.BoneSpurHeel,
+          dis: "Bone spur under heel",
         },
       ],
       ProbableTherapies: [
@@ -663,24 +689,26 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Headache / Head Region",
-      Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
+      Heading: "Sole Pain",
+      Diseases: [
+
+      ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
-          dis: "Stress, tension & overthinking",
+          icon: PrevIcon.LongWalkingStanding,
+          dis: "Long walking/standing on hard floor",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
-          dis: "Late nights & sleeplessness",
+          icon: PrevIcon.FlatwrongFootwear,
+          dis: "Flat foot or wrong footwear",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Too much mobile & computer use",
+          icon: PrevIcon.InflammationSoleTissue,
+          dis: "Inflammation of sole tissue",
         },
         {
-          icon: PrevIcon.SinusBlockageIcon,
-          dis: "Sinus blockage or acidity rising to head",
+          icon: PrevIcon.BoneSpurHeel,
+          dis: "Bone spur under heel",
         },
       ],
       ProbableTherapies: [
@@ -810,7 +838,7 @@ function Previkta() {
                     className="p-4 rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md"
                   >
                     <div className="bg-primary flex justify-center items-center w-8 h-8 rounded-full">
-                      <svg
+                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="15"
                         height="15"
@@ -821,10 +849,11 @@ function Previkta() {
                           fill="#81DE76"
                           d="M13.662 7.496c.416-.4.749-.879.978-1.41a4.39 4.39 0 0 0-.899-4.814 4.3 4.3 0 0 0-1.42-.952 4.25 4.25 0 0 0-3.338.044c-.526.233-1 .57-1.395.99l-.036.041-.052-.041A4.27 4.27 0 0 0 4.491.122a4.27 4.27 0 0 0-3.002 1.25A4.37 4.37 0 0 0 .21 4.39a4.37 4.37 0 0 0 1.175 3.062l-.127.132A4.37 4.37 0 0 0 0 10.656a4.37 4.37 0 0 0 1.258 3.072A4.27 4.27 0 0 0 4.295 15a4.27 4.27 0 0 0 3.037-1.272l.044-.045.044.045a4.27 4.27 0 0 0 3.004 1.213 4.27 4.27 0 0 0 2.99-1.251 4.37 4.37 0 0 0 1.277-3.007 4.37 4.37 0 0 0-1.16-3.055zM2.345 2.28a2.975 2.975 0 0 1 3.726-.414L5.35 2.6H2.66v2.716l-.724.733a3.06 3.06 0 0 1 .41-3.769m2.62 1.635V4.93H3.96V3.915zm-2.791 8.883a3.062 3.062 0 0 1-.41-3.769l.724.734v2.717h2.687l.725.733a2.975 2.975 0 0 1-3.726-.415m1.614-1.633v-1.017h1.006v1.017zm4.866.385-1.278 1.293-1.28-1.294V8.835H3.408l-1.19-1.207L3.58 6.247h2.684V3.53l1.287-1.293 1.28 1.294v2.716h2.676l1.193 1.206-1.365 1.382H8.654zm1.473-6.618V3.915h1.003v1.017zm.832 5.217v1.016H9.952V10.15zm1.613 2.649a2.972 2.972 0 0 1-3.726.414l.723-.732h2.686V9.763l.726-.734a3.064 3.064 0 0 1-.41 3.769m.58-6.749-.722-.732V2.6H9.743l-.726-.734a2.96 2.96 0 0 1 3.741.4 3.051 3.051 0 0 1 .394 3.784"
                         ></path>
-                      </svg>
+                      </svg> */}
+                      <item.icon />
                     </div>
 
-                    <p className="text-sm font-[Duplet]">{item}</p>
+                    <p className="text-sm font-[Duplet]">{item.txt}</p>
                   </div>
                 ))}
 
