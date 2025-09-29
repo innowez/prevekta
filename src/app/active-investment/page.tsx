@@ -263,7 +263,7 @@ function page() {
           </h1>
 
           <div className="flex justify-between items-start">
-            <div className="relative method-3 flex flex-col items-center w-1/3 h-full">
+            <div className="relative method-3 flex flex-col items-center w-1/3 h-full pb-2">
               <h2 className="text-2xl text-primary text-center leading-[29px] font-[Atyp] font-semibold mb-5 ">
                 Exclusive Territory <br />
                 Leadership
@@ -291,7 +291,7 @@ function page() {
               </div>
             </div>
 
-            <div className="relative method-1 flex flex-col items-center w-1/3 h-full">
+            <div className="relative method-1 flex flex-col items-center w-1/3 h-full pb-2 ">
               <h2 className="text-2xl text-primary text-center leading-[29px] font-[Atyp] font-semibold mb-5 ">
                 Regional Presence And <br />
                 Market Dominance
