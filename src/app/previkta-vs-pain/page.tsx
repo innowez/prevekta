@@ -7,6 +7,19 @@ import BodyFront from "@/assets/pvp/body-front.png";
 import BodySide from "@/assets/pvp/body-side.png";
 import BodyBack from "@/assets/pvp/body-back.png";
 import EyePain from "@/assets/pvp/eye.png";
+import NeckPain from "@/assets/pvp/neckPain.png";
+import ShoulderPain from "@/assets/pvp/shouldePain.png";
+import ElbowWristPain from "@/assets/pvp/elbowWristpain.png";
+import XiphisternumPain from "@/assets/pvp/xiphisternumPain.png";
+import MidBackPain from "@/assets/pvp/midBackPain.png";
+import PelvicPain from "@/assets/pvp/pelvicPain.png";
+import AbdominalPain from "@/assets/pvp/abdominalPain.png";
+import KneePain from "@/assets/pvp/kneePain.png";
+import CalfMusclePain from "@/assets/pvp/calfMusclePain.png";
+import AnklePain from "@/assets/pvp/AnklePain.png";
+import SolePain from "@/assets/pvp/solePain.png";
+import FlankPain from "@/assets/pvp/flankPain.png";
+
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { StaticImageData } from "next/image";
@@ -48,18 +61,20 @@ function Previkta() {
   };
 
   interface BodyPosition {
-  top: string;
-  left: string;
-  translate: string;
-  icon: React.ElementType;
-  organ?: {
-    name: string;
-    image: StaticImageData;
-    description: string;
-  };
-}
+    top: string;
+    left: string;
+    translate: string;
+    icon: React.ElementType;
+    organ?: {
+      name: string;
+      image: StaticImageData;
+      description: string;
+      top: string;
+      left: string;
+    };
+  }
 
-  const bodySectionPositions: Record<1 | 2 | 3, BodyPosition[]> =  {
+  const bodySectionPositions: Record<1 | 2 | 3, BodyPosition[]> = {
     1: [
       // Front view positions
       { top: "1.5", left: "50%", translate: "-50%", icon: PrevIcon.firstIcon },
@@ -72,23 +87,143 @@ function Previkta() {
           name: "Eye Pain",
           image: EyePain,
           description: "Common eye pain areas",
+          top: "-1.8rem",
+          left: "3rem",
         },
       },
-      { top: "5", left: "50%", translate: "-50%", icon: PrevIcon.ThirdIcon },
-      { top: "6", left: "35%", translate: "0", icon: PrevIcon.FourthIcon },
+      {
+        top: "5",
+        left: "50%",
+        translate: "-50%",
+        icon: PrevIcon.ThirdIcon,
+        organ: {
+          name: "Neck Pain",
+          image: NeckPain,
+          description: "",
+          top: "-1.8rem",
+          left: "5rem",
+        },
+      },
+      {
+        top: "6",
+        left: "35%",
+        translate: "0",
+        icon: PrevIcon.FourthIcon,
+        organ: {
+          name: "Shoulder Pain",
+          image: ShoulderPain,
+          description: "",
+          top: "-1.8rem",
+          left: "-7rem",
+        },
+      },
 
-      { top: "10", left: "68%", translate: "0", icon: PrevIcon.fifthIcon },
-      { top: "12", left: "50%", translate: "-50%", icon: PrevIcon.sixthIcon },
-      { top: "15", left: "50%", translate: "-50%", icon: PrevIcon.seventhIcon },
+      {
+        top: "10",
+        left: "68%",
+        translate: "0",
+        icon: PrevIcon.fifthIcon,
+        organ: {
+          name: "Elbow & Wrist Pain",
+          image: ElbowWristPain,
+          description: "",
+          top: "-4rem",
+          left: "2rem",
+        },
+      },
+      {
+        top: "8",
+        left: "50%",
+        translate: "-50%",
+        icon: PrevIcon.sixthIcon,
+        organ: {
+          name: "Xiphisternum Pain",
+          image: XiphisternumPain,
+          description: "",
+          top: "4rem",
+          left: "3.5rem",
+        },
+      },
+      // {
+      //   top: "15",
+      //   left: "50%",
+      //   translate: "-50%",
+      //   icon: PrevIcon.seventhIcon,
+      //   organ: {
+      //     name: "Low Back & Mid Back Pain",
+      //     image: MidBackPain,
+      //     description: "",
+      //     top: "1rem",
+      //     left: "3.5rem",
+      //   },
+      // },
+      {
+        top: "12",
+        left: "50%",
+        translate: "-50%",
+        icon: PrevIcon.ninthIcon,
+        organ: {
+          name: "Abdominal Pain",
+          image: AbdominalPain,
+          description: "",
+          top: "1rem",
+          left: "3.5rem",
+        },
+      },
 
-      { top: "22", left: "40%", translate: "0", icon: PrevIcon.eleventhIcon },
-      { top: "25", left: "49%", translate: "0", icon: PrevIcon.twelvthIcon },
+      {
+        top: "15",
+        left: "50%",
+        translate: "-50%",
+        icon: PrevIcon.eigithIcon,
+        organ: {
+          name: "Pelvic Pain",
+          image: PelvicPain,
+          description: "",
+          top: "1rem",
+          left: "3.5rem",
+        },
+      },
+
+      {
+        top: "22",
+        left: "40%",
+        translate: "0",
+        icon: PrevIcon.eleventhIcon,
+        organ: {
+          name: "Knee Pain",
+          image: KneePain,
+          description: "",
+          top: "-1.5rem",
+          left: "-6.5rem",
+        },
+      },
+      {
+        top: "25",
+        left: "49%",
+        translate: "0",
+        icon: PrevIcon.twelvthIcon,
+        organ: {
+          name: "Calf Muscle Pain",
+          image: CalfMusclePain,
+          description: "",
+          top: "-1.5rem",
+          left: "3rem",
+        },
+      },
 
       {
         top: "28.5",
         left: "49%",
         translate: "0",
         icon: PrevIcon.thirteenthIcon,
+        organ: {
+          name: "Ankle Pain",
+          image: AnklePain,
+          description: "",
+          top: "-2rem",
+          left: "3rem",
+        },
       },
       {
         top: "29.5",
@@ -96,7 +231,19 @@ function Previkta() {
         translate: "0",
         icon: PrevIcon.fourteenthIcon,
       },
-      { top: "30.2", left: "52%", translate: "0", icon: PrevIcon.fifteenIcon },
+      {
+        top: "30.2",
+        left: "52%",
+        translate: "0",
+        icon: PrevIcon.fifteenIcon,
+        organ: {
+          name: "Sole Pain",
+          image: SolePain,
+          description: "",
+          top: "-2rem",
+          left: "3rem",
+        },
+      },
     ],
     2: [
       // Side view positions
@@ -110,19 +257,81 @@ function Previkta() {
           name: "Eye Pain",
           image: EyePain,
           description: "Common eye pain areas",
+          top: "-1.8rem",
+          left: "3rem",
         },
       },
       // { top: "24", left: "40%", translate: "-50%", icon: PrevIcon.ThirdIcon },
-      { top: "7.5", left: "55%", translate: "0", icon: PrevIcon.FourthIcon },
+      {
+        top: "7.5",
+        left: "55%",
+        translate: "0",
+        icon: PrevIcon.FourthIcon,
+        organ: {
+          name: "Shoulder Pain",
+          image: ShoulderPain,
+          description: "",
+          top: "-1.8rem",
+          left: "3rem",
+        },
+      },
 
       // { top: "10", left: "68%", translate: "0", icon: PrevIcon.fifthIcon },
       // { top: "12", left: "50%", translate: "-50%", icon: PrevIcon.sixthIcon },
-      { top: "12", left: "57%", translate: "0", icon: PrevIcon.seventhIcon },
+      {
+        top: "12",
+        left: "57%",
+        translate: "0",
+        icon: PrevIcon.seventhIcon,
+        organ: {
+          name: "Low Back & Mid Back Pain",
+          image: MidBackPain,
+          description: "",
+          top: "-1.5rem",
+          left: "2rem",
+        },
+      },
 
-      { top: "22.7", left: "44%", translate: "0", icon: PrevIcon.eleventhIcon },
-      { top: "25", left: "56%", translate: "0", icon: PrevIcon.twelvthIcon },
+      {
+        top: "22.7",
+        left: "44%",
+        translate: "0",
+        icon: PrevIcon.eleventhIcon,
+        organ: {
+          name: "Knee Pain",
+          image: KneePain,
+          description: "",
+          top: "-1.5rem",
+          left: "-6.5rem",
+        },
+      },
+      {
+        top: "25",
+        left: "56%",
+        translate: "0",
+        icon: PrevIcon.twelvthIcon,
+        organ: {
+          name: "Calf Muscle Pain",
+          image: CalfMusclePain,
+          description: "",
+          top: "-1.5rem",
+          left: "3rem",
+        },
+      },
 
-      { top: "29", left: "55%", translate: "0", icon: PrevIcon.thirteenthIcon },
+      {
+        top: "29",
+        left: "55%",
+        translate: "0",
+        icon: PrevIcon.thirteenthIcon,
+        organ: {
+          name: "Ankle Pain",
+          image: AnklePain,
+          description: "",
+          top: "-2rem",
+          left: "2rem",
+        },
+      },
       {
         top: "30.5",
         left: "56.5%",
@@ -134,6 +343,13 @@ function Previkta() {
         left: "44.5%",
         translate: "0",
         icon: PrevIcon.fifteenIcon,
+        organ: {
+          name: "Sole Pain",
+          image: SolePain,
+          description: "",
+          top: "-4rem",
+          left: "-7rem",
+        },
       },
     ],
     3: [
@@ -141,30 +357,104 @@ function Previkta() {
       { top: "1", left: "52%", translate: "-50%", icon: PrevIcon.firstIcon },
       // { top: "2.5", left: "58%", translate: "0", icon: PrevIcon.SecondIcon },
       // { top: "5", left: "45%", translate: "-50%", icon: PrevIcon.ThirdIcon },
-      { top: "6", left: "34%", translate: "0", icon: PrevIcon.FourthIcon },
+      {
+        top: "6",
+        left: "34%",
+        translate: "0",
+        icon: PrevIcon.FourthIcon,
+        organ: {
+          name: "Shoulder Pain",
+          image: ShoulderPain,
+          description: "",
+          top: "-1.8rem",
+          left: "-7rem",
+        },
+      },
 
-      { top: "10", left: "68%", translate: "0", icon: PrevIcon.fifthIcon },
+      {
+        top: "10",
+        left: "68%",
+        translate: "0",
+        icon: PrevIcon.fifthIcon,
+        organ: {
+          name: "Elbow & Wrist Pain",
+          image: ElbowWristPain,
+          description: "",
+          top: "-4rem",
+          left: "2rem",
+        },
+      },
       // { top: "12", left: "50%", translate: "-50%", icon: PrevIcon.sixthIcon },
       {
         top: "13.5",
         left: "52%",
         translate: "-50%",
         icon: PrevIcon.seventhIcon,
+        organ: {
+          name: "Low Back & Mid Back Pain",
+          image: MidBackPain,
+          description: "",
+          top: "1rem",
+          left: "3.5rem",
+        },
       },
 
-      { top: "12.5", left: "57%", translate: "0", icon: PrevIcon.tenthIcon },
+      {
+        top: "12.5",
+        left: "57%",
+        translate: "0",
+        icon: PrevIcon.tenthIcon,
+        organ: {
+          name: "Flank Pain",
+          image: FlankPain,
+          description: "",
+          top: "1rem",
+          left: "1.5rem",
+        },
+      },
 
       // { top: "22", left: "40%", translate: "0", icon: PrevIcon.eleventhIcon },
-      { top: "25", left: "54%", translate: "0", icon: PrevIcon.twelvthIcon },
+      {
+        top: "25",
+        left: "54%",
+        translate: "0",
+        icon: PrevIcon.twelvthIcon,
+        organ: {
+          name: "Calf Muscle Pain",
+          image: CalfMusclePain,
+          description: "",
+          top: "-1.5rem",
+          left: "3rem",
+        },
+      },
 
       {
         top: "28.5",
         left: "52%",
         translate: "0",
         icon: PrevIcon.thirteenthIcon,
+        organ: {
+          name: "Ankle Pain",
+          image: AnklePain,
+          description: "",
+          top: "-2rem",
+          left: "2.5rem",
+        },
       },
       { top: "30", left: "42%", translate: "0", icon: PrevIcon.fourteenthIcon },
-      { top: "30", left: "55%", translate: "0", icon: PrevIcon.fifteenIcon },
+      {
+        top: "30",
+        left: "55%",
+        translate: "0",
+        icon: PrevIcon.fifteenIcon,
+        organ: {
+          name: "Sole Pain",
+          image: SolePain,
+          description: "",
+          top: "-4rem",
+          left: "2rem",
+        },
+      },
     ],
   };
 
@@ -356,7 +646,10 @@ function Previkta() {
         { txt: "Gastritis", icon: PrevIcon.Tennis },
         { icon: PrevIcon.GolferElbow, txt: "Acid reflux" },
         { icon: PrevIcon.CarpalTunnel, txt: "Costochondritis" },
-        { icon: PrevIcon.CarpalTunnel, txt: "Peptic ulcer pain radiating to xiphisternum" },
+        {
+          icon: PrevIcon.CarpalTunnel,
+          txt: "Peptic ulcer pain radiating to xiphisternum",
+        },
         { icon: PrevIcon.CarpalTunnel, txt: "Anxiety-related chest tightness" },
       ],
       Causes: [
@@ -376,7 +669,7 @@ function Previkta() {
           icon: PrevIcon.StressAnxiety,
           dis: "Stress and anxiety",
         },
-         {
+        {
           icon: PrevIcon.PoorPostureMeals,
           dis: "Poor posture after meals",
         },
@@ -477,9 +770,7 @@ function Previkta() {
     },
     {
       Heading: "Abdominal Pain",
-      Diseases: [
-        
-      ],
+      Diseases: [],
       Causes: [
         {
           icon: PrevIcon.IndigestionGasAcidity,
@@ -579,7 +870,7 @@ function Previkta() {
     },
     {
       Heading: "Calf Muscle Pain",
-        Diseases: [
+      Diseases: [
         { icon: PrevIcon.MuscleCramps, txt: "Muscle cramps" },
         { icon: PrevIcon.VaricoseVeins, txt: "Varicose veins" },
         { icon: PrevIcon.DeepVeinWeakness, txt: "Deep vein weakness" },
@@ -652,9 +943,7 @@ function Previkta() {
     },
     {
       Heading: "Sole Pain",
-      Diseases: [
-
-      ],
+      Diseases: [],
       Causes: [
         {
           icon: PrevIcon.LongWalkingStanding,
@@ -690,9 +979,7 @@ function Previkta() {
     },
     {
       Heading: "Sole Pain",
-      Diseases: [
-
-      ],
+      Diseases: [],
       Causes: [
         {
           icon: PrevIcon.LongWalkingStanding,
@@ -1237,32 +1524,36 @@ function Previkta() {
 
             <h1 className=" text-2xl text-primary mb-5">Healing time</h1>
 
-              {organData[activeOrgan].HealingTime.map((item, index) => (
-            <div key={index+1} className="flex justify-between items-center rounded-2xl p-2 bg-[#81DE764D] mb-4">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="15"
-                    fill="none"
-                    viewBox="0 0 16 15"
-                  >
-                    <path
-                      fill="#fff"
-                      d="M13.75 13.015a1.73 1.73 0 0 1-.519 1.138 1.78 1.78 0 0 1-1.254.514H2.441c-.488 0-.931-.197-1.253-.514a1.73 1.73 0 0 1-.52-1.236c0-.215.176-.39.394-.39s.396.175.396.39c0 .266.11.508.289.685a1 1 0 0 0 .694.285h9.536a.986.986 0 0 0 .979-.873H5.012c-.455 0-.919-.15-1.297-.393-.39-.25-.697-.604-.827-1l-1.43-4.344v2.44c0 .216-.178.39-.396.39a.393.393 0 0 1-.395-.39V3.513c0-.482.2-.92.52-1.237a1.78 1.78 0 0 1 1.254-.513h.581v-.705c0-.215.177-.39.396-.39h1.967c.218 0 .396.175.396.39v.705h2.857v-.705c0-.215.177-.39.395-.39h1.968c.218 0 .395.175.395.39v.705h.58c.489 0 .932.197 1.254.513l.022.025c.309.315.499.743.499 1.212v1.245l2.18 6.625q.07.211.07.409c0 .27-.09.514-.253.714-.154.192-.373.34-.641.425l-.021.006q-.25.076-.54.078h-.798zm-3.482-2.93c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.949-.61.135-.609.548-.609m7.28-2.017c.414 0 .839.272.95.609s-.135.61-.548.61-.838-.274-.95-.61c-.11-.336.136-.61.549-.61m-2.648 0c.414 0 .839.272.95.609s-.135.61-.549.61c-.413 0-.837-.274-.949-.61-.11-.336.135-.61.548-.61m-2.648 0c.414 0 .838.272.95.609.11.336-.135.61-.549.61-.413 0-.838-.274-.949-.61s.135-.61.548-.61m-2.647 0c.413 0 .837.272.949.609.11.336-.135.61-.548.61s-.838-.274-.95-.61c-.11-.336.135-.61.549-.61m7.28-2.018c.414 0 .838.273.95.61.11.336-.135.609-.549.609-.413 0-.838-.273-.949-.61s.135-.609.548-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-.302-3.508H5.782v.705c0 .215-.177.39-.395.39H3.419a.393.393 0 0 1-.395-.39v-.705h-.581c-.27 0-.517.11-.695.285a.96.96 0 0 0-.289.685v.915h11.503v-.915a.96.96 0 0 0-.27-.668l-.019-.017a1 1 0 0 0-.694-.285h-.58v.705c0 .215-.178.39-.396.39H9.036a.393.393 0 0 1-.396-.39v-.705m1.968-1.095H9.43v1.41h1.177zm-5.616 0H3.814v1.41h1.177zm10.192 10.175-2.112-6.416H1.607l2.033 6.176c.073.222.261.431.505.588.255.164.566.265.868.265h9.536q.173 0 .302-.04l.013-.004a.56.56 0 0 0 .267-.169.36.36 0 0 0 .08-.23q0-.081-.028-.168zM1.46 11.83c0 .215-.177.39-.395.39a.393.393 0 0 1-.396-.39v-1.025c0-.215.178-.39.396-.39s.395.175.395.39z"
-                    ></path>
-                  </svg>
+            {organData[activeOrgan].HealingTime.map((item, index) => (
+              <div
+                key={index + 1}
+                className="flex justify-between items-center rounded-2xl p-2 bg-[#81DE764D] mb-4"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="15"
+                      fill="none"
+                      viewBox="0 0 16 15"
+                    >
+                      <path
+                        fill="#fff"
+                        d="M13.75 13.015a1.73 1.73 0 0 1-.519 1.138 1.78 1.78 0 0 1-1.254.514H2.441c-.488 0-.931-.197-1.253-.514a1.73 1.73 0 0 1-.52-1.236c0-.215.176-.39.394-.39s.396.175.396.39c0 .266.11.508.289.685a1 1 0 0 0 .694.285h9.536a.986.986 0 0 0 .979-.873H5.012c-.455 0-.919-.15-1.297-.393-.39-.25-.697-.604-.827-1l-1.43-4.344v2.44c0 .216-.178.39-.396.39a.393.393 0 0 1-.395-.39V3.513c0-.482.2-.92.52-1.237a1.78 1.78 0 0 1 1.254-.513h.581v-.705c0-.215.177-.39.396-.39h1.967c.218 0 .396.175.396.39v.705h2.857v-.705c0-.215.177-.39.395-.39h1.968c.218 0 .395.175.395.39v.705h.58c.489 0 .932.197 1.254.513l.022.025c.309.315.499.743.499 1.212v1.245l2.18 6.625q.07.211.07.409c0 .27-.09.514-.253.714-.154.192-.373.34-.641.425l-.021.006q-.25.076-.54.078h-.798zm-3.482-2.93c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.949-.61.135-.609.548-.609m7.28-2.017c.414 0 .839.272.95.609s-.135.61-.548.61-.838-.274-.95-.61c-.11-.336.136-.61.549-.61m-2.648 0c.414 0 .839.272.95.609s-.135.61-.549.61c-.413 0-.837-.274-.949-.61-.11-.336.135-.61.548-.61m-2.648 0c.414 0 .838.272.95.609.11.336-.135.61-.549.61-.413 0-.838-.274-.949-.61s.135-.61.548-.61m-2.647 0c.413 0 .837.272.949.609.11.336-.135.61-.548.61s-.838-.274-.95-.61c-.11-.336.135-.61.549-.61m7.28-2.018c.414 0 .838.273.95.61.11.336-.135.609-.549.609-.413 0-.838-.273-.949-.61s.135-.609.548-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-.302-3.508H5.782v.705c0 .215-.177.39-.395.39H3.419a.393.393 0 0 1-.395-.39v-.705h-.581c-.27 0-.517.11-.695.285a.96.96 0 0 0-.289.685v.915h11.503v-.915a.96.96 0 0 0-.27-.668l-.019-.017a1 1 0 0 0-.694-.285h-.58v.705c0 .215-.178.39-.396.39H9.036a.393.393 0 0 1-.396-.39v-.705m1.968-1.095H9.43v1.41h1.177zm-5.616 0H3.814v1.41h1.177zm10.192 10.175-2.112-6.416H1.607l2.033 6.176c.073.222.261.431.505.588.255.164.566.265.868.265h9.536q.173 0 .302-.04l.013-.004a.56.56 0 0 0 .267-.169.36.36 0 0 0 .08-.23q0-.081-.028-.168zM1.46 11.83c0 .215-.177.39-.395.39a.393.393 0 0 1-.396-.39v-1.025c0-.215.178-.39.396-.39s.395.175.395.39z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <p className="text-sm font-[Duplet] text-primary ">
+                    {item.title}
+                  </p>
                 </div>
-                <p className="text-sm font-[Duplet] text-primary ">
-                  {item.title}
+
+                <p className="bg-white rounded-lg px-3 py-2 text-sm font-[Duplet] text-primary">
+                  {item.period}
                 </p>
               </div>
-
-              <p className="bg-white rounded-lg px-3 py-2 text-sm font-[Duplet] text-primary">
-                {item.period}
-              </p>
-            </div>))}
+            ))}
 
             <div className="bg-white rounded-2xl p-5 ">
               <h1 className="text-lg text-primary text-center font-[Duplet] font-semibold mb-4">
@@ -1297,6 +1588,8 @@ interface BodySectionProps {
     name: string;
     image: StaticImageData;
     description: string;
+    top: string;
+    left: string;
   };
 }
 
@@ -1327,8 +1620,8 @@ function BodySection({ className, Icon, organ }: BodySectionProps) {
             exit={{ opacity: 0, y: 10 }}
             className="absolute z-50 bg-[#132D4733] rounded-xl p-1 shadow-lg"
             style={{
-              top: "-1.8rem",
-              left: "3rem",
+              top: organ.top,
+              left: organ.left,
               // transform: "translateX(-50%)",
               // width: "200px"
             }}

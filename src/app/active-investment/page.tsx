@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 import FinanceHero from "@assets/images/finance.png";
 import HeighProfit from "@assets/images/highProfit.png";
 import SendReqBtn from "./comp/SendReqBtn";
@@ -8,39 +8,40 @@ import ContactSection from "@/components/layout/HomeSection/ContactSection";
 function page() {
   return (
     <main>
-      <section className="p-5 mb-[80px]">
-        <div className="relative w-full h-[679px] ">
-          <div className="bg-[#132D4780] w-full h-full absolute z-10 rounded-4xl"></div>
+      <section className="p-4 lg:p-5 mb-12 md:mb-[80px]">
+        <div className="relative w-full h-[634px] lg:h-[679px]">
+          <div className="bg-[#132D4780] w-full h-full absolute z-10 rounded-2xl lg:rounded-4xl"></div>
           <Image
             src={FinanceHero}
             alt=""
-            className="absolute w-full h-full rounded-4xl object-cover object-bottom"
+            className="absolute w-full h-full rounded-2xl lg:rounded-4xl object-cover object-bottom"
           />
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center">
-            <h2 className="uppercase text-white text-2xl text-center mb-20">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 flex flex-col items-center w-full">
+            <h2 className="uppercase text-white text-base lg:text-2xl text-center font-extralight font-[Duplet] mb-20">
               active investment
             </h2>
 
-            <h1 className="text-white text-[40px] text-center leading-12 mb-6">
+            <h1 className="text-white text-2xl lg:text-[40px] text-center font-[Atyp] font-bold leading-[29px] lg:leading-12 mb-6">
               Redefining Modern Healthcare <br />
               with Ayurveda
             </h1>
 
-            <p className="text-white text-center text-lg leading-[23px] font-[Duplet] mb-12 ">
-              Shape your future with Ayurveda while building sustainable <br />
+            <p className="text-white text-center text-base lg:text-lg lg:leading-[23px] font-[Duplet] mb-12 ">
+              Shape your future with Ayurveda while building sustainable <br className="hidden lg:block" />
               and profitable growth
             </p>
 
             <div className="relative mb-12">
               <div className="absolute top-1/2 left-1/2 -translate-1/2 w-full h-full -z-10 bg-[#96DDA5] -skew-x-[30deg] rounded-sm"></div>
-              <div className="flex items-center gap-3 px-9 py-2.5">
+              <div className="flex items-center gap-3 px-3 lg:px-9 py-2.5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="26"
                   height="26"
                   fill="none"
                   viewBox="0 0 26 26"
+                  className="h-[18px] w-[18px] lg:h-[26px] lg:w-[26px]"
                 >
                   <path
                     fill="#132D47"
@@ -50,7 +51,7 @@ function page() {
                   ></path>
                 </svg>
 
-                <p className="wrap-anywhere text-primary text-center text-xl font-[Duplet]">
+                <p className="wrap-anywhere text-primary text-center text-base lg:text-xl font-[Duplet]">
                   First Investors, Biggest Rewards
                 </p>
 
@@ -60,6 +61,7 @@ function page() {
                   height="26"
                   fill="none"
                   viewBox="0 0 26 26"
+                  className="h-[18px] w-[18px] lg:h-[26px] lg:w-[26px]"
                 >
                   <path
                     fill="#132D47"
@@ -76,20 +78,21 @@ function page() {
         </div>
       </section>
 
-      <section className="p-5 mb-[80px] ">
-        <h1 className="text-primary text-[40px] font-Atpy mb-12">
+      <section className="mb-12 md:mb-[80px]">
+        <h1 className="px-4 lg:px-5 text-primary text-2xl lg:text-[40px] font-Atpy mb-6 lg:mb-12">
           Why Invest with Prevekta?
         </h1>
 
-        <div className="flex justify-between ">
+        <div className="px-4 lg:px-5 flex justify-between gap-2 overflow-x-scroll lg:overflow-x-auto no-scrollbar">
           <div className="relative">
-            <div className="absolute top-0 left-0 bg-primary w-20 h-20 rounded-full flex items-center justify-center">
+            <div className="absolute top-0 left-0 bg-primary w-14 h-14 lg:w-20 lg:h-20 rounded-full flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="34"
                 height="26"
                 fill="none"
                 viewBox="0 0 34 26"
+                className="h-[25.7px] w-[25.7px] lg:h-[34px] lg:w-[34px]"
               >
                 <path
                   fill="#fff"
@@ -100,17 +103,18 @@ function page() {
               </svg>
             </div>
             <div
-              className="clipper w-[429px] h-[377px] bg-primary flex flex-col justify-between p-10 relative"
-              style={{
-                clipPath: `path("M429 329c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V138c0-25.405 20.595-46 46-46s46-20.595 46-46 20.595-46 46-46h243c26.51 0 48 21.49 48 48z")`,
-              }}
+              className="clipper w-[298px] h-[263px] lg:w-[429px] lg:h-[377px] bg-primary flex flex-col justify-between p-4 lg:p-10 relative"
+              // style={{
+              //   // clipPath: `path("M429 329c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V138c0-25.405 20.595-46 46-46s46-20.595 46-46 20.595-46 46-46h243c26.51 0 48 21.49 48 48z")`,
+              //   clipPath: `path("M298 238C298 251.255 287.255 262 274 262H24C10.7452 262 0 251.255 0 238V87.9365C0 74.6817 10.7452 63.9365 24 63.9365H39.9072C53.1621 63.9365 63.9072 53.1914 63.9072 39.9365V24C63.9072 10.7452 74.6524 0 87.9072 0H274C287.255 0 298 10.7452 298 24V238Z")`
+              // }}
             >
-              <h1 className="text-white text-2xl font-semibold font-[Atyp] ml-20 ">
-                Long-Term <br />
+              <h1 className="text-white text-base lg:text-2xl font-semibold font-[Atyp] ml-14 lg:ml-20 ">
+                Long-Term <br className="hidden lg:block" />
                 Sustainability
               </h1>
 
-              <p className="text-white text-lg leading-[23px] font-[Duplet]">
+              <p className="text-white text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
                 {"Prevekta's"} innovative approach, commitment to
                 sustainability, strategic expansion, educational initiatives,
                 and alignment with health trends make it a promising investment
@@ -125,6 +129,7 @@ function page() {
                   height="235"
                   fill="none"
                   viewBox="0 0 306 235"
+                  className="w-[212.55px] h-[163.24px] lg:w-[306px] lg:h-[235px]"
                 >
                   <path
                     fill="#183653"
@@ -138,13 +143,14 @@ function page() {
           </div>
 
           <div className="relative">
-            <div className="absolute top-0 left-0 bg-primary w-20 h-20 rounded-full flex items-center justify-center">
+            <div className="absolute top-0 left-0 bg-primary w-14 h-14 lg:w-20 lg:h-20 rounded-full flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="34"
                 height="42"
                 fill="none"
                 viewBox="0 0 34 42"
+                className="w-[22.34px] h-[28.96px] lg:w-[34px] lg:h-[42px]"
               >
                 <path
                   fill="#fff"
@@ -161,16 +167,17 @@ function page() {
               </svg>
             </div>
             <div
-              className="clipper w-[429px] h-[377px] bg-primary flex flex-col justify-between p-10 relative"
-              style={{
-                clipPath: `path("M429 329c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V138c0-25.405 20.595-46 46-46s46-20.595 46-46 20.595-46 46-46h243c26.51 0 48 21.49 48 48z")`,
-              }}
+              className="clipper w-[298px] h-[263px] lg:w-[429px] lg:h-[377px] bg-primary flex flex-col justify-between p-4 lg:p-10 relative"
+              // style={{
+              //   // clipPath: `path("M429 329c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V138c0-25.405 20.595-46 46-46s46-20.595 46-46 20.595-46 46-46h243c26.51 0 48 21.49 48 48z")`,
+              //   clipPath: `path("M298 238C298 251.255 287.255 262 274 262H24C10.7452 262 0 251.255 0 238V87.9365C0 74.6817 10.7452 63.9365 24 63.9365H39.9072C53.1621 63.9365 63.9072 53.1914 63.9072 39.9365V24C63.9072 10.7452 74.6524 0 87.9072 0H274C287.255 0 298 10.7452 298 24V238Z")`
+              // }}
             >
-              <h1 className="text-white text-2xl font-semibold font-[Atyp] ml-20 ">
+              <h1 className="text-white text-base lg:text-2xl font-semibold font-[Atyp] ml-14 lg:ml-20 ">
                 Profitability
               </h1>
 
-              <p className="text-white text-lg leading-[23px] font-[Duplet]">
+              <p className="text-white text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
                 With a proven business framework and a growing network of up to
                 40 clinics, Prevekta delivers consistent financial returns while
                 minimizing operational risks—giving you a reliable path to
@@ -184,6 +191,7 @@ function page() {
                   height="299"
                   fill="none"
                   viewBox="0 0 237 299"
+                  className="w-[164.85px] h-[208.07px] lg:w-[237px] lg:h-[299px]"
                 >
                   <path
                     fill="#183653"
@@ -203,13 +211,14 @@ function page() {
           </div>
 
           <div className="relative">
-            <div className="absolute top-0 left-0 bg-primary w-20 h-20 rounded-full flex items-center justify-center">
+            <div className="absolute top-0 left-0 bg-primary w-14 h-14 lg:w-20 lg:h-20 rounded-full flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="41"
                 height="40"
                 fill="none"
                 viewBox="0 0 41 40"
+                className="w-[27.34px] h-[26.67px] lg:w-[41px] lg:h-[40px]"
               >
                 <path
                   fill="#fff"
@@ -220,16 +229,17 @@ function page() {
               </svg>
             </div>
             <div
-              className="clipper w-[429px] h-[377px] bg-primary flex flex-col justify-between p-10 relative"
-              style={{
-                clipPath: `path("M429 329c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V138c0-25.405 20.595-46 46-46s46-20.595 46-46 20.595-46 46-46h243c26.51 0 48 21.49 48 48z")`,
-              }}
+              className="clipper w-[298px] h-[263px] lg:w-[429px] lg:h-[377px] bg-primary flex flex-col justify-between p-4 lg:p-10 relative"
+              // style={{
+              //   // clipPath: `path("M429 329c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V138c0-25.405 20.595-46 46-46s46-20.595 46-46 20.595-46 46-46h243c26.51 0 48 21.49 48 48z")`,
+              //   clipPath: `path("M298 238C298 251.255 287.255 262 274 262H24C10.7452 262 0 251.255 0 238V87.9365C0 74.6817 10.7452 63.9365 24 63.9365H39.9072C53.1621 63.9365 63.9072 53.1914 63.9072 39.9365V24C63.9072 10.7452 74.6524 0 87.9072 0H274C287.255 0 298 10.7452 298 24V238Z")`
+              // }}
             >
-              <h1 className="text-white text-2xl font-semibold font-[Atyp] ml-20 ">
+              <h1 className="text-white text-base lg:text-2xl font-semibold font-[Atyp] ml-14 lg:ml-20 ">
                 Impactful
               </h1>
 
-              <p className="text-white text-lg leading-[23px] font-[Duplet]">
+              <p className="text-white text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
                 Your investment transforms community health and well-being,
                 creating meaningful social impact while balancing wealth,
                 purpose, and growth.
@@ -242,6 +252,7 @@ function page() {
                   height="274"
                   fill="none"
                   viewBox="0 0 274 274"
+                  className="w-[190.18px] h-[190.18px] lg:w-[274px] lg:h-[274px]"
                 >
                   <path
                     fill="#183653"
@@ -256,51 +267,50 @@ function page() {
         </div>
       </section>
 
-      <section className="p-5 mb-[80px] ">
-        <div className="bg-[#81DE7633] rounded-2xl pt-[72px] pb-5 px-5 ">
-          <h1 className="text-primary text-[40px] text-center font-Atyp font-semibold mb-12 ">
+      <section className="p-4 lg:p-5 mb-12 md:mb-[80px]">
+        <div className="bg-[#81DE7633] rounded-2xl lg:rounded-2xl pt-[72px] pb-5 px-5">
+          <h1 className="text-primary text-2xl lg:text-[40px] text-center font-Atyp font-semibold mb-12 ">
             Investor Advantages
           </h1>
 
-          <div className="flex justify-between items-start">
-            <div className="relative method-3 flex flex-col items-center w-1/3 h-full pb-2">
-              <h2 className="text-2xl text-primary text-center leading-[29px] font-[Atyp] font-semibold mb-5 ">
-                Exclusive Territory <br />
+          <div className="flex gap-6 lg:gap-0 flex-col lg:flex-row justify-between items-start">
+            <div className="relative method-3 flex flex-col lg:items-center w-full lg:w-1/3 h-full pb-2">
+              <h2 className="text-base lg:text-2xl text-primary lg:text-center leading-5 lg:leading-[29px] font-[Atyp] font-semibold mb-5 ">
+                Exclusive Territory <br className="hidden lg:block" />
                 Leadership
               </h2>
-              <p className="text-primary text-lg font-[Duplet] leading-[23px]">
-                As a Cluster Franchisee, you are the sole <br />
-                representative of Prevekta in your region, <br />
-                giving you exclusive rights to operate and <br />
+              <p className="text-primary text-base lg:text-lg font-[Duplet] leading-5 lg:leading-[23px]">
+                As a Cluster Franchisee, you are the sole <br className="hidden lg:block" />
+                representative of Prevekta in your region, <br className="hidden lg:block" />
+                giving you exclusive rights to operate and <br className="hidden lg:block" />
                 expand your franchise.
               </p>
               <div className="sm:hidden absolute right-0 top-0 h-full w-1 method-1"></div>
             </div>
 
-            <div className="relative method-1 h-[-webkit-fill-available] w-1/3">
-              <div className="flex flex-col items-center">
-                <h2 className="text-2xl text-primary text-center leading-[29px] font-[Atyp] font-semibold mb-5 ">
-                  Operational Control & Growth <br />
+            <div className="relative method-1 h-[-webkit-fill-available] w-full lg:w-1/3">
+              <div className="flex flex-col lg:items-center">
+                <h2 className="text-base lg:text-2xl text-primary lg:text-center leading-5 lg:leading-[29px] font-[Atyp] font-semibold mb-5 ">
+                  Operational Control & Growth <br className="hidden lg:block" />
                   establish dominance
                 </h2>
-                <p className="text-primary text-lg font-[Duplet] leading-[23px]">
-                  Lead day-to-day operations, implement <br />
-                  strategic initiatives, and drive the growth <br />
+                <p className="text-primary text-base lg:text-lg font-[Duplet] leading-5 lg:leading-[23px]">
+                  Lead day-to-day operations, implement <br className="hidden lg:block" />
+                  strategic initiatives, and drive the growth <br className="hidden lg:block" />
                   of your territory with full brand support.
                 </p>
               </div>
             </div>
 
-            <div className="relative method-1 flex flex-col items-center w-1/3 h-full pb-2 ">
-              <h2 className="text-2xl text-primary text-center leading-[29px] font-[Atyp] font-semibold mb-5 ">
-                Regional Presence And <br />
+            <div className="relative method-1 flex flex-col lg:items-center w-full lg:w-1/3 h-full pb-2 ">
+              <h2 className="text-base lg:text-2xl text-primary lg:text-center leading-5 lg:leading-[29px] font-[Atyp] font-semibold mb-5 ">
+                Regional Presence And <br className="hidden lg:block" />
                 Market Dominance
               </h2>
-              <p className="text-primary text-lg font-[Duplet] leading-[23px]">
-                Establish a strong and lasting presence, <br />
-                ensuring long-term success while securing <br />a dominant
-                position in the Ayurveda
-                <br />
+              <p className="text-primary text-base lg:text-lg font-[Duplet] leading-5 lg:leading-[23px]">
+                Establish a strong and lasting presence, <br className="hidden lg:block" />
+                ensuring long-term success while securing <br className="hidden lg:block" />a dominant
+                position in the Ayurveda <br className="hidden lg:block" />
                 wellness market.
               </p>
             </div>
@@ -309,25 +319,26 @@ function page() {
       </section>
 
       <section className="p-5 ">
-        <div className="flex gap-10">
-          <Image src={HeighProfit} alt="sdkf" width={563} height={577} className="w-[563px] h-[577px] object-cover object-top-right rounded-3xl " />
+        <h1 className="lg:hidden text-primary text-2xl leading-12 font-[Atyp] font-semibold">High-Profit, Scalable Model</h1>
+        <div className="flex flex-col lg:flex-row gap-4 lg:gap-10">
+          <Image src={HeighProfit} alt="sdkf" width={563} height={577} className="w-full h-[319px] lg:w-[563px] lg:h-[577px] object-cover object-top-right rounded-3xl " />
 
           <div>
-            <h1 className="text-primary text-[40px] leading-12 font-[Atyp] font-semibold">High-Profit, <br />Scalable Model</h1>
+            <h1 className="hidden lg:block text-primary text-2xl lg:text-[40px] leading-12 font-[Atyp] font-semibold">High-Profit, <br />Scalable Model</h1>
 
             <div className="pt-8 pb-6 border-b border-b-[#132D474F]">
-              <h1 className="mb-6 text-primary text-2xl font-[Atyp] font-semibold">Up to 60% Annual Returns</h1>
-              <p className="text-primary text-lg leading-[23px] font-[Duplet] font-semibold ">Our proven framework ensures strong profitability by combining Ayurveda’s evergreen demand with modern business systems.</p>
+              <h1 className="mb-4 lg:mb-6 text-primary text-xl lg:text-2xl font-[Atyp] font-semibold">Up to 60% Annual Returns</h1>
+              <p className="text-primary text-base lg:text-lg leading-[23px] font-[Duplet] font-extralight lg:font-semibold ">Our proven framework ensures strong profitability by combining Ayurveda’s evergreen demand with modern business systems.</p>
             </div>
 
             <div className="pt-8 pb-6 border-b border-b-[#132D474F]">
-              <h1 className="mb-6 text-primary text-2xl font-[Atyp] font-semibold">Entry from ₹25 Lakhs</h1>
-              <p className="text-primary text-lg leading-[23px] font-[Duplet] font-semibold ">Start small and scale big. With a modest investment, you unlock opportunities for significant growth and higher returns over time.</p>
+              <h1 className="mb-4 lg:mb-6 text-primary text-xl lg:text-2xl font-[Atyp] font-semibold">Entry from ₹25 Lakhs</h1>
+              <p className="text-primary text-base lg:text-lg leading-[23px] font-[Duplet] font-extralight lg:font-semibold ">Start small and scale big. With a modest investment, you unlock opportunities for significant growth and higher returns over time.</p>
             </div>
 
             <div className="pt-8 pb-6 border-b border-b-[#132D474F]">
-              <h1 className="mb-6 text-primary text-2xl font-[Atyp] font-semibold">Scalable & Future-Ready</h1>
-              <p className="text-primary text-lg leading-[23px] font-[Duplet] font-semibold ">Designed with expansion in mind, our franchise model adapts to market demand, helping you multiply impact and revenue across regions.</p>
+              <h1 className="mb-4 lg:mb-6 text-primary text-xl lg:text-2xl font-[Atyp] font-semibold">Scalable & Future-Ready</h1>
+              <p className="text-primary text-base lg:text-lg leading-[23px] font-[Duplet] font-extralight lg:font-semibold ">Designed with expansion in mind, our franchise model adapts to market demand, helping you multiply impact and revenue across regions.</p>
             </div>
           </div>
         </div>
