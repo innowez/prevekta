@@ -19,6 +19,8 @@ import CalfMusclePain from "@/assets/pvp/calfMusclePain.png";
 import AnklePain from "@/assets/pvp/AnklePain.png";
 import SolePain from "@/assets/pvp/solePain.png";
 import FlankPain from "@/assets/pvp/flankPain.png";
+import Headpain from "@/assets/pvp/headpain.png";
+import HeelPain from "@/assets/pvp/heelPain.png";
 
 import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
@@ -77,7 +79,19 @@ function Previkta() {
   const bodySectionPositions: Record<1 | 2 | 3, BodyPosition[]> = {
     1: [
       // Front view positions
-      { top: "1.5", left: "50%", translate: "-50%", icon: PrevIcon.firstIcon },
+      {
+        top: "1.5",
+        left: "50%",
+        translate: "-50%",
+        icon: PrevIcon.firstIcon,
+        organ: {
+          name: "Head Region",
+          image: Headpain,
+          description: "",
+          top: "-1.8rem",
+          left: "3rem",
+        },
+      },
       {
         top: "2.25",
         left: "53%",
@@ -230,6 +244,13 @@ function Previkta() {
         left: "42%",
         translate: "0",
         icon: PrevIcon.fourteenthIcon,
+        organ: {
+          name: "Heel Pain",
+          image: HeelPain,
+          description: "",
+          top: "-2rem",
+          left: "-7rem",
+        },
       },
       {
         top: "30.2",
@@ -247,7 +268,14 @@ function Previkta() {
     ],
     2: [
       // Side view positions
-      { top: "2.2", left: "53%", translate: "0", icon: PrevIcon.firstIcon },
+      { top: "2.2", left: "53%", translate: "0", icon: PrevIcon.firstIcon, 
+        organ: {
+          name: "Head Region",
+          image: Headpain,
+          description: "",
+          top: "-1.8rem",
+          left: "3rem",
+        }, },
       {
         top: "3.5",
         left: "48%",
@@ -337,6 +365,13 @@ function Previkta() {
         left: "56.5%",
         translate: "0",
         icon: PrevIcon.fourteenthIcon,
+        organ: {
+          name: "Heel Pain",
+          image: HeelPain,
+          description: "",
+          top: "-2rem",
+          left: "-7rem",
+        },
       },
       {
         top: "31.3",
@@ -354,7 +389,13 @@ function Previkta() {
     ],
     3: [
       // Back view positions
-      { top: "1", left: "52%", translate: "-50%", icon: PrevIcon.firstIcon },
+      { top: "1", left: "52%", translate: "-50%", icon: PrevIcon.firstIcon, organ: {
+          name: "Head Region",
+          image: Headpain,
+          description: "",
+          top: "-1.8rem",
+          left: "3rem",
+        }, },
       // { top: "2.5", left: "58%", translate: "0", icon: PrevIcon.SecondIcon },
       // { top: "5", left: "45%", translate: "-50%", icon: PrevIcon.ThirdIcon },
       {
@@ -441,7 +482,15 @@ function Previkta() {
           left: "2.5rem",
         },
       },
-      { top: "30", left: "42%", translate: "0", icon: PrevIcon.fourteenthIcon },
+      { top: "30", left: "42%", translate: "0", icon: PrevIcon.fourteenthIcon,
+        organ: {
+          name: "Heel Pain",
+          image: HeelPain,
+          description: "",
+          top: "-2rem",
+          left: "-7rem",
+        },
+       },
       {
         top: "30",
         left: "55%",
@@ -770,7 +819,12 @@ function Previkta() {
     },
     {
       Heading: "Abdominal Pain",
-      Diseases: [],
+      Diseases: [
+        { icon: PrevIcon.GastroesophagealReflux, txt: "Gastroesophageal reflux disease" },
+        { icon: PrevIcon.PepticUlcer, txt: "Peptic ulcer" },
+        { icon: PrevIcon.Piles, txt: "Piles" },
+        { icon: PrevIcon.Fissures, txt: "Fissures" },
+      ],
       Causes: [
         {
           icon: PrevIcon.IndigestionGasAcidity,
@@ -802,7 +856,12 @@ function Previkta() {
     },
     {
       Heading: "Flank Pain",
-      Diseases: [],
+      Diseases: [
+        { icon: PrevIcon.ChronicKidney, txt: "Chronic Kidney Diseases" },
+        { icon: PrevIcon.DiscProblems, txt: "Disc Problems" },
+        { icon: PrevIcon.SpinalStenosi, txt: "Spinal stenosi" },
+        { icon: PrevIcon.RenalCalculi, txt: "Renal calculi" },
+      ],
       Causes: [
         {
           icon: PrevIcon.KidneyStoneInfection,
@@ -942,23 +1001,26 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Sole Pain",
-      Diseases: [],
+      Heading: "Heel Pain",
+      Diseases: [
+        { icon: PrevIcon.PlantarFasciiti, txt: "Plantar Fasciiti" },
+        { icon: PrevIcon.Spur, txt: "Spur" },
+      ],
       Causes: [
         {
-          icon: PrevIcon.LongWalkingStanding,
-          dis: "Long walking/standing on hard floor",
+          icon: PrevIcon.StandingLonghours,
+          dis: "Standing long hours on hard floor",
         },
         {
-          icon: PrevIcon.FlatwrongFootwear,
-          dis: "Flat foot or wrong footwear",
+          icon: PrevIcon.WrongFootwear,
+          dis: "Wrong footwear",
         },
         {
-          icon: PrevIcon.InflammationSoleTissue,
-          dis: "Inflammation of sole tissue",
+          icon: PrevIcon.ExtraBodyWeight,
+          dis: "Extra body weight causing strain",
         },
         {
-          icon: PrevIcon.BoneSpurHeel,
+          icon: PrevIcon.BoneSpurUnder,
           dis: "Bone spur under heel",
         },
       ],
@@ -979,7 +1041,11 @@ function Previkta() {
     },
     {
       Heading: "Sole Pain",
-      Diseases: [],
+      Diseases: [
+        { icon: PrevIcon.FlatFoot, txt: "Flat Foot" },
+        { icon: PrevIcon.StrainIcon, txt: "Strain" },
+        { icon: PrevIcon.FasciaTightness, txt: "Fascia Tightness" },
+      ],
       Causes: [
         {
           icon: PrevIcon.LongWalkingStanding,
