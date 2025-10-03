@@ -2123,6 +2123,7 @@ function BodySection({ className, Icon, organ }: BodySectionProps) {
       <motion.div
         whileHover={{ scale: 1.1 }}
         onHoverStart={() => setShowOrgan(true)}
+        onClick={() => setShowOrgan(true)}
         onHoverEnd={() => setShowOrgan(false)}
         className={
           "h-5 w-5 rounded-full bg-[#81DE7633] flex items-center justify-center cursor-pointer" +
