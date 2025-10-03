@@ -1732,9 +1732,14 @@ function Previkta() {
       <AnimatePresence initial={false}>
         {isDrawerOpen && (
           <motion.div
-            initial={{ opacity: 0, bottom: 0 }}
-            animate={{ opacity: 1, bottom: 0 }}
-            exit={{ opacity: 0, bottom: 0 }}
+            initial={{ opacity: 0, y: "100%" }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: "100%" }}
+      transition={{ 
+        type: "spring",
+        stiffness: 300,
+        damping: 30
+      }}
             className="fixed w-full bottom-0 left-0 z-40 bg-white rounded-t-3xl lg:hidden"
           >
             <div className="bg-[#81DE761A] px-4 py-5 rounded-t-3xl h-full">
@@ -1982,10 +1987,10 @@ function Previkta() {
                   </div>
 
                   <motion.div
-                    initial={{
-                      height: isDrawerActive === 3 ? "auto" : 0,
-                      opacity: isDrawerActive === 3 ? 1 : 0,
-                    }}
+                    // initial={{
+                    //   height: isDrawerActive === 3 ? "auto" : 0,
+                    //   opacity: isDrawerActive === 3 ? 1 : 0,
+                    // }}
                     animate={{
                       height: isDrawerActive === 3 ? "auto" : 0,
                       opacity: isDrawerActive === 3 ? 1 : 0,
@@ -2061,10 +2066,10 @@ function Previkta() {
                   </div>
 
                   <motion.div
-                    initial={{
-                      height: isDrawerActive === 4 ? "auto" : 0,
-                      opacity: isDrawerActive === 4 ? 1 : 0,
-                    }}
+                    // initial={{
+                    //   height: isDrawerActive === 4 ? "auto" : 0,
+                    //   opacity: isDrawerActive === 4 ? 1 : 0,
+                    // }}
                     animate={{
                       height: isDrawerActive === 4 ? "auto" : 0,
                       opacity: isDrawerActive === 4 ? 1 : 0,
