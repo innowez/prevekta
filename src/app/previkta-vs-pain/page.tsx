@@ -1378,6 +1378,7 @@ function Previkta() {
                         type: "spring",
                         stiffness: 100,
                       }}
+                      onHoverStart={() => setActiveOrgan(index)}
                       onClick={() => setActiveOrgan(index)}
                       className={"absolute z-30 " + position.className}
                     >
@@ -1385,6 +1386,8 @@ function Previkta() {
                         className=""
                         Icon={position.icon}
                         organ={position.organ}
+                        index={index}
+                        isActive={activeOrgan === index}
                       />
                     </motion.div>
                   ))}
@@ -2104,6 +2107,8 @@ function Previkta() {
 export default Previkta;
 
 interface BodySectionProps {
+  index?: number;
+  isActive?: boolean;
   className: string;
   Icon: React.ElementType; // Changed from ReactDOM to React.ElementType
   organ?: {
@@ -2115,7 +2120,7 @@ interface BodySectionProps {
   };
 }
 
-function BodySection({ className, Icon, organ }: BodySectionProps) {
+function BodySection({ className, Icon, organ,index, isActive }: BodySectionProps) {
   const [showOrgan, setShowOrgan] = useState(false);
 
   return (
@@ -2123,8 +2128,8 @@ function BodySection({ className, Icon, organ }: BodySectionProps) {
       <motion.div
         whileHover={{ scale: 1.1 }}
         onHoverStart={() => setShowOrgan(true)}
-        onClick={() => setShowOrgan(true)}
         onHoverEnd={() => setShowOrgan(false)}
+        onClick={() => setShowOrgan(true)}
         className={
           "h-5 w-5 rounded-full bg-[#81DE7633] flex items-center justify-center cursor-pointer" +
           className
@@ -2136,7 +2141,7 @@ function BodySection({ className, Icon, organ }: BodySectionProps) {
       </motion.div>
 
       <AnimatePresence>
-        {showOrgan && organ && (
+        {showOrgan && organ && isActive && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
