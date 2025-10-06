@@ -71,6 +71,7 @@ function Previkta() {
     // translate: string;
     icon: React.ElementType;
     className?: string;
+    pos: number;
     organ?: {
       name: string;
       image: StaticImageData;
@@ -87,6 +88,7 @@ function Previkta() {
         // top: "1.5",
         // left: "50%",
         // translate: "-50%",
+        pos: 0,
         icon: PrevIcon.firstIcon,
         className: "top-[0.5rem] lg:top-[1.5rem] left-[50%] -translate-x-1/2",
         organ: {
@@ -101,6 +103,7 @@ function Previkta() {
         // top: "2.25",
         // left: "53%",
         // translate: "0",
+        pos: 1,
         className: "top-[1.8rem] lg:top-[2.25rem] left-[53%] -translate-x-0",
         icon: PrevIcon.SecondIcon,
         organ: {
@@ -115,6 +118,7 @@ function Previkta() {
         // top: "5",
         // left: "50%",
         // translate: "-50%",
+        pos: 2,
         className: "top-[4.4rem] lg:top-[5rem] left-[50%] -translate-x-1/2",
         icon: PrevIcon.ThirdIcon,
         organ: {
@@ -129,6 +133,7 @@ function Previkta() {
         // top: "6",
         // left: "35%",
         // translate: "0",
+        pos: 3,
         className:
           "top-[5.3rem] lg:top-[6rem] left-[30%] lg:left-[35%] -translate-x-0",
         icon: PrevIcon.FourthIcon,
@@ -145,6 +150,7 @@ function Previkta() {
         // top: "10",
         // left: "68%",
         // translate: "0",
+        pos: 4,
         className:
           "top-[9rem] lg:top-[10rem] left-[68%] lg:left-[68%] -translate-x-0",
         icon: PrevIcon.fifthIcon,
@@ -160,6 +166,7 @@ function Previkta() {
         // top: "8",
         // left: "50%",
         // translate: "-50%",
+        pos: 5,
         className: "top-[7rem] lg:top-[8rem] left-[50%] -translate-x-1/2",
         icon: PrevIcon.sixthIcon,
         organ: {
@@ -187,6 +194,7 @@ function Previkta() {
         // top: "12",
         // left: "50%",
         // translate: "-50%",
+        pos: 8,
         className: "top-[10.5rem] lg:top-[12rem] left-[50%] -translate-x-1/2",
         icon: PrevIcon.ninthIcon,
         organ: {
@@ -202,6 +210,7 @@ function Previkta() {
         // top: "15",
         // left: "50%",
         // translate: "-50%",
+        pos: 7,
         className: "top-[13.5rem] lg:top-[15rem] left-[50%] -translate-x-1/2",
         icon: PrevIcon.eigithIcon,
         organ: {
@@ -217,6 +226,7 @@ function Previkta() {
         // top: "22",
         // left: "40%",
         // translate: "0",
+        pos: 10,
         className: "top-[19rem] lg:top-[22rem] left-[40%] -translate-x-0",
         icon: PrevIcon.eleventhIcon,
         organ: {
@@ -231,6 +241,7 @@ function Previkta() {
         // top: "25",
         // left: "49%",
         // translate: "0",
+        pos: 11,
         className: "top-[21rem] lg:top-[25rem] left-[49%] -translate-x-0",
         icon: PrevIcon.twelvthIcon,
         organ: {
@@ -246,6 +257,7 @@ function Previkta() {
         // top: "28.5",
         // left: "49%",
         // translate: "0",
+        pos: 12,
         className: "top-[24.5rem] lg:top-[28.5rem] left-[49%] -translate-x-0",
         icon: PrevIcon.thirteenthIcon,
         organ: {
@@ -260,6 +272,7 @@ function Previkta() {
         // top: "29.5",
         // left: "42%",
         // translate: "0",
+        pos: 13,
         className: "top-[25.5rem] lg:top-[29.5rem] left-[42%] -translate-x-0",
         icon: PrevIcon.fourteenthIcon,
         organ: {
@@ -274,6 +287,7 @@ function Previkta() {
         // top: "30.2",
         // left: "52%",
         // translate: "0",
+        pos: 14,
         className: "top-[26rem] lg:top-[30.2rem] left-[52%] -translate-x-0",
         icon: PrevIcon.fifteenIcon,
         organ: {
@@ -291,7 +305,9 @@ function Previkta() {
         // top: "2.2",
         // left: "53%",
         // translate: "0",
-        className: "top-[1rem] lg:top-[2.2rem] left-[53%] -translate-x-0",
+        pos: 0,
+        className:
+          "top-[1rem] lg:top-[1.3rem] left-[53%] lg:left-[55%] -translate-x-0",
         icon: PrevIcon.firstIcon,
         organ: {
           name: "Head Region",
@@ -305,7 +321,8 @@ function Previkta() {
         // top: "3.5",
         // left: "48%",
         // translate: "0",
-        className: "top-[2rem] lg:top-[3.5rem] left-[48%] -translate-x-0",
+        pos: 1,
+        className: "top-[2rem] lg:top-[2.6rem] left-[48%] -translate-x-0",
         icon: PrevIcon.SecondIcon,
         organ: {
           name: "Eye Pain",
@@ -320,6 +337,7 @@ function Previkta() {
         // top: "7.5",
         // left: "55%",
         // translate: "0",
+        pos: 3,
         className: "top-[6rem] lg:top-[7.5rem] left-[55%] -translate-x-0",
         icon: PrevIcon.FourthIcon,
         organ: {
@@ -337,6 +355,7 @@ function Previkta() {
         // top: "12",
         // left: "57%",
         // translate: "0",
+        pos: 6,
         className: "top-[9.5rem] lg:top-[12rem] left-[57%] -translate-x-0",
         icon: PrevIcon.seventhIcon,
         organ: {
@@ -352,6 +371,7 @@ function Previkta() {
         // top: "22.7",
         // left: "44%",
         // translate: "0",
+        pos: 10,
         className: "top-[19rem] lg:top-[22.7rem] left-[44%] -translate-x-0",
         icon: PrevIcon.eleventhIcon,
         organ: {
@@ -366,6 +386,7 @@ function Previkta() {
         // top: "25",
         // left: "56%",
         // translate: "0",
+        pos: 12,
         className: "top-[21.5rem] lg:top-[25rem] left-[56%] -translate-x-0",
         icon: PrevIcon.twelvthIcon,
         organ: {
@@ -381,6 +402,7 @@ function Previkta() {
         // top: "29",
         // left: "55%",
         // translate: "0",
+        pos: 12,
         className: "top-[24.5rem] lg:top-[29rem] left-[55%] -translate-x-0",
         icon: PrevIcon.thirteenthIcon,
         organ: {
@@ -395,6 +417,7 @@ function Previkta() {
         // top: "30.5",
         // left: "56.5%",
         // translate: "0",
+        pos: 13,
         className: "top-[25.5rem] lg:top-[30.5rem] left-[56.5%] -translate-x-0",
         icon: PrevIcon.fourteenthIcon,
         organ: {
@@ -409,6 +432,7 @@ function Previkta() {
         // top: "31.3",
         // left: "44.5%",
         // translate: "0",
+        pos: 14,
         className: "top-[26.5rem] lg:top-[31.3rem] left-[44.5%] -translate-x-0",
         icon: PrevIcon.fifteenIcon,
         organ: {
@@ -426,6 +450,7 @@ function Previkta() {
         // top: "1",
         // left: "52%",
         // translate: "-50%",
+        pos: 0,
         className: "top-[1.5rem] lg:top-[1rem] left-[52%] -translate-x-1/2",
         icon: PrevIcon.firstIcon,
         organ: {
@@ -436,12 +461,11 @@ function Previkta() {
           left: "3rem",
         },
       },
-      // { top: "2.5", left: "58%", translate: "0", icon: PrevIcon.SecondIcon },
-      // { top: "5", left: "45%", translate: "-50%", icon: PrevIcon.ThirdIcon },
       {
         // top: "6",
         // left: "34%",
         // translate: "0",
+        pos: 3,
         className: "top-[6rem] left-[34%] -translate-x-0",
         icon: PrevIcon.FourthIcon,
         organ: {
@@ -457,6 +481,7 @@ function Previkta() {
         // top: "10",
         // left: "68%",
         // translate: "0",
+        pos: 4,
         className: "top-[10rem] left-[68%] -translate-x-0",
         icon: PrevIcon.fifthIcon,
         organ: {
@@ -472,6 +497,7 @@ function Previkta() {
         // top: "13.5",
         // left: "52%",
         // translate: "-50%",
+        pos: 6,
         className: "top-[12rem] lg:top-[13.5rem] left-[52%] -translate-x-1/2",
         icon: PrevIcon.seventhIcon,
         organ: {
@@ -487,6 +513,7 @@ function Previkta() {
         // top: "12.5",
         // left: "57%",
         // translate: "0",
+        pos: 9,
         className: "top-[11rem] lg:top-[12.5rem] left-[57%] -translate-x-0",
         icon: PrevIcon.tenthIcon,
         organ: {
@@ -503,6 +530,7 @@ function Previkta() {
         // top: "25",
         // left: "54%",
         // translate: "0",
+        pos: 11,
         className: "top-[20.5rem] lg:top-[25rem] left-[54%] -translate-x-0",
         icon: PrevIcon.twelvthIcon,
         organ: {
@@ -518,6 +546,7 @@ function Previkta() {
         // top: "28.5",
         // left: "52%",
         // translate: "0",
+        pos: 12,
         className: "top-[24.5rem] lg:top-[28.5rem] left-[52%] -translate-x-0",
         icon: PrevIcon.thirteenthIcon,
         organ: {
@@ -532,6 +561,7 @@ function Previkta() {
         // top: "30",
         // left: "42%",
         // translate: "0",
+        pos: 13,
         className: "top-[25.5rem] lg:top-[30rem] left-[42%] -translate-x-0",
         icon: PrevIcon.fourteenthIcon,
         organ: {
@@ -546,6 +576,7 @@ function Previkta() {
         // top: "30",
         // left: "55%",
         // translate: "0",
+        pos: 14,
         className: "top-[25.5rem] lg:top-[30rem] left-[55%] -translate-x-0",
         icon: PrevIcon.fifteenIcon,
         organ: {
@@ -1266,18 +1297,6 @@ function Previkta() {
                       className="p-4 rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md"
                     >
                       <div className="bg-primary flex justify-center items-center w-8 h-8 rounded-full">
-                        {/* <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="15"
-                        fill="none"
-                        viewBox="0 0 15 15"
-                      >
-                        <path
-                          fill="#81DE76"
-                          d="M13.662 7.496c.416-.4.749-.879.978-1.41a4.39 4.39 0 0 0-.899-4.814 4.3 4.3 0 0 0-1.42-.952 4.25 4.25 0 0 0-3.338.044c-.526.233-1 .57-1.395.99l-.036.041-.052-.041A4.27 4.27 0 0 0 4.491.122a4.27 4.27 0 0 0-3.002 1.25A4.37 4.37 0 0 0 .21 4.39a4.37 4.37 0 0 0 1.175 3.062l-.127.132A4.37 4.37 0 0 0 0 10.656a4.37 4.37 0 0 0 1.258 3.072A4.27 4.27 0 0 0 4.295 15a4.27 4.27 0 0 0 3.037-1.272l.044-.045.044.045a4.27 4.27 0 0 0 3.004 1.213 4.27 4.27 0 0 0 2.99-1.251 4.37 4.37 0 0 0 1.277-3.007 4.37 4.37 0 0 0-1.16-3.055zM2.345 2.28a2.975 2.975 0 0 1 3.726-.414L5.35 2.6H2.66v2.716l-.724.733a3.06 3.06 0 0 1 .41-3.769m2.62 1.635V4.93H3.96V3.915zm-2.791 8.883a3.062 3.062 0 0 1-.41-3.769l.724.734v2.717h2.687l.725.733a2.975 2.975 0 0 1-3.726-.415m1.614-1.633v-1.017h1.006v1.017zm4.866.385-1.278 1.293-1.28-1.294V8.835H3.408l-1.19-1.207L3.58 6.247h2.684V3.53l1.287-1.293 1.28 1.294v2.716h2.676l1.193 1.206-1.365 1.382H8.654zm1.473-6.618V3.915h1.003v1.017zm.832 5.217v1.016H9.952V10.15zm1.613 2.649a2.972 2.972 0 0 1-3.726.414l.723-.732h2.686V9.763l.726-.734a3.064 3.064 0 0 1-.41 3.769m.58-6.749-.722-.732V2.6H9.743l-.726-.734a2.96 2.96 0 0 1 3.741.4 3.051 3.051 0 0 1 .394 3.784"
-                        ></path>
-                      </svg> */}
                         <item.icon />
                       </div>
 
@@ -1285,13 +1304,15 @@ function Previkta() {
                     </div>
                   ))}
 
-                  <div className="relative rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md overflow-hidden">
-                    <Image
-                      src={Pvplogo}
-                      alt="dsa"
-                      className="absolute left-0 bottom-0"
-                    />
-                  </div>
+                  {organData[activeOrgan].Diseases.length % 2 !== 0 && (
+                    <div className="relative rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md overflow-hidden">
+                      <Image
+                        src={Pvplogo}
+                        alt="dsa"
+                        className="absolute left-0 bottom-0"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -1378,8 +1399,8 @@ function Previkta() {
                         type: "spring",
                         stiffness: 100,
                       }}
-                      onHoverStart={() => setActiveOrgan(index)}
-                      onClick={() => setActiveOrgan(index)}
+                      onHoverStart={() => setActiveOrgan(position.pos)}
+                      onClick={() => setActiveOrgan(position.pos)}
                       className={"absolute z-30 " + position.className}
                     >
                       <BodySection
@@ -1736,13 +1757,13 @@ function Previkta() {
         {isDrawerOpen && (
           <motion.div
             initial={{ opacity: 0, y: "100%" }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: "100%" }}
-      transition={{ 
-        type: "spring",
-        stiffness: 300,
-        damping: 30
-      }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "100%" }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 30,
+            }}
             className="fixed w-full bottom-0 left-0 z-40 bg-white rounded-t-3xl lg:hidden"
           >
             <div className="bg-[#81DE761A] px-4 py-5 rounded-t-3xl h-full">
@@ -1809,18 +1830,6 @@ function Previkta() {
                           className="p-4 rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md"
                         >
                           <div className="bg-primary flex justify-center items-center w-8 h-8 rounded-full">
-                            {/* <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="15"
-                        fill="none"
-                        viewBox="0 0 15 15"
-                      >
-                        <path
-                          fill="#81DE76"
-                          d="M13.662 7.496c.416-.4.749-.879.978-1.41a4.39 4.39 0 0 0-.899-4.814 4.3 4.3 0 0 0-1.42-.952 4.25 4.25 0 0 0-3.338.044c-.526.233-1 .57-1.395.99l-.036.041-.052-.041A4.27 4.27 0 0 0 4.491.122a4.27 4.27 0 0 0-3.002 1.25A4.37 4.37 0 0 0 .21 4.39a4.37 4.37 0 0 0 1.175 3.062l-.127.132A4.37 4.37 0 0 0 0 10.656a4.37 4.37 0 0 0 1.258 3.072A4.27 4.27 0 0 0 4.295 15a4.27 4.27 0 0 0 3.037-1.272l.044-.045.044.045a4.27 4.27 0 0 0 3.004 1.213 4.27 4.27 0 0 0 2.99-1.251 4.37 4.37 0 0 0 1.277-3.007 4.37 4.37 0 0 0-1.16-3.055zM2.345 2.28a2.975 2.975 0 0 1 3.726-.414L5.35 2.6H2.66v2.716l-.724.733a3.06 3.06 0 0 1 .41-3.769m2.62 1.635V4.93H3.96V3.915zm-2.791 8.883a3.062 3.062 0 0 1-.41-3.769l.724.734v2.717h2.687l.725.733a2.975 2.975 0 0 1-3.726-.415m1.614-1.633v-1.017h1.006v1.017zm4.866.385-1.278 1.293-1.28-1.294V8.835H3.408l-1.19-1.207L3.58 6.247h2.684V3.53l1.287-1.293 1.28 1.294v2.716h2.676l1.193 1.206-1.365 1.382H8.654zm1.473-6.618V3.915h1.003v1.017zm.832 5.217v1.016H9.952V10.15zm1.613 2.649a2.972 2.972 0 0 1-3.726.414l.723-.732h2.686V9.763l.726-.734a3.064 3.064 0 0 1-.41 3.769m.58-6.749-.722-.732V2.6H9.743l-.726-.734a2.96 2.96 0 0 1 3.741.4 3.051 3.051 0 0 1 .394 3.784"
-                        ></path>
-                      </svg> */}
                             <item.icon />
                           </div>
 
@@ -2120,7 +2129,13 @@ interface BodySectionProps {
   };
 }
 
-function BodySection({ className, Icon, organ,index, isActive }: BodySectionProps) {
+function BodySection({
+  className,
+  Icon,
+  organ,
+  index,
+  isActive,
+}: BodySectionProps) {
   const [showOrgan, setShowOrgan] = useState(false);
 
   return (
