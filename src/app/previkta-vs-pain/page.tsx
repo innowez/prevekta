@@ -1290,7 +1290,7 @@ function Previkta() {
               >
                 <h1 className=" text-2xl text-primary mb-5">Diseases</h1>
 
-                <div className="grid grid-cols-2 grid-row-2 gap-4">
+                {/* <div className="grid grid-cols-2 grid-row-2 gap-4">
                   {organData[activeOrgan].Diseases.map((item, ind) => (
                     <div
                       key={ind + 1}
@@ -1313,7 +1313,54 @@ function Previkta() {
                       />
                     </div>
                   )}
-                </div>
+                </div> */}
+                <AnimatePresence mode="popLayout">
+                  <motion.div
+                    key={activeOrgan} // This ensures animation triggers when activeOrgan changes
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="grid grid-cols-2 grid-row-2 gap-4"
+                  >
+                    {organData[activeOrgan].Diseases.map((item, ind) => (
+                      <motion.div
+                        key={ind + 1}
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.9, opacity: 0 }}
+                        transition={{
+                          duration: 0.2,
+                          delay: ind * 0.1, // Stagger the animations
+                        }}
+                        className="p-4 rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md"
+                      >
+                        <div className="bg-primary flex justify-center items-center w-8 h-8 rounded-full">
+                          <item.icon />
+                        </div>
+                        <p className="text-sm font-[Duplet]">{item.txt}</p>
+                      </motion.div>
+                    ))}
+
+                    {organData[activeOrgan].Diseases.length % 2 !== 0 && (
+                      <motion.div
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.9, opacity: 0 }}
+                        transition={{
+                          duration: 0.2,
+                          delay: organData[activeOrgan].Diseases.length * 0.1,
+                        }}
+                        className="relative rounded-2xl bg-white h-[136px] w-full flex flex-col justify-between shadow-md overflow-hidden"
+                      >
+                        <Image
+                          src={Pvplogo}
+                          alt="dsa"
+                          className="absolute left-0 bottom-0"
+                        />
+                      </motion.div>
+                    )}
+                  </motion.div>
+                </AnimatePresence>
               </div>
 
               <div
@@ -1328,7 +1375,7 @@ function Previkta() {
               >
                 <h1 className=" text-2xl text-primary mb-5">Causes</h1>
 
-                <div className="flex flex-col gap-4">
+                {/* <div className="flex flex-col gap-4">
                   {organData[activeOrgan].Causes.map((item, ind) => (
                     <div
                       key={ind + 1}
@@ -1341,37 +1388,37 @@ function Previkta() {
                       <p className=" text-sm font-[Duplet] ">{item.dis}</p>
                     </div>
                   ))}
-
-                  {/* <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
-                  <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full ">
-                    
-                  </div>
-
-                  <p className=" text-sm font-[Duplet] ">
-                    Late nights & sleeplessness
-                  </p>
                 </div> */}
-
-                  {/* <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
-                  <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full ">
-                    
-                  </div>
-
-                  <p className=" text-sm font-[Duplet] ">
-                    Too much mobile & computer use
-                  </p>
-                </div> */}
-
-                  {/* <div className="w-full flex items-center gap-2 p-2 rounded-full bg-white">
-                  <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full ">
-                    
-                  </div>
-
-                  <p className=" text-sm font-[Duplet] ">
-                    Sinus blockage or acidity rising to head
-                  </p>
-                </div> */}
-                </div>
+                <AnimatePresence mode="popLayout">
+                  <motion.div
+                    key={activeOrgan} // This ensures the animation triggers when activeOrgan changes
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex flex-col gap-2"
+                  >
+                    {organData[activeOrgan].Causes.map((item, ind) => (
+                      <motion.div
+                        key={ind + 1}
+                        initial={{ x: -20, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 20, opacity: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: ind * 0.1, // Creates a staggered animation effect
+                          type: "spring",
+                          stiffness: 100,
+                        }}
+                        className="w-full flex items-center gap-2 p-2 rounded-full bg-white"
+                      >
+                        <div className="flex items-center justify-center bg-primary h-12 w-12 rounded-full">
+                          <item.icon />
+                        </div>
+                        <p className="text-sm font-[Duplet]">{item.dis}</p>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
 
