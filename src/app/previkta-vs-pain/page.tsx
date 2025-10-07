@@ -1832,34 +1832,34 @@ function Previkta() {
                     ))}
                   </ul> */}
                   <AnimatePresence mode="popLayout">
-  <motion.div
-    key={activeOrgan}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="semisSw my-4"
-  >
-    <motion.ul className="flex flex-col gap-2">
-      {organData[activeOrgan].comeBack.map((item, index) => (
-        <motion.li
-          key={`list-${index}`}
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: 20, opacity: 0 }}
-          transition={{
-            duration: 0.3,
-            delay: index * 0.1,
-            type: "spring",
-            stiffness: 100
-          }}
-          className="text-sm text-primary font-[Duplet]"
-        >
-          {item}
-        </motion.li>
-      ))}
-    </motion.ul>
-  </motion.div>
-</AnimatePresence>
+                    <motion.div
+                      key={activeOrgan}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="semisSw my-4"
+                    >
+                      <motion.ul className="flex flex-col gap-2">
+                        {organData[activeOrgan].comeBack.map((item, index) => (
+                          <motion.li
+                            key={`list-${index}`}
+                            initial={{ x: -20, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: 20, opacity: 0 }}
+                            transition={{
+                              duration: 0.3,
+                              delay: index * 0.1,
+                              type: "spring",
+                              stiffness: 100,
+                            }}
+                            className="text-sm text-primary font-[Duplet]"
+                          >
+                            {item}
+                          </motion.li>
+                        ))}
+                      </motion.ul>
+                    </motion.div>
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
