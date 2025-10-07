@@ -27,6 +27,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { StaticImageData } from "next/image";
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import { X } from "lucide-react";
+import useMediaQuery from "@/hooks/useMediaquery";
 
 const iconList = [
   PrevIcon.firstIcon,
@@ -47,21 +48,19 @@ const iconList = [
 ];
 
 function Previkta() {
-  const [navigaate, setNavigaate] = useState<1 | 2 | 3>(1);
+  const [navigaate, setNavigaate] = useState<1 | 2>(1);
   const [activeOrgan, setActiveOrgan] = useState(0);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isDrawerActive, setIsDrawerActive] = useState(0);
+  const isMobile = useMediaQuery("(max-width: 525px)");
 
-  const rotateImage = (
-    direction: "next" | "prev",
-    current: 1 | 2 | 3
-  ): 1 | 2 | 3 => {
+  const rotateImage = (direction: "next" | "prev", current: 1 | 2): 1 | 2 => {
     if (direction === "next") {
       // Rotate forward: 1 -> 2 -> 3 -> 1
-      return current === 3 ? 1 : ((current + 1) as 1 | 2 | 3);
+      return current === 2 ? 1 : ((current + 1) as 1 | 2);
     } else {
       // Rotate backward: 1 -> 3 -> 2 -> 1
-      return current === 1 ? 3 : ((current - 1) as 1 | 2 | 3);
+      return current === 1 ? 2 : ((current - 1) as 1 | 2);
     }
   };
 
@@ -81,7 +80,7 @@ function Previkta() {
     };
   }
 
-  const bodySectionPositions: Record<1 | 2 | 3, BodyPosition[]> = {
+  const bodySectionPositions: Record<1 | 2, BodyPosition[]> = {
     1: [
       // Front view positions
       {
@@ -299,152 +298,152 @@ function Previkta() {
         },
       },
     ],
+    // 2: [
+    //   // Side view positions
+    //   {
+    //     // top: "2.2",
+    //     // left: "53%",
+    //     // translate: "0",
+    //     pos: 0,
+    //     className:
+    //       "top-[1rem] lg:top-[1.3rem] left-[53%] lg:left-[55%] -translate-x-0",
+    //     icon: PrevIcon.firstIcon,
+    //     organ: {
+    //       name: "Head Region",
+    //       image: Headpain,
+    //       description: "",
+    //       top: "-1.8rem",
+    //       left: "3rem",
+    //     },
+    //   },
+    //   {
+    //     // top: "3.5",
+    //     // left: "48%",
+    //     // translate: "0",
+    //     pos: 1,
+    //     className: "top-[2rem] lg:top-[2.6rem] left-[48%] -translate-x-0",
+    //     icon: PrevIcon.SecondIcon,
+    //     organ: {
+    //       name: "Eye Pain",
+    //       image: EyePain,
+    //       description: "Common eye pain areas",
+    //       top: "-1.8rem",
+    //       left: "3rem",
+    //     },
+    //   },
+    //   // { top: "24", left: "40%", translate: "-50%", icon: PrevIcon.ThirdIcon },
+    //   {
+    //     // top: "7.5",
+    //     // left: "55%",
+    //     // translate: "0",
+    //     pos: 3,
+    //     className: "top-[6rem] lg:top-[7.5rem] left-[55%] -translate-x-0",
+    //     icon: PrevIcon.FourthIcon,
+    //     organ: {
+    //       name: "Shoulder Pain",
+    //       image: ShoulderPain,
+    //       description: "",
+    //       top: "-1.8rem",
+    //       left: "3rem",
+    //     },
+    //   },
+
+    //   // { top: "10", left: "68%", translate: "0", icon: PrevIcon.fifthIcon },
+    //   // { top: "12", left: "50%", translate: "-50%", icon: PrevIcon.sixthIcon },
+    //   {
+    //     // top: "12",
+    //     // left: "57%",
+    //     // translate: "0",
+    //     pos: 6,
+    //     className: "top-[9.5rem] lg:top-[12rem] left-[57%] -translate-x-0",
+    //     icon: PrevIcon.seventhIcon,
+    //     organ: {
+    //       name: "Low Back & Mid Back Pain",
+    //       image: MidBackPain,
+    //       description: "",
+    //       top: "-1.5rem",
+    //       left: "2rem",
+    //     },
+    //   },
+
+    //   {
+    //     // top: "22.7",
+    //     // left: "44%",
+    //     // translate: "0",
+    //     pos: 10,
+    //     className: "top-[19rem] lg:top-[22.7rem] left-[44%] -translate-x-0",
+    //     icon: PrevIcon.eleventhIcon,
+    //     organ: {
+    //       name: "Knee Pain",
+    //       image: KneePain,
+    //       description: "",
+    //       top: "-1.5rem",
+    //       left: "-6.5rem",
+    //     },
+    //   },
+    //   {
+    //     // top: "25",
+    //     // left: "56%",
+    //     // translate: "0",
+    //     pos: 12,
+    //     className: "top-[21.5rem] lg:top-[25rem] left-[56%] -translate-x-0",
+    //     icon: PrevIcon.twelvthIcon,
+    //     organ: {
+    //       name: "Calf Muscle Pain",
+    //       image: CalfMusclePain,
+    //       description: "",
+    //       top: "-1.5rem",
+    //       left: "3rem",
+    //     },
+    //   },
+
+    //   {
+    //     // top: "29",
+    //     // left: "55%",
+    //     // translate: "0",
+    //     pos: 12,
+    //     className: "top-[24.5rem] lg:top-[29rem] left-[55%] -translate-x-0",
+    //     icon: PrevIcon.thirteenthIcon,
+    //     organ: {
+    //       name: "Ankle Pain",
+    //       image: AnklePain,
+    //       description: "",
+    //       top: "-2rem",
+    //       left: "2rem",
+    //     },
+    //   },
+    //   {
+    //     // top: "30.5",
+    //     // left: "56.5%",
+    //     // translate: "0",
+    //     pos: 13,
+    //     className: "top-[25.5rem] lg:top-[30.5rem] left-[56.5%] -translate-x-0",
+    //     icon: PrevIcon.fourteenthIcon,
+    //     organ: {
+    //       name: "Heel Pain",
+    //       image: HeelPain,
+    //       description: "",
+    //       top: "-2rem",
+    //       left: "-7rem",
+    //     },
+    //   },
+    //   {
+    //     // top: "31.3",
+    //     // left: "44.5%",
+    //     // translate: "0",
+    //     pos: 14,
+    //     className: "top-[26.5rem] lg:top-[31.3rem] left-[44.5%] -translate-x-0",
+    //     icon: PrevIcon.fifteenIcon,
+    //     organ: {
+    //       name: "Sole Pain",
+    //       image: SolePain,
+    //       description: "",
+    //       top: "-4rem",
+    //       left: "-7rem",
+    //     },
+    //   },
+    // ],
     2: [
-      // Side view positions
-      {
-        // top: "2.2",
-        // left: "53%",
-        // translate: "0",
-        pos: 0,
-        className:
-          "top-[1rem] lg:top-[1.3rem] left-[53%] lg:left-[55%] -translate-x-0",
-        icon: PrevIcon.firstIcon,
-        organ: {
-          name: "Head Region",
-          image: Headpain,
-          description: "",
-          top: "-1.8rem",
-          left: "3rem",
-        },
-      },
-      {
-        // top: "3.5",
-        // left: "48%",
-        // translate: "0",
-        pos: 1,
-        className: "top-[2rem] lg:top-[2.6rem] left-[48%] -translate-x-0",
-        icon: PrevIcon.SecondIcon,
-        organ: {
-          name: "Eye Pain",
-          image: EyePain,
-          description: "Common eye pain areas",
-          top: "-1.8rem",
-          left: "3rem",
-        },
-      },
-      // { top: "24", left: "40%", translate: "-50%", icon: PrevIcon.ThirdIcon },
-      {
-        // top: "7.5",
-        // left: "55%",
-        // translate: "0",
-        pos: 3,
-        className: "top-[6rem] lg:top-[7.5rem] left-[55%] -translate-x-0",
-        icon: PrevIcon.FourthIcon,
-        organ: {
-          name: "Shoulder Pain",
-          image: ShoulderPain,
-          description: "",
-          top: "-1.8rem",
-          left: "3rem",
-        },
-      },
-
-      // { top: "10", left: "68%", translate: "0", icon: PrevIcon.fifthIcon },
-      // { top: "12", left: "50%", translate: "-50%", icon: PrevIcon.sixthIcon },
-      {
-        // top: "12",
-        // left: "57%",
-        // translate: "0",
-        pos: 6,
-        className: "top-[9.5rem] lg:top-[12rem] left-[57%] -translate-x-0",
-        icon: PrevIcon.seventhIcon,
-        organ: {
-          name: "Low Back & Mid Back Pain",
-          image: MidBackPain,
-          description: "",
-          top: "-1.5rem",
-          left: "2rem",
-        },
-      },
-
-      {
-        // top: "22.7",
-        // left: "44%",
-        // translate: "0",
-        pos: 10,
-        className: "top-[19rem] lg:top-[22.7rem] left-[44%] -translate-x-0",
-        icon: PrevIcon.eleventhIcon,
-        organ: {
-          name: "Knee Pain",
-          image: KneePain,
-          description: "",
-          top: "-1.5rem",
-          left: "-6.5rem",
-        },
-      },
-      {
-        // top: "25",
-        // left: "56%",
-        // translate: "0",
-        pos: 12,
-        className: "top-[21.5rem] lg:top-[25rem] left-[56%] -translate-x-0",
-        icon: PrevIcon.twelvthIcon,
-        organ: {
-          name: "Calf Muscle Pain",
-          image: CalfMusclePain,
-          description: "",
-          top: "-1.5rem",
-          left: "3rem",
-        },
-      },
-
-      {
-        // top: "29",
-        // left: "55%",
-        // translate: "0",
-        pos: 12,
-        className: "top-[24.5rem] lg:top-[29rem] left-[55%] -translate-x-0",
-        icon: PrevIcon.thirteenthIcon,
-        organ: {
-          name: "Ankle Pain",
-          image: AnklePain,
-          description: "",
-          top: "-2rem",
-          left: "2rem",
-        },
-      },
-      {
-        // top: "30.5",
-        // left: "56.5%",
-        // translate: "0",
-        pos: 13,
-        className: "top-[25.5rem] lg:top-[30.5rem] left-[56.5%] -translate-x-0",
-        icon: PrevIcon.fourteenthIcon,
-        organ: {
-          name: "Heel Pain",
-          image: HeelPain,
-          description: "",
-          top: "-2rem",
-          left: "-7rem",
-        },
-      },
-      {
-        // top: "31.3",
-        // left: "44.5%",
-        // translate: "0",
-        pos: 14,
-        className: "top-[26.5rem] lg:top-[31.3rem] left-[44.5%] -translate-x-0",
-        icon: PrevIcon.fifteenIcon,
-        organ: {
-          name: "Sole Pain",
-          image: SolePain,
-          description: "",
-          top: "-4rem",
-          left: "-7rem",
-        },
-      },
-    ],
-    3: [
       // Back view positions
       {
         // top: "1",
@@ -599,7 +598,6 @@ function Previkta() {
         { icon: PrevIcon.SinusHeadacheIcon, txt: "Sinus Headache" },
         { icon: PrevIcon.TensionHeadache, txt: "Tension headache" },
       ],
-      // Diseases: ["Migraine", "Sinus Headache", "Tension headache"],
       Causes: [
         {
           icon: PrevIcon.OverThinkingIcon,
@@ -631,6 +629,10 @@ function Previkta() {
       HealingTime: [
         { title: "Simple headache :", period: "1 to 3 month" },
         { title: "Migraine :", period: "3 to 6 month" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Can be prevented with yoga, early sleep & good diet",
       ],
     },
     {
@@ -664,6 +666,10 @@ function Previkta() {
         { title: "Simple strain :", period: "1 to 3 month" },
         { title: "Chronic dry eyes/sinus :", period: "3 to 6 month" },
       ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Preventable with eye breaks, yoga & early sleep",
+      ],
     },
 
     {
@@ -686,19 +692,14 @@ function Previkta() {
           dis: "Ageing & dryness in bones",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Abhyangam", "Kizhi", "Pichu", "Greeva Vasti"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Mild stiffness :", period: "1 to 3 months" },
+        { title: "Long-term neck pain :", period: "3 to 6 months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Regular yoga & oil massage keep it away",
       ],
     },
     {
@@ -722,18 +723,18 @@ function Previkta() {
         },
       ],
       ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
         "Abhyangam",
-        "Swedanam",
+        "Patra Pinda Swedanam",
+        "Nasyam",
+        "Dhara",
       ],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Frozen shoulder :", period: "3 months" },
+        { title: "Arthritis :", period: "3 months or more" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Controlled with daily yoga & healthy food",
       ],
     },
     {
@@ -757,19 +758,17 @@ function Previkta() {
           dis: "Nerve compression in wrist",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Abhyangam", "Nadi Swedanam", "Bandanam", "Upanaham"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Mild sprain :", period: "1 month" },
+        {
+          title: "Chronic arthritis or carpal tunnel :",
+          period: "3 to 6 months",
+        },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "With yoga breaks & regular care, pain reduces greatly",
       ],
     },
     {
@@ -807,18 +806,18 @@ function Previkta() {
         },
       ],
       ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
         "Abhyangam",
-        "Swedanam",
+        "Takra Dhara",
+        "Sirodhara",
+        "Virechanam",
       ],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Simple gastric/muscle pain :", period: "1 month" },
+        { title: "Chronic acidity :", period: "3 to 6 months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Controlled with proper diet, yoga & routine",
       ],
     },
     {
@@ -847,22 +846,25 @@ function Previkta() {
         },
       ],
       ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
+        "Kati Vasti",
+        "Spine Pichu",
+        "Local Pizhichil",
+        "Matra Vasti",
       ],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        {
+          title: "Simple backache :",
+          period: "1 session + 3 months medication",
+        },
+        { title: "Sciatica or slip disc :", period: "3 to 6 months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Preventable with daily stretching & proper sitting",
       ],
     },
     {
-      Heading: "Pelvic Pain",
+      Heading: "Pelvic Pain (Lower Abdomen / Hip Region)",
       Diseases: [
         { icon: PrevIcon.LowerAbdomen, txt: "Lower Abdomen" },
         { icon: PrevIcon.HipRegion, txt: "Hip Region" },
@@ -885,23 +887,18 @@ function Previkta() {
           dis: "Constipation or bowel issues",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Matra Vasti", "Bagna Pichu", "Local Swedanam"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Period cramps :", period: "1 session + 3 months medication" },
+        { title: "Chronic PCOS/UTI :", period: "3 to 6 months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Preventable with regular yoga & balanced diet",
       ],
     },
     {
-      Heading: "Abdominal Pain",
+      Heading: "Abdominal Pain (Stomach Region",
       Diseases: [
         {
           icon: PrevIcon.GastroesophagealReflux,
@@ -925,23 +922,18 @@ function Previkta() {
           dis: "Ulcer or chronic gastritis",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Deepana & Pachanam", "Virechanam"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Simple indigestion :", period: "3 months" },
+        { title: "Chronic gastritis/IBS :", period: "3 or more months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Controlled with regular meals & light diet",
       ],
     },
     {
-      Heading: "Flank Pain",
+      Heading: "Flank Pain (Side of Waist / Kidney Area)",
       Diseases: [
         { icon: PrevIcon.ChronicKidney, txt: "Chronic Kidney Diseases" },
         { icon: PrevIcon.DiscProblems, txt: "Disc Problems" },
@@ -962,19 +954,14 @@ function Previkta() {
           dis: "Nerve compression in spine",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Parsva Basti", "Abhyangam", "Lepam", "Swedanam"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Muscle strain :", period: "3 months" },
+        { title: "Kidney stone :", period: "6 months or more" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Preventable with proper hydration & balanced diet",
       ],
     },
     {
@@ -998,19 +985,14 @@ function Previkta() {
           dis: "Overweight adding stress on knees",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Local Pizhichil", "Kizhi", "Upanaham", "Bandanam"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Mild knee strain :", period: "3 months" },
+        { title: "Arthritis :", period: "3 to 6 months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Controlled with regular yoga, oil therapy & healthy food",
       ],
     },
     {
@@ -1037,18 +1019,18 @@ function Previkta() {
         },
       ],
       ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
         "Abhyangam",
         "Swedanam",
+        "Siravyadhana",
+        "Jalouka Avacharanam",
       ],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Simple cramps :", period: "3 months" },
+        { title: "Varicose-related pain :", period: "6 months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Controlled with hydration, stretching & oil massage",
       ],
     },
     {
@@ -1071,19 +1053,14 @@ function Previkta() {
           dis: "Weak ligaments due to age/strain",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Nadi Swedanam", "Abhyangam", "Bandanam", "Upanaham"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Sprain :", period: "1 to 3 months" },
+        { title: "Arthritis :", period: "3 to 6 months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Preventable with ankle-strengthening yoga & care",
       ],
     },
     {
@@ -1110,19 +1087,14 @@ function Previkta() {
           dis: "Bone spur under heel",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Abhyangam", "Ishtika Swedanam", "Bandanam"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Simple heel pain :", period: "1 month" },
+        { title: "Chronic spur :", period: "3 to 6 months" },
+      ],
+      comeBack: [
+        "Will not if you follow proper diet & lifestyle",
+        "Preventable with soft footwear & regular stretching",
       ],
     },
     {
@@ -1150,25 +1122,20 @@ function Previkta() {
           dis: "Bone spur under heel",
         },
       ],
-      ProbableTherapies: [
-        "Siro abhynagam",
-        "Dhara",
-        "Pichu",
-        "Nasyam",
-        "Thalapothichil",
-        "Siro lepam",
-        "Abhyangam",
-        "Swedanam",
-      ],
+      ProbableTherapies: ["Abhyangam", "Lepam", "pichu & bandanam"],
       HealingTime: [
-        { title: "Simple headache :", period: "1 to 3 month" },
-        { title: "Migraine :", period: "3 to 6 month" },
+        { title: "Simple sole strain :", period: "1 month" },
+        { title: "Chronic fasciitis  :", period: "3 to 6 months" },
+      ],
+      comeBack: [
+        "Yes, with hard surfaces & wrong shoes",
+        "Preventable with soft footwear & daily stretching",
       ],
     },
   ];
 
   useEffect(() => {
-    if (isDrawerOpen) {
+    if (isDrawerOpen && isMobile) {
       // Disable scrolling on body when drawer is open
       document.body.style.overflow = "hidden";
       document.body.style.height = "100vh";
@@ -1455,7 +1422,7 @@ function Previkta() {
                         Icon={position.icon}
                         organ={position.organ}
                         index={index}
-                        isActive={activeOrgan === index}
+                        isActive={activeOrgan === position.pos}
                       />
                     </motion.div>
                   ))}
@@ -1478,7 +1445,7 @@ function Previkta() {
                       </motion.div>
                     )}
 
-                    {navigaate === 2 && (
+                    {/* {navigaate === 2 && (
                       <motion.div
                         key="side"
                         initial={{ opacity: 0 }}
@@ -1494,9 +1461,9 @@ function Previkta() {
                           className="absolute left-[50%] -translate-x-[42%] lg:-translate-x-[25%] w-auto h-[470px] lg:h-[562px] lg:w-auto"
                         />
                       </motion.div>
-                    )}
+                    )} */}
 
-                    {navigaate === 3 && (
+                    {navigaate === 2 && (
                       <motion.div
                         key="back"
                         initial={{ opacity: 0 }}
@@ -1728,7 +1695,7 @@ function Previkta() {
                 Probable therapies
               </h1>
 
-              <div className="flex flex-wrap gap-2 mb-12">
+              {/* <div className="flex flex-wrap gap-2 mb-12">
                 {organData[activeOrgan].ProbableTherapies.map((item, ind) => (
                   <p
                     key={ind + 1}
@@ -1737,11 +1704,38 @@ function Previkta() {
                     {item}
                   </p>
                 ))}
-              </div>
+              </div> */}
+              <AnimatePresence mode="popLayout">
+                <motion.div
+                  key={activeOrgan}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex flex-wrap gap-2 mb-12"
+                >
+                  {organData[activeOrgan].ProbableTherapies.map((item, ind) => (
+                    <motion.p
+                      key={ind + 1}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      transition={{
+                        duration: 0.2,
+                        delay: ind * 0.05,
+                        type: "spring",
+                        stiffness: 100,
+                      }}
+                      className="p-2.5 text-sm text-primary font-[Duplet] wrap-break-word rounded-2xl bg-[#D2F4CD]"
+                    >
+                      {item}
+                    </motion.p>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
 
               <h1 className=" text-2xl text-primary mb-5">Healing time</h1>
 
-              {organData[activeOrgan].HealingTime.map((item, index) => (
+              {/* {organData[activeOrgan].HealingTime.map((item, index) => (
                 <div
                   key={index + 1}
                   className="flex justify-between items-center rounded-2xl p-2 bg-[#81DE764D] mb-4"
@@ -1770,7 +1764,56 @@ function Previkta() {
                     {item.period}
                   </p>
                 </div>
-              ))}
+              ))} */}
+              <AnimatePresence mode="popLayout">
+                <motion.div
+                  key={activeOrgan}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="flex flex-col "
+                >
+                  {organData[activeOrgan].HealingTime.map((item, index) => (
+                    <motion.div
+                      key={index + 1}
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 20, opacity: 0 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: index * 0.1,
+                        type: "spring",
+                        stiffness: 100,
+                      }}
+                      className="flex justify-between items-center rounded-2xl p-2 bg-[#81DE764D] mb-4"
+                    >
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="15"
+                            fill="none"
+                            viewBox="0 0 16 15"
+                          >
+                            <path
+                              fill="#fff"
+                              d="M13.75 13.015a1.73 1.73 0 0 1-.519 1.138 1.78 1.78 0 0 1-1.254.514H2.441c-.488 0-.931-.197-1.253-.514a1.73 1.73 0 0 1-.52-1.236c0-.215.176-.39.394-.39s.396.175.396.39c0 .266.11.508.289.685a1 1 0 0 0 .694.285h9.536a.986.986 0 0 0 .979-.873H5.012c-.455 0-.919-.15-1.297-.393-.39-.25-.697-.604-.827-1l-1.43-4.344v2.44c0 .216-.178.39-.396.39a.393.393 0 0 1-.395-.39V3.513c0-.482.2-.92.52-1.237a1.78 1.78 0 0 1 1.254-.513h.581v-.705c0-.215.177-.39.396-.39h1.967c.218 0 .396.175.396.39v.705h2.857v-.705c0-.215.177-.39.395-.39h1.968c.218 0 .395.175.395.39v.705h.58c.489 0 .932.197 1.254.513l.022.025c.309.315.499.743.499 1.212v1.245l2.18 6.625q.07.211.07.409c0 .27-.09.514-.253.714-.154.192-.373.34-.641.425l-.021.006q-.25.076-.54.078h-.798zm-3.482-2.93c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.949-.61.135-.609.548-.609m7.28-2.017c.414 0 .839.272.95.609s-.135.61-.548.61-.838-.274-.95-.61c-.11-.336.136-.61.549-.61m-2.648 0c.414 0 .839.272.95.609s-.135.61-.549.61c-.413 0-.837-.274-.949-.61-.11-.336.135-.61.548-.61m-2.648 0c.414 0 .838.272.95.609.11.336-.135.61-.549.61-.413 0-.838-.274-.949-.61s.135-.61.548-.61m-2.647 0c.413 0 .837.272.949.609.11.336-.135.61-.548.61s-.838-.274-.95-.61c-.11-.336.135-.61.549-.61m7.28-2.018c.414 0 .838.273.95.61.11.336-.135.609-.549.609-.413 0-.838-.273-.949-.61s.135-.609.548-.609m-2.648 0c.413 0 .838.273.949.61s-.135.609-.548.609-.838-.273-.95-.61c-.11-.336.136-.609.549-.609m-.302-3.508H5.782v.705c0 .215-.177.39-.395.39H3.419a.393.393 0 0 1-.395-.39v-.705h-.581c-.27 0-.517.11-.695.285a.96.96 0 0 0-.289.685v.915h11.503v-.915a.96.96 0 0 0-.27-.668l-.019-.017a1 1 0 0 0-.694-.285h-.58v.705c0 .215-.178.39-.396.39H9.036a.393.393 0 0 1-.396-.39v-.705m1.968-1.095H9.43v1.41h1.177zm-5.616 0H3.814v1.41h1.177zm10.192 10.175-2.112-6.416H1.607l2.033 6.176c.073.222.261.431.505.588.255.164.566.265.868.265h9.536q.173 0 .302-.04l.013-.004a.56.56 0 0 0 .267-.169.36.36 0 0 0 .08-.23q0-.081-.028-.168zM1.46 11.83c0 .215-.177.39-.395.39a.393.393 0 0 1-.396-.39v-1.025c0-.215.178-.39.396-.39s.395.175.395.39z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <p className="text-sm font-[Duplet] text-primary">
+                          {item.title}
+                        </p>
+                      </div>
+
+                      <p className="bg-white rounded-lg px-3 py-2 text-sm font-[Duplet] text-primary">
+                        {item.period}
+                      </p>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
 
               <div className="bg-white rounded-2xl p-5 ">
                 <h1 className="text-lg text-primary text-center font-[Duplet] font-semibold mb-4">
@@ -1778,14 +1821,45 @@ function Previkta() {
                 </h1>
 
                 <div className="semisSw">
-                  <ul className="flex flex-col gap-2">
-                    <li className="text-sm text-primary font-[Duplet]">
-                      Will not if you follow proper diet & lifestyle
-                    </li>
-                    <li className="text-sm text-primary font-[Duplet]">
-                      Can be prevented with yoga, early sleep & good diet
-                    </li>
-                  </ul>
+                  {/* <ul className="flex flex-col gap-2">
+                    {organData[activeOrgan].comeBack.map((item, index) => (
+                      <li
+                        key={`list-${index}`}
+                        className="text-sm text-primary font-[Duplet]"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul> */}
+                  <AnimatePresence mode="popLayout">
+  <motion.div
+    key={activeOrgan}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    className="semisSw my-4"
+  >
+    <motion.ul className="flex flex-col gap-2">
+      {organData[activeOrgan].comeBack.map((item, index) => (
+        <motion.li
+          key={`list-${index}`}
+          initial={{ x: -20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: 20, opacity: 0 }}
+          transition={{
+            duration: 0.3,
+            delay: index * 0.1,
+            type: "spring",
+            stiffness: 100
+          }}
+          className="text-sm text-primary font-[Duplet]"
+        >
+          {item}
+        </motion.li>
+      ))}
+    </motion.ul>
+  </motion.div>
+</AnimatePresence>
                 </div>
               </div>
             </div>
@@ -1797,7 +1871,7 @@ function Previkta() {
       {isDrawerOpen && (
         <motion.div
           animate={{ opacity: 1 }}
-          className="w-full h-full absolute top-0 left-0 bg-[#2422221f] z-30"
+          className="w-full h-full absolute top-0 left-0 bg-[#2422221f] z-30 md:hidden"
         ></motion.div>
       )}
       <AnimatePresence initial={false}>
@@ -2216,7 +2290,7 @@ function BodySection({
               // width: "200px"
             }}
           >
-            <div className="relative aspect-video rounded-lg overflow-hidden mb-0.5  h-[52px] w-[86px]">
+            <div className="relative aspect-video rounded-lg overflow-hidden mb-0.5  h-[52px] w-[86px] bg-white">
               <Image
                 src={organ.image}
                 alt={organ.name}

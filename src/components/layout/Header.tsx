@@ -7,6 +7,7 @@ import ArrowDown from "@/assets/icons/ArrowDown";
 import MenuIcon from "@/assets/icons/MenuIcon";
 import CloseIcon from "@/assets/icons/CloseIcon";
 import CustomButton from "@/components/ui/CustomButton";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 // import { Button } from "../ui/Button";
 // import CsButton from "../ui/CsButton";
@@ -15,7 +16,9 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHome, setIsHome] = useState(true);
+  const [isPvp, setIsPvp] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,20 +29,17 @@ const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (window.location.pathname === "/") {
-      setIsHome(true);
-    } else {
-      setIsHome(false);
-    }
-  }, [router]);
+    setIsHome(pathname === "/");
+    setIsPvp(pathname === "/previkta-vs-pain");
+  }, [pathname]);
 
-  const handleFranchiseClick = () => {
-    console.log("Franchise Button clicked!");
-  };
+  // const handleFranchiseClick = () => {
+  //   console.log("Franchise Button clicked!");
+  // };
 
-  const handleShopClick = () => {
-    console.log("Shop Button clicked!");
-  };
+  // const handleShopClick = () => {
+  //   console.log("Shop Button clicked!");
+  // };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -49,48 +49,53 @@ const Header: React.FC = () => {
     <>
       {/* Desktop Header */}
       <header
-        className={`hidden xl:flex w-full justify-between items-center py-4 px-4 xl:px-4 ${isHome ? "bg-white" : "bg-primary"} z-50 sticky top-0 transition-all duration-300 ${
-          isScrolled ? "shadow-md" : ""
-        }`}
+        className={`hidden xl:flex w-full justify-between items-center py-4 px-4 xl:px-4 ${
+          isHome ? "bg-white" : "bg-primary"
+        } z-50 ${
+          isPvp ? "static" : "sticky"
+        } top-0 transition-all duration-300 ${isScrolled ? "shadow-md" : ""}`}
       >
         {/* Logo */}
         <div
           className="min-w-[180px] xl:min-w-[200px] cursor-pointer"
           onClick={() => router.push("/")}
         >
-          {isHome ? <Image
-            src={logo}
-            alt="Company Logo"
-            height={32}
-            width={201}
-            className="w-full h-auto max-h-[32px] object-contain"
-          /> :
-          <Image
-            src={Whitelogo.src}
-            alt="Company Logo"
-            height={32}
-            width={201}
-            className="w-full h-auto max-h-[32px] object-contain"
-          />}
+          {isHome ? (
+            <Image
+              src={logo}
+              alt="Company Logo"
+              height={32}
+              width={201}
+              className="w-full h-auto max-h-[32px] object-contain"
+            />
+          ) : (
+            <Image
+              src={Whitelogo.src}
+              alt="Company Logo"
+              height={32}
+              width={201}
+              className="w-full h-auto max-h-[32px] object-contain"
+            />
+          )}
         </div>
 
         {/* Navigation Bar */}
         <nav className="flex flex-1 justify-center items-center mx-4 md:text-base xl:text-lg">
-          <div className={`flex whitespace-nowrap justify-center gap-2 xl:gap-5 ${isHome ? "text-primary" : "text-white"} `}>
+          <div
+            className={`flex whitespace-nowrap justify-center gap-2 xl:gap-5 ${
+              isHome ? "text-primary" : "text-white"
+            } `}
+          >
             <div className="flex items-center gap-1 cursor-pointer transition-colors">
-              <span className="font-[Duplet] text-bodyRegular ">
-                Services
-              </span>
+              <span className="font-[Duplet] text-bodyRegular ">Services</span>
               <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
             <div
               className="flex items-center gap-1 cursor-pointer transition-colors"
               onClick={() => router.push("/products")}
             >
-              <span className="font-[Duplet] text-bodyRegular ">
-                Products
-              </span>
-              <ArrowDown fill={isHome ? "#132D47" : "#ffff"}/>
+              <span className="font-[Duplet] text-bodyRegular ">Products</span>
+              <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
             <span className="font-[Duplet] text-bodyRegular cursor-pointer  transition-colors">
               Clinics
@@ -121,7 +126,7 @@ const Header: React.FC = () => {
               labelWidth="170px"
               labelWidthHover="140px"
               labelBackground={isHome ? "#ffff" : "#132D47"}
-              labelBackgroundHover={isHome ? "#132D47" : "#ffff" }
+              labelBackgroundHover={isHome ? "#132D47" : "#ffff"}
               labelTextColor={isHome ? "#132D47" : "#ffff"}
               labelTextColorHover={isHome ? "#FFFF" : "#132D47"}
               arrowFill={isHome ? "#132D47" : "#ffff"}
@@ -156,26 +161,31 @@ const Header: React.FC = () => {
 
       {/* Mobile Header */}
       <header
-        className={`xl:hidden flex w-full justify-between items-center py-4 px-4 ${isHome ? "bg-white" : "bg-primary"} z-50 sticky top-0 transition-all duration-300 ${
+        className={`xl:hidden flex w-full justify-between items-center py-4 px-4 ${
+          isHome ? "bg-white" : "bg-primary"
+        } z-50 sticky top-0 transition-all duration-300 ${
           isScrolled ? "shadow-md" : ""
         }`}
       >
         {/* Logo */}
         <div className="w-[160px]">
-          {isHome ? <Image
-            src={logo.src}
-            alt="Company Logo"
-            height={25}
-            width={201}
-            className="w-full h-auto max-h-[25px] object-contain"
-          /> :
-          <Image
-            src={Whitelogo.src}
-            height={25}
-            width={201}
-            alt="Company Logo"
-            className="w-full h-auto max-h-[25px] object-contain"
-          />}
+          {isHome ? (
+            <Image
+              src={logo.src}
+              alt="Company Logo"
+              height={25}
+              width={201}
+              className="w-full h-auto max-h-[25px] object-contain"
+            />
+          ) : (
+            <Image
+              src={Whitelogo.src}
+              height={25}
+              width={201}
+              alt="Company Logo"
+              className="w-full h-auto max-h-[25px] object-contain"
+            />
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -184,7 +194,11 @@ const Header: React.FC = () => {
           className="w-10 h-10 flex items-center justify-center focus:outline-none"
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon fill={!isHome ? "#ffff" :"#132D47"} />}
+          {isMobileMenuOpen ? (
+            <CloseIcon />
+          ) : (
+            <MenuIcon fill={!isHome ? "#ffff" : "#132D47"} />
+          )}
         </button>
       </header>
 
