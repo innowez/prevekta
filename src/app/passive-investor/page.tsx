@@ -4,6 +4,7 @@ import FinanceHero from "@assets/images/passive-investor.png";
 import PassiveGraph from "@assets/images/passive-graph.png";
 import SendReqBtn from "./comp/SendReqBtn";
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
+import ROICalclator from "./comp/ROICalclator";
 
 function page() {
   return (
@@ -261,6 +262,11 @@ function page() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Calculator section */}
+      <section className="p-5 mb-8 md:mb-[80px]">
+        <ROICalclator />
       </section>
 
       <ContactSection />
