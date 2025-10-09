@@ -4,10 +4,9 @@ import React, { useEffect, useState } from "react";
 import * as PrevIcon from "./icon-component";
 import Pvplogo from "@/assets/images/pvp-bg.png";
 import BodyFront from "@/assets/pvp/body-front.png";
-import BodySide from "@/assets/pvp/body-side.png";
 import BodyBack from "@/assets/pvp/body-back.png";
 import EyePain from "@/assets/pvp/eye.png";
-import NeckPain from "@/assets/pvp/neckPain.png";
+import NeckPain from "@/assets/pvp/NeckPain2.png";
 import ShoulderPain from "@/assets/pvp/shouldePain.png";
 import ElbowWristPain from "@/assets/pvp/elbowWristpain.png";
 import XiphisternumPain from "@/assets/pvp/xiphisternumPain.png";
@@ -48,6 +47,8 @@ const iconList = [
 ];
 
 function Previkta() {
+  // const iconComponents = Object.entries(PrevIcon);
+  
   const [navigaate, setNavigaate] = useState<1 | 2>(1);
   const [activeOrgan, setActiveOrgan] = useState(0);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -823,25 +824,25 @@ function Previkta() {
     {
       Heading: "Low Back & Mid Back Pain",
       Diseases: [
-        { icon: PrevIcon.GolferElbow, txt: "Sciatica" },
-        { icon: PrevIcon.CarpalTunnel, txt: "Lumbar pain" },
-        { icon: PrevIcon.CarpalTunnel, txt: "Thoracic stiffness" },
+        { icon: PrevIcon.Sciatica, txt: "Sciatica" },
+        { icon: PrevIcon.LumbarPain, txt: "Lumbar pain" },
+        { icon: PrevIcon.ThoracicStiffness, txt: "Thoracic stiffness" },
       ],
       Causes: [
         {
-          icon: PrevIcon.OverThinkingIcon,
+          icon: PrevIcon.WrongSittingPosture,
           dis: "Wrong sitting posture & long travel",
         },
         {
-          icon: PrevIcon.SleeplessnessIcon,
+          icon: PrevIcon.WeakSpineMuscles,
           dis: "Weak spine muscles",
         },
         {
-          icon: PrevIcon.ComputerUseIcon,
-          dis: "Disc bulge pressing on nerves",
+          icon: PrevIcon.DiscProblems,
+          dis: "Disc bulge pressing on nerves (sciatica in brackets)",
         },
         {
-          icon: PrevIcon.SinusBlockageIcon,
+          icon: PrevIcon.StressLackExercise,
           dis: "Stress & lack of exercise",
         },
       ],
@@ -889,7 +890,7 @@ function Previkta() {
       ],
       ProbableTherapies: ["Matra Vasti", "Bagna Pichu", "Local Swedanam"],
       HealingTime: [
-        { title: "Period cramps :", period: "1 session + 3 months medication" },
+        { title: "Period cramps :", period: "1 SESSION OF THERAPY + INTERNAL MEDICATION FOR 3 MONTHS + LIFE LONG DIET MODIFICATION [ VARY IF ANY ASSOCIATED ILLENESS]" },
         { title: "Chronic PCOS/UTI :", period: "3 to 6 months" },
       ],
       comeBack: [
@@ -898,15 +899,15 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Abdominal Pain (Stomach Region",
+      Heading: "Abdominal Pain (Stomach Region)",
       Diseases: [
         {
           icon: PrevIcon.GastroesophagealReflux,
           txt: "Gastroesophageal reflux disease",
         },
         { icon: PrevIcon.PepticUlcer, txt: "Peptic ulcer" },
-        { icon: PrevIcon.Piles, txt: "Piles" },
-        { icon: PrevIcon.Fissures, txt: "Fissures" },
+        // { icon: PrevIcon.Piles, txt: "Piles" },
+        { icon: PrevIcon.Fissures, txt: "Bloating issues" },
       ],
       Causes: [
         {
@@ -937,7 +938,7 @@ function Previkta() {
       Diseases: [
         { icon: PrevIcon.ChronicKidney, txt: "Chronic Kidney Diseases" },
         { icon: PrevIcon.DiscProblems, txt: "Disc Problems" },
-        { icon: PrevIcon.SpinalStenosi, txt: "Spinal stenosi" },
+        { icon: PrevIcon.SpinalStenosi, txt: "Spinal stenosis" },
         { icon: PrevIcon.RenalCalculi, txt: "Renal calculi" },
       ],
       Causes: [
@@ -1064,9 +1065,9 @@ function Previkta() {
       ],
     },
     {
-      Heading: "Heel Pain",
+      Heading: "Heel Pain ",
       Diseases: [
-        { icon: PrevIcon.PlantarFasciiti, txt: "Plantar Fasciiti" },
+        { icon: PrevIcon.PlantarFasciiti, txt: "Flantar Fasciitis" },
         { icon: PrevIcon.Spur, txt: "Spur" },
       ],
       Causes: [
@@ -1154,6 +1155,21 @@ function Previkta() {
 
   return (
     <>
+        {/* <div className="p-8">
+      <h1 className="text-2xl font-bold mb-6">Icon Showcase</h1>
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {iconComponents.map(([name, Icon]) => (
+          <button
+            key={name}
+            className="flex flex-col items-center justify-center p-4 border rounded-lg hover:shadow-md transition-shadow bg-primary cursor-pointer"
+            onClick={() => { window.navigator.clipboard.writeText(name) }}
+          >
+            <Icon isActive={true} />
+            <span className="text-sm text-white">{name}</span>
+          </button>
+        ))}
+      </div>
+    </div> */}
       <main className="px-4 py-5 lg:p-10 relative min-h-screen overflow-hidden">
         {/* Eclips 19 */}
         <>
@@ -1787,8 +1803,8 @@ function Previkta() {
                       }}
                       className="flex justify-between items-center rounded-2xl p-2 bg-[#81DE764D] mb-4"
                     >
-                      <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                      <div className="flex items-center gap-2 flex-1 min-w-0">
+                        <div className="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="16"
@@ -1807,9 +1823,11 @@ function Previkta() {
                         </p>
                       </div>
 
-                      <p className="bg-white rounded-lg px-3 py-2 text-sm font-[Duplet] text-primary">
+                      <div className="flex-shrink-0 ">
+                      <p className="bg-white rounded-lg px-3 py-2 text-sm font-[Duplet] text-primary whitespace-normal max-w-[200px]">
                         {item.period}
                       </p>
+                      </div>
                     </motion.div>
                   ))}
                 </motion.div>
