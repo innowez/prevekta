@@ -869,6 +869,9 @@ function Previkta() {
       Diseases: [
         { icon: PrevIcon.LowerAbdomen, txt: "Lower Abdomen" },
         { icon: PrevIcon.HipRegion, txt: "Hip Region" },
+        { icon: PrevIcon.PepticUlcer, txt: "Pelvic Inflammatory Disease" },
+        { icon: PrevIcon.ChronicKidney, txt: "Cystitis " },
+        { icon: PrevIcon.DiscProblems, txt: "Dysmenorrhea" },
       ],
       Causes: [
         {
@@ -1039,6 +1042,8 @@ function Previkta() {
       Diseases: [
         { icon: PrevIcon.Sprain, txt: "Sprain" },
         { icon: PrevIcon.Gout, txt: "Gout" },
+        { icon: PrevIcon.ThoracicStiffness, txt: "Tarsal tunnel syndrome" },
+        { icon: PrevIcon.ArthritisCausingSwelling, txt: "Achilles tendonitis" },
       ],
       Causes: [
         {
@@ -2308,7 +2313,10 @@ function BodySection({
               // width: "200px"
             }}
           >
-            <div className="relative aspect-video rounded-lg overflow-hidden mb-0.5  h-[52px] w-[86px] bg-white">
+            <h3 className="text-primary font-[Duplet] text-sm text-center mb-0.5">
+              {organ.name}
+            </h3>
+            <div className="relative aspect-video rounded-lg overflow-hidden h-[52px] w-[86px] bg-white">
               <Image
                 src={organ.image}
                 alt={organ.name}
@@ -2318,9 +2326,7 @@ function BodySection({
                 className=" h-[52px] w-[86px]"
               />
             </div>
-            <h3 className="text-primary font-[Duplet] text-sm text-center ">
-              {organ.name}
-            </h3>
+            
           </motion.div>
         )}
       </AnimatePresence>
