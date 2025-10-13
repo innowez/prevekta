@@ -100,7 +100,7 @@ function ROICalclator() {
 
                 <p className=" text-xl lg:text-2xl text-primary font-[Atyp] font-semibold leading-[29px] ">
                   {/* ₹ 3,60,000 */}
-                  ₹ {yearlyReturns.toLocaleString('en-IN')}
+                  ₹ {Math.abs(yearlyReturns).toLocaleString('en-IN')}
                 </p>
               </div>
 
