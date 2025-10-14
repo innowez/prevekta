@@ -105,118 +105,132 @@ function FinancePage() {
 
       {/* Strategic Partner Section */}
       <div className="max-w-7xl mx-auto p-4 mb-10">
-        <h1 className="text-xl text-center text-primary leading-6 font-Atyp font-bold mb-6">
-          Strategic Partner: Expand With Us
-        </h1>
-        <Image
-          src={StrategicPartner}
-          alt="smom"
-          className="h-[245px] w-full rounded-2xl object-cover mb-4"
-        />
+        <div>
+          <h1 className="text-xl text-center text-primary leading-6 font-Atyp font-bold mb-6">
+            Strategic Partner: Expand With Us
+          </h1>
+          <Image
+            src={StrategicPartner}
+            alt="smom"
+            className="h-[245px] w-full rounded-2xl object-cover mb-4"
+          />
 
-        <p className="text-base text-primary leading-5 font-[Duplet] mb-4">
-          If you already own hospitals or clinics, you can integrate with
-          Prevekta as a strategic partner. This model allows you to leverage
-          your existing infrastructure, add new revenue streams through
-          Ayurveda, and strengthen your brand with our proven framework.
-          Together, we create a win-win model where your setup grows in value
-          while contributing to a larger vision of holistic healthcare.
-        </p>
+          <p className="text-base text-primary leading-5 font-[Duplet] mb-4">
+            If you already own hospitals or clinics, you can integrate with
+            Prevekta as a strategic partner. This model allows you to leverage
+            your existing infrastructure, add new revenue streams through
+            Ayurveda, and strengthen your brand with our proven framework.
+            Together, we create a win-win model where your setup grows in value
+            while contributing to a larger vision of holistic healthcare.
+          </p>
 
-        <ul className="flex flex-col gap-4 mb-7">
-          <li className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="16"
-                fill="none"
-                viewBox="0 0 12 16"
-              >
-                <path
-                  fill="#fff"
-                  d="M1.483 2.109c0-.301.093-.595.266-.846.173-.25.419-.444.707-.56.287-.114.604-.144.909-.085s.585.204.805.417c.22.212.37.484.43.779.061.295.03.601-.09.879-.118.278-.32.516-.579.683a1.61 1.61 0 0 1-1.988-.19 1.5 1.5 0 0 1-.34-.494 1.5 1.5 0 0 1-.12-.583M8.94 3.632c.312 0 .616-.09.874-.257.259-.167.46-.405.58-.683.118-.278.15-.584.088-.88a1.5 1.5 0 0 0-.43-.778c-.22-.213-.5-.358-.806-.416a1.62 1.62 0 0 0-.909.086c-.287.115-.533.31-.706.56s-.266.544-.266.845c.002.402.169.788.464 1.072s.695.443 1.111.443zM.626 8.274c.024.202.105.393.235.553s.303.28.5.35l.658 5.788a.5.5 0 0 0 .169.316.53.53 0 0 0 .344.128h1.033c.127 0 .25-.046.344-.128a.5.5 0 0 0 .17-.316l.303-2.704.73-6.614a.07.07 0 0 1 .022-.042.07.07 0 0 1 .044-.018l.95-.124.386 2.815c.024.201.105.393.235.552s.303.281.5.35l.658 5.788a.5.5 0 0 0 .169.317.53.53 0 0 0 .344.127h1.033c.127 0 .25-.046.344-.127a.5.5 0 0 0 .17-.317l.657-5.78a1.13 1.13 0 0 0 .518-.348c.135-.161.22-.356.244-.562l.37-2.82a1.277 1.277 0 0 0-.328-.999 1.3 1.3 0 0 0-.447-.318 1.4 1.4 0 0 0-.541-.114h-.518a.07.07 0 0 0-.051.023l-.823.985a.16.16 0 0 1-.125.056.17.17 0 0 1-.126-.056l-.823-.985a.06.06 0 0 0-.05-.023h-.527l-2.68.01-.68-.02a.06.06 0 0 0-.051.022l-.822.986a.16.16 0 0 1-.126.057.17.17 0 0 1-.126-.057l-.822-.984a.06.06 0 0 0-.038-.024h-.494a1.4 1.4 0 0 0-.54.115 1.3 1.3 0 0 0-.447.317 1.248 1.248 0 0 0-.328.999z"
-                ></path>
-              </svg>
-            </div>
-            <p className="text-base text-primary leading-5 font-[Duplet] font-semibold">
-              Strategic Partner
-            </p>
-          </li>
-          <li className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="15"
-                fill="none"
-                viewBox="0 0 16 15"
-              >
-                <path
-                  fill="#fff"
-                  d="M13.94 10.293h-.387C13.431 7.29 10.988 4.888 8 4.888c-.59 0-1.173.095-1.73.28l-1.442-2.48v-.002l.027-.081a1.62 1.62 0 0 0-.17-1.222A1.59 1.59 0 0 0 3.318.588a1.609 1.609 0 0 0-1.538 1.21 1.617 1.617 0 0 0 1.227 1.984L4.42 6.214a5.64 5.64 0 0 0-1.975 4.078h-.387c-.808 0-1.47.668-1.47 1.493v2.535c0 .148.119.268.265.268h14.294c.146 0 .264-.12.264-.268v-2.535c0-.825-.662-1.492-1.471-1.492m-5.173.166a.785.785 0 0 1-1.45.207.8.8 0 0 1-.085-.61.79.79 0 0 1 .365-.49A.75.75 0 0 1 8 9.452a.79.79 0 0 1 .683.398.8.8 0 0 1 .085.61m-5.792-.166a5.1 5.1 0 0 1 1.719-3.61l1.31 2.254a2.43 2.43 0 0 0-.389 1.356zm7.407 0c.005-.43-.1-.865-.331-1.262a2.36 2.36 0 0 0-2.223-1.184L6.547 5.642a4.9 4.9 0 0 1 1.452-.217c2.698 0 4.906 2.162 5.025 4.868z"
-                ></path>
-              </svg>
-            </div>
-            <p className="text-base text-primary leading-5 font-[Duplet] font-semibold">
-              Leverage Existing Infrastructure
-            </p>
-          </li>
-          <li className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="none"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill="#fff"
-                  d="M6.368 4.196a4.3 4.3 0 0 1-.86-.633c-.523-.496-.94-1.13-1.236-1.885l-.433-1.1-.433 1.1c-.297.755-.713 1.39-1.235 1.885-.26.246-.55.46-.86.634l-.723.405.723.406c.31.174.6.388.86.634.522.496.938 1.13 1.235 1.885l.433 1.1.433-1.1c.297-.755.713-1.39 1.236-1.885.26-.246.55-.46.86-.634l.724-.406zM13.966 9.01a4.4 4.4 0 0 1-.874-.644c-.537-.508-.965-1.163-1.273-1.946l-.866-2.198-.865 2.198c-.308.783-.736 1.438-1.273 1.946-.264.25-.558.467-.873.644l-1.446.812 1.446.81c.315.178.61.394.873.645.537.509.965 1.163 1.273 1.946l.866 2.199.865-2.2c.308-.782.736-1.436 1.273-1.945.264-.25.558-.468.874-.645l1.446-.811z"
-                ></path>
-              </svg>
-            </div>
-            <p className="text-base text-primary leading-5 font-[Duplet] font-semibold">
-              New Revenue Streams Through Ayurveda
-            </p>
-          </li>
-          <li className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="15"
-                height="14"
-                fill="none"
-                viewBox="0 0 15 14"
-              >
-                <path
-                  fill="#fff"
-                  d="M10.751 5.49c-.092.484-.155.964-.185 1.429a.42.42 0 0 1-.203.342.37.37 0 0 1-.372.01 3.9 3.9 0 0 0-1.846-.462c-.588 0-1.17.132-1.683.38a.56.56 0 0 1-.517-.018L5.93 7.16a.2.2 0 0 0-.064-.036 3.57 3.57 0 0 0-1.896-.542c-1.962 0-3.559 1.572-3.559 3.503s1.597 3.503 3.559 3.503c.635 0 1.254-.167 1.802-.486q.023-.007.043-.018.126-.07.246-.151a.41.41 0 0 1 .338.015 3.9 3.9 0 0 0 1.747.411 5.5 5.5 0 0 0 1.868-.343q.274-.108.528-.103c.741.017 1.357-.1 1.38-.103l.035-.006c1.418-.256 2.45-1.551 2.454-3.08a36 36 0 0 0-.033-1.941c-.057-.968-.468-2.497-.831-3.846l-.091-.34a5 5 0 0 0-.082-.275c-.36-1.086-1.177-2.007-2.238-2.528l-.444-.217a.87.87 0 0 0-.688-.147.9.9 0 0 0-.59.42l-.861 1.153q-.008.01-.013.02c-.24.396-.178.917.15 1.24l.63.616c.34.33.76.346 1.181.044a.28.28 0 0 1 .258-.039c.047.016.13.06.166.172a.2.2 0 0 1 .017.098c-.04.417-.104.869-.192 1.337"
-                ></path>
-              </svg>
-            </div>
-            <p className="text-base text-primary leading-5 font-[Duplet] font-semibold">
-              Strengthen Your Brand
-            </p>
-          </li>
-        </ul>
-        <SendReqBtn btntype="passive" />
+          <div className="hidden lg:block">
+            <SendReqBtn btntype="passive" />
+          </div>
+        </div>
+
+        <div>
+          <ul className="flex flex-col gap-4 mb-7">
+            <li className="flex items-center gap-2">
+              <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 12 16"
+                >
+                  <path
+                    fill="#fff"
+                    d="M1.483 2.109c0-.301.093-.595.266-.846.173-.25.419-.444.707-.56.287-.114.604-.144.909-.085s.585.204.805.417c.22.212.37.484.43.779.061.295.03.601-.09.879-.118.278-.32.516-.579.683a1.61 1.61 0 0 1-1.988-.19 1.5 1.5 0 0 1-.34-.494 1.5 1.5 0 0 1-.12-.583M8.94 3.632c.312 0 .616-.09.874-.257.259-.167.46-.405.58-.683.118-.278.15-.584.088-.88a1.5 1.5 0 0 0-.43-.778c-.22-.213-.5-.358-.806-.416a1.62 1.62 0 0 0-.909.086c-.287.115-.533.31-.706.56s-.266.544-.266.845c.002.402.169.788.464 1.072s.695.443 1.111.443zM.626 8.274c.024.202.105.393.235.553s.303.28.5.35l.658 5.788a.5.5 0 0 0 .169.316.53.53 0 0 0 .344.128h1.033c.127 0 .25-.046.344-.128a.5.5 0 0 0 .17-.316l.303-2.704.73-6.614a.07.07 0 0 1 .022-.042.07.07 0 0 1 .044-.018l.95-.124.386 2.815c.024.201.105.393.235.552s.303.281.5.35l.658 5.788a.5.5 0 0 0 .169.317.53.53 0 0 0 .344.127h1.033c.127 0 .25-.046.344-.127a.5.5 0 0 0 .17-.317l.657-5.78a1.13 1.13 0 0 0 .518-.348c.135-.161.22-.356.244-.562l.37-2.82a1.277 1.277 0 0 0-.328-.999 1.3 1.3 0 0 0-.447-.318 1.4 1.4 0 0 0-.541-.114h-.518a.07.07 0 0 0-.051.023l-.823.985a.16.16 0 0 1-.125.056.17.17 0 0 1-.126-.056l-.823-.985a.06.06 0 0 0-.05-.023h-.527l-2.68.01-.68-.02a.06.06 0 0 0-.051.022l-.822.986a.16.16 0 0 1-.126.057.17.17 0 0 1-.126-.057l-.822-.984a.06.06 0 0 0-.038-.024h-.494a1.4 1.4 0 0 0-.54.115 1.3 1.3 0 0 0-.447.317 1.248 1.248 0 0 0-.328.999z"
+                  ></path>
+                </svg>
+              </div>
+              <p className="text-base text-primary leading-5 font-[Duplet] font-semibold">
+                Strategic Partner
+              </p>
+            </li>
+            <li className="flex items-center gap-2">
+              <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="15"
+                  fill="none"
+                  viewBox="0 0 16 15"
+                >
+                  <path
+                    fill="#fff"
+                    d="M13.94 10.293h-.387C13.431 7.29 10.988 4.888 8 4.888c-.59 0-1.173.095-1.73.28l-1.442-2.48v-.002l.027-.081a1.62 1.62 0 0 0-.17-1.222A1.59 1.59 0 0 0 3.318.588a1.609 1.609 0 0 0-1.538 1.21 1.617 1.617 0 0 0 1.227 1.984L4.42 6.214a5.64 5.64 0 0 0-1.975 4.078h-.387c-.808 0-1.47.668-1.47 1.493v2.535c0 .148.119.268.265.268h14.294c.146 0 .264-.12.264-.268v-2.535c0-.825-.662-1.492-1.471-1.492m-5.173.166a.785.785 0 0 1-1.45.207.8.8 0 0 1-.085-.61.79.79 0 0 1 .365-.49A.75.75 0 0 1 8 9.452a.79.79 0 0 1 .683.398.8.8 0 0 1 .085.61m-5.792-.166a5.1 5.1 0 0 1 1.719-3.61l1.31 2.254a2.43 2.43 0 0 0-.389 1.356zm7.407 0c.005-.43-.1-.865-.331-1.262a2.36 2.36 0 0 0-2.223-1.184L6.547 5.642a4.9 4.9 0 0 1 1.452-.217c2.698 0 4.906 2.162 5.025 4.868z"
+                  ></path>
+                </svg>
+              </div>
+              <p className="text-base text-primary leading-5 font-[Duplet] font-semibold">
+                Leverage Existing Infrastructure
+              </p>
+            </li>
+            <li className="flex items-center gap-2">
+              <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill="#fff"
+                    d="M6.368 4.196a4.3 4.3 0 0 1-.86-.633c-.523-.496-.94-1.13-1.236-1.885l-.433-1.1-.433 1.1c-.297.755-.713 1.39-1.235 1.885-.26.246-.55.46-.86.634l-.723.405.723.406c.31.174.6.388.86.634.522.496.938 1.13 1.235 1.885l.433 1.1.433-1.1c.297-.755.713-1.39 1.236-1.885.26-.246.55-.46.86-.634l.724-.406zM13.966 9.01a4.4 4.4 0 0 1-.874-.644c-.537-.508-.965-1.163-1.273-1.946l-.866-2.198-.865 2.198c-.308.783-.736 1.438-1.273 1.946-.264.25-.558.467-.873.644l-1.446.812 1.446.81c.315.178.61.394.873.645.537.509.965 1.163 1.273 1.946l.866 2.199.865-2.2c.308-.782.736-1.436 1.273-1.945.264-.25.558-.468.874-.645l1.446-.811z"
+                  ></path>
+                </svg>
+              </div>
+              <p className="text-base text-primary leading-5 font-[Duplet] font-semibold">
+                New Revenue Streams Through Ayurveda
+              </p>
+            </li>
+            <li className="flex items-center gap-2">
+              <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="14"
+                  fill="none"
+                  viewBox="0 0 15 14"
+                >
+                  <path
+                    fill="#fff"
+                    d="M10.751 5.49c-.092.484-.155.964-.185 1.429a.42.42 0 0 1-.203.342.37.37 0 0 1-.372.01 3.9 3.9 0 0 0-1.846-.462c-.588 0-1.17.132-1.683.38a.56.56 0 0 1-.517-.018L5.93 7.16a.2.2 0 0 0-.064-.036 3.57 3.57 0 0 0-1.896-.542c-1.962 0-3.559 1.572-3.559 3.503s1.597 3.503 3.559 3.503c.635 0 1.254-.167 1.802-.486q.023-.007.043-.018.126-.07.246-.151a.41.41 0 0 1 .338.015 3.9 3.9 0 0 0 1.747.411 5.5 5.5 0 0 0 1.868-.343q.274-.108.528-.103c.741.017 1.357-.1 1.38-.103l.035-.006c1.418-.256 2.45-1.551 2.454-3.08a36 36 0 0 0-.033-1.941c-.057-.968-.468-2.497-.831-3.846l-.091-.34a5 5 0 0 0-.082-.275c-.36-1.086-1.177-2.007-2.238-2.528l-.444-.217a.87.87 0 0 0-.688-.147.9.9 0 0 0-.59.42l-.861 1.153q-.008.01-.013.02c-.24.396-.178.917.15 1.24l.63.616c.34.33.76.346 1.181.044a.28.28 0 0 1 .258-.039c.047.016.13.06.166.172a.2.2 0 0 1 .017.098c-.04.417-.104.869-.192 1.337"
+                  ></path>
+                </svg>
+              </div>
+              <p className="text-base text-primary leading-5 font-[Duplet] font-semibold">
+                Strengthen Your Brand
+              </p>
+            </li>
+          </ul>
+          <div className="lg:hidden">
+            <SendReqBtn btntype="passive" />
+          </div>
+        </div>
+        
       </div>
 
       {/* Vaidya Partner Section */}
       <div className="max-w-7xl mx-4 lg:mx-auto bg-primary rounded-3xl py-6 px-7 ">
-        <h2 className="text-xl leading-6 text-center text-white font-[Atyp] mb-6">
+
+        <div className="flex flex-col lg:flex-row">
+        <h2 className="text-xl lg:text-[40px]  leading-6 lg:leading-12 text-center text-white font-[Atyp] mb-6 w-full lg:w-1/2">
           Vaidya Partner: <br />
           Turn Expertise into Opportunity
         </h2>
 
-        <p className="font-[Duplet] font-extralight text-base leading-5 text-white mb-4">
+        <p className="font-[Duplet] font-extralight text-base leading-5 text-white mb-4 w-full lg:w-1/2">
           Join Prevekta as a Vaidya Partner and bring authentic Ayurveda to more
           people. We provide you with a professional platform, patient reach,
           and growth opportunities so you can focus on healing while we support
           you in building a thriving practice.
         </p>
+        </div>
 
         <Image
           src={VaidaPartner}

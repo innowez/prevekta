@@ -83,7 +83,7 @@ function ROICalclator() {
                     onChange={(e) => setMonthlyTurnover(Number(e.target.value))}
                     className="w-full lg:w-[452px] h-0.5 bg-[#132D4799] rounded-lg appearance-none cursor-pointer"
                   />
-                  <div className="flex justify-between text-xs text-gray-600 mt-1">
+                  <div className="flex justify-between text-xs text-gray-600 mt-1 pl-0.5">
                     {Array.from({ length: 13 }, (_, i) => i + 3).map((num) => (
                       <span key={num}>{num}L</span>
                     ))}
