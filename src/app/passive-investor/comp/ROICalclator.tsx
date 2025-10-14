@@ -125,7 +125,7 @@ function ROICalclator() {
 
                 <p className=" text-xl lg:text-2xl text-primary font-[Atyp] font-semibold leading-[29px] ">
                   {/* 12% */}
-                  ₹ {miniGrand}
+                  ₹ {Math.abs(miniGrand).toLocaleString('en-IN')}
                 </p>
               </div>
             </div>
