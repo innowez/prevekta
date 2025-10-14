@@ -8,6 +8,7 @@ import Image from "next/image";
 // ROI % = (M.G/y + YR) / Inv. Amt
 
 function ROICalclator() {
+  const [miniGrand, setMiniGrand] = useState(0);
   const [investmentAmount, setInvestmentAmount] = useState(3);
   const [monthlyTurnover, setMonthlyTurnover] = useState(3);
   const [yearlyReturns, setYearlyReturns] = useState(0);
@@ -20,6 +21,7 @@ function ROICalclator() {
 
     // 1. Minimum Guarantee per month = 1% of investment
     const minGuaranteeMonthly = invAmt * 0.01 / 1;
+    setMiniGrand(minGuaranteeMonthly);
 
     // 2. Yearly Returns = (FT * 10%) * 12 - (MG * 12)
     const yearReturn = ft * 0.1 * 12 - minGuaranteeMonthly * 12;
@@ -114,6 +116,16 @@ function ROICalclator() {
                 <p className=" text-xl lg:text-2xl text-primary font-[Atyp] font-semibold leading-[29px] ">
                   {/* 12% */}
                   {roi}%
+                </p>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="text-base lg:text-lg text-primary font-[Duplet] font-semibold leading-[23px]">
+                  Minimum Guarantee / month:
+                </p>
+
+                <p className=" text-xl lg:text-2xl text-primary font-[Atyp] font-semibold leading-[29px] ">
+                  {/* 12% */}
+                  ₹ {miniGrand}
                 </p>
               </div>
             </div>
