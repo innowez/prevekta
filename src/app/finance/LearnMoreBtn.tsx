@@ -11,11 +11,11 @@ function SendReqBtn({ btntype }: {btntype: "active" | "passive"}) {
       mainWidth={isMobile ? "175px" : "210px"}
       labelWidth={isMobile ? "135px" : "210px"}
       labelWidthHover={isMobile ? "139px" : "180px"}
-      labelBackground={btntype === "active" ? "#81DE76" : ""}
+      labelBackground={btntype === "active" ? "#81DE76" : "#132D47"}
       labelBackgroundHover={btntype === "active" ? "#81DE76" : "#132D47"}
-      labelTextColor="#132D47"
+      labelTextColor={btntype !== "active" ? "#fff" : "#132D47"}
       labelTextColorHover="#FFFF"
-      arrowFill="#132D47"
+      arrowFill={btntype !== "active" ? "#fff" : "#132D47"}
       arrowFillHover="#FFFF"
       labelText="Learn More"
       labelBorderColor="#fff"

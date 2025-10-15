@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import SendReqBtn from "./LearnMoreBtn";
 import StrategicPartner from "@assets/images/strategic_partner.png";
+import FinanceMassage from "@assets/images/finance-massage.png";
 import VaidaPartner from "@assets/images/vaidyaPartner.png";
 import Image from "next/image";
 
@@ -9,7 +10,7 @@ function FinancePage() {
   return (
     <main className="min-h-screen ">
       {/* Header Section */}
-      <div className="max-w-7xl mx-auto text-center mb-16 py-7 px-4 lg:py-20 lg:px-6">
+      <div className="max-w-7xl mx-auto text-center mb-2.5 py-7 px-4 lg:py-20 lg:px-6">
         <h1 className="text-2xl md:text-6xl font-[Atyp] font-semibold text-primary mb-4 lg:mb-6">
           Building Health, Wealth,
           <br />
@@ -22,7 +23,7 @@ function FinancePage() {
       </div>
 
       {/* Cards Section */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 bg-[#CFF2CB] p-4">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 bg-[#CFF2CB] p-4 lg:rounded-3xl mb-11 lg:mb-24">
         {/* Active Investor Card */}
         <div className="bg-primary rounded-3xl ">
           <div className="inline-block bg-secondary text-[#1B3A3A] font-[Duplet] font-semibold px-6 py-2 rounded-tl-3xl rounded-br-3xl mb-6">
@@ -55,7 +56,7 @@ function FinancePage() {
             </div>
 
             {/* Learn More Button */}
-            <Link href="/active-investor">
+            <Link href="/active-investment">
               <SendReqBtn btntype="active" />
             </Link>
           </div>
@@ -104,32 +105,42 @@ function FinancePage() {
       </div>
 
       {/* Strategic Partner Section */}
-      <div className="max-w-7xl mx-auto p-4 mb-10">
-        <div>
-          <h1 className="text-xl text-center text-primary leading-6 font-Atyp font-bold mb-6">
-            Strategic Partner: Expand With Us
-          </h1>
-          <Image
-            src={StrategicPartner}
-            alt="smom"
-            className="h-[245px] w-full rounded-2xl object-cover mb-4"
-          />
+      <div className="max-w-7xl mx-auto p-4 flex flex-col lg:flex-row lg:justify-between mb-11 lg:mb-24">
+        <Image
+          src={StrategicPartner}
+          alt="smom"
+          className="h-[435px] w-[412px] rounded-2xl object-cover mb-4 hidden lg:block"
+        />
+        <div className="flex flex-col justify-between mb-4">
+          <div>
+            <h1 className="text-xl lg:text-[40px] text-center lg:text-left text-primary leading-6 lg:leading-12 font-Atyp font-bold mb-6">
+              Strategic Partner: <br className="hidden lg:block" /> Expand With
+              Us
+            </h1>
+            <Image
+              src={StrategicPartner}
+              alt="smom"
+              className="h-[245px] w-full rounded-2xl object-cover mb-4 lg:hidden"
+            />
 
-          <p className="text-base text-primary leading-5 font-[Duplet] mb-4">
-            If you already own hospitals or clinics, you can integrate with
-            Prevekta as a strategic partner. This model allows you to leverage
-            your existing infrastructure, add new revenue streams through
-            Ayurveda, and strengthen your brand with our proven framework.
-            Together, we create a win-win model where your setup grows in value
-            while contributing to a larger vision of holistic healthcare.
-          </p>
+            <p className="text-base text-primary leading-5 font-[Duplet] mb-4 w-full lg:w-[384px]">
+              If you already own hospitals or clinics, you can integrate with
+              Prevekta as a strategic partner. This model allows you to leverage
+              your existing infrastructure, add new revenue streams through
+              Ayurveda, and strengthen your brand with our proven framework.
+              Together, we create a win-win model where your setup grows in
+              value while contributing to a larger vision of holistic
+              healthcare.
+            </p>
+          </div>
 
-          <div className="hidden lg:block">
-            <SendReqBtn btntype="passive" />
+          <div className="hidden lg:flex h-auto flex-col justify-end ">
+            <Link href={"passive-investor"}>
+            <SendReqBtn btntype="passive" /></Link>
           </div>
         </div>
 
-        <div>
+        <div className="w-[364px] h-auto lg:flex flex-col justify-end ">
           <ul className="flex flex-col gap-4 mb-7">
             <li className="flex items-center gap-2">
               <div className="flex items-center justify-center w-7 h-7 bg-primary rounded-full">
@@ -208,119 +219,128 @@ function FinancePage() {
               </p>
             </li>
           </ul>
+
+          <Image
+            src={FinanceMassage}
+            alt="smom"
+            className="h-[132px] w-full rounded-2xl object-cover mb-4 hidden lg:block"
+          />
+
           <div className="lg:hidden">
-            <SendReqBtn btntype="passive" />
+            <Link href={"passive-investor"}>
+            <SendReqBtn btntype="passive" /></Link>
           </div>
         </div>
-        
       </div>
 
       {/* Vaidya Partner Section */}
-      <div className="max-w-7xl mx-4 lg:mx-auto bg-primary rounded-3xl py-6 px-7 ">
+      <div className="max-w-7xl mx-4 lg:mx-auto bg-primary rounded-3xl py-6 px-7 mb-11 lg:mb-24">
+        <div className="flex flex-col lg:flex-row lg:gap-16">
+          <h2 className="text-xl lg:text-[40px] leading-6 lg:leading-12 text-center lg:text-left text-white font-[Atyp] font-semibold mb-6 w-full lg:w-1/2">
+            Vaidya Partner: <br />
+            Turn Expertise into Opportunity
+          </h2>
 
-        <div className="flex flex-col lg:flex-row">
-        <h2 className="text-xl lg:text-[40px]  leading-6 lg:leading-12 text-center text-white font-[Atyp] mb-6 w-full lg:w-1/2">
-          Vaidya Partner: <br />
-          Turn Expertise into Opportunity
-        </h2>
-
-        <p className="font-[Duplet] font-extralight text-base leading-5 text-white mb-4 w-full lg:w-1/2">
-          Join Prevekta as a Vaidya Partner and bring authentic Ayurveda to more
-          people. We provide you with a professional platform, patient reach,
-          and growth opportunities so you can focus on healing while we support
-          you in building a thriving practice.
-        </p>
+          <p className="font-[Duplet] font-extralight text-base leading-5 text-white mb-4 w-full lg:w-[45%]">
+            Join Prevekta as a Vaidya Partner and bring authentic Ayurveda to
+            more people. We provide you with a professional platform, patient
+            reach, and growth opportunities so you can focus on healing while we
+            support you in building a thriving practice.
+          </p>
         </div>
 
-        <Image
-          src={VaidaPartner}
-          alt="vaidya partner"
-          className="h-[163px] w-full rounded-2xl object-cover mb-4 "
-        />
-
-        <ul className="flex flex-col gap-4 mb-4">
-          <li className="flex items-center gap-2">
-            <div className="flex justify-center items-center h-7 w-7 rounded-full bg-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="16"
-                fill="none"
-                viewBox="0 0 14 16"
-              >
-                <path
-                  fill="#132D47"
-                  fillRule="evenodd"
-                  d="M10.522 7.038a3.87 3.87 0 0 0-1.98-1.341 3.7 3.7 0 0 1-2.463.93 3.7 3.7 0 0 1-2.463-.93C2.009 6.157.778 7.638.826 9.38l.05 1.849a.884.884 0 0 0 .884.857h5.76a.9.9 0 0 1-.193-.443v-.008a.9.9 0 0 1 .036-.357l.094-.299a.4.4 0 0 0 .014-.202.4.4 0 0 0-.09-.181l-.128-.151a.9.9 0 0 1-.175-.324.9.9 0 0 1-.021-.365.86.86 0 0 1 .393-.6l.265-.17a.4.4 0 0 0 .14-.146.4.4 0 0 0 .048-.198v-.197q0-.194.074-.359l.006-.013a.878.878 0 0 1 .535-.461.9.9 0 0 1 .367-.029l.312.041q.109.014.202-.022a.4.4 0 0 0 .164-.12l.126-.152a.9.9 0 0 1 .29-.228.9.9 0 0 1 .358-.084h.013q.088 0 .172.02m-.79 7.236v-.82a.84.84 0 0 1-.538-.007.9.9 0 0 1-.318-.186.9.9 0 0 1-.21-.303l-.12-.29a.4.4 0 0 0-.181-.202l-.019 1.81v1.136l.53-.527c.09-.09.237-.09.328 0l.528.526zm2.606.001-.018-1.81a.4.4 0 0 0-.062.04.4.4 0 0 0-.12.163l-.12.29a.9.9 0 0 1-.21.303.9.9 0 0 1-.317.186.87.87 0 0 1-.54.007v.82h.002v1.137l.528-.526c.09-.09.237-.09.328 0l.53.527zm.028-2.306a.86.86 0 0 0-.656.522l-.12.29a.4.4 0 0 1-.097.142.4.4 0 0 1-.149.086.4.4 0 0 1-.172.022.4.4 0 0 1-.164-.056l-.17-.099a1 1 0 0 0-.495-.124c-.174 0-.35.042-.494.124l-.17.1a.4.4 0 0 1-.164.055.4.4 0 0 1-.172-.022.4.4 0 0 1-.15-.086.4.4 0 0 1-.096-.143l-.12-.289a.87.87 0 0 0-.656-.522l-.195-.033a.4.4 0 0 1-.161-.062.4.4 0 0 1-.118-.126.4.4 0 0 1-.058-.162v-.005a.4.4 0 0 1 .018-.167l.095-.298a.87.87 0 0 0 .025-.431.86.86 0 0 0-.19-.389l-.128-.15a.4.4 0 0 1-.082-.15.4.4 0 0 1-.009-.173.4.4 0 0 1 .06-.161.4.4 0 0 1 .123-.12l.265-.169a.87.87 0 0 0 .298-.314.86.86 0 0 0 .104-.418v-.198q0-.092.033-.17l.004-.008a.4.4 0 0 1 .1-.128.4.4 0 0 1 .15-.086.4.4 0 0 1 .172-.012l.312.04c.151.02.297.003.43-.049a.86.86 0 0 0 .351-.255l.127-.152a.4.4 0 0 1 .298-.145.4.4 0 0 1 .163.038.4.4 0 0 1 .135.107l.127.152a.86.86 0 0 0 .35.255q.203.079.431.05l.312-.041a.4.4 0 0 1 .172.012.4.4 0 0 1 .15.086.4.4 0 0 1 .104.136.4.4 0 0 1 .034.17l-.001.198a.856.856 0 0 0 .402.733l.265.168a.4.4 0 0 1 .124.12q.045.069.059.16a.4.4 0 0 1-.009.173.4.4 0 0 1-.082.15l-.13.151a.86.86 0 0 0-.165.82l.094.298a.4.4 0 0 1 .018.172.4.4 0 0 1-.059.162.4.4 0 0 1-.117.126.4.4 0 0 1-.16.062zm-1.163-1.28.247 1.008a.145.145 0 0 1-.056.154.15.15 0 0 1-.166.006l-.885-.546-.886.547a.15.15 0 0 1-.165-.007.15.15 0 0 1-.058-.155l.248-1.007-.796-.67a.14.14 0 0 1-.045-.158.15.15 0 0 1 .13-.102l1.04-.077.393-.96a.15.15 0 0 1 .138-.092c.061 0 .114.035.137.092l.394.96 1.039.077a.15.15 0 0 1 .13.102.15.15 0 0 1-.045.158zM6.078.59a2.58 2.58 0 0 1 2.586 2.575 2.58 2.58 0 0 1-2.586 2.575 2.58 2.58 0 0 1-2.586-2.575A2.58 2.58 0 0 1 6.078.588"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </div>
-            <p className="text-base text-white leading-5 font-[Duplet] font-semibold">
-              Professional Platform
-            </p>
-          </li>
-          <li className="flex items-center gap-2">
-            <div className="flex justify-center items-center h-7 w-7 rounded-full bg-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                fill="none"
-                viewBox="0 0 18 18"
-              >
-                <path
-                  fill="#132D47"
-                  fillRule="evenodd"
-                  d="M2.955 9.235a1.488 1.488 0 1 1 0-.47h1.433a4.6 4.6 0 0 1 1.185-2.86L4.56 4.892a1.487 1.487 0 1 1 .332-.332l1.014 1.015a4.6 4.6 0 0 1 2.86-1.186V2.955a1.488 1.488 0 1 1 .47 0v1.433a4.6 4.6 0 0 1 2.858 1.186l1.015-1.014a1.488 1.488 0 1 1 .332.331l-1.014 1.015a4.6 4.6 0 0 1 1.185 2.86h1.433A1.488 1.488 0 0 1 18 9a1.487 1.487 0 0 1-2.956.234h-1.433a4.6 4.6 0 0 1-.864 2.462 4 4 0 0 0-2.672-2.47 1.957 1.957 0 1 0-2.15 0 4 4 0 0 0-2.672 2.47 4.6 4.6 0 0 1-.864-2.462zM4.89 13.44a1.487 1.487 0 1 1-.332-.333l1.075-1.074a3.523 3.523 0 0 1 5.856-1.455c.41.41.708.911.875 1.455l1.074 1.074a1.487 1.487 0 1 1-.333.332l-1.014-1.014a4.6 4.6 0 0 1-2.86 1.186v1.433a1.488 1.488 0 1 1-1.722 1.468c.001-.74.544-1.356 1.253-1.468v-1.433a4.6 4.6 0 0 1-2.86-1.186L4.89 13.441zm4.108-4.363A1.488 1.488 0 1 1 9 6.103 1.488 1.488 0 0 1 9 9.078"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </div>
-            <p className="text-base text-white leading-5 font-[Duplet] font-semibold">
-              Patient Reach
-            </p>
-          </li>
-          <li className="flex items-center gap-2">
-            <div className="flex justify-center items-center h-7 w-7 rounded-full bg-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="none"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill="#132D47"
-                  d="M10.495 7.364a.413.413 0 0 1-.13.604.45.45 0 0 1-.227.061h-.893v7.139a.24.24 0 0 1-.074.172.26.26 0 0 1-.178.072H7.009a.26.26 0 0 1-.18-.072.24.24 0 0 1-.073-.172V8.029H5.86a.45.45 0 0 1-.227-.062.43.43 0 0 1-.16-.166.41.41 0 0 1 .03-.437l2.14-2.908A.43.43 0 0 1 8 4.28a.45.45 0 0 1 .358.177zM5.66 11.056a.41.41 0 0 1-.13.603.45.45 0 0 1-.227.06h-.892v3.449a.24.24 0 0 1-.075.172.26.26 0 0 1-.178.072H2.174a.26.26 0 0 1-.18-.072.24.24 0 0 1-.074-.172V11.72h-.895a.44.44 0 0 1-.226-.061.42.42 0 0 1-.21-.39.4.4 0 0 1 .077-.215l2.143-2.907a.44.44 0 0 1 .357-.176.45.45 0 0 1 .357.177zM15.363 4.107a.43.43 0 0 1-.161.168.45.45 0 0 1-.229.062h-.892v10.83a.24.24 0 0 1-.073.173.25.25 0 0 1-.179.072h-1.984a.26.26 0 0 1-.179-.072.24.24 0 0 1-.073-.172V4.338h-.897a.45.45 0 0 1-.227-.063.43.43 0 0 1-.16-.166.41.41 0 0 1 .03-.437l2.14-2.908a.44.44 0 0 1 .357-.176.45.45 0 0 1 .357.176l2.138 2.91a.4.4 0 0 1 .032.433"
-                ></path>
-              </svg>
-            </div>
-            <p className="text-base text-white leading-5 font-[Duplet] font-semibold">
-              Growth Opportunities
-            </p>
-          </li>
-          <li className="flex items-center gap-2">
-            <div className="flex justify-center items-center h-7 w-7 rounded-full bg-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="none"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill="#132D47"
-                  d="M9.076 7.867a1.95 1.95 0 0 1-1.077.328c-.39 0-.764-.125-1.076-.328a1.385 1.385 0 0 0-.937 1.312v.703c0 .14.11.25.25.25h3.51c.141 0 .25-.11.25-.25v-.687a1.36 1.36 0 0 0-.92-1.328M7.998 7.524a1.218 1.218 0 1 0 0-2.436 1.218 1.218 0 0 0 0 2.436M7.828 4.025c.078.109.25.109.327 0l.999-1.25a.211.211 0 0 0-.172-.344h-.468V.776a.19.19 0 0 0-.187-.188h-.702a.19.19 0 0 0-.188.188v1.64H6.97c-.171 0-.28.203-.171.343zM4.755 3.353l-.328.328-1.17-1.171a.18.18 0 0 0-.266 0l-.483.5a.18.18 0 0 0 0 .265l1.17 1.171-.328.328c-.124.125-.046.344.125.36l1.592.187c.14.016.25-.094.234-.234l-.187-1.609c-.016-.187-.234-.25-.36-.125M2.757 9.18l1.248-1a.205.205 0 0 0 0-.328l-1.248-1a.211.211 0 0 0-.343.172v.468H.775a.19.19 0 0 0-.187.188v.703a.19.19 0 0 0 .187.187h1.639v.469c0 .14.202.25.343.14M5.067 10.71l-1.592.188c-.171.015-.25.234-.125.359l.328.328-1.17 1.171a.18.18 0 0 0 0 .266l.5.5a.18.18 0 0 0 .264 0l1.17-1.172.328.328c.125.125.344.047.36-.125l.186-1.593c0-.156-.109-.266-.25-.25M8.172 11.99a.205.205 0 0 0-.328 0l-.999 1.25a.211.211 0 0 0 .172.344h.468v1.64a.19.19 0 0 0 .187.188h.703a.19.19 0 0 0 .187-.188V13.6h.468c.172 0 .28-.203.172-.344zM12.322 11.585l.327-.328c.125-.125.047-.344-.125-.36l-1.591-.187a.207.207 0 0 0-.234.234l.187 1.594c.016.172.234.25.359.125l.328-.328 1.17 1.171a.18.18 0 0 0 .265 0l.5-.5a.18.18 0 0 0 0-.265zM15.224 7.477h-1.638v-.469c0-.172-.203-.281-.344-.172l-1.248 1a.205.205 0 0 0 0 .328l1.248 1c.14.11.344.015.344-.172v-.469h1.638a.19.19 0 0 0 .187-.187v-.703c0-.078-.078-.156-.187-.156M10.933 5.306l1.592-.188c.172-.016.25-.234.125-.36l-.328-.327 1.17-1.172a.18.18 0 0 0 0-.265l-.499-.485a.18.18 0 0 0-.265 0l-1.17 1.172-.328-.328c-.125-.125-.344-.047-.36.125l-.186 1.593c0 .14.109.25.25.235"
-                ></path>
-              </svg>
-            </div>
-            <p className="text-base text-white leading-5 font-[Duplet] font-semibold">
-              Focus on Healing
-            </p>
-          </li>
-        </ul>
-        <SendReqBtn btntype="active" />
+        <div className="lg:flex gap-32">
+          <Image
+            src={VaidaPartner}
+            alt="vaidya partner"
+            className="h-[163px] lg:w-[656px] w-full lg:h-[288px] rounded-2xl object-cover mb-4 "
+          />
+          <div className="lg:flex flex-col justify-between h-auto lg:mb-4">
+            <ul className="flex flex-col gap-4 mb-4">
+              <li className="flex items-center gap-2">
+                <div className="flex justify-center items-center h-7 w-7 rounded-full bg-secondary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="16"
+                    fill="none"
+                    viewBox="0 0 14 16"
+                  >
+                    <path
+                      fill="#132D47"
+                      fillRule="evenodd"
+                      d="M10.522 7.038a3.87 3.87 0 0 0-1.98-1.341 3.7 3.7 0 0 1-2.463.93 3.7 3.7 0 0 1-2.463-.93C2.009 6.157.778 7.638.826 9.38l.05 1.849a.884.884 0 0 0 .884.857h5.76a.9.9 0 0 1-.193-.443v-.008a.9.9 0 0 1 .036-.357l.094-.299a.4.4 0 0 0 .014-.202.4.4 0 0 0-.09-.181l-.128-.151a.9.9 0 0 1-.175-.324.9.9 0 0 1-.021-.365.86.86 0 0 1 .393-.6l.265-.17a.4.4 0 0 0 .14-.146.4.4 0 0 0 .048-.198v-.197q0-.194.074-.359l.006-.013a.878.878 0 0 1 .535-.461.9.9 0 0 1 .367-.029l.312.041q.109.014.202-.022a.4.4 0 0 0 .164-.12l.126-.152a.9.9 0 0 1 .29-.228.9.9 0 0 1 .358-.084h.013q.088 0 .172.02m-.79 7.236v-.82a.84.84 0 0 1-.538-.007.9.9 0 0 1-.318-.186.9.9 0 0 1-.21-.303l-.12-.29a.4.4 0 0 0-.181-.202l-.019 1.81v1.136l.53-.527c.09-.09.237-.09.328 0l.528.526zm2.606.001-.018-1.81a.4.4 0 0 0-.062.04.4.4 0 0 0-.12.163l-.12.29a.9.9 0 0 1-.21.303.9.9 0 0 1-.317.186.87.87 0 0 1-.54.007v.82h.002v1.137l.528-.526c.09-.09.237-.09.328 0l.53.527zm.028-2.306a.86.86 0 0 0-.656.522l-.12.29a.4.4 0 0 1-.097.142.4.4 0 0 1-.149.086.4.4 0 0 1-.172.022.4.4 0 0 1-.164-.056l-.17-.099a1 1 0 0 0-.495-.124c-.174 0-.35.042-.494.124l-.17.1a.4.4 0 0 1-.164.055.4.4 0 0 1-.172-.022.4.4 0 0 1-.15-.086.4.4 0 0 1-.096-.143l-.12-.289a.87.87 0 0 0-.656-.522l-.195-.033a.4.4 0 0 1-.161-.062.4.4 0 0 1-.118-.126.4.4 0 0 1-.058-.162v-.005a.4.4 0 0 1 .018-.167l.095-.298a.87.87 0 0 0 .025-.431.86.86 0 0 0-.19-.389l-.128-.15a.4.4 0 0 1-.082-.15.4.4 0 0 1-.009-.173.4.4 0 0 1 .06-.161.4.4 0 0 1 .123-.12l.265-.169a.87.87 0 0 0 .298-.314.86.86 0 0 0 .104-.418v-.198q0-.092.033-.17l.004-.008a.4.4 0 0 1 .1-.128.4.4 0 0 1 .15-.086.4.4 0 0 1 .172-.012l.312.04c.151.02.297.003.43-.049a.86.86 0 0 0 .351-.255l.127-.152a.4.4 0 0 1 .298-.145.4.4 0 0 1 .163.038.4.4 0 0 1 .135.107l.127.152a.86.86 0 0 0 .35.255q.203.079.431.05l.312-.041a.4.4 0 0 1 .172.012.4.4 0 0 1 .15.086.4.4 0 0 1 .104.136.4.4 0 0 1 .034.17l-.001.198a.856.856 0 0 0 .402.733l.265.168a.4.4 0 0 1 .124.12q.045.069.059.16a.4.4 0 0 1-.009.173.4.4 0 0 1-.082.15l-.13.151a.86.86 0 0 0-.165.82l.094.298a.4.4 0 0 1 .018.172.4.4 0 0 1-.059.162.4.4 0 0 1-.117.126.4.4 0 0 1-.16.062zm-1.163-1.28.247 1.008a.145.145 0 0 1-.056.154.15.15 0 0 1-.166.006l-.885-.546-.886.547a.15.15 0 0 1-.165-.007.15.15 0 0 1-.058-.155l.248-1.007-.796-.67a.14.14 0 0 1-.045-.158.15.15 0 0 1 .13-.102l1.04-.077.393-.96a.15.15 0 0 1 .138-.092c.061 0 .114.035.137.092l.394.96 1.039.077a.15.15 0 0 1 .13.102.15.15 0 0 1-.045.158zM6.078.59a2.58 2.58 0 0 1 2.586 2.575 2.58 2.58 0 0 1-2.586 2.575 2.58 2.58 0 0 1-2.586-2.575A2.58 2.58 0 0 1 6.078.588"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <p className="text-base text-white leading-5 font-[Duplet] ">
+                  Professional Platform
+                </p>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="flex justify-center items-center h-7 w-7 rounded-full bg-secondary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="none"
+                    viewBox="0 0 18 18"
+                  >
+                    <path
+                      fill="#132D47"
+                      fillRule="evenodd"
+                      d="M2.955 9.235a1.488 1.488 0 1 1 0-.47h1.433a4.6 4.6 0 0 1 1.185-2.86L4.56 4.892a1.487 1.487 0 1 1 .332-.332l1.014 1.015a4.6 4.6 0 0 1 2.86-1.186V2.955a1.488 1.488 0 1 1 .47 0v1.433a4.6 4.6 0 0 1 2.858 1.186l1.015-1.014a1.488 1.488 0 1 1 .332.331l-1.014 1.015a4.6 4.6 0 0 1 1.185 2.86h1.433A1.488 1.488 0 0 1 18 9a1.487 1.487 0 0 1-2.956.234h-1.433a4.6 4.6 0 0 1-.864 2.462 4 4 0 0 0-2.672-2.47 1.957 1.957 0 1 0-2.15 0 4 4 0 0 0-2.672 2.47 4.6 4.6 0 0 1-.864-2.462zM4.89 13.44a1.487 1.487 0 1 1-.332-.333l1.075-1.074a3.523 3.523 0 0 1 5.856-1.455c.41.41.708.911.875 1.455l1.074 1.074a1.487 1.487 0 1 1-.333.332l-1.014-1.014a4.6 4.6 0 0 1-2.86 1.186v1.433a1.488 1.488 0 1 1-1.722 1.468c.001-.74.544-1.356 1.253-1.468v-1.433a4.6 4.6 0 0 1-2.86-1.186L4.89 13.441zm4.108-4.363A1.488 1.488 0 1 1 9 6.103 1.488 1.488 0 0 1 9 9.078"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <p className="text-base text-white leading-5 font-[Duplet] ">
+                  Patient Reach
+                </p>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="flex justify-center items-center h-7 w-7 rounded-full bg-secondary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill="#132D47"
+                      d="M10.495 7.364a.413.413 0 0 1-.13.604.45.45 0 0 1-.227.061h-.893v7.139a.24.24 0 0 1-.074.172.26.26 0 0 1-.178.072H7.009a.26.26 0 0 1-.18-.072.24.24 0 0 1-.073-.172V8.029H5.86a.45.45 0 0 1-.227-.062.43.43 0 0 1-.16-.166.41.41 0 0 1 .03-.437l2.14-2.908A.43.43 0 0 1 8 4.28a.45.45 0 0 1 .358.177zM5.66 11.056a.41.41 0 0 1-.13.603.45.45 0 0 1-.227.06h-.892v3.449a.24.24 0 0 1-.075.172.26.26 0 0 1-.178.072H2.174a.26.26 0 0 1-.18-.072.24.24 0 0 1-.074-.172V11.72h-.895a.44.44 0 0 1-.226-.061.42.42 0 0 1-.21-.39.4.4 0 0 1 .077-.215l2.143-2.907a.44.44 0 0 1 .357-.176.45.45 0 0 1 .357.177zM15.363 4.107a.43.43 0 0 1-.161.168.45.45 0 0 1-.229.062h-.892v10.83a.24.24 0 0 1-.073.173.25.25 0 0 1-.179.072h-1.984a.26.26 0 0 1-.179-.072.24.24 0 0 1-.073-.172V4.338h-.897a.45.45 0 0 1-.227-.063.43.43 0 0 1-.16-.166.41.41 0 0 1 .03-.437l2.14-2.908a.44.44 0 0 1 .357-.176.45.45 0 0 1 .357.176l2.138 2.91a.4.4 0 0 1 .032.433"
+                    ></path>
+                  </svg>
+                </div>
+                <p className="text-base text-white leading-5 font-[Duplet] ">
+                  Growth Opportunities
+                </p>
+              </li>
+              <li className="flex items-center gap-2">
+                <div className="flex justify-center items-center h-7 w-7 rounded-full bg-secondary">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill="#132D47"
+                      d="M9.076 7.867a1.95 1.95 0 0 1-1.077.328c-.39 0-.764-.125-1.076-.328a1.385 1.385 0 0 0-.937 1.312v.703c0 .14.11.25.25.25h3.51c.141 0 .25-.11.25-.25v-.687a1.36 1.36 0 0 0-.92-1.328M7.998 7.524a1.218 1.218 0 1 0 0-2.436 1.218 1.218 0 0 0 0 2.436M7.828 4.025c.078.109.25.109.327 0l.999-1.25a.211.211 0 0 0-.172-.344h-.468V.776a.19.19 0 0 0-.187-.188h-.702a.19.19 0 0 0-.188.188v1.64H6.97c-.171 0-.28.203-.171.343zM4.755 3.353l-.328.328-1.17-1.171a.18.18 0 0 0-.266 0l-.483.5a.18.18 0 0 0 0 .265l1.17 1.171-.328.328c-.124.125-.046.344.125.36l1.592.187c.14.016.25-.094.234-.234l-.187-1.609c-.016-.187-.234-.25-.36-.125M2.757 9.18l1.248-1a.205.205 0 0 0 0-.328l-1.248-1a.211.211 0 0 0-.343.172v.468H.775a.19.19 0 0 0-.187.188v.703a.19.19 0 0 0 .187.187h1.639v.469c0 .14.202.25.343.14M5.067 10.71l-1.592.188c-.171.015-.25.234-.125.359l.328.328-1.17 1.171a.18.18 0 0 0 0 .266l.5.5a.18.18 0 0 0 .264 0l1.17-1.172.328.328c.125.125.344.047.36-.125l.186-1.593c0-.156-.109-.266-.25-.25M8.172 11.99a.205.205 0 0 0-.328 0l-.999 1.25a.211.211 0 0 0 .172.344h.468v1.64a.19.19 0 0 0 .187.188h.703a.19.19 0 0 0 .187-.188V13.6h.468c.172 0 .28-.203.172-.344zM12.322 11.585l.327-.328c.125-.125.047-.344-.125-.36l-1.591-.187a.207.207 0 0 0-.234.234l.187 1.594c.016.172.234.25.359.125l.328-.328 1.17 1.171a.18.18 0 0 0 .265 0l.5-.5a.18.18 0 0 0 0-.265zM15.224 7.477h-1.638v-.469c0-.172-.203-.281-.344-.172l-1.248 1a.205.205 0 0 0 0 .328l1.248 1c.14.11.344.015.344-.172v-.469h1.638a.19.19 0 0 0 .187-.187v-.703c0-.078-.078-.156-.187-.156M10.933 5.306l1.592-.188c.172-.016.25-.234.125-.36l-.328-.327 1.17-1.172a.18.18 0 0 0 0-.265l-.499-.485a.18.18 0 0 0-.265 0l-1.17 1.172-.328-.328c-.125-.125-.344-.047-.36.125l-.186 1.593c0 .14.109.25.25.235"
+                    ></path>
+                  </svg>
+                </div>
+                <p className="text-base text-white leading-5 font-[Duplet] ">
+                  Focus on Healing
+                </p>
+              </li>
+            </ul>
+            <SendReqBtn btntype="active" />
+          </div>
+        </div>
       </div>
     </main>
   );
