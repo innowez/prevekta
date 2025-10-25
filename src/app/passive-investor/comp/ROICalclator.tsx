@@ -106,7 +106,7 @@ function ROICalclator() {
                 </p>
               </div>
 
-              <hr className="bg-[#132D4766] text-[#132D4766]" />
+              {/* <hr className="bg-[#132D4766] text-[#132D4766]" /> */}
 
               <div className="flex flex-col gap-2">
                 <p className="text-base lg:text-lg text-primary font-[Duplet] font-semibold leading-[23px]">

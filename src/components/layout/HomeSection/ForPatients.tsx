@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import ForPatientBtn from "./btns/ForPatientBtn";
 
 const MultipleIcon = () => (
@@ -140,7 +141,8 @@ const ForPatients = () => {
       </div>
 
       {/* Button */}
-      <ForPatientBtn />
+      <Link href={"/appointment"} >
+      <ForPatientBtn /></Link>
     </div>
   );
 };

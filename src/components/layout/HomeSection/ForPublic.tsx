@@ -8,6 +8,7 @@ import PublicVideoThree from "@assets/videos/PublicVideoThree.gif";
 import VideoTip3 from "@/assets/images/videotip3.gif";
 import Image from "next/image";
 import ForPublicBtn from "./btns/ForPublicBtn";
+import Link from "next/link";
 
 const ForPublic: React.FC = () => {
   
@@ -70,9 +71,9 @@ const ForPublic: React.FC = () => {
 
         {/* Button */}
         <div className="flex justify-center">
-          {/* <Link href="/for-people"> */}
+          <Link href="/for-people">
             <ForPublicBtn />
-          {/* </Link> */}
+          </Link>
         </div>
       </div>
     </section>
