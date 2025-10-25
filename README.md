@@ -30,7 +30,7 @@ Prevekta Ayurveda is a healthcare platform that combines traditional Ayurvedic w
 
 ### Information
 
-- **[`/prevekta-vs-pain`](https://www.prevektaayurveda.com/previkta-vs-pain)** - Detailed information about Prevekta's approach to pain management
+- **[`/prevekta-vs-pain`](https://www.prevektaayurveda.com/prevekta-vs-pain)** - Detailed information about Prevekta's approach to pain management
 - **[`/products`](https://www.prevektaayurveda.com/products)** - Product catalog and offerings (under dashboard route group)
 
 ## Key Features
