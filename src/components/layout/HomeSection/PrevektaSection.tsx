@@ -69,7 +69,8 @@ const PrevektaSection = () => {
   const gotoelement = (name: string) => {
     const element = document.getElementById(name);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      // element.scrollIntoView({ behavior: "smooth", block: "start" });
+      element.scrollIntoView();
     }
   };
 
