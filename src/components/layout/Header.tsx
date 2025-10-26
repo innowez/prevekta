@@ -9,6 +9,7 @@ import CloseIcon from "@/assets/icons/CloseIcon";
 import CustomButton from "@/components/ui/CustomButton";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 // import { Button } from "../ui/Button";
 // import CsButton from "../ui/CsButton";
 
@@ -109,9 +110,9 @@ const Header: React.FC = () => {
             <span className="font-[Duplet] text-bodyRegular cursor-pointer bg-[#ffffff00] hover:text-primary transition-colors">
               Careers
             </span>
-            <span className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
+            <Link href={"/about-us"} className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
               About Us
-            </span>
+            </Link>
             <span className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
               Contact us
             </span>
@@ -277,9 +278,9 @@ const Header: React.FC = () => {
                   </div>
                 </div>
                 <div className="border-b pb-4">
-                  <div className="font-bold text-primary-dark text-base cursor-pointer">
+                  <Link href={"/about-us"} className="font-bold text-primary-dark text-base cursor-pointer">
                     About Us
-                  </div>
+                  </Link>
                 </div>
                 <div className="border-b pb-4">
                   <div className="font-bold text-primary-dark text-base cursor-pointer">
