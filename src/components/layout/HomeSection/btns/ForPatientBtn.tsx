@@ -8,16 +8,16 @@ function ForPatientBtn() {
       const isMobile = useMediaQuery('(max-width: 525px)');
   return (
           <CustomButton
-        mainWidth={isMobile? "100%" : "320px"}
-        labelWidth={isMobile? "100%" : "320px"}
-        labelWidthHover={isMobile? "91%" : "280px"}
+        mainWidth={isMobile? "100%" : "190px"}
+        labelWidth={isMobile? "100%" : "190px"}
+        labelWidthHover={isMobile? "91%" : "155px"}
         labelBackground="rgba(19,45,71,0.0)"
         labelBackgroundHover="#132D47"
         labelTextColor="#132D47"
         labelTextColorHover="#FFFF"
         arrowFill="#132D47"
         arrowFillHover="#FFFF"
-        labelText="Book Your Consultation"
+        labelText="Explore More"
         labelBorderColor="#132D47"
         iconPosition="0px"
         iconPositionHover="px"

@@ -6,6 +6,7 @@ import LogoLeft from "@assets/images/pvprightlogo.png";
 import LogoRight from "@assets/images/pvpleftlogo.png";
 import CustomButton from "@/components/ui/CustomButton";
 import MapVisualization from "@/components/ui/BodyVisualization";
+import Link from "next/link";
 
 function PrevektavsPain() {
   return (
@@ -52,6 +53,7 @@ function PrevektavsPain() {
         </div>
 
         <div className="relative lg:absolute w-[218px] h-[56px] left-1/2 -translate-x-1/2 bottom-0 lg:left-auto lg:bottom-20 lg:right-6">
+        <Link href={"/prevekta-vs-pain"}>
           <CustomButton
             mainWidth="216px"
             labelWidth="216px"
@@ -67,6 +69,7 @@ function PrevektavsPain() {
             iconPosition="0px"
             iconPositionHover="0px"
           />
+          </Link>
         </div>
       </div>
     </div>

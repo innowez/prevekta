@@ -141,7 +141,7 @@ const ForPatients = () => {
       </div>
 
       {/* Button */}
-      <Link href={"/appointment"} >
+      <Link href={"/patients"} >
       <ForPatientBtn /></Link>
     </div>
   );

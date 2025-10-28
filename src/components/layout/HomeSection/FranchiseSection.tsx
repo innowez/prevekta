@@ -2,6 +2,7 @@ import React from 'react';
 import ArrowRightThin from '@/assets/icons/ArrowRightThin';
 import Image from 'next/image';
 import LogoHalf from '@assets/images/LogoHalfImage.png'
+import Link from 'next/link';
 
 const FranchiseSection: React.FC = () => {
   return (
@@ -58,11 +59,11 @@ const FranchiseSection: React.FC = () => {
     </div>
 
     {/* Bordered Image Placeholder */}
-    <div className="absolute right-10 top-4 border-5 border-[#132D47] rounded-[29px] w-[288px] h-[288px] flex items-center justify-center overflow-hidden">
+    <Link href={"/finance"} className="absolute right-10 top-4 border-5 border-[#132D47] rounded-[29px] w-[288px] h-[288px] flex items-center justify-center overflow-hidden">
       <div className="w-60 h-55 transform flex justify-center items-center -rotate-45 relative">
         <ArrowRightThin width={60} height={55} fill='#132D47' />
       </div>
-    </div>
+    </Link>
   </div>
 </section>
 

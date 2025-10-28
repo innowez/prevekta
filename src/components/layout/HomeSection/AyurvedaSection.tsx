@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
 import Logo from "@assets/icons/Logo";
@@ -7,6 +9,14 @@ import LogoDriverDesignTwo from "@assets/images/LogoDriverDesignTwo.png";
 import AyruvedaSectionBtn from "./btns/AyruvedaSectionBtn";
 
 const AyurvedaSection = () => {
+
+  const scrollIntopvfor = () => {
+     const element = document.getElementById("pvfor");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      // element.scrollIntoView();
+    }
+  } 
   
   return (
     <div className="w-full mx-auto px-4  my-8 lg:my-16">
@@ -48,7 +58,9 @@ const AyurvedaSection = () => {
                 </p>
 
                 <div className="pb-4 lg:pb-0">
+                  <button onClick={() => scrollIntopvfor()}>
                   <AyruvedaSectionBtn />
+                  </button>
                 </div>
               </div>
             </div>

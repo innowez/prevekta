@@ -91,28 +91,30 @@ const Header: React.FC = () => {
               <span className="font-[Duplet] text-bodyRegular ">Services</span>
               <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
-            <div
+             <span className="font-[Duplet] text-bodyRegular cursor-pointer bg-[#ffffff00] hover:text-primary transition-colors">
+              Know your vaidya
+            </span>
+            {/* <div
               className="flex items-center gap-1 cursor-pointer transition-colors"
               onClick={() => router.push("/products")}
             >
               <span className="font-[Duplet] text-bodyRegular ">Products</span>
               <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
-            </div>
+            </div> */}
             <span className="font-[Duplet] text-bodyRegular cursor-pointer  transition-colors">
-              Clinics
+              Find a clinic
             </span>
+            
+           
+            {/* <Link href={"/about-us"} className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
+              About Us
+            </Link> */}
             <div className="flex items-center gap-1 cursor-pointer transition-colors">
               <span className="font-[Duplet] text-bodyRegular">
                 Knowledge Hub
               </span>
               <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
-            <span className="font-[Duplet] text-bodyRegular cursor-pointer bg-[#ffffff00] hover:text-primary transition-colors">
-              Careers
-            </span>
-            <Link href={"/about-us"} className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
-              About Us
-            </Link>
             <span className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
               Contact us
             </span>
@@ -242,7 +244,7 @@ const Header: React.FC = () => {
                 </div>
 
                 {/* Products Dropdown */}
-                <div className="border-b pb-4">
+                {/* <div className="border-b pb-4">
                   <div
                     className="flex justify-between items-center cursor-pointer"
                     onClick={() => router.push("/products")}
@@ -252,12 +254,12 @@ const Header: React.FC = () => {
                     </span>
                     <ArrowDown />
                   </div>
-                </div>
+                </div> */}
 
                 {/* Simple Menu Items */}
                 <div className="border-b pb-4">
                   <div className="font-bold text-primary-dark text-base cursor-pointer">
-                    Clinics
+                    Find a clinic
                   </div>
                 </div>
 
@@ -272,7 +274,7 @@ const Header: React.FC = () => {
                 </div>
 
                 {/* Simple Menu Items */}
-                <div className="border-b pb-4">
+                {/* <div className="border-b pb-4">
                   <div className="font-bold text-primary-dark text-base cursor-pointer">
                     Careers
                   </div>
@@ -281,7 +283,7 @@ const Header: React.FC = () => {
                   <Link href={"/about-us"} className="font-bold text-primary-dark text-base cursor-pointer">
                     About Us
                   </Link>
-                </div>
+                </div> */}
                 <div className="border-b pb-4">
                   <div className="font-bold text-primary-dark text-base cursor-pointer">
                     Contact us

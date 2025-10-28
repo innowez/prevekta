@@ -75,7 +75,7 @@ const PrevektaSection = () => {
   };
 
   return (
-    <div className="max-w-[1360px] mx-auto px-8 py-12 md:py-24">
+    <div id="pvfor" className="max-w-[1360px] mx-auto px-8 py-12 md:py-24">
       {/* Header */}
       <div className="flex justify-between items-center gap-8 mb-0">
         <h1 className="text-2xl md:text-5xl lg:text-[60px] font-bold text-primary-dark font-atyp">

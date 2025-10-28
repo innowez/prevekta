@@ -132,7 +132,7 @@ body {
   /* border-radius: 4px 0 0 4px; */
 }
 
-.method-2::before {
+.method-2::after {
   content: "";
   position: absolute;
   left: 0;
