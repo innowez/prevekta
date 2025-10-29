@@ -11,6 +11,19 @@ const InvestmentForm = () => {
   const [submitError, setSubmitError] = useState("");
   const router = useRouter();
 
+  const loct = {
+    region: ["Southern India", "Western India", "Eastern India", "Northern India", "North-Eastern India"],
+    states:[
+        ["Tamil Nadu", 'Kerala', "Karnataka", "Andhra Pradesh", "Telangana", "Puducherry", "Lakshadweep", "Goa"],
+        ["Rajasthan", "Gujarat", "Maharashtra", "Dadra & Nagar Haveli", "Daman & Diu"],
+        ["Bihar", "Jharkhand", "Odisha", "West Bengal", "Andaman & Nicobar Islands"],
+        ["Jammu & Kashmir", "Ladakh", "Himachal Pradesh", "Punjab", "Haryana", "Chandigarh", "Delhi", "Uttarakhand", "Uttar Pradesh"],
+        ["Madhya Pradesh", "Chhattisgarh"],
+        ["Assam", "Arunachal Pradesh", "Nagaland", "Manipur", "Mizoram", "Tripura", "Meghalaya", "Sikkim"]
+    ],
+    
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);

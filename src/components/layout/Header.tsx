@@ -115,15 +115,16 @@ const Header: React.FC = () => {
               </span>
               <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
-            <span className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
+            <Link href={"/contact-us"} className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
               Contact us
-            </span>
+            </Link>
           </div>
         </nav>
 
         {/* Buttons */}
         <div>
           <div className="flex gap-12">
+            <Link href={"/finance"}>
             <CustomButton
               mainWidth="170px"
               labelWidth="170px"
@@ -139,6 +140,7 @@ const Header: React.FC = () => {
               iconPosition="2px"
               iconPositionHover="px"
             />
+            </Link>
             {/* <Button showIcon>Robin</Button> */}
             {/* <CsButton>Robin</CsButton> */}
             <div className="relative -ml-5">
@@ -285,14 +287,15 @@ const Header: React.FC = () => {
                   </Link>
                 </div> */}
                 <div className="border-b pb-4">
-                  <div className="font-bold text-primary-dark text-base cursor-pointer">
+                  <Link href={"/contact-us"} className="font-bold text-primary-dark text-base cursor-pointer">
                     Contact us
-                  </div>
+                  </Link>
                 </div>
               </div>
 
               {/* Mobile Buttons */}
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <Link href={"/finance"}>
                 <CustomButton
                   mainWidth="170px"
                   labelWidth="170px"
@@ -307,7 +310,7 @@ const Header: React.FC = () => {
                   labelBorderColor="#132D47"
                   iconPosition="2px"
                   iconPositionHover="px"
-                />
+                /></Link>
                 <CustomButton
                   mainWidth="120px"
                   labelWidth="120px"

@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import AboutBg from "../../assets/images/about-bg.png";
 import AbGrid1 from "../../assets/images/abgrid1.png";
+import FranchiseSection from "@/components/layout/HomeSection/FranchiseSection";
+import ContactSection from "@/components/layout/HomeSection/ContactSection";
 
 function page() {
   return (
@@ -51,6 +53,8 @@ function page() {
           </div>
         </div>
       </section>
+            <FranchiseSection />
+      <ContactSection />
     </>
   );
 }
