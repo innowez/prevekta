@@ -1,9 +1,76 @@
 "use client";
 import CustomButton from "@/components/ui/CustomButton";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const AppointmentPage = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState("");
+    const router = useRouter();
+  
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      setSubmitError("");
+  
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycby6G6Pp096af1BknVPklIptlUpoTc2pY6pWXyFYW82kQ1-Ybgk0_x-CyOY3AO87RjN3/exec";
+  
+  
+      // Create a hidden iframe for form submission
+      const iframe = document.createElement("iframe");
+      iframe.style.display = "none";
+      iframe.name = "hidden_iframe";
+      document.body.appendChild(iframe);
+  
+      // Create a temporary form for submission
+      const tempForm = document.createElement("form");
+      tempForm.action = scriptURL;
+      tempForm.method = "POST";
+      tempForm.target = "hidden_iframe";
+      tempForm.encType = "multipart/form-data";
+      tempForm.style.display = "none";
+  
+      // Copy form data to temp form
+      for (const [key, value] of formData.entries()) {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = value as string;
+        tempForm.appendChild(input);
+      }
+  
+      document.body.appendChild(tempForm);
+  
+      try {
+        // Submit the form
+        tempForm.submit();
+  
+        // Wait a moment then assume success
+        setTimeout(() => {
+          setIsSubmitted(true);
+          setIsSubmitting(false);
+  
+          // Cleanup
+          document.body.removeChild(tempForm);
+          document.body.removeChild(iframe);
+        }, 1000);
+      } catch (error) {
+        setSubmitError("Failed to send message. Please try again.");
+        setIsSubmitting(false);
+  
+        // Cleanup on error
+        document.body.removeChild(tempForm);
+        document.body.removeChild(iframe);
+      }
+    };
+  
+    if (isSubmitted) {
+      router.push("/thank-you");
+    }
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 p-4 md:p-8 lg:py-14">
       <div className="max-w-7xl mx-auto">
@@ -47,12 +114,12 @@ const AppointmentPage = () => {
 
           {/* Right Form Section */}
           <div className="md:w-1/2">
-            <form className="bg-white p-6 rounded-lg lg:rounded-3xl space-y-4">
+            <form className="bg-white p-6 rounded-lg lg:rounded-3xl space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-1 gap-4 lg:gap-8 lg:mb-10">
                 <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
                   <input
-                    name="Name"
-                    placeholder=" Name"
+                    name="name"
+                    placeholder="Name"
                     required
                     className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none placeholder:text-primary"
                   />
@@ -61,6 +128,7 @@ const AppointmentPage = () => {
                 <div className="flex flex-col lg:flex-row justify-between gap-2 ">
                   <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
                     <input
+                      name="email"
                       type="email"
                       placeholder="Email"
                       required
@@ -69,6 +137,7 @@ const AppointmentPage = () => {
                   </div>
                   <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
                     <input
+                      name="mobile"
                       type="tel"
                       placeholder="Phone Number"
                       required
@@ -79,33 +148,47 @@ const AppointmentPage = () => {
 
                 <div className="flex flex-col lg:flex-row justify-between gap-2 ">
                   <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
-                    <select className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none">
+                    <select
+                      name="consultation"
+                      className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
+                    >
                       <option value="">Consultation type</option>
-                      <option value="online">Online Consultation</option>
-                      <option value="inPerson">In-Person Consultation</option>
+                      <option value="Online Consultation">
+                        Online Consultation
+                      </option>
+                      <option value="In-Person Consultation">
+                        In-Person Consultation
+                      </option>
                     </select>
                   </div>
 
                   <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
-                    <select className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none">
+                    <select
+                      name="location"
+                      className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
+                    >
                       <option value="">Location</option>
-                      <option value="clinic1">Main Clinic</option>
-                      <option value="clinic2">Branch Location</option>
+                      <option value="Main Clinic">Main Clinic</option>
+                      <option value="Branch Location">Branch Location</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
-                  <select className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none">
+                  <select
+                    name="time"
+                    className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
+                  >
                     <option value="">Choose Your Time</option>
-                    <option value="morning">Morning</option>
-                    <option value="afternoon">Afternoon</option>
-                    <option value="evening">Evening</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                    <option value="Evening">Evening</option>
                   </select>
                 </div>
 
                 <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
                   <textarea
+                    name="message"
                     placeholder="Message"
                     rows={4}
                     className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none placeholder:text-primary"

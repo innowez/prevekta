@@ -4,6 +4,7 @@ import FinanceHero from "@assets/images/finance.png";
 import HeighProfit from "@assets/images/highProfit.png";
 import SendReqBtn from "./comp/SendReqBtn";
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
+import InvestmentForm from "@/components/layout/Investment/InvstmentForm";
 
 function page() {
   return (
@@ -344,7 +345,8 @@ function page() {
         </div>
       </section>
 
-      <ContactSection />
+      {/* <ContactSection /> */}
+      <InvestmentForm />
     </main>
   );
 }
