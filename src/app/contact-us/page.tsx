@@ -3,11 +3,13 @@ import React from "react";
 import ContactBg from "../../assets/images/contact-us-bg.png";
 import LetsConnectBtn from "./LetsConnectBtn";
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
+import ContactForm from "./ContactForm";
 
 function page() {
   return (
-    <>
-      <section className="w-full h-screen relative ">
+    <div
+    className="overflow-hidden">
+      <section className="w-full h-screen relative overflow-x-hidden ">
         <Image
           src={ContactBg}
           alt="contact-bg"
@@ -355,9 +357,9 @@ function page() {
       </section>
 
       <section>
-        <ContactSection />
+        <ContactForm />
       </section>
-    </>
+    </div>
   );
 }
 
