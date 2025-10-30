@@ -5,7 +5,8 @@ import PassiveGraph from "@assets/images/passive-graph.png";
 import SendReqBtn from "./comp/SendReqBtn";
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import ROICalclator from "./comp/ROICalclator";
-import InvestmentForm from "@/components/layout/Investment/InvstmentForm";
+// import InvestmentForm from "@/components/layout/Investment/InvstmentForm";
+import PassiveInvestmentForm from "@/components/layout/Investment/PassiveInvstmentForm";
 
 function page() {
   return (
@@ -271,7 +272,7 @@ function page() {
       </section>
 
       {/* <ContactSection /> */}
-      <InvestmentForm />
+      <PassiveInvestmentForm />
     </main>
   );
 }

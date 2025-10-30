@@ -3,7 +3,6 @@ import Image from "next/image";
 import FinanceHero from "@assets/images/finance.png";
 import HeighProfit from "@assets/images/highProfit.png";
 import SendReqBtn from "./comp/SendReqBtn";
-import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import InvestmentForm from "@/components/layout/Investment/InvstmentForm";
 
 function page() {
