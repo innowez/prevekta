@@ -9,19 +9,72 @@ const InvestmentForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [selRegion, setRegion] = useState<number | null>(null)
+  const [selState, setSelState] = useState<number | null>(null)
   const router = useRouter();
 
   const loct = {
     region: ["Southern India", "Western India", "Eastern India", "Northern India", "North-Eastern India"],
     states:[
-        ["Tamil Nadu", 'Kerala', "Karnataka", "Andhra Pradesh", "Telangana", "Puducherry", "Lakshadweep", "Goa"],
-        ["Rajasthan", "Gujarat", "Maharashtra", "Dadra & Nagar Haveli", "Daman & Diu"],
-        ["Bihar", "Jharkhand", "Odisha", "West Bengal", "Andaman & Nicobar Islands"],
-        ["Jammu & Kashmir", "Ladakh", "Himachal Pradesh", "Punjab", "Haryana", "Chandigarh", "Delhi", "Uttarakhand", "Uttar Pradesh"],
-        ["Madhya Pradesh", "Chhattisgarh"],
-        ["Assam", "Arunachal Pradesh", "Nagaland", "Manipur", "Mizoram", "Tripura", "Meghalaya", "Sikkim"]
+      ["Tamil Nadu", 'Kerala', "Karnataka", "Andhra Pradesh", "Telangana", "Puducherry", "Lakshadweep", "Goa"],
+      ["Rajasthan", "Gujarat", "Maharashtra", "Dadra & Nagar Haveli, Daman & Diu"],
+      ["Bihar", "Jharkhand", "Odisha", "West Bengal", "Andaman & Nicobar Islands"],
+      ["Jammu & Kashmir", "Ladakh", "Himachal Pradesh", "Punjab", "Haryana", "Chandigarh", "Delhi", "Uttarakhand",],
+      ["Madhya Pradesh", "Chhattisgarh", "Uttar Pradesh"],
+      ["Assam", "Arunachal Pradesh", "Nagaland", "Manipur", "Mizoram", "Tripura", "Meghalaya", "Sikkim"]
     ],
-    
+    cluster: [
+      [
+      ["Chennai", "Vellore / Chn", "Salem / Cbe", "Coimabatore", "Trichy", "Madurai", "Tirunelveli/Mdu",],
+      ["Trivandrum (South)", "Ernakulam (Central)", "Kannur (North)"],
+      ["Belgaum", "Gulbarga", "Mysuru", "Udupi", "Bengaluru", "Tumkuru"],
+      ["Vizag","Kakinada", "Amaravathi", "Nellore", "Tirupati"],
+      ["Warangal", "Hyderabad", "Nizamabad", ],
+      ["Pondichery / Try"],
+      ["Ernakulam (Central)"],
+      ["Goa"],
+    ],
+
+      [
+        ["Jaipur", "Jodhpur", "Udaipur",],
+        ["Ahamedabad", "Surat", "Vadodara", "Rajkot"],
+        ["Mumbai", "Thane","Pune", "Kolhapur", "Solapur", "Nashik", "Chhatrapati-Sambhajinagar", "Nanded", "Amravati", "Nagpur"],
+        ["Dadra"]
+      ],
+      [
+        ["Patna", "Rohtas", "Gaya", "Champaran", "Muzaffarpur", "Saran", "Dharbanga", "Saharsa", "Purnia", "Bhagalpur"],
+        ["Ranchi", "Dhanbad", "Hazaribagh"],
+        ["Bhubaneswar", "Berhampur", "Rourkela", "Balasore"],
+        ["Baharampur", "Jalpaiguri", "Medinipur", "Kolkatta"],
+        []
+      ],
+      [
+        ["Jammu", "Kashmir"],
+        [],
+        ["Shimla", "Dharmashala", "Mandi"],
+        ["Amritsar", "Jalandhar", "Ludhiana", "Patiala", "Bathinda"],
+        ["Ambala", "Sonipat", "Faridabad", "Karnal", "Hisar", "Gurugram" ],
+        ["Chandigarh", "Dharmashala", "Mandi"],
+        ["Chandigarh"],
+        ["East Delhi", "NE Delhi", "NW Delhi", "West Delhi", "South Delhi", "SW Delhi"],
+        ["Dehradun", "Rudrapur"],
+      ],
+      [
+        ["Bhopal", "Indore", "Ujjain", "Jabalpur", "Gwalior", "Sagar", "Rewa",],
+        ["Bastar", "Durg", "Raipur", "Bilaspur", "Jashpur"],
+        ["Agra", "Western UP", "Central UP", "Jhansi", "Bareilly", "Ayodhya","Prayagraj","Varanasi","Gorakhpur"],
+      ],
+      [
+        ["Guawahati", "Lower Assam","Central Assam", "North Assam", "Upper Assam", "Barak Valley"],
+        ["Kohima"],
+        ["Imphal"],
+        ["Aizawl"],
+        ["Agartala"],
+        ["Shillong"],
+        ["Gangtok"],
+      ]
+
+  ] 
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -86,6 +139,11 @@ const InvestmentForm = () => {
     router.push("/thank-you");
   }
 
+  // console.log((selState !== null && selRegion !== null) && loct.cluster[selRegion]);
+  // console.log(selRegion, "selRegion");
+  // console.log(selState, "selState");
+  
+
   return (
     <div className="flex flex-col lg:flex-row items-start px-4 py-12 md:py-20 lg:pt-40 mx-auto max-w-[1360px] gap-10 md:gap-20 relative">
       {/* Background Circle (hidden on mobile) */}
@@ -119,7 +177,7 @@ const InvestmentForm = () => {
           </div>
         )}
         {/* Name Fields */}
-        <div className="flex flex-col md:flex-row gap-4 w-full">
+        {/* <div className="flex flex-col md:flex-row gap-4 w-full"> */}
           <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
               // name="Name_First"
@@ -129,7 +187,7 @@ const InvestmentForm = () => {
               className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none placeholder:text-primary placeholder:font-normal"
             />
           </div>
-        </div>
+        {/* </div> */}
 
         {/* Contact Fields */}
         <div className="flex flex-col md:flex-row gap-4 w-full">
@@ -152,17 +210,22 @@ const InvestmentForm = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-2 ">
+        <div className="flex flex-col lg:flex-row justify-between gap-4 ">
           <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <select
               name="region"
               className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
+              onChange={(e) => {
+                if (e.target.value !== "") { 
+                  const selectedIndex = loct.region.findIndex(reg => reg === e.target.value);
+                  setRegion(selectedIndex);
+                } else{
+                  setRegion(null);
+                }
+              }}
             >
               <option value="">-- Region --</option>
-              <option value="Online_Consultation">Online Consultation</option>
-              <option value="In-Person_Consultation">
-                In-Person Consultation
-              </option>
+              {loct.region.map((reg, ind) => (<option key={ind+"reg"} value={reg}>{reg}</option>))}
             </select>
           </div>
 
@@ -170,36 +233,17 @@ const InvestmentForm = () => {
             <select
               name="state"
               className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
+              onChange={(e) => {
+                if (selRegion !== null && e.target.value !== "") {
+                  const selectedIndex = loct.states[selRegion].findIndex(reg => reg === e.target.value);
+                  setSelState(selectedIndex);
+                }else {
+                  setSelState(null);
+                }
+              }}
             >
               <option value="">-- Select a state --</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-              <option value="Assam">Assam</option>
-              <option value="Bihar">Bihar</option>
-              <option value="Chhattisgarh">Chhattisgarh</option>
-              <option value="Goa">Goa</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Haryana">Haryana</option>
-              <option value="Himachal Pradesh">Himachal Pradesh</option>
-              <option value="Jharkhand">Jharkhand</option>
-              <option value="Karnataka">Karnataka</option>
-              <option value="Kerala">Kerala</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Manipur">Manipur</option>
-              <option value="Meghalaya">Meghalaya</option>
-              <option value="Mizoram">Mizoram</option>
-              <option value="Nagaland">Nagaland</option>
-              <option value="Odisha">Odisha</option>
-              <option value="Punjab">Punjab</option>
-              <option value="Rajasthan">Rajasthan</option>
-              <option value="Sikkim">Sikkim</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="Telangana">Telangana</option>
-              <option value="Tripura">Tripura</option>
-              <option value="Uttar Pradesh">Uttar Pradesh</option>
-              <option value="Uttarakhand">Uttarakhand</option>
-              <option value="West Bengal">West Bengal</option>
+              {selRegion !== null && loct.states[selRegion].map((reg, ind) => (<option key={ind+"reg"} value={reg}>{reg}</option>))}
             </select>
           </div>
         </div>
@@ -212,8 +256,7 @@ const InvestmentForm = () => {
             className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
           >
             <option value="">-- Cluster --</option>
-            <option value="Main_Clinic">Main Clinic</option>
-            <option value="Branch_Location">Branch Location</option>
+              {(selState !== null && selRegion !== null) && loct.cluster[selRegion][selState].map((reg, ind) => (<option key={ind+"reg"} value={reg}>{reg}</option>))}
           </select>
         </div>
 
