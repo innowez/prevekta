@@ -155,7 +155,7 @@ const PassiveInvestmentForm = () => {
 
       {/* Form Section */}
       <form
-        className="w-full lg:w-1/2 space-y-6 md:space-y-10"
+        className="w-full lg:w-1/2 space-y-6 "
         onSubmit={handleSubmit}
       >
         {submitError && (
@@ -197,7 +197,7 @@ const PassiveInvestmentForm = () => {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-2 ">
+        <div className="flex flex-col lg:flex-row justify-between gap-4 ">
           <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <select
               name="location"
