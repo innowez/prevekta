@@ -135,8 +135,9 @@ function FinancePage() {
           </div>
 
           <div className="hidden lg:flex h-auto flex-col justify-end ">
-            <Link href={"passive-investor"}>
-            <SendReqBtn btntype="passive" /></Link>
+            {/* <Link href={"passive-investor"}> */}
+            <SendReqBtn btntype="passive" />
+            {/* </Link> */}
           </div>
         </div>
 

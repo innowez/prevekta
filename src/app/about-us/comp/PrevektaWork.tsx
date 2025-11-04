@@ -40,13 +40,13 @@ const PrevektaWork: React.FC = () => {
     {/* Main content */}
     <div className="absolute left-10 top-10 w-[434px]">
       <h2 className="text-[40px] leading-[48px] font-bold uppercase text-[#132D47] font-Atyp">
-        Partner with Us <span className='whitespace-nowrap'>Prevekta Franchise</span>  <br/> Opportunities
+        Still wondering <span className='whitespace-nowrap'>how Prevekta</span>  <br/> works for you?
       </h2>
     </div>
 
     {/* Bottom text */}
-    <p className="absolute left-1/2 transform -translate-x-1/2 bottom-20 text-lg text-[#132D47] font-[Duplet] font-normal w-[427px] text-left">
-      Own a piece of {"India's"} Ayurveda future. Become a unit or cluster franchise partner. We offer you branding, tech, training, and product support.
+    <p className="absolute left-1/2 transform -translate-x-1/2 bottom-10 text-lg text-[#132D47] font-[Duplet] font-normal w-[427px] text-left">
+    Have questions? Head over to our [FAQ page] for quick, clear answers to everything you need to know about Prevekta’s model, opportunities, and benefits.
     </p>
 
     {/* Logo in the center area */}
@@ -59,7 +59,7 @@ const PrevektaWork: React.FC = () => {
     </div>
 
     {/* Bordered Image Placeholder */}
-    <Link href={"/finance"} className="absolute right-10 top-4 border-5 border-[#132D47] rounded-[29px] w-[288px] h-[288px] flex items-center justify-center overflow-hidden">
+    <Link href={"#"} className="absolute right-10 top-4 border-5 border-[#132D47] rounded-[29px] w-[288px] h-[288px] flex items-center justify-center overflow-hidden">
       <div className="w-60 h-55 transform flex justify-center items-center -rotate-45 relative">
         <ArrowRightThin width={60} height={55} fill='#132D47' />
       </div>

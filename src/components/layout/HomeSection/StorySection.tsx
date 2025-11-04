@@ -1,5 +1,6 @@
 import React from "react";
 import StorySectionBtn from "./btns/StorySectionBtn";
+import Link from "next/link";
 
 const StorySection = () => {
 
@@ -32,9 +33,9 @@ const StorySection = () => {
         </div>
 
         {/* Button */}
-        <div className=" w-full sm:w-auto">
+        <Link href={"/appointment"} className=" w-full sm:w-auto">
             <StorySectionBtn />
-        </div>
+        </Link>
       </div>
     </section>
   );

@@ -124,7 +124,7 @@ const Header: React.FC = () => {
         {/* Buttons */}
         <div>
           <div className="flex gap-12">
-            <Link href={"/finance"}>
+            <Link href={"/franchise"}>
             <CustomButton
               mainWidth="170px"
               labelWidth="170px"
@@ -295,7 +295,7 @@ const Header: React.FC = () => {
 
               {/* Mobile Buttons */}
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href={"/finance"}>
+                <Link href={"/franchise"}>
                 <CustomButton
                   mainWidth="170px"
                   labelWidth="170px"

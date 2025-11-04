@@ -8,6 +8,7 @@ import WhatsappIcon from "@/assets/icons/WhatsappIcon";
 import FooterDesign from "@assets/images/FooterDesign.png";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -60,22 +61,27 @@ const Footer: React.FC = () => {
             <div className="space-y-6">
               <h3 className="text-xl font-bold">About</h3>
               <ul className="space-y-2 text-base">
-                <li>Our Story</li>
-                <li>The 4P Model</li>
-                <li>Our Team</li>
+                <Link href="/about-us">About us</Link>
+                <Link href="#">Our team</Link>
+                <Link href="/contact-us">Contact</Link>
+                <Link href="#">Career</Link>
+                <Link href="#">Media</Link>
+                <Link href="#">Community</Link>
+                <Link href="#">Partner with us</Link>
+                <Link href="#">Membership</Link>
+                <Link href="#">Packages</Link>
               </ul>
             </div>
             <div className="space-y-6">
               <h3 className="text-xl font-bold">Quick Links</h3>
-              <ul className="space-y-2 text-base">
-                <li>Book a Consultation</li>
-                <li>Shop Products</li>
-                <li>Find a Clinic</li>
-                <li>Become a Franchisee</li>
-                <li>Contact</li>
+              <ul className="space-y-2 text-base flex flex-col">
+                <Link href="#">Book a consultation</Link>
+                <Link href="#">Know your vaidya</Link>
+                <Link href="#">Find a clinic</Link>
+                <Link href="#">Shop</Link>
               </ul>
             </div>
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
               <h3 className="text-xl font-bold">Products</h3>
               <ul className="space-y-2 text-base">
                 <li>Treeyna</li>
@@ -83,13 +89,15 @@ const Footer: React.FC = () => {
                 <li>Yuvrasa</li>
                 <li>Juvinam</li>
               </ul>
-            </div>
+            </div> */}
             <div className="space-y-6">
               <h3 className="text-xl font-bold">Legal & Help</h3>
               <ul className="space-y-2 text-base">
-                <li>Terms & Conditions</li>
-                <li>Privacy Policy</li>
-                <li>FAQ</li>
+                <Link href="#">Terms & Conditions</Link>
+                <Link href="#">Shipping Policy</Link>
+                <Link href="#">Refunds & Returns</Link>
+                <Link href="#">Privacy Policy</Link>
+                <Link href="#">FAQ</Link>
               </ul>
             </div>
 
@@ -143,23 +151,28 @@ const Footer: React.FC = () => {
           <div className="flex flex-col space-y-6 font-[Duplet]">
             <div className="space-y-2">
               <h3 className="text-xl font-bold">About</h3>
-              <ul className="space-y-2 text-base">
-                <li>Our Story</li>
-                <li>The 4P Model</li>
-                <li>Our Team</li>
+              <ul className="space-y-2 text-base flex flex-col">
+                <Link href="/about-us">About us</Link>
+                <Link href="#">Our team</Link>
+                <Link href="/contact-us">Contact</Link>
+                <Link href="#">Career</Link>
+                <Link href="#">Media</Link>
+                <Link href="#">Community</Link>
+                <Link href="#">Partner with us</Link>
+                <Link href="#">Membership</Link>
+                <Link href="#">Packages</Link>
               </ul>
             </div>
             <div className="space-y-2">
               <h3 className="text-xl font-bold">Quick Links</h3>
-              <ul className="space-y-2 text-base">
-                <li>Book a Consultation</li>
-                <li>Shop Products</li>
-                <li>Find a Clinic</li>
-                <li>Become a Franchisee</li>
-                <li>Contact</li>
+              <ul className="space-y-2 text-base flex flex-col">
+                <Link href="#">Book a consultation</Link>
+                <Link href="#">Know your vaidya</Link>
+                <Link href="#">Find a clinic</Link>
+                <Link href="#">Shop</Link>
               </ul>
             </div>
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <h3 className="text-xl font-bold">Products</h3>
               <ul className="space-y-2 text-base">
                 <li>Treeyna</li>
@@ -167,13 +180,15 @@ const Footer: React.FC = () => {
                 <li>Yuvrasa</li>
                 <li>Juvinam</li>
               </ul>
-            </div>
+            </div> */}
             <div className="space-y-2">
               <h3 className="text-xl font-bold">Legal & Help</h3>
-              <ul className="space-y-2 text-base">
-                <li>Terms & Conditions</li>
-                <li>Privacy Policy</li>
-                <li>FAQ</li>
+              <ul className="space-y-2 text-base flex flex-col">
+                <Link href="#">Terms & Conditions</Link>
+                <Link href="#">Shipping Policy</Link>
+                <Link href="#">Refunds & Returns</Link>
+                <Link href="#">Privacy Policy</Link>
+                <Link href="#">FAQ</Link>
               </ul>
             </div>
             <div className="mb-8 space-y-2.5 font-[Duplet]">

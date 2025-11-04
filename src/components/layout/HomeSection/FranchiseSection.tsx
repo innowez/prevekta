@@ -59,7 +59,7 @@ const FranchiseSection: React.FC = () => {
     </div>
 
     {/* Bordered Image Placeholder */}
-    <Link href={"/finance"} className="absolute right-10 top-4 border-5 border-[#132D47] rounded-[29px] w-[288px] h-[288px] flex items-center justify-center overflow-hidden">
+    <Link href={"/franchise"} className="absolute right-10 top-4 border-5 border-[#132D47] rounded-[29px] w-[288px] h-[288px] flex items-center justify-center overflow-hidden">
       <div className="w-60 h-55 transform flex justify-center items-center -rotate-45 relative">
         <ArrowRightThin width={60} height={55} fill='#132D47' />
       </div>
