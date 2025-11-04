@@ -39,7 +39,7 @@ function AboutAccordina() {
     setAccActive(index);
   };
   return (
-    <div className="lg:w-1/2">
+    <div className="lg:w-1/2 relative z-20">
       {accordinList.map((item, ind) => (
         <div key={ind + "acor"} className="border-b border-[#FFFFFF33] pb-4">
           <button
