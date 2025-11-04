@@ -5,9 +5,11 @@ import AbGrid2 from "../../assets/images/abgrid2.png";
 import AbGrid3 from "../../assets/images/abgrid3.png";
 
 import CoreValue from "../../assets/images/coreValue.png";
+import RoadmapBg from "../../assets/images/roadmap-bg.png";
+import PreBlurLogo from "../../assets/images/preblurLogo.png";
+
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import PrevektaWork from "./comp/PrevektaWork";
-import RoadmapBg from "../../assets/images/roadmap-bg.png";
 import "./aboutStyle.css";
 import AboutAccordina from "./comp/AboutAccordina";
 import SendReqBtn from "./comp/SendReqBtn";
@@ -41,40 +43,58 @@ function page() {
   ];
 
   return (
-    <>
-      <section className="w-full h-screen p-4 lg:mb-24">
+    <main className="overflow-x-hidden">
+      <section className="w-full h-screen p-4 lg:mb-24 relative">
         <div className="relative rounded-2xl lg:rounded-[28px] h-[602px] lg:h-[568px]">
+          <div className="relative z-30">
+            <Image
+              src={AboutBg}
+              alt="contact-bg"
+              className="w-full h-[602px] lg:h-[568px] object-cover rounded-2xl lg:rounded-[28px] "
+            />
+            <div className="absolute top-0 left-0 w-full h-full bg-[#00000066] rounded-2xl lg:rounded-[28px]"></div>
+
+            <div className="text-white absolute left-[16px] top-[16px]">
+              <h1 className="text-2xl lg:text-[40px] leading-7 lg:leading-[48px] font-[Atyp] font-semibold mb-5">
+                Reviving Ayurveda: <br className="hidden lg:block" /> The
+                Prevekta Approach
+              </h1>
+              <h2 className="text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
+                A modern approach to integrating Ayurveda into contemporary{" "}
+                <br className="hidden lg:block" />
+                healthcare systems, making holistic wellness accessible for all.
+              </h2>
+            </div>
+
+            <div className="absolute left-[16px] right-[16px] lg:left-auto bottom-[16px] lg:right-[16px] bg-[#132D474D] p-4 rounded-xl lg:rounded-2xl max-w-[522px]">
+              <p className="text-white text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
+                Prevekta Ayurveda, An Initiative By Viriksham Wellness Pvt.
+                Ltd., Is An Integrated Ayurvedic Ecosystem That Modernizes
+                Traditional Healthcare Through Holistic Service, Product, And
+                Digital Models. With The Tagline “Thrive Beyond,” It Bridges
+                Ancient Wisdom And Modern Wellness, Promoting Ayurveda As An
+                Accessible, Reliable, And Evidence-based Lifestyle Healthcare
+                System Rooted In Protection, Prevention, And Progression.
+              </p>
+            </div>
+          </div>
           <Image
-            src={AboutBg}
-            alt="contact-bg"
-            className="w-full h-[602px] lg:h-[568px] object-cover rounded-2xl lg:rounded-[28px] "
+            src={PreBlurLogo}
+            alt="err"
+            style={{ transform: "scaleX(-1)" }}
+            className="-z-0 absolute left-16 lg:left-auto bottom-[-50px] lg:bottom-[-100px] w-[193px] h-[192px] lg:w-[516px] lg:h-[513px]"
           />
-          <div className="absolute top-0 left-0 w-full h-full bg-[#00000066] rounded-2xl lg:rounded-[28px]"></div>
-
-          <div className="text-white absolute left-[16px] top-[16px]">
-            <h1 className="text-2xl lg:text-[40px] leading-7 lg:leading-[48px] font-[Atyp] font-semibold mb-5">
-              Reviving Ayurveda: <br className="hidden lg:block" /> The Prevekta
-              Approach
-            </h1>
-            <h2 className="text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
-              A modern approach to integrating Ayurveda into contemporary{" "}
-              <br className="hidden lg:block" />
-              healthcare systems, making holistic wellness accessible for all.
-            </h2>
-          </div>
-
-          <div className="absolute left-[16px] right-[16px] lg:left-auto bottom-[16px] lg:right-[16px] bg-[#132D474D] p-4 rounded-xl lg:rounded-2xl max-w-[522px]">
-            <p className="text-white text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
-              Prevekta Ayurveda, An Initiative By Viriksham Wellness Pvt. Ltd.,
-              Is An Integrated Ayurvedic Ecosystem That Modernizes Traditional
-              Healthcare Through Holistic Service, Product, And Digital Models.
-              With The Tagline “Thrive Beyond,” It Bridges Ancient Wisdom And
-              Modern Wellness, Promoting Ayurveda As An Accessible, Reliable,
-              And Evidence-based Lifestyle Healthcare System Rooted In
-              Protection, Prevention, And Progression.
-            </p>
-          </div>
         </div>
+
+        <div
+          className="w-[367px] h-[344px] absolute top-[-33px] left-[-175px]"
+          style={{ background: "#81DE76", filter: "blur(300px)" }}
+        ></div>
+
+        <div
+          className="w-[367px] h-[344px] absolute top-[469px] right-[-153px]"
+          style={{ background: "#81DE76", filter: "blur(300px)" }}
+        ></div>
       </section>
 
       <section className="px-4 mb-10 lg:mb-24">
@@ -97,7 +117,10 @@ function page() {
             />
           </div>
 
-          <div style={{ gridArea: "box3" }} className="flex justify-center items-center">
+          <div
+            style={{ gridArea: "box3" }}
+            className="flex justify-center items-center"
+          >
             <Image
               src={AbGrid2}
               alt="ab1"
@@ -354,7 +377,7 @@ function page() {
       </section>
 
       <ContactSection />
-    </>
+    </main>
   );
 }
 
