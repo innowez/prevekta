@@ -1,11 +1,16 @@
 import Image from "next/image";
-import React from "react";
 import AboutBg from "../../assets/images/about-bg.png";
 import AbGrid1 from "../../assets/images/abgrid1.png";
+import AbGrid2 from "../../assets/images/abgrid2.png";
+import AbGrid3 from "../../assets/images/abgrid3.png";
+
+import CoreValue from "../../assets/images/coreValue.png";
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import PrevektaWork from "./comp/PrevektaWork";
 import RoadmapBg from "../../assets/images/roadmap-bg.png";
-import "./timeStyle.css";
+import "./aboutStyle.css";
+import AboutAccordina from "./comp/AboutAccordina";
+import SendReqBtn from "./comp/SendReqBtn";
 
 function page() {
   const roadlist = [
@@ -34,6 +39,7 @@ function page() {
       desc: "By 2030, Prevekta aims to become India’s largest and most trusted Ayurveda healthcare network, touching lives across the nation and beyond. We are building not just a healthcare system, but a movement for preventive, holistic, and sustainable living.",
     },
   ];
+
   return (
     <>
       <section className="w-full h-screen p-4">
@@ -46,17 +52,19 @@ function page() {
           <div className="absolute top-0 left-0 w-full h-full bg-[#00000066] rounded-2xl lg:rounded-[28px]"></div>
 
           <div className="text-white absolute left-[16px] top-[16px]">
-            <h1 className="text-2xl leading-7 font-[Atyp] mb-5">
-              Reviving Ayurveda: The Prevekta Approach
+            <h1 className="text-2xl lg:text-[40px] leading-7 lg:leading-[48px] font-[Atyp] font-semibold mb-5">
+              Reviving Ayurveda: <br className="hidden lg:block" /> The Prevekta
+              Approach
             </h1>
-            <h2 className="text-base leading-5 font-[Duplet]">
-              A modern approach to integrating Ayurveda into contemporary
+            <h2 className="text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
+              A modern approach to integrating Ayurveda into contemporary{" "}
+              <br className="hidden lg:block" />
               healthcare systems, making holistic wellness accessible for all.
             </h2>
           </div>
 
-          <div className="absolute left-[16px] bottom-[16px] right-[16px] bg-[#132D474D] p-4 rounded-xl lg:rounded-2xl">
-            <p className="text-white text-base leading-5 font-[Duplet]">
+          <div className="absolute left-[16px] right-[16px] lg:left-auto bottom-[16px] lg:right-[16px] bg-[#132D474D] p-4 rounded-xl lg:rounded-2xl max-w-[522px]">
+            <p className="text-white text-base lg:text-lg leading-5 lg:leading-[23px] font-[Duplet]">
               Prevekta Ayurveda, An Initiative By Viriksham Wellness Pvt. Ltd.,
               Is An Integrated Ayurvedic Ecosystem That Modernizes Traditional
               Healthcare Through Holistic Service, Product, And Digital Models.
@@ -70,25 +78,59 @@ function page() {
       </section>
 
       <section className="px-4 mb-10 lg:mb-24">
-        <div className="">
-          <h1 className="text-2xl text-primary leading-7 font-Atyp mb-4">
-            Mission
-          </h1>
-          <p className="text-base text-primary leading-5 font-[Duplet]">
-            To build an ecosystem where Ayurveda, technology, and trust thrive
-            together.
-          </p>
-        </div>
+        <div className="g-temp-cont">
+          <div style={{ gridArea: "box1" }}>
+            <h1 className="text-2xl text-primary leading-7 font-Atyp mb-4">
+              Mission
+            </h1>
+            <p className="text-base text-primary leading-5 font-[Duplet]">
+              To build an ecosystem where Ayurveda, technology, and trust thrive
+              together.
+            </p>
+          </div>
 
-        <div>
-          <div className="flex"></div>
+          <div style={{ gridArea: "box2" }}>
+            <Image
+              src={AbGrid1}
+              alt="ab1"
+              className="w-[117px] h-[220px] object-cover rounded-lg "
+            />
+          </div>
+
+          <div style={{ gridArea: "box3" }}>
+            <Image
+              src={AbGrid2}
+              alt="ab1"
+              className="w-[228px] h-[103px] object-cover rounded-lg "
+            />
+          </div>
+
+          <div style={{ gridArea: "box4" }}>
+            <h1 className="text-2xl text-primary leading-7 font-Atyp mb-4">
+              Vision
+            </h1>
+            <p className="text-base text-primary leading-5 font-[Duplet]">
+              To make authentic Ayurveda accessible, efficient, and trustworthy
+              across the modern healthcare landscape.
+            </p>
+          </div>
+
+          <div style={{ gridArea: "box5" }}>
+            <Image
+              src={AbGrid3}
+              alt="ab1"
+              className="w-full h-[131px] object-cover rounded-lg "
+            />
+          </div>
         </div>
       </section>
 
       <section className="px-4 mb-10 lg:mb-24">
-        <h1 className="text-2xl lg:text-[40px] text-primary text-center font-[Atyp] font-semibold leading-12 lg:leading-[29px] mb-8 lg:mb-12">Care, Cure, Cherish</h1>
+        <h1 className="text-2xl lg:text-[40px] text-primary text-center font-[Atyp] font-semibold leading-12 lg:leading-[29px] mb-8 lg:mb-12">
+          Care, Cure, Cherish
+        </h1>
 
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 mt-6">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 my-6">
           <div className="w-full lg:w-1/3 border border-primary rounded-lg lg:rounded-lg p-5 flex flex-col justify-between">
             <h1 className="text-xl lg:text-[32px] text-primary font-[Atyp] font-semibold leading-6 lg:leading-[38px] ">
               Prevekta Care Consultation-First Model
@@ -131,6 +173,45 @@ function page() {
               and a full spectrum of support staff, Prevekta Cherish ensures
               personalized, holistic care for every individual seeking wellness.
             </p>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <SendReqBtn btntype="active" text="hold hands with us" />
+        </div>
+      </section>
+
+      <section className="p-4  mb-10 lg:mb-24">
+        <div className="bg-[#132D47] rounded-2xl p-4 lg:p-10 lg:flex lg:gap-8 lg:pb-[243px] relative overflow-hidden">
+          <div className="lg:w-1/2">
+            <h3 className="text-base lg:text-2xl text-center lg:text-left text-white font-[Duplet] mb-4 lg:mb-10">
+              Our Core Values
+            </h3>
+            <h1 className="text-xl lg:text-[32px] text-white text-center lg:text-left font-[Atyp] font-semibold leading-6 lg:leading-[38px] mb-6 lg:mb-12">
+              AT PREVEKTA, OUR VALUES ARE <br className="hidden lg:block" />
+              NOT JUST WORDS THEY GUIDE <br className="hidden lg:block" />
+              EVERY DECISION, EVERY <br className="hidden lg:block" />
+              CONSULTATION, AND EVERY LIFE WE TOUCH
+            </h1>
+
+            <SendReqBtn btntype="active" text="Join with us" />
+            <Image
+              src={CoreValue}
+              alt="core-value"
+              className="w-full h-auto rounded-2xl mt-6 lg:hidden"
+            />
+          </div>
+          <AboutAccordina />
+          <div className="absolute bottom-[52px] left-[36px] h-[327px] w-full hidden lg:block">
+            <div
+              className="clip-path-box w-full h-[327px] object-fill object-center overflow-hidden relative hidden lg:block mt-6"
+              // style={{ backgroundImage: `url("${CoreValue.src}")` }}
+            >
+              <Image
+                src={CoreValue}
+                alt="core-value"
+                className="w-full h-auto rounded-2xl mt-6 object-center absolute top-[-329px] left-[-52px]"
+              />
+            </div>
           </div>
         </div>
       </section>
