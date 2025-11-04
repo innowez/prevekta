@@ -79,7 +79,7 @@ function page() {
 
       <section className="px-4 mb-10 lg:mb-24">
         <div className="g-temp-cont max-w-[870px] mx-auto">
-          <div style={{ gridArea: "box1" }}>
+          <div style={{ gridArea: "box1" }} className="lg:ml-10">
             <h1 className="text-2xl lg:text-[40px] text-primary leading-7 lg:leading-12 font-Atyp mb-4">
               Mission
             </h1>

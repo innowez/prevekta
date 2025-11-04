@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
           <div className="flex space-x-8 font-[Duplet]">
             <div className="space-y-6">
               <h3 className="text-xl font-bold">About</h3>
-              <ul className="space-y-2 text-base">
+              <ul className="space-y-2 text-base flex flex-col">
                 <Link href="/about-us">About us</Link>
                 <Link href="#">Our team</Link>
                 <Link href="/contact-us">Contact</Link>
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
             </div> */}
             <div className="space-y-6">
               <h3 className="text-xl font-bold">Legal & Help</h3>
-              <ul className="space-y-2 text-base">
+              <ul className="space-y-2 text-base flex flex-col">
                 <Link href="#">Terms & Conditions</Link>
                 <Link href="#">Shipping Policy</Link>
                 <Link href="#">Refunds & Returns</Link>
