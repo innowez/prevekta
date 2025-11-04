@@ -42,7 +42,7 @@ function page() {
 
   return (
     <>
-      <section className="w-full h-screen p-4">
+      <section className="w-full h-screen p-4 lg:mb-24">
         <div className="relative rounded-2xl lg:rounded-[28px] h-[602px] lg:h-[568px]">
           <Image
             src={AboutBg}
@@ -78,12 +78,12 @@ function page() {
       </section>
 
       <section className="px-4 mb-10 lg:mb-24">
-        <div className="g-temp-cont">
+        <div className="g-temp-cont max-w-[870px] mx-auto">
           <div style={{ gridArea: "box1" }}>
-            <h1 className="text-2xl text-primary leading-7 font-Atyp mb-4">
+            <h1 className="text-2xl lg:text-[40px] text-primary leading-7 lg:leading-12 font-Atyp mb-4">
               Mission
             </h1>
-            <p className="text-base text-primary leading-5 font-[Duplet]">
+            <p className="text-base lg:text-lg text-primary leading-5 lg:leading-[23px] font-[Duplet]">
               To build an ecosystem where Ayurveda, technology, and trust thrive
               together.
             </p>
@@ -93,23 +93,23 @@ function page() {
             <Image
               src={AbGrid1}
               alt="ab1"
-              className="w-[117px] h-[220px] object-cover rounded-lg "
+              className="w-[117px] h-[220px] lg:w-[328px] lg:h-[358px] object-cover rounded-lg "
             />
           </div>
 
-          <div style={{ gridArea: "box3" }}>
+          <div style={{ gridArea: "box3" }} className="flex justify-center items-center">
             <Image
               src={AbGrid2}
               alt="ab1"
-              className="w-[228px] h-[103px] object-cover rounded-lg "
+              className="w-[228px] h-[103px] lg:w-[264px] lg:h-[188px] object-cover rounded-lg "
             />
           </div>
 
           <div style={{ gridArea: "box4" }}>
-            <h1 className="text-2xl text-primary leading-7 font-Atyp mb-4">
+            <h1 className="text-2xl lg:text-[40px] text-primary leading-7 lg:leading-12 font-Atyp mb-4">
               Vision
             </h1>
-            <p className="text-base text-primary leading-5 font-[Duplet]">
+            <p className="text-base lg:text-lg text-primary leading-5 lg:leading-[23px] font-[Duplet]">
               To make authentic Ayurveda accessible, efficient, and trustworthy
               across the modern healthcare landscape.
             </p>
@@ -119,7 +119,7 @@ function page() {
             <Image
               src={AbGrid3}
               alt="ab1"
-              className="w-full h-[131px] object-cover rounded-lg "
+              className="w-full h-[131px] lg:w-[328px] lg:h-[358px] object-cover rounded-lg "
             />
           </div>
         </div>

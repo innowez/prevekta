@@ -146,15 +146,30 @@
   display: grid;
   grid-template-columns: 117px auto auto auto auto;
   grid-template-rows: auto auto;
-  grid-template-areas: "box1 box1 box1 box1 box1 box1" 
-  "box2 box3 box3 box3 box3 box3"
-  "box2 box4 box4 box4 box4 box4"
-  "box5 box5 box5 box5 box5 box5";
+  grid-template-areas:
+    "box1 box1 box1 box1 box1 box1"
+    "box2 box3 box3 box3 box3 box3"
+    "box2 box4 box4 box4 box4 box4"
+    "box5 box5 box5 box5 box5 box5";
   gap: 16px;
 }
 
+@media (min-width: 1000px) {
+  .g-temp-cont {
+    display: grid;
+    grid-template-columns: 328px auto 264px auto 328px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "box1 box1 box1 box1 box2 box2"
+      "box5 box3 box3 box3 box2 box2"
+      "box5 box4 box4 box4 box4 box4";
+    gap: 16px;
+  }
+}
 
 /* Clip Path */
 .clip-path-box {
-  clip-path: path("M592 121C592 133.703 602.297 144 615 144H1241C1253.7 144 1264 154.297 1264 167V304C1264 316.703 1253.7 327 1241 327H23C10.2975 327 0 316.703 0 304V23C0 10.2975 10.2975 0 23 0H569C581.703 0 592 10.2975 592 23V121Z");
+  clip-path: path(
+    "M592 121C592 133.703 602.297 144 615 144H1241C1253.7 144 1264 154.297 1264 167V304C1264 316.703 1253.7 327 1241 327H23C10.2975 327 0 316.703 0 304V23C0 10.2975 10.2975 0 23 0H569C581.703 0 592 10.2975 592 23V121Z"
+  );
 }

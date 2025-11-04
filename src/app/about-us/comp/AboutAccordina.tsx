@@ -11,23 +11,23 @@ function AboutAccordina() {
     },
     {
       title: "Integrity",
-      desc: "Rooted in true Ayurvedic wisdom, we stay committed to purity in every treatment, product, and practice. No shortcuts—only genuine healing.",
+      desc: "Every patient is treated with empathy, understanding, and respect. Healing begins with a caring touch and a listening ear.",
     },
     {
       title: "Sustainability",
-      desc: "Rooted in true Ayurvedic wisdom, we stay committed to purity in every treatment, product, and practice. No shortcuts—only genuine healing.",
+      desc: "We uphold transparency and ethics in every interaction—with patients, partners, and practitioners. Trust is the foundation of our journey.",
     },
     {
       title: "Preventive First",
-      desc: "Rooted in true Ayurvedic wisdom, we stay committed to purity in every treatment, product, and practice. No shortcuts—only genuine healing.",
+      desc: "From herbal sourcing to eco-friendly operations, we honor nature—the essence of every Ayurvedic principle.",
     },
     {
       title: "Innovation with Tradition",
-      desc: "Rooted in true Ayurvedic wisdom, we stay committed to purity in every treatment, product, and practice. No shortcuts—only genuine healing.",
+      desc: "We blend time-tested Ayurvedic knowledge with modern systems, creating a connected, efficient, and scalable model of holistic healthcare.",
     },
     {
       title: "Accessibility",
-      desc: "Rooted in true Ayurvedic wisdom, we stay committed to purity in every treatment, product, and practice. No shortcuts—only genuine healing.",
+      desc: "We promote wellness before illness. Early awareness, timely guidance, and sustainable habits are at the heart of Prevekta’s approach.",
     },
   ];
 
