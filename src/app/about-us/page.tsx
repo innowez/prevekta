@@ -216,12 +216,12 @@ function page() {
         </div>
       </section>
 
-      <section className="px-4 mb-10 lg:mb-24 flex flex-col lg:flex-row">
-        <div>
-          <h1 className="text-xl text-primary text-center font-[Atyp] font-semibold leading-6 ">
+      <section className="px-4 mb-10 lg:mb-24 flex flex-col lg:flex-row justify-between">
+        <div className="lg:mt-10">
+          <h1 className="text-xl text-primary text-center lg:text-left font-[Atyp] font-semibold leading-6 lg:mb-6 ">
             Our Story
           </h1>
-          <h2 className="text-2xl text-primary text-center font-[Atyp] font-semibold leading-7">
+          <h2 className="text-2xl lg:text-[40px] text-primary text-center lg:text-left font-[Atyp] font-semibold leading-7 lg:leading-12">
             Building a Legacy of <br />
             Holistic Health
           </h2>
@@ -240,7 +240,7 @@ function page() {
                   </p>
                 </div>
                 <div className="time">
-                  <h4>1998</h4>
+                  <h4 className="">1998</h4>
                 </div>
               </li>
               <li>
