@@ -91,7 +91,7 @@ const Header: React.FC = () => {
               <span className="font-[Duplet] text-bodyRegular ">Services</span>
               <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
-             <span className="font-[Duplet] text-bodyRegular cursor-pointer bg-[#ffffff00] hover:text-primary transition-colors">
+             <span className="font-[Duplet] text-bodyRegular cursor-pointer ">
               Know your vaidya
             </span>
             {/* <div

@@ -208,7 +208,7 @@ const PrevektaSection = () => {
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                       >
-                        <p className="text-lg text-primary-dark font-[Duplet] mb-6">
+                        <p className="text-lg text-primary-dark font-[Duplet] mb-6" onClick={() => gotoelement(tab.title)}>
                           {tab.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
@@ -224,7 +224,7 @@ const PrevektaSection = () => {
                       </motion.div>
                     ) : (
                       <div className="mt-4">
-                        <p className="text-lg text-primary-dark font-[Duplet] mb-6">
+                        <p className="text-lg text-primary-dark font-[Duplet] mb-6" onClick={() => gotoelement(tab.title)}>
                           {tab.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
