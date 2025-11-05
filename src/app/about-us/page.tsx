@@ -44,8 +44,11 @@ function page() {
   ];
 
   return (
-    <main className="overflow-x-hidden">
-      <section className="w-full h-screen p-4 lg:mb-24 relative">
+    <main 
+    // className=""
+    >
+      <div className="overflow-hidden">
+      <section className="w-full h-screen p-4 lg:mb-24 relative ">
         <div className="relative rounded-2xl lg:rounded-[28px] h-[602px] lg:h-[568px]">
           <div className="relative z-30">
             <Image
@@ -148,6 +151,7 @@ function page() {
           </div>
         </div>
       </section>
+      </div>
 
       <section className="px-4 mb-10 lg:mb-24">
         <h1 className="text-2xl lg:text-[40px] text-primary text-center font-[Atyp] font-semibold leading-12 lg:leading-[29px] mb-8 lg:mb-12">
@@ -240,18 +244,17 @@ function page() {
         </div>
       </section>
 
-      <section className="px-4 mb-10 lg:mb-24 flex flex-col lg:flex-row justify-between relative">
-        {/* <div className="w-1/2"> */}
-          <div className="lg:mt-10 lg:sticky lg:top-48 lg:w-1/2 ">
-            <h1 className="text-xl text-primary text-center lg:text-left font-[Atyp] font-semibold leading-6 lg:mb-6 ">
-              Our Story
-            </h1>
-            <h2 className="text-2xl lg:text-[40px] text-primary text-center lg:text-left font-[Atyp] font-semibold leading-7 lg:leading-12">
-              Building a Legacy of <br />
-              Holistic Health
-            </h2>
-          </div>
-        {/* </div> */}
+      <section className="px-4 lg:pl-8 mb-10 lg:mb-24 flex flex-col lg:flex-row justify-between relative min-h-screen">
+        <div className="lg:mt-10 lg:sticky lg:top-48 lg:w-1/2 lg:self-start">
+          <h1 className="text-xl text-primary text-center lg:text-left font-[Atyp] font-semibold leading-6 lg:mb-6">
+            Our Story
+          </h1>
+          <h2 className="text-2xl lg:text-[40px] text-primary text-center lg:text-left font-[Atyp] font-semibold leading-7 lg:leading-12">
+            Building a Legacy of <br />
+            Holistic Health
+          </h2>
+        </div>
+        {/* <div className="h-[1000px]"></div> */}
 
         <div>
           <div className="timeline">
