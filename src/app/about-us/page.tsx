@@ -6,13 +6,14 @@ import AbGrid3 from "../../assets/images/abgrid3.png";
 
 import CoreValue from "../../assets/images/coreValue.png";
 import RoadmapBg from "../../assets/images/roadmap-bg.png";
-import PreBlurLogo from "../../assets/images/preblurLogo.png";
+import PreBlurLogo from "../../assets/images/prevBiglogo.png";
 
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import PrevektaWork from "./comp/PrevektaWork";
 import "./aboutStyle.css";
 import AboutAccordina from "./comp/AboutAccordina";
 import SendReqBtn from "./comp/SendReqBtn";
+import HoldHandBtn from "./comp/HoldHandBtn";
 
 function page() {
   const roadlist = [
@@ -81,7 +82,7 @@ function page() {
           <Image
             src={PreBlurLogo}
             alt="err"
-            style={{ transform: "scaleX(-1)" }}
+            // style={{ transform: "scaleX(-1)" }}
             className="-z-0 absolute left-16 lg:left-auto bottom-[-50px] lg:bottom-[-100px] w-[193px] h-[192px] lg:w-[516px] lg:h-[513px]"
           />
         </div>
@@ -199,7 +200,7 @@ function page() {
           </div>
         </div>
         <div className="flex justify-center">
-          <SendReqBtn btntype="active" text="hold hands with us" />
+          <HoldHandBtn btntype="active" text="hold hands with us" />
         </div>
       </section>
 
@@ -239,16 +240,18 @@ function page() {
         </div>
       </section>
 
-      <section className="px-4 mb-10 lg:mb-24 flex flex-col lg:flex-row justify-between">
-        <div className="lg:mt-10">
-          <h1 className="text-xl text-primary text-center lg:text-left font-[Atyp] font-semibold leading-6 lg:mb-6 ">
-            Our Story
-          </h1>
-          <h2 className="text-2xl lg:text-[40px] text-primary text-center lg:text-left font-[Atyp] font-semibold leading-7 lg:leading-12">
-            Building a Legacy of <br />
-            Holistic Health
-          </h2>
-        </div>
+      <section className="px-4 mb-10 lg:mb-24 flex flex-col lg:flex-row justify-between relative">
+        {/* <div className="w-1/2"> */}
+          <div className="lg:mt-10 lg:sticky lg:top-48 lg:w-1/2 ">
+            <h1 className="text-xl text-primary text-center lg:text-left font-[Atyp] font-semibold leading-6 lg:mb-6 ">
+              Our Story
+            </h1>
+            <h2 className="text-2xl lg:text-[40px] text-primary text-center lg:text-left font-[Atyp] font-semibold leading-7 lg:leading-12">
+              Building a Legacy of <br />
+              Holistic Health
+            </h2>
+          </div>
+        {/* </div> */}
 
         <div>
           <div className="timeline">

@@ -41,11 +41,13 @@ function AboutAccordina() {
   return (
     <div className="lg:w-1/2 relative z-20">
       {accordinList.map((item, ind) => (
-        <div key={ind + "acor"} className="border-b border-[#FFFFFF33] pb-4">
-          <button
-            onClick={() => handleToggle(ind)}
-            className="flex justify-between items-center mt-4 mb-4 w-full text-left cursor-pointer"
-          >
+        <div
+          key={ind + "acor"}
+          className="border-b border-[#FFFFFF33] pb-4"
+          onMouseEnter={() => handleToggle(ind)}
+          onMouseLeave={() => handleToggle(0)}
+        >
+          <button className="flex justify-between items-center mt-4 mb-4 w-full text-left cursor-pointer">
             <h2 className="text-xl text-white font-semibold">{item.title}</h2>
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
