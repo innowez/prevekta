@@ -4,7 +4,7 @@ import CustomButton from "@/components/ui/CustomButton";
 import useMediaQuery from "@/hooks/useMediaquery";
 import React from "react";
 
-function LetsConnectBtn({ btntype }: {btntype: "active" | "passive"}) {
+function LetsConnectBtn({ btntype, onClick }: {btntype: "active" | "passive", onClick?: () => void}) {
   const isMobile = useMediaQuery("(max-width: 525px)");
   return (
     <CustomButton
@@ -21,6 +21,7 @@ function LetsConnectBtn({ btntype }: {btntype: "active" | "passive"}) {
       labelBorderColor="#81DE76"
       iconPosition="0px"
       iconPositionHover="px"
+      onClick={onClick}
     />
   );
 }

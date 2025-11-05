@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import ContactBg from "../../assets/images/contact-us-bg.png";
@@ -6,9 +7,15 @@ import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import ContactForm from "./ContactForm";
 
 function page() {
+  const handleContact = () => {
+    const element = document.getElementById("contact-form");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      // element.scrollIntoView();
+    }
+  };
   return (
-    <div
-    className="overflow-hidden">
+    <div className="overflow-hidden">
       <section className="w-full h-screen relative overflow-x-hidden ">
         <Image
           src={ContactBg}
@@ -27,16 +34,19 @@ function page() {
             </p>
             <p className="text-base lg:text-lg leading-5 lg:leading-6 font-[Duplet] font-extralight">
               Have a question, need guidance, or want to explore how Ayurveda
-              can transform your<br className="hidden lg:block" />health? Our team is here to provide the right
-              support, care, and answers you need.
+              can transform your
+              <br className="hidden lg:block" />
+              health? Our team is here to provide the right support, care, and
+              answers you need.
             </p>
           </div>
 
           <div className="flex flex-col items-center gap-7">
-            <LetsConnectBtn btntype="active" />
+            <LetsConnectBtn btntype="active" onClick={handleContact} />
             <p className="text-white text-center text-base lg:text-lg leading-5 lg:leading-6 font-[Duplet] font-extralight">
               Reach out anytime to schedule your visit, learn about our
-              services, <br className="hidden lg:block" /> or simply connect with us we’ll be happy to guide you.
+              services, <br className="hidden lg:block" /> or simply connect
+              with us we’ll be happy to guide you.
             </p>
           </div>
         </div>
@@ -72,9 +82,9 @@ function page() {
                 ></path>
               </svg>
 
-              <p className="font-[Duplet] text-base leading-5 text-primary">
+              <a href="mailto:info@prevektaayurveda.com" className="font-[Duplet] text-base leading-5 text-primary">
                 info@prevektaayurveda.com
-              </p>
+              </a>
             </div>
 
             <div className="flex items-center gap-2">
@@ -92,9 +102,9 @@ function page() {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <p className="font-[Duplet] text-base leading-5 text-primary">
+              <a href="tel:+919962062060" className="font-[Duplet] text-base leading-5 text-primary">
                 +91 99620 62060
-              </p>
+              </a>
             </div>
           </div>
         </div>
@@ -356,7 +366,7 @@ function page() {
         </div>
       </section>
 
-      <section>
+      <section id="contact-form">
         <ContactForm />
       </section>
     </div>
