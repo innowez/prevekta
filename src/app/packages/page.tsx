@@ -5,13 +5,6 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { X } from "lucide-react";
@@ -30,6 +23,8 @@ function PackagesPage() {
     SIKISHA: false,
     SERVICES: false,
   });
+
+  const [select, setselect] = useState("")
   return (
     <main>
       <section className="mb-6 lg:mb-12 pt-8 lg:pt-24 px-4">
@@ -90,7 +85,7 @@ function PackagesPage() {
                 ? "bg-primary text-white"
                 : "border border-primary text-primary bg-white"
             }`}>
-                <span>SERVICES</span>
+                <span>{select || "SERVICES"}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="15"
@@ -107,11 +102,11 @@ function PackagesPage() {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56" align="start">
               <DropdownMenuGroup>
-                <DropdownMenuItem onClick={e => {console.log(e)}} textValue="Kayachitsa (General)" >Kayachitsa (General)</DropdownMenuItem>
-                <DropdownMenuItem onClick={e => {console.log(e)}} textValue="Shalya Tantra (ENT&Eye)" >Shalya Tantra (ENT&Eye)</DropdownMenuItem>
-                <DropdownMenuItem onClick={e => {console.log(e)}} textValue="Shalakya Tantra (Surgery)" >Shalakya Tantra (Surgery)</DropdownMenuItem>
-                <DropdownMenuItem onClick={e => {console.log(e)}} textValue="Kaumara bhritya (Pediatric)" >Kaumara bhritya (Pediatric)</DropdownMenuItem>
-                <DropdownMenuItem onClick={e => {console.log(e)}} textValue="Prasuti Tantra & Stri Roga (Gynec & obs)" >
+                <DropdownMenuItem onClick={() => {setselect("Kayachitsa (General)")}} textValue="Kayachitsa (General)" >Kayachitsa (General)</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => {setselect("Shalya Tantra (ENT&Eye)")}} textValue="Shalya Tantra (ENT&Eye)" >Shalya Tantra (ENT&Eye)</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => {setselect("Shalakya Tantra (Surgery)")}} textValue="Shalakya Tantra (Surgery)" >Shalakya Tantra (Surgery)</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => {setselect("Kaumara bhritya (Pediatric)")}} textValue="Kaumara bhritya (Pediatric)" >Kaumara bhritya (Pediatric)</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => {setselect("Prasuti Tantra & Stri Roga (Gynec & obs)")}} textValue="Prasuti Tantra & Stri Roga (Gynec & obs)" >
                   Prasuti Tantra & Stri Roga (Gynec & obs)
                 </DropdownMenuItem>
                 <DropdownMenuItem>Bhuta Vidya (Psychiatric)</DropdownMenuItem>
@@ -151,8 +146,8 @@ function PackagesPage() {
                   </p>
                 </div>
 
-                <button className="bg-secondary text-primary rounded-full py-3.5 px-4 flex justify-between items-center my-6 w-full max-w-xs">
-                  <span className="uppercase leading-[15px] ">
+                <button className="bg-secondary text-primary rounded-full py-3.5 px-4 flex justify-between items-center my-6 w-full ">
+                  <span className="uppercase leading-[15px] font-[Duplet] ">
                     View Details
                   </span>
                   <svg

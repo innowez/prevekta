@@ -5,7 +5,7 @@ import Doctortwo from "@/assets/images/doctor2.png";
 
 function DoctorList() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <div className="lg:max-w-[450px] max-w-[450px] w-full h-[450px] rounded-3xl overflow-hidden relative">
         <Image
           src={Doctorone}

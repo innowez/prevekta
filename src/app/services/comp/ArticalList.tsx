@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function ArticalList() {
   return (
-    <div className="flex flex-col lg:flex-row lg:flex-wrap lg:items-center lg:content-start gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <div className="lg:max-w-[318px] max-w-[450px] h-[450px] rounded-3xl overflow-hidden relative">
         <Image
           src={YogaMaman}

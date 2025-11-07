@@ -9,7 +9,7 @@ function Package() {
     "Ideal for those looking to rejuvenate naturally and regain inner glow.",
   ];
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+    <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5">
       <div className="bg-primary p-6 rounded-2xl ">
         <h2 className="text-white text-2xl font-[Atyp] font-semibold ">
           URBAN CLEANSE
@@ -32,17 +32,19 @@ function Package() {
         </div>
 
         <button className="bg-secondary text-primary rounded-full py-3.5 px-4 flex justify-between items-center my-6 w-full max-w-xs">
-          <span className="uppercase leading-[15px] ">View Details</span>
+          <span className="uppercase leading-[15px] font-[Duplet] ">
+            View Details
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
+            width="23"
+            height="15"
             fill="none"
-            viewBox="0 0 17 17"
+            viewBox="0 0 23 15"
           >
             <path
               fill="#132D47"
-              d="M15.642.53 6.625 0c-.448-.004-.768.32-.788.713a.78.78 0 0 0 .713.787l7.343.431L.218 15.607a.75.75 0 1 0 1.06 1.06L14.955 2.992l.431 7.343c.02.393.394.72.787.713.41-.007.733-.395.713-.787l-.53-9.018c-.075-.45-.319-.649-.713-.713"
+              d="M22.317 6.997 16.316.245c-.314-.319-.77-.316-1.06-.052a.78.78 0 0 0-.054 1.06l4.888 5.498H.75a.75.75 0 1 0 0 1.5h19.34l-4.888 5.497c-.264.292-.23.788.053 1.06.295.285.797.24 1.06-.052l6.002-6.751c.265-.37.234-.685 0-1.008"
             ></path>
           </svg>
         </button>
@@ -96,17 +98,19 @@ function Package() {
         </div>
 
         <button className="bg-secondary text-primary rounded-full py-3.5 px-4 flex justify-between items-center my-6 w-full ">
-          <span className="uppercase leading-[15px] ">View Details</span>
+          <span className="uppercase leading-[15px] font-[Duplet]">
+            View Details
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
+            width="23"
+            height="15"
             fill="none"
-            viewBox="0 0 17 17"
+            viewBox="0 0 23 15"
           >
             <path
               fill="#132D47"
-              d="M15.642.53 6.625 0c-.448-.004-.768.32-.788.713a.78.78 0 0 0 .713.787l7.343.431L.218 15.607a.75.75 0 1 0 1.06 1.06L14.955 2.992l.431 7.343c.02.393.394.72.787.713.41-.007.733-.395.713-.787l-.53-9.018c-.075-.45-.319-.649-.713-.713"
+              d="M22.317 6.997 16.316.245c-.314-.319-.77-.316-1.06-.052a.78.78 0 0 0-.054 1.06l4.888 5.498H.75a.75.75 0 1 0 0 1.5h19.34l-4.888 5.497c-.264.292-.23.788.053 1.06.295.285.797.24 1.06-.052l6.002-6.751c.265-.37.234-.685 0-1.008"
             ></path>
           </svg>
         </button>
@@ -160,17 +164,19 @@ function Package() {
         </div>
 
         <button className="bg-secondary text-primary rounded-full py-3.5 px-4 flex justify-between items-center my-6 w-full max-w-xs">
-          <span className="uppercase leading-[15px] ">View Details</span>
+          <span className="uppercase leading-[15px] font-[Duplet] ">
+            View Details
+          </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
+            width="23"
+            height="15"
             fill="none"
-            viewBox="0 0 17 17"
+            viewBox="0 0 23 15"
           >
             <path
               fill="#132D47"
-              d="M15.642.53 6.625 0c-.448-.004-.768.32-.788.713a.78.78 0 0 0 .713.787l7.343.431L.218 15.607a.75.75 0 1 0 1.06 1.06L14.955 2.992l.431 7.343c.02.393.394.72.787.713.41-.007.733-.395.713-.787l-.53-9.018c-.075-.45-.319-.649-.713-.713"
+              d="M22.317 6.997 16.316.245c-.314-.319-.77-.316-1.06-.052a.78.78 0 0 0-.054 1.06l4.888 5.498H.75a.75.75 0 1 0 0 1.5h19.34l-4.888 5.497c-.264.292-.23.788.053 1.06.295.285.797.24 1.06-.052l6.002-6.751c.265-.37.234-.685 0-1.008"
             ></path>
           </svg>
         </button>

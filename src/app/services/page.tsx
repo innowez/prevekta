@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SearchButton from "./comp/SearchButton";
 import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import ArticalList from "./comp/ArticalList";
@@ -47,8 +48,7 @@ function Service() {
 
       <section className="mx-4">
         <h1 className="text-xl lg:text-[32px] text-center text-primary font-[Atyp] font-semibold mb-4 lg:mb-12">
-          Search Results for
-          <br className="block lg:hidden"/>
+          Search Results for  <br className="block lg:hidden"/>
           Kayachitsa (General)
         </h1>
 
@@ -65,9 +65,43 @@ function Service() {
             </button>
           </div>
 
-          {selTab === 0 && <ArticalList />}
-          {selTab === 1 && <DoctorList />}
-          {selTab === 2 && <Package />}
+          <div className="relative overflow-hidden">
+            <AnimatePresence mode="wait" initial={false}>
+              {selTab === 0 && (
+                <motion.div
+                  key="articles"
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -300, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <ArticalList />
+                </motion.div>
+              )}
+              {selTab === 1 && (
+                <motion.div
+                  key="doctors"
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -300, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <DoctorList />
+                </motion.div>
+              )}
+              {selTab === 2 && (
+                <motion.div
+                  key="package"
+                  initial={{ x: 300, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -300, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <Package />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
       </section>
       <ContactSection />

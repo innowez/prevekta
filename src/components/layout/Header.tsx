@@ -10,6 +10,13 @@ import CustomButton from "@/components/ui/CustomButton";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 // import { Button } from "../ui/Button";
 // import CsButton from "../ui/CsButton";
 
@@ -87,11 +94,66 @@ const Header: React.FC = () => {
               isHome ? "text-primary" : "text-white"
             } `}
           >
-            <div className="flex items-center gap-1 cursor-pointer transition-colors">
-              <span className="font-[Duplet] text-bodyRegular ">Services</span>
-              <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
-            </div>
-             <span className="font-[Duplet] text-bodyRegular cursor-pointer ">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <div className="flex items-center gap-1 cursor-pointer transition-colors">
+                  <span className="font-[Duplet] text-bodyRegular ">
+                    Services
+                  </span>
+                  <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="start">
+                <DropdownMenuGroup>
+                  <DropdownMenuItem
+                    onClick={(e) => {
+                      console.log(e);
+                    }}
+                    textValue="Kayachitsa (General)"
+                  >
+                    Kayachitsa (General)
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={(e) => {
+                      console.log(e);
+                    }}
+                    textValue="Shalya Tantra (ENT&Eye)"
+                  >
+                    Shalya Tantra (ENT&Eye)
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={(e) => {
+                      console.log(e);
+                    }}
+                    textValue="Shalakya Tantra (Surgery)"
+                  >
+                    Shalakya Tantra (Surgery)
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={(e) => {
+                      console.log(e);
+                    }}
+                    textValue="Kaumara bhritya (Pediatric)"
+                  >
+                    Kaumara bhritya (Pediatric)
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    onClick={(e) => {
+                      console.log(e);
+                    }}
+                    textValue="Prasuti Tantra & Stri Roga (Gynec & obs)"
+                  >
+                    Prasuti Tantra & Stri Roga (Gynec & obs)
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>Bhuta Vidya (Psychiatric)</DropdownMenuItem>
+                  <DropdownMenuItem>Rasayana (Rejuvanation)</DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Vajikarana (Sexology & infertility)
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <span className="font-[Duplet] text-bodyRegular cursor-pointer ">
               Know your vaidya
             </span>
             {/* <div
@@ -104,8 +166,7 @@ const Header: React.FC = () => {
             <span className="font-[Duplet] text-bodyRegular cursor-pointer  transition-colors">
               Find a clinic
             </span>
-            
-           
+
             {/* <Link href={"/about-us"} className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
               About Us
             </Link> */}
@@ -115,7 +176,10 @@ const Header: React.FC = () => {
               </span>
               <ArrowDown fill={isHome ? "#132D47" : "#ffff"} />
             </div>
-            <Link href={"/contact-us"} className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors">
+            <Link
+              href={"/contact-us"}
+              className="font-[Duplet] text-bodyRegular cursor-pointer transition-colors"
+            >
               Contact us
             </Link>
           </div>
@@ -125,21 +189,21 @@ const Header: React.FC = () => {
         <div>
           <div className="flex gap-12">
             <Link href={"/franchise"}>
-            <CustomButton
-              mainWidth="170px"
-              labelWidth="170px"
-              labelWidthHover="140px"
-              labelBackground={isHome ? "#ffff" : "#132D47"}
-              labelBackgroundHover={isHome ? "#132D47" : "#ffff"}
-              labelTextColor={isHome ? "#132D47" : "#ffff"}
-              labelTextColorHover={isHome ? "#FFFF" : "#132D47"}
-              arrowFill={isHome ? "#132D47" : "#ffff"}
-              arrowFillHover={isHome ? "#FFFF" : "#132D47"}
-              labelText="Franchise"
-              labelBorderColor={isHome ? "#132D47" : "#ffff"}
-              iconPosition="2px"
-              iconPositionHover="px"
-            />
+              <CustomButton
+                mainWidth="170px"
+                labelWidth="170px"
+                labelWidthHover="140px"
+                labelBackground={isHome ? "#ffff" : "#132D47"}
+                labelBackgroundHover={isHome ? "#132D47" : "#ffff"}
+                labelTextColor={isHome ? "#132D47" : "#ffff"}
+                labelTextColorHover={isHome ? "#FFFF" : "#132D47"}
+                arrowFill={isHome ? "#132D47" : "#ffff"}
+                arrowFillHover={isHome ? "#FFFF" : "#132D47"}
+                labelText="Franchise"
+                labelBorderColor={isHome ? "#132D47" : "#ffff"}
+                iconPosition="2px"
+                iconPositionHover="px"
+              />
             </Link>
             {/* <Button showIcon>Robin</Button> */}
             {/* <CsButton>Robin</CsButton> */}
@@ -287,7 +351,10 @@ const Header: React.FC = () => {
                   </Link>
                 </div> */}
                 <div className="border-b pb-4">
-                  <Link href={"/contact-us"} className="font-bold text-primary-dark text-base cursor-pointer">
+                  <Link
+                    href={"/contact-us"}
+                    className="font-bold text-primary-dark text-base cursor-pointer"
+                  >
                     Contact us
                   </Link>
                 </div>
@@ -296,21 +363,22 @@ const Header: React.FC = () => {
               {/* Mobile Buttons */}
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link href={"/franchise"}>
-                <CustomButton
-                  mainWidth="170px"
-                  labelWidth="170px"
-                  labelWidthHover="140px"
-                  labelBackground="#ffff"
-                  labelBackgroundHover="#132D47"
-                  labelTextColor="#132D47"
-                  labelTextColorHover="#FFFF"
-                  arrowFill="#132D47"
-                  arrowFillHover="#FFFF"
-                  labelText="Franchise"
-                  labelBorderColor="#132D47"
-                  iconPosition="2px"
-                  iconPositionHover="px"
-                /></Link>
+                  <CustomButton
+                    mainWidth="170px"
+                    labelWidth="170px"
+                    labelWidthHover="140px"
+                    labelBackground="#ffff"
+                    labelBackgroundHover="#132D47"
+                    labelTextColor="#132D47"
+                    labelTextColorHover="#FFFF"
+                    arrowFill="#132D47"
+                    arrowFillHover="#FFFF"
+                    labelText="Franchise"
+                    labelBorderColor="#132D47"
+                    iconPosition="2px"
+                    iconPositionHover="px"
+                  />
+                </Link>
                 <CustomButton
                   mainWidth="120px"
                   labelWidth="120px"
