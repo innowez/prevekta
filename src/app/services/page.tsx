@@ -6,15 +6,19 @@ import ContactSection from "@/components/layout/HomeSection/ContactSection";
 import ArticalList from "./comp/ArticalList";
 import DoctorList from "./comp/DoctorList";
 import Package from "./comp/Package";
+import { useServiceStore } from "@/provider/store-provider";
 
 function Service() {
   const [selTab, setSelTab] = useState(0)
+  const services = useServiceStore((state) => state.serviceType);
+  // console.log(services);
+  
   return (
     <main>
       <section className="mb-6 lg:mb-12">
         <div className="mt-8 lg:mt-24 mb-6 lg:mb-12">
           <h1 className="text-2xl lg:text-[40px] text-center text-primary font-[Atyp] font-semibold mb-4 lg:mb-6">
-            Kayachitsa (General)
+            {services}
           </h1>
           <p className="text-base lg:text-lg text-primary text-center leading-[20px] lg:leading-[23px] font-[Duplet] ">
             Discover treatments, trusted practitioners, and knowledge <br className="hidden lg:block" />tailored

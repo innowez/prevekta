@@ -17,14 +17,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-// import { Button } from "../ui/Button";
-// import CsButton from "../ui/CsButton";
+import { useServiceStore } from "@/provider/store-provider";
+import { services } from "@/data/services";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHome, setIsHome] = useState(true);
   const [isPvp, setIsPvp] = useState(false);
+  const [isServiceActive, setIsServiceActive] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -51,6 +53,15 @@ const Header: React.FC = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const setServices = useServiceStore((state) => state.setServiceType);
+  // console.log(services);
+
+  const changeServiceType = (type: string) => {
+    console.log("Selected service type:", type);
+    // You can add logic here to update the service type in the store
+    // Call the action to set the service type
   };
 
   return (
@@ -105,51 +116,18 @@ const Header: React.FC = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="start">
                 <DropdownMenuGroup>
-                  <DropdownMenuItem
-                    onClick={(e) => {
-                      console.log(e);
-                    }}
-                    textValue="Kayachitsa (General)"
-                  >
-                    Kayachitsa (General)
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={(e) => {
-                      console.log(e);
-                    }}
-                    textValue="Shalya Tantra (ENT&Eye)"
-                  >
-                    Shalya Tantra (ENT&Eye)
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={(e) => {
-                      console.log(e);
-                    }}
-                    textValue="Shalakya Tantra (Surgery)"
-                  >
-                    Shalakya Tantra (Surgery)
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={(e) => {
-                      console.log(e);
-                    }}
-                    textValue="Kaumara bhritya (Pediatric)"
-                  >
-                    Kaumara bhritya (Pediatric)
-                  </DropdownMenuItem>
-                  <DropdownMenuItem
-                    onClick={(e) => {
-                      console.log(e);
-                    }}
-                    textValue="Prasuti Tantra & Stri Roga (Gynec & obs)"
-                  >
-                    Prasuti Tantra & Stri Roga (Gynec & obs)
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>Bhuta Vidya (Psychiatric)</DropdownMenuItem>
-                  <DropdownMenuItem>Rasayana (Rejuvanation)</DropdownMenuItem>
-                  <DropdownMenuItem>
-                    Vajikarana (Sexology & infertility)
-                  </DropdownMenuItem>
+                  {services.map((service) => (
+                    <DropdownMenuItem
+                      key={service}
+                      onClick={() => {
+                        setServices(service);
+                        router.push("/services");
+                      }}
+                      textValue={service}
+                    >
+                      {service}
+                    </DropdownMenuItem>
+                  ))}
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -273,8 +251,8 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-40 bg-black bg-opacity-50">
-          <div className="absolute right-0 top-0 w-[85%] sm:w-[70%] h-full bg-white overflow-y-auto animate-slideIn">
+        <div className="lg:hidden fixed inset-0 z-40 bg-black bg-opacity-50 ">
+          <div className="absolute right-0 top-0 w-[85%] sm:w-[70%] h-full bg-white overflow-y-auto animate-slideIn no-scrollbar">
             {/* Mobile Menu Header */}
             <div className="flex justify-between items-center p-4 border-b">
               <div className="w-[160px]">
@@ -301,12 +279,50 @@ const Header: React.FC = () => {
               <div className="flex flex-col space-y-4">
                 {/* Services Dropdown */}
                 <div className="border-b pb-4">
-                  <div className="flex justify-between items-center cursor-pointer">
+                  <button
+                    onClick={() => {
+                      setIsServiceActive(!isServiceActive);
+                    }}
+                    className="flex justify-between items-center cursor-pointer w-full"
+                  >
                     <span className="font-bold text-primary-dark text-base">
                       Services
                     </span>
-                    <ArrowDown />
-                  </div>
+                    <motion.div
+                      animate={{ rotate: isServiceActive ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ArrowDown />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {isServiceActive && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="flex flex-col gap-1.5 pl-4 overflow-hidden"
+                      >
+                        {services.map((service, ind) => (
+                          <motion.button
+                            key={service + ind}
+                            initial={{ x: -10, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: ind * 0.05 }}
+                            className="text-base text-left font-[Duplet]"
+                            onClick={() => {
+                              setServices(service);
+                              router.push("/services");
+                              setIsMobileMenuOpen(false);
+                            }}
+                          >
+                            {service}
+                          </motion.button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 {/* Products Dropdown */}

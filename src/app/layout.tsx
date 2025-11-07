@@ -3,30 +3,30 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
+import { StoreProvider } from "@/provider/store-provider";
 
-const Duplet = localFont({ 
-  src: '../../public/fonts/Duplet-Regular.otf',
+const Duplet = localFont({
+  src: "../../public/fonts/Duplet-Regular.otf",
   // variable: '--font-duplet'
 });
 
-const Atyp = localFont({ 
-  src: '../../public/fonts/AtypDisplayTRIAL-Regular.otf',
+const Atyp = localFont({
+  src: "../../public/fonts/AtypDisplayTRIAL-Regular.otf",
   // variable: '--font-atyp'
 });
 
-const AtypBold = localFont({ 
-  src: '../../public/fonts/AtypText-Bold.otf',
+const AtypBold = localFont({
+  src: "../../public/fonts/AtypText-Bold.otf",
   // variable: '--font-atyp'
 });
 
-// const TestAtyp = localFont({ 
+// const TestAtyp = localFont({
 //   src: '../../public/fonts/AtypTEST-OTF.otf',
 //   // variable: '--font-test'
 // });
 
 // console.log(AtypTest, "comman is this", Atyp);
-
 
 // C:\Users\danip\Documents\WEZ-Product\prevekta\public\fonts\AtypTEST.ttf
 // C:\Users\danip\Documents\Projects\prevekta-frontend\public\fonts\.otf
@@ -53,13 +53,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${Atyp.className} ${AtypBold.className} ${Duplet.className}  `}>
+    <html
+      lang="en"
+      className={`${Atyp.className} ${AtypBold.className} ${Duplet.className}  `}
+    >
       <body>
-        <Header />
-        {children}
-        <div className=" p-3">
-        <Footer  />
-        </div>
+        <StoreProvider>
+          <Header />
+          {children}
+          <div className=" p-3">
+            <Footer />
+          </div>
+        </StoreProvider>
       </body>
     </html>
   );
