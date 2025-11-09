@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { X } from "lucide-react";
+import { services } from "@/data/services";
 
 function PackagesPage() {
   const firstList = [
@@ -24,7 +25,7 @@ function PackagesPage() {
     SERVICES: false,
   });
 
-  const [select, setselect] = useState("")
+  const [select, setselect] = useState("");
   return (
     <main>
       <section className="mb-6 lg:mb-12 pt-8 lg:pt-24 px-4">
@@ -55,68 +56,86 @@ function PackagesPage() {
             <span>ANUBAVA</span>
             {selectBtn.ANUBAVA && <X />}
           </button>
-          <button className={`px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
+          <button
+            className={`px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
               selectBtn.RAKSHA
                 ? "bg-primary text-white"
                 : "border border-primary text-primary bg-white"
             }`}
             onClick={() =>
               setSelectBtn((prev) => ({ ...prev, RAKSHA: !prev.RAKSHA }))
-            }>
+            }
+          >
             <span>RAKSHA</span>
             {selectBtn.RAKSHA && <X />}
           </button>
-          <button className={` px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
+          <button
+            className={` px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
               selectBtn.SIKISHA
                 ? "bg-primary text-white"
                 : "border border-primary text-primary bg-white"
             }`}
             onClick={() =>
               setSelectBtn((prev) => ({ ...prev, SIKISHA: !prev.SIKISHA }))
-            }>
+            }
+          >
             <span>SIKISHA</span>
             {selectBtn.SIKISHA && <X />}
           </button>
 
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button className={` px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
-              selectBtn.SERVICES
-                ? "bg-primary text-white"
-                : "border border-primary text-primary bg-white"
-            }`}>
-                <span>{select || "SERVICES"}</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="9"
-                  fill="none"
-                  viewBox="0 0 15 9"
+          {select ? (
+            <button
+              className="px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 bg-primary text-white"
+              onClick={() => {
+                setselect("");
+              }}
+            >
+              <span>{select}</span>
+              <X />
+            </button>
+          ) : (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={` px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
+                    selectBtn.SERVICES
+                      ? "bg-primary text-white"
+                      : "border border-primary text-primary bg-white"
+                  }`}
                 >
-                  <path
-                    fill="#132D47"
-                    d="m.136 1.158.084.099 6.375 7.34c.216.248.54.403.9.403.361 0 .685-.16.9-.403l6.37-7.326.108-.122A.73.73 0 0 0 15 .741C15 .333 14.653 0 14.222 0H.778C.347 0 0 .333 0 .741c0 .155.052.3.136.417"
-                  ></path>
-                </svg>
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56" align="start">
-              <DropdownMenuGroup>
-                <DropdownMenuItem onClick={() => {setselect("Kayachitsa (General)")}} textValue="Kayachitsa (General)" >Kayachitsa (General)</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => {setselect("Shalya Tantra (ENT&Eye)")}} textValue="Shalya Tantra (ENT&Eye)" >Shalya Tantra (ENT&Eye)</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => {setselect("Shalakya Tantra (Surgery)")}} textValue="Shalakya Tantra (Surgery)" >Shalakya Tantra (Surgery)</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => {setselect("Kaumara bhritya (Pediatric)")}} textValue="Kaumara bhritya (Pediatric)" >Kaumara bhritya (Pediatric)</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => {setselect("Prasuti Tantra & Stri Roga (Gynec & obs)")}} textValue="Prasuti Tantra & Stri Roga (Gynec & obs)" >
-                  Prasuti Tantra & Stri Roga (Gynec & obs)
-                </DropdownMenuItem>
-                <DropdownMenuItem>Bhuta Vidya (Psychiatric)</DropdownMenuItem>
-                <DropdownMenuItem>Rasayana (Rejuvanation)</DropdownMenuItem>
-                <DropdownMenuItem>
-                  Vajikarana (Sexology & infertility)
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
+                  <span>{select || "SERVICES"}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="9"
+                    fill="none"
+                    viewBox="0 0 15 9"
+                  >
+                    <path
+                      fill="#132D47"
+                      d="m.136 1.158.084.099 6.375 7.34c.216.248.54.403.9.403.361 0 .685-.16.9-.403l6.37-7.326.108-.122A.73.73 0 0 0 15 .741C15 .333 14.653 0 14.222 0H.778C.347 0 0 .333 0 .741c0 .155.052.3.136.417"
+                    ></path>
+                  </svg>
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="start">
+                <DropdownMenuGroup>
+                  {services.map((service) => (
+                    <DropdownMenuItem
+                      key={service}
+                      onClick={() => {
+                        setselect(service);
+                        // router.push("/services");
+                      }}
+                      textValue={service}
+                    >
+                      {service}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
         </div>
 
         <div className="px-4 grid grid-cols-1 lg:grid-cols-3 gap-6 ">
