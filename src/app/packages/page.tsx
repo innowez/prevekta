@@ -14,7 +14,7 @@ import TechNeck from "@/assets/images/tech_neck.jpg";
 import DigitalDetox from "@/assets/images/digital_detox.jpg";
 import Image from "next/image";
 import { useServiceStore } from "@/provider/store-provider";
-// import { details } from "framer-motion/client";
+import { AnimatePresence, motion } from "motion/react";
 
 function PackagesPage() {
   const servicesList = [
@@ -87,8 +87,8 @@ function PackagesPage() {
 
       <section className="mb-6 lg:mb-12 mt-8 ">
         <div className="flex gap-2 overflow-x-auto px-4 mb-4 no-scrollbar">
-          <button
-            className={` px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
+          <motion.button
+            className={`px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
               selectBtn.ANUBAVA
                 ? "bg-primary text-white"
                 : "border border-primary text-primary bg-white"
@@ -96,11 +96,25 @@ function PackagesPage() {
             onClick={() =>
               setSelectBtn((prev) => ({ ...prev, ANUBAVA: !prev.ANUBAVA }))
             }
+            // whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            layout
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <span>ANUBAVA</span>
-            {selectBtn.ANUBAVA && <X />}
-          </button>
-          <button
+            <motion.span layout="position">ANUBAVA</motion.span>
+            {selectBtn.ANUBAVA && (
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                exit={{ scale: 0, rotate: 180 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
+                <X />
+              </motion.div>
+            )}
+          </motion.button>
+
+          <motion.button
             className={`px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
               selectBtn.RAKSHA
                 ? "bg-primary text-white"
@@ -109,11 +123,23 @@ function PackagesPage() {
             onClick={() =>
               setSelectBtn((prev) => ({ ...prev, RAKSHA: !prev.RAKSHA }))
             }
+            whileTap={{ scale: 0.95 }}
+            layout
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <span>RAKSHA</span>
-            {selectBtn.RAKSHA && <X />}
-          </button>
-          <button
+            <motion.span>RAKSHA</motion.span>
+            {selectBtn.RAKSHA && (
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                exit={{ scale: 0, rotate: 180 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
+                <X />
+              </motion.div>
+            )}
+          </motion.button>
+          <motion.button
             className={` px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
               selectBtn.SIKISHA
                 ? "bg-primary text-white"
@@ -122,76 +148,153 @@ function PackagesPage() {
             onClick={() =>
               setSelectBtn((prev) => ({ ...prev, SIKISHA: !prev.SIKISHA }))
             }
+            whileTap={{ scale: 0.95 }}
+            layout
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <span>SIKISHA</span>
-            {selectBtn.SIKISHA && <X />}
-          </button>
+            {selectBtn.SIKISHA && (
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                exit={{ scale: 0, rotate: 180 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
+                <X />
+              </motion.div>
+            )}
+          </motion.button>
 
-          {select ? (
-            <button
-              className="px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 bg-primary text-white"
-              onClick={() => {
-                setselect("");
-              }}
-            >
-              <span>{select}</span>
-              <X />
-            </button>
-          ) : (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button
-                  className={` px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
-                    selectBtn.SERVICES
-                      ? "bg-primary text-white"
-                      : "border border-primary text-primary bg-white"
-                  }`}
+          <AnimatePresence mode="wait">
+            {select ? (
+              <motion.button
+                key="selected"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                // whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 bg-primary text-white"
+                onClick={() => {
+                  setselect("");
+                }}
+              >
+                <motion.span layout="position">{select}</motion.span>
+                <motion.div
+                  initial={{ rotate: -180, scale: 0 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <span>{select || "SERVICES"}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="9"
-                    fill="none"
-                    viewBox="0 0 15 9"
+                  <X />
+                </motion.div>
+              </motion.button>
+            ) : (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <motion.button
+                    key="dropdown"
+                    // initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.9, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    // whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    layout
+                    className={`px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
+                      selectBtn.SERVICES
+                        ? "bg-primary text-white"
+                        : "border border-primary text-primary bg-white"
+                    }`}
                   >
-                    <path
-                      fill="#132D47"
-                      d="m.136 1.158.084.099 6.375 7.34c.216.248.54.403.9.403.361 0 .685-.16.9-.403l6.37-7.326.108-.122A.73.73 0 0 0 15 .741C15 .333 14.653 0 14.222 0H.778C.347 0 0 .333 0 .741c0 .155.052.3.136.417"
-                    ></path>
-                  </svg>
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56" align="start">
-                <DropdownMenuGroup>
-                  {services.map((service, ind) => (
-                    <DropdownMenuItem
-                      key={service}
-                      onClick={() => {
-                        setselect(service);
-                        setServices(ind);
-                        // router.push("/services");
+                    <motion.span layout="position">
+                      {select || "SERVICES"}
+                    </motion.span>
+                    <motion.svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="15"
+                      height="9"
+                      fill="none"
+                      viewBox="0 0 15 9"
+                      animate={{ rotate: 0 }}
+                      whileHover={{ y: 2 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 15,
                       }}
-                      textValue={service}
                     >
-                      {service}
-                    </DropdownMenuItem>
-                  ))}
-                </DropdownMenuGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          )}
+                      <path
+                        fill="#132D47"
+                        d="m.136 1.158.084.099 6.375 7.34c.216.248.54.403.9.403.361 0 .685-.16.9-.403l6.37-7.326.108-.122A.73.73 0 0 0 15 .741C15 .333 14.653 0 14.222 0H.778C.347 0 0 .333 0 .741c0 .155.052.3.136.417"
+                      ></path>
+                    </motion.svg>
+                  </motion.button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56" align="start" asChild>
+                  <DropdownMenuGroup>
+                    {services.map((service, ind) => (
+                      <DropdownMenuItem
+                        key={service}
+                        onClick={() => {
+                          setselect(service);
+                          setServices(ind);
+                        }}
+                        textValue={service}
+                        asChild
+                      >
+                        <motion.div
+                          whileHover={{
+                            x: 4,
+                          }}
+                          transition={{ duration: 0.15 }}
+                        >
+                          {service}
+                        </motion.div>
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
+          </AnimatePresence>
         </div>
 
-        {(selectBtn.ANUBAVA ||
-          selectBtn.RAKSHA ||
-          selectBtn.SERVICES ||
-          selectBtn.SIKISHA) && (
-          <p className="text-base lg:text-lg font-[Duplet] font-extralight leading-[23px] px-4 mb-3 lg:mb-6 text-primary">
-            Discover Ayurveda’s magic — feel recharged, peaceful, and naturally
-            alive in just a few days.
-          </p>
-        )}
+        <AnimatePresence>
+          {(select ||
+            selectBtn.ANUBAVA ||
+            selectBtn.RAKSHA ||
+            selectBtn.SERVICES ||
+            selectBtn.SIKISHA) && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{
+                height: {
+                  duration: 0.4,
+                  ease: [0.4, 0, 0.2, 1], // Custom easing for smoother height animation
+                },
+                opacity: {
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
+              }}
+              style={{ overflow: "hidden" }} // Prevents content from showing during collapse
+            >
+              <motion.p
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                className="text-base lg:text-lg font-[Duplet] font-extralight leading-[23px] px-4 mb-3 lg:mb-6 text-primary"
+              >
+                Discover {"Ayurveda's"} magic — feel recharged, peaceful, and
+                naturally alive in just a few days.
+              </motion.p>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <div className="px-4 grid grid-cols-1 lg:grid-cols-3 gap-6 ">
           {servicesList.map((item, index) => (
