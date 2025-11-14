@@ -21,8 +21,7 @@ function Service() {
             {services}
           </h1>
           <p className="text-base lg:text-lg text-primary text-center leading-[20px] lg:leading-[23px] font-[Duplet] ">
-            Discover treatments, trusted practitioners, and knowledge <br className="hidden lg:block" />tailored
-            to your needs.
+            Kayachikitsa, the core of Ayurvedic healing, addresses the root of illness through customized treatments. It nurtures harmony between body, mind, and soul.
           </p>
         </div>
 
