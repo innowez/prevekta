@@ -55,14 +55,9 @@ const Header: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const setServices = useServiceStore((state) => state.setServiceType);
+  const setServices = useServiceStore((state) => state.setService);
   // console.log(services);
 
-  const changeServiceType = (type: string) => {
-    console.log("Selected service type:", type);
-    // You can add logic here to update the service type in the store
-    // Call the action to set the service type
-  };
 
   return (
     <>
@@ -116,11 +111,11 @@ const Header: React.FC = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="start">
                 <DropdownMenuGroup>
-                  {services.map((service) => (
+                  {services.map((service, ind) => (
                     <DropdownMenuItem
                       key={service}
                       onClick={() => {
-                        setServices(service);
+                        setServices(ind);
                         router.push("/services");
                       }}
                       textValue={service}
@@ -312,7 +307,7 @@ const Header: React.FC = () => {
                             transition={{ delay: ind * 0.05 }}
                             className="text-base text-left font-[Duplet]"
                             onClick={() => {
-                              setServices(service);
+                              setServices(ind);
                               router.push("/services");
                               setIsMobileMenuOpen(false);
                             }}

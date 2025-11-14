@@ -13,17 +13,10 @@ import UrbanCleanse from "@/assets/images/urban_cleanse.png";
 import TechNeck from "@/assets/images/tech_neck.jpg";
 import DigitalDetox from "@/assets/images/digital_detox.jpg";
 import Image from "next/image";
+import { useServiceStore } from "@/provider/store-provider";
 // import { details } from "framer-motion/client";
 
 function PackagesPage() {
-  const firstList = [
-    "Individuals feeling tiredness, bloating, or heaviness",
-    "Those with poor digestion or irregular bowel habits.",
-    "People experiencing skin problems & recurrent infections.",
-    "Anyone wanting to reset after stress, travel, or unhealthy habits like alcohol,smoking",
-    "Ideal for those looking to rejuvenate naturally and regain inner glow.",
-  ];
-
   const servicesList = [
     {
       name: "Urban Cleanse",
@@ -74,6 +67,9 @@ function PackagesPage() {
   });
 
   const [select, setselect] = useState("");
+
+  const setServices = useServiceStore((state) => state.setService);
+
   return (
     <main>
       <section className="mb-6 lg:mb-12 pt-8 lg:pt-24 px-4">
@@ -168,11 +164,12 @@ function PackagesPage() {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="start">
                 <DropdownMenuGroup>
-                  {services.map((service) => (
+                  {services.map((service, ind) => (
                     <DropdownMenuItem
                       key={service}
                       onClick={() => {
                         setselect(service);
+                        setServices(ind);
                         // router.push("/services");
                       }}
                       textValue={service}
@@ -186,10 +183,15 @@ function PackagesPage() {
           )}
         </div>
 
-        {(selectBtn.ANUBAVA || selectBtn.RAKSHA || selectBtn.SERVICES || selectBtn.SIKISHA) && <p className="text-base lg:text-lg font-[Duplet] font-extralight leading-[23px] px-4 mb-3 lg:mb-6 text-primary">
-          Discover Ayurveda’s magic — feel recharged, peaceful, and naturally
-          alive in just a few days.
-        </p>}
+        {(selectBtn.ANUBAVA ||
+          selectBtn.RAKSHA ||
+          selectBtn.SERVICES ||
+          selectBtn.SIKISHA) && (
+          <p className="text-base lg:text-lg font-[Duplet] font-extralight leading-[23px] px-4 mb-3 lg:mb-6 text-primary">
+            Discover Ayurveda’s magic — feel recharged, peaceful, and naturally
+            alive in just a few days.
+          </p>
+        )}
 
         <div className="px-4 grid grid-cols-1 lg:grid-cols-3 gap-6 ">
           {servicesList.map((item, index) => (

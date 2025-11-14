@@ -10,7 +10,7 @@ import { useServiceStore } from "@/provider/store-provider";
 
 function Service() {
   const [selTab, setSelTab] = useState(0)
-  const services = useServiceStore((state) => state.serviceType);
+  const {serviceType, serviceDesc} = useServiceStore((state) => state);
   // console.log(services);
   
   return (
@@ -18,10 +18,10 @@ function Service() {
       <section className="mb-6 lg:mb-12">
         <div className="mt-8 lg:mt-24 mb-6 lg:mb-12">
           <h1 className="text-2xl lg:text-[40px] text-center text-primary font-[Atyp] font-semibold mb-4 lg:mb-6">
-            {services}
+            {serviceType}
           </h1>
-          <p className="text-base lg:text-lg text-primary text-center leading-[20px] lg:leading-[23px] font-[Duplet] ">
-            Kayachikitsa, the core of Ayurvedic healing, addresses the root of illness through customized treatments. It nurtures harmony between body, mind, and soul.
+          <p className="text-base lg:text-lg text-primary text-center leading-[20px] lg:leading-[23px] font-[Duplet] max-w-2xl mx-auto">
+            {serviceDesc}
           </p>
         </div>
 
