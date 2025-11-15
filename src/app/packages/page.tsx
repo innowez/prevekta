@@ -15,6 +15,7 @@ import DigitalDetox from "@/assets/images/digital_detox.jpg";
 import Image from "next/image";
 import { useServiceStore } from "@/provider/store-provider";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 
 function PackagesPage() {
   const servicesList = [
@@ -25,6 +26,7 @@ function PackagesPage() {
       dur: "3 days",
       price: 7999,
       oldPrice: 9999,
+      link: "urban-cleanse",
       details: [
         "Individuals feeling tiredness, bloating, or heaviness",
         "Those with poor digestion or irregular bowel habits.",
@@ -39,6 +41,7 @@ function PackagesPage() {
       dur: "3 days",
       price: 5999,
       oldPrice: 7999,
+      link: "tech-neck",
       details: [
         "People with neck, shoulder, or back stiffness from long screen time.",
         "Those with poor posture, tension headaches, or cervical discomfort.",
@@ -53,6 +56,7 @@ function PackagesPage() {
       dur: "3 days",
       price: 5999,
       oldPrice: 7999,
+      link: "digital-detox",
       details: [
         "Ideal for individuals like IT professionals and night shift workers.",
         `Perfect for those experiencing <br /> <ul class="list-disc"><li>Eye strain or dryness of eyes.</li><li>Headaches due to screen exposure</li><li>Burning , Itching and watering of eyes.</li></ul>`,
@@ -363,7 +367,7 @@ function PackagesPage() {
                 </p>
               </div>
 
-              <button className="bg-secondary text-primary rounded-full py-3.5 px-4 flex justify-between items-center my-3 w-full ">
+              <Link href={`/packages/${item.link}`} className="bg-secondary text-primary rounded-full py-3.5 px-4 flex justify-between items-center my-3 w-full ">
                 <span className="uppercase leading-[15px] font-[Duplet] ">
                   View Details
                 </span>
@@ -379,7 +383,7 @@ function PackagesPage() {
                     d="M15.642.53 6.625 0c-.448-.004-.768.32-.788.713a.78.78 0 0 0 .713.787l7.343.431L.218 15.607a.75.75 0 1 0 1.06 1.06L14.955 2.992l.431 7.343c.02.393.394.72.787.713.41-.007.733-.395.713-.787l-.53-9.018c-.075-.45-.319-.649-.713-.713"
                   ></path>
                 </svg>
-              </button>
+              </Link>
 
               <hr className="w-full text-[#ffffff44] mb-6" />
 
