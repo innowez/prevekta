@@ -94,7 +94,7 @@ function PackagesPage() {
                 : "border border-primary text-primary bg-white"
             }`}
             onClick={() =>
-              setSelectBtn((prev) => ({ ...prev, ANUBAVA: !prev.ANUBAVA }))
+              setSelectBtn((prev) => ({ ...prev, ANUBAVA: !prev.ANUBAVA, RAKSHA: false, SIKISHA: false  }))
             }
             // whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -121,7 +121,7 @@ function PackagesPage() {
                 : "border border-primary text-primary bg-white"
             }`}
             onClick={() =>
-              setSelectBtn((prev) => ({ ...prev, RAKSHA: !prev.RAKSHA }))
+              setSelectBtn((prev) => ({ ...prev, RAKSHA: !prev.RAKSHA, ANUBAVA: false, SIKISHA: false }))
             }
             whileTap={{ scale: 0.95 }}
             layout
@@ -139,6 +139,7 @@ function PackagesPage() {
               </motion.div>
             )}
           </motion.button>
+
           <motion.button
             className={` px-4 py-2 rounded-xl uppercase text-lg font-[Duplet] cursor-pointer flex items-center gap-4 ${
               selectBtn.SIKISHA
@@ -146,7 +147,7 @@ function PackagesPage() {
                 : "border border-primary text-primary bg-white"
             }`}
             onClick={() =>
-              setSelectBtn((prev) => ({ ...prev, SIKISHA: !prev.SIKISHA }))
+              setSelectBtn((prev) => ({ ...prev, SIKISHA: !prev.SIKISHA, ANUBAVA: false, RAKSHA: false }))
             }
             whileTap={{ scale: 0.95 }}
             layout
@@ -260,10 +261,9 @@ function PackagesPage() {
           </AnimatePresence>
         </div>
 
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {(select ||
             selectBtn.ANUBAVA ||
-            selectBtn.RAKSHA ||
             selectBtn.SERVICES ||
             selectBtn.SIKISHA) && (
             <motion.div
@@ -294,6 +294,32 @@ function PackagesPage() {
               </motion.p>
             </motion.div>
           )}
+          {selectBtn.RAKSHA && (<motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{
+                height: {
+                  duration: 0.4,
+                  ease: [0.4, 0, 0.2, 1], // Custom easing for smoother height animation
+                },
+                opacity: {
+                  duration: 0.3,
+                  ease: "easeInOut",
+                },
+              }}
+              style={{ overflow: "hidden" }} // Prevents content from showing during collapse
+            >
+              <motion.p
+                initial={{ y: -10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                className="text-base lg:text-lg font-[Duplet] font-extralight leading-[23px] px-4 mb-3 lg:mb-6 text-primary"
+              >
+                Catch early imbalances and restore vitality - thrive with Ayurveda through RAKSHA
+              </motion.p>
+            </motion.div>)}
         </AnimatePresence>
 
         <div className="px-4 grid grid-cols-1 lg:grid-cols-3 gap-6 ">
