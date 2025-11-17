@@ -298,7 +298,7 @@ function PackagesPage() {
               </motion.p>
             </motion.div>
           )}
-          {selectBtn.RAKSHA && (<motion.div
+          {selectBtn.RAKSHA && !select && (<motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
