@@ -23,7 +23,7 @@ function PackageDetail() {
     summary: false,
   });
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <section className="px-4 lg:px-10 pt-7 lg:pt-28 mb-4 lg:mb-12">
         <div className="flex flex-col lg:flex-row justify-between gap-2 mb-10 ">
           <h1 className="text-2xl lg:text-[60px] text-center lg:text-left text-primary lg:leading-[72px] font-Atyp font-semibold ">
@@ -43,7 +43,7 @@ function PackageDetail() {
               src={UrbanCleanse}
               alt="urban"
               style={{ gridArea: "box1" }}
-              className="object-cover object-center w-[195px] h-[148px] lg:w-[510px] lg:h-[285px] rounded-2xl "
+              className="object-cover object-center w-[195px] h-[148px] lg:w-[480px] lg:h-[285px] rounded-2xl "
             />
           </div>
           <div>
@@ -51,7 +51,7 @@ function PackageDetail() {
               src={UCImage2}
               alt="urban"
               style={{ gridArea: "box2" }}
-              className="object-cover object-center w-[158px] h-[148px] lg:w-[391px] lg:h-[285px] rounded-2xl "
+              className="object-cover object-center w-[158px] h-[148px] lg:w-[361px] lg:h-[285px] rounded-2xl "
             />
           </div>
 
@@ -60,7 +60,7 @@ function PackageDetail() {
               src={UCImage3}
               alt="urban"
               style={{ gridArea: "box3" }}
-              className="object-cover object-center w-[158px] h-[104px] lg:w-[427px] lg:h-[285px] rounded-2xl "
+              className="object-cover object-center w-[158px] h-[104px] lg:w-[397px] lg:h-[285px] rounded-2xl "
             />
           </div>
 
@@ -69,16 +69,16 @@ function PackageDetail() {
               src={UCImage4}
               alt="urban"
               style={{ gridArea: "box4" }}
-              className="object-cover object-center w-[195px] h-[104px] lg:w-[510px] lg:h-[285px] rounded-2xl "
+              className="object-cover object-center w-[195px] h-[104px] lg:w-[480px] lg:h-[285px] rounded-2xl "
             />
           </div>
 
-          <div className="w-full">
+          <div className="">
             <Image
               src={UCImage5}
               alt="urban"
               style={{ gridArea: "box5" }}
-              className="object-cover object-center w-[361px] h-[104px] lg:w-[391px] lg:h-[285px] rounded-2xl "
+              className="object-cover object-center w-[361px] h-[104px] lg:w-[361px] lg:h-[285px] rounded-2xl "
             />
           </div>
         </div>
