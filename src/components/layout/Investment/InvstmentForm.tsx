@@ -265,7 +265,7 @@ const InvestmentForm = () => {
           </select>
         </div>
 
-        <input type="text" name="type" value={"finance"} className="hidden" />
+        <input type="text" name="type" value={"active_investment"} className="hidden" />
 
         {/* Submit Button */}
         <button

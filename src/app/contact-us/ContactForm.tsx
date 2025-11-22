@@ -171,7 +171,7 @@ const ContactForm = () => {
             className="w-full h-24 md:h-32 text-primary text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none resize-none placeholder:text-primary placeholder:font-normal"
           />
         </div>
-        <input type="text" name="SingleLine1" value={"get_in_touch"} className="hidden" />
+        <input type="text" name="SingleLine1" value={"contact_us"} className="hidden" />
 
         {/* Submit Button */}
         <button

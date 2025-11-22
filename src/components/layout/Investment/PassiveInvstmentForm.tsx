@@ -234,7 +234,7 @@ const PassiveInvestmentForm = () => {
             </select>
           </div>
         </div>
-        <input type="text" name="type" value={"finance"} className="hidden" />
+        <input type="text" name="type" value={"passive_investment"} className="hidden" />
 
         {/* Message Field */}
 
