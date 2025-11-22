@@ -196,7 +196,7 @@ const AppointmentPage = () => {
                 <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
                   <textarea
                     // name="message"
-                    name="SingleLine5"
+                    name="SingleLine"
                     placeholder="Message"
                     rows={4}
                     className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none placeholder:text-primary"
