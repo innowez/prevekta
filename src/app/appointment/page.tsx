@@ -17,7 +17,8 @@ const AppointmentPage = () => {
       const form = e.currentTarget;
       const formData = new FormData(form);
       const scriptURL =
-        "https://script.google.com/macros/s/AKfycby6G6Pp096af1BknVPklIptlUpoTc2pY6pWXyFYW82kQ1-Ybgk0_x-CyOY3AO87RjN3/exec";
+        // "https://script.google.com/macros/s/AKfycby6G6Pp096af1BknVPklIptlUpoTc2pY6pWXyFYW82kQ1-Ybgk0_x-CyOY3AO87RjN3/exec";
+        "https://forms.zohopublic.in/adminviri1/form/PreviktaWebsite/formperma/QV6vR7uRlqBG75EVBmNvekv1nbBfI129nwqpqWlP_aE/htmlRecords/submit";
   
   
       // Create a hidden iframe for form submission
@@ -118,7 +119,8 @@ const AppointmentPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-1 gap-4 lg:gap-8 lg:mb-10">
                 <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
                   <input
-                    name="name"
+                    // name="name"
+                    name="Name_First"
                     placeholder="Name"
                     required
                     className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none placeholder:text-primary"
@@ -128,7 +130,8 @@ const AppointmentPage = () => {
                 <div className="flex flex-col lg:flex-row justify-between gap-2 ">
                   <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
                     <input
-                      name="email"
+                      // name="email"
+                      name="Email"
                       type="email"
                       placeholder="Email"
                       required
@@ -137,7 +140,8 @@ const AppointmentPage = () => {
                   </div>
                   <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
                     <input
-                      name="mobile"
+                      // name="mobile"
+                      name="PhoneNumber_countrycode"
                       type="tel"
                       placeholder="Phone Number"
                       required
@@ -149,7 +153,8 @@ const AppointmentPage = () => {
                 <div className="flex flex-col lg:flex-row justify-between gap-2 ">
                   <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
                     <select
-                      name="consultation"
+                      // name="consultation"
+                      name="SingleLine2"
                       className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
                     >
                       <option value="">Consultation type</option>
@@ -164,7 +169,8 @@ const AppointmentPage = () => {
 
                   <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
                     <select
-                      name="location"
+                      // name="location"
+                      name="SingleLine3"
                       className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
                     >
                       <option value="">Location</option>
@@ -176,7 +182,8 @@ const AppointmentPage = () => {
 
                 <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
                   <select
-                    name="time"
+                    // name="time"
+                    name="SingleLine4"
                     className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
                   >
                     <option value="">Choose Your Time</option>
@@ -188,13 +195,16 @@ const AppointmentPage = () => {
 
                 <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
                   <textarea
-                    name="message"
+                    // name="message"
+                    name="SingleLine5"
                     placeholder="Message"
                     rows={4}
                     className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none placeholder:text-primary"
                   ></textarea>
                 </div>
               </div>
+
+              <input type="text" name="SingleLine1" value={"get_in_touch"} className="hidden" />
 
               <div className="flex justify-end lg:justify-start">
                 <button

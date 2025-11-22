@@ -77,7 +77,8 @@ const PassiveInvestmentForm = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbw7NmoNV9doR0jQNxs9ncHRVQQ3Rlp_uOYeWSwsEvxXSQurPXuD4usNesKLKRIu4lahMg/exec";
+      // "https://script.google.com/macros/s/AKfycbw7NmoNV9doR0jQNxs9ncHRVQQ3Rlp_uOYeWSwsEvxXSQurPXuD4usNesKLKRIu4lahMg/exec";
+      "https://forms.zohopublic.in/adminviri1/form/PrevektaFranchiseform/formperma/xcRu1b3ziSJlpplC1mFH6p7GNMqWpzyg142I5p7pBfw/htmlRecords/submit";
 
     // Create a hidden iframe for form submission
     const iframe = document.createElement("iframe");
@@ -167,8 +168,8 @@ const PassiveInvestmentForm = () => {
         <div className="flex flex-col md:flex-row gap-4 w-full">
           <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
-              // name="Name_First"
-              name="name"
+              name="Name_First"
+              // name="name"
               placeholder="Name"
               required
               className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none placeholder:text-primary placeholder:font-normal"
@@ -180,8 +181,8 @@ const PassiveInvestmentForm = () => {
         <div className="flex flex-col md:flex-row gap-4 w-full">
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
-              name="email"
-              // name="Email"
+              // name="email"
+              name="Email"
               required
               placeholder="Email"
               className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none placeholder:text-primary placeholder:font-normal"
@@ -189,7 +190,8 @@ const PassiveInvestmentForm = () => {
           </div>
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
-              name="mobile"
+              // name="mobile"
+              name="PhoneNumber_countrycode"
               required
               placeholder="Phone Number"
               className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none placeholder:text-primary placeholder:font-normal"
@@ -200,7 +202,8 @@ const PassiveInvestmentForm = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-4 ">
           <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <select
-              name="location"
+              // name="location"
+              name="SingleLine3"
               className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
             >
               <option value="">-- Location --</option>
@@ -215,7 +218,8 @@ const PassiveInvestmentForm = () => {
 
           <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <select
-              name="budget"
+              // name="budget"
+              name="SingleLine4"
               className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
             >
               <option value="">-- Investment --</option>
@@ -230,6 +234,7 @@ const PassiveInvestmentForm = () => {
             </select>
           </div>
         </div>
+        <input type="text" name="type" value={"finance"} className="hidden" />
 
         {/* Message Field */}
 

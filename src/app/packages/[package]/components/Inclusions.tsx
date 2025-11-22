@@ -75,7 +75,6 @@ function Inclusions() {
           <div className="absolute left-0 top-2 h-4 w-4 rounded-full border border-primary bg-[#dcf6d9]"></div>
           <p className="font-[Duplet] text-lg text-primary ">Bonus</p>
         </li>
-
       </ul>
 
       <div

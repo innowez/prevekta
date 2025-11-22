@@ -85,7 +85,8 @@ const InvestmentForm = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbw3ybLKAZClUWzNLGQ75lHPhXG6wpo0J8CZMLuWapjZHQ-xpq-R4fTSNPgt2VVqUKXWtA/exec";
+      // "https://script.google.com/macros/s/AKfycbw3ybLKAZClUWzNLGQ75lHPhXG6wpo0J8CZMLuWapjZHQ-xpq-R4fTSNPgt2VVqUKXWtA/exec";
+      "https://forms.zohopublic.in/adminviri1/form/PrevektaFranchiseform/formperma/xcRu1b3ziSJlpplC1mFH6p7GNMqWpzyg142I5p7pBfw/htmlRecords/submit";
 
     // Create a hidden iframe for form submission
     const iframe = document.createElement("iframe");
@@ -180,8 +181,8 @@ const InvestmentForm = () => {
         {/* <div className="flex flex-col md:flex-row gap-4 w-full"> */}
           <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
-              // name="Name_First"
-              name="name"
+              name="Name_First"
+              // name="name"
               placeholder="Name"
               required
               className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none placeholder:text-primary placeholder:font-normal"
@@ -193,8 +194,8 @@ const InvestmentForm = () => {
         <div className="flex flex-col md:flex-row gap-4 w-full">
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
-              name="email"
-              // name="Email"
+              // name="email"
+              name="Email"
               required
               placeholder="Email"
               className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none placeholder:text-primary placeholder:font-normal"
@@ -202,7 +203,8 @@ const InvestmentForm = () => {
           </div>
           <div className="w-full md:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <input
-              name="mobile"
+              // name="mobile"
+              name="PhoneNumber_countrycode"
               required
               placeholder="Phone Number"
               className="w-full text-base md:text-[18px] leading-[23px] font-[Duplet] font-semibold bg-transparent outline-none placeholder:text-primary placeholder:font-normal"
@@ -213,7 +215,8 @@ const InvestmentForm = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-4 ">
           <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <select
-              name="region"
+              // name="region"
+              name="SingleLine"
               className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
               onChange={(e) => {
                 if (e.target.value !== "") { 
@@ -231,7 +234,8 @@ const InvestmentForm = () => {
 
           <div className="w-full lg:w-1/2 border-b border-[rgba(19,45,71,0.2)] pb-2">
             <select
-              name="state"
+              // name="state"
+              name="SingleLine1"
               className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
               onChange={(e) => {
                 if (selRegion !== null && e.target.value !== "") {
@@ -252,13 +256,16 @@ const InvestmentForm = () => {
 
         <div className="w-full border-b border-[rgba(19,45,71,0.2)] pb-2">
           <select
-            name="cluster"
+            // name="cluster"
+            name="SingleLine2"
             className="w-full text-base text-primary md:text-[18px] leading-[23px] font-[Duplet] bg-transparent outline-none"
           >
             <option value="">-- Cluster --</option>
               {(selState !== null && selRegion !== null) && loct.cluster[selRegion][selState].map((reg, ind) => (<option key={ind+"reg"} value={reg}>{reg}</option>))}
           </select>
         </div>
+
+        <input type="text" name="type" value={"finance"} className="hidden" />
 
         {/* Submit Button */}
         <button
